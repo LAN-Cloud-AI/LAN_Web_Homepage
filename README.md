@@ -20,8 +20,23 @@ python3 -m http.server 8787
 
 ## 部署（Cloudflare Pages）
 
+仓库：https://github.com/LAN-Cloud-AI/LAN_Web_Homepage
+
+### 推荐：Git 连接（持续部署）
+
+1. 打开 [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages)
+2. **Create** → **Pages** → **Connect to Git**
+3. 选择 `LAN-Cloud-AI/LAN_Web_Homepage`，分支 `main`
+4. 构建设置（静态站点，无需构建）：
+   - Framework preset: `None`
+   - Build command: （留空）
+   - Build output directory: `/`
+5. 保存并部署；部署完成后把自定义域绑到 `lancloudtech.com` / `www.lancloudtech.com`
+
+### 或：命令行直推
+
+需先设置 `CLOUDFLARE_API_TOKEN`：
+
 ```bash
 npx wrangler pages deploy . --project-name=lan-cloud-ai --commit-dirty=true
 ```
-
-或将本仓库推送到 GitHub 后，在 Cloudflare Dashboard 连接 `LAN-Cloud-AI/LAN_Web_Homepage`，构建命令留空，输出目录为 `/`。
