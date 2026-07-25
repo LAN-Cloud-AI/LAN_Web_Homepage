@@ -20,22 +20,33 @@
   --card-soft: rgba(255, 255, 255, 0.88);
   --card-soft-end: rgba(255, 255, 255, 0.72);
   --radius: 28px;
-  --font-display: "Outfit", "Noto Sans SC", sans-serif;
-  --font-sans: "Noto Sans SC", "Outfit", sans-serif;
+  /* Latin → SF Pro; CJK → PingFang (browser picks by glyph) */
+  --font-sf: "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont;
+  --font-cjk: "PingFang SC", "PingFang HK";
+  --font-display: var(--font-sf), var(--font-cjk), sans-serif;
+  --font-sans: var(--font-sf), var(--font-cjk), sans-serif;
   --max: 1120px;
   --pad: clamp(1.25rem, 4vw, 2.5rem);
   --focus: rgba(0, 102, 204, 0.55);
   --belief-shimmer: #8a9199;
 }
 
+html[data-locale="zh-Hans"] {
+  --font-cjk: "PingFang SC", "PingFang HK";
+  --font-display: var(--font-sf), var(--font-cjk), sans-serif;
+  --font-sans: var(--font-sf), var(--font-cjk), sans-serif;
+}
+
 html[data-locale="zh-Hant"] {
-  --font-display: "Outfit", "Noto Sans TC", sans-serif;
-  --font-sans: "Noto Sans TC", "Outfit", sans-serif;
+  --font-cjk: "PingFang HK", "PingFang SC";
+  --font-display: var(--font-sf), var(--font-cjk), sans-serif;
+  --font-sans: var(--font-sf), var(--font-cjk), sans-serif;
 }
 
 html[data-locale="en"] {
-  --font-display: "Outfit", "Noto Sans SC", sans-serif;
-  --font-sans: "Outfit", "Noto Sans SC", sans-serif;
+  --font-cjk: "PingFang SC", "PingFang HK";
+  --font-display: var(--font-sf), var(--font-cjk), sans-serif;
+  --font-sans: var(--font-sf), var(--font-cjk), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -124,6 +135,7 @@ body {
   letter-spacing: -0.01em;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
 }
 
 img { display: block; max-width: 100%; height: auto; }
