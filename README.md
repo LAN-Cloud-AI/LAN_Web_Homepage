@@ -4,9 +4,11 @@
 
 - 正式域名：https://lancloudtech.com
 - 联系邮箱：lance@lancloudtech.com
-- 电话：17713573150
+- 电话：+86-17380566771
 - 公司：四川兰芯云朵智能科技有限公司
 - 站点入口：`index.html`
+- 语言：简体 / 繁體 / EN；默认跟设备语言，右上角可切换并写入 localStorage
+- 主题：跟随系统浅色 / 深色模式
 - 图片与 Prompt：`images/`
 - 组织 GitHub：https://github.com/LAN-Cloud-AI
 
