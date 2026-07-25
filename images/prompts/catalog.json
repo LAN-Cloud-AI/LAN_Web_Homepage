@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "count": 55,
+  "items": [
+    {
+      "id": "analyst-action-layers",
+      "category": "analyst",
+      "title": "三层行动翻译",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nThree-column action board 总部层/区域层/门店层 with Owner and deadlines, Chinese bullets for institutional fixes,\ndifferentiated regional levers, store closed-loop tasks. Title 「同一个洞察 · 三个层级的动作」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/analyst/analyst-action-layers.png",
+      "source": "images/prompts/analyst/analyst-action-layers.md"
+    },
+    {
+      "id": "analyst-data-audit",
+      "category": "analyst",
+      "title": "AI 数据审计台",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAI data audit console 「正在重建正式样本」: source files chips 考核门店名单/巡检评分/投诉总表/保险补充表,\nchecklist lines done/warn for 同店异码 mapping, 异常门店, 名称错登, coverage 93.1%→100%. Serious analytics UI.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/analyst/analyst-data-audit.png",
+      "source": "images/prompts/analyst/analyst-data-audit.md"
+    },
+    {
+      "id": "analyst-quadrant",
+      "category": "analyst",
+      "title": "巡检×投诉四象限",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nQuadrant chart UI: X 巡检总分, Y 服务投诉风险, points for stores; highlight cluster 「高分仍涉诉」.\nInsight callout in Chinese: 最危险的门店可能并不是低分门店. Clean research dashboard, anonymized store codes.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/analyst/analyst-quadrant.png",
+      "source": "images/prompts/analyst/analyst-quadrant.md"
+    },
+    {
+      "id": "brand-capability-map",
+      "category": "brand",
+      "title": "能力地图四象限",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nFull-width SaaS illustration-as-UI: a horizontal flow board titled 「能力地图」with four connected panels:\n1 看见 LeadsHunter — comment cards becoming lead cards\n2 理解 VECT — relationship temperature gauge 82→42\n3 调度 TACT — workshop work order timeline\n4 判断 AI Analyst — insight cards with actions\nChinese labels only on cards. Clean editorial product diagram inside a web app frame.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/brand/brand-capability-map.png",
+      "source": "images/prompts/brand/brand-capability-map.md"
+    },
+    {
+      "id": "brand-hero-homepage",
+      "category": "brand",
+      "title": "官网首页 Hero · 产品能力总览",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nHomepage hero product collage for 兰芯云朵 official website: one wide browser window showing a command center that combines three product modules in tabs — LeadsHunter (公域线索), VECT (客户关系), TACT (车间调度).\nLeft nav with logos and Chinese labels. Center shows a clean capability ribbon: 看见 → 理解 → 调度 → 判断.\nSubtle abstract soft gradient background outside the browser in cool gray-teal mist, not purple. Brand wordmark area top-left: 「兰芯云朵」.\nPremium marketing site screenshot quality, hero budget: brand + one headline area + one dominant UI plane.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/brand/brand-hero-homepage.png",
+      "source": "images/prompts/brand/brand-hero-homepage.md"
+    },
+    {
+      "id": "brand-logo-lockup-ui",
+      "category": "brand",
+      "title": "侧栏品牌锁头 UI",
+      "aspect": "1:1",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nClose crop of left sidebar brand lockup for 兰芯云朵 SaaS: small geometric cloud+circuit mark in forge teal,\nChinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.\nSquare composition, lots of negative space, UI fragment only.\n\nAspect ratio 1:1. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/brand/brand-logo-lockup-ui.png",
+      "source": "images/prompts/brand/brand-logo-lockup-ui.md"
+    },
+    {
+      "id": "brand-method-six-pillars",
+      "category": "brand",
+      "title": "六要素方法论面板",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nWeb app settings-style board titled 「管理系统造法」showing six equal cards in 2x3 grid:\n业务对象 / 状态 / 责任人 / 时点 / 证据 / 风险\nEach card has a short Chinese subtitle and a tiny icon line drawing (minimal).\nFooter formula strip: 业务规则 × 多维表格 × AI. Calm, educational product UI, not poster.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/brand/brand-method-six-pillars.png",
+      "source": "images/prompts/brand/brand-method-six-pillars.md"
+    },
+    {
+      "id": "brand-store-switcher",
+      "category": "brand",
+      "title": "门店切换器顶栏",
+      "aspect": "21:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nUltra-wide top application bar only: left brand, center store switcher dropdown showing 「武汉体验中心 · A店」,\nright side: 通知铃铛, 角色「店长」, avatar initials 「ZX」. Clean SaaS chrome strip, Chinese UI.\n\nAspect ratio 21:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/brand/brand-store-switcher.png",
+      "source": "images/prompts/brand/brand-store-switcher.md"
+    },
+    {
+      "id": "lh-assign-map",
+      "category": "leadshunter",
+      "title": "属地化分发",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAssignment console 「属地化分发」: China province simplified map heatmap (abstract, not overly detailed),\nlist of leads with city names, toggle 「仅派发同省」ON, org list with 配额 remaining.\nAnimation-like arrows from national pool to Hubei/Hunan dealers — still a static UI mock.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-assign-map.png",
+      "source": "images/prompts/leadshunter/lh-assign-map.md"
+    },
+    {
+      "id": "lh-comment-scoring",
+      "category": "leadshunter",
+      "title": "评论评分详情",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSplit view: left raw public comment thread from Xiaohongshu-style UI mock (not real brand logos),\nright LH Evaluation Agent panel 「意向评分」showing five-level intent S0–S4, evidence bullets in Chinese,\nsummary, 跟进建议, confidence. Status badge 「已写入线索池」. Emphasize explainable AI scoring, not black box.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-comment-scoring.png",
+      "source": "images/prompts/leadshunter/lh-comment-scoring.md"
+    },
+    {
+      "id": "lh-dashboard-manager",
+      "category": "leadshunter",
+      "title": "经理战情盘",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nLeadsHunter manager cockpit dashboard titled 「公域战情盘」.\nKPI row: 公开信号 1284 / 有效经营信号 216 / 高行动机会 37 / 竞品承接断点 19 / 服务舆情 8.\nBelow: left fishpond efficiency bars (本品账号/直播间/本地话题/竞品账号/KOL), center topic cloud with 「智驾体验 32%」,\nright feedback loop 推送机会→销售采纳→获得回复→原因回写.\nSidebar: 线索池, 任务, 组织, 训练场. Top: 组织「湘鄂赣大区」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-dashboard-manager.png",
+      "source": "images/prompts/leadshunter/lh-dashboard-manager.md"
+    },
+    {
+      "id": "lh-feishu-delivery",
+      "category": "leadshunter",
+      "title": "飞书卡片交付预览",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nUI mock of Feishu-style chat card preview embedded in LeadsHunter 「交付预览」modal (do not copy official Feishu logo exactly; use generic chat card).\nCard content: 线索摘要, 意向 S4, 建议话术, 短链按钮「阅后即焚」, 打开原帖. Desktop SaaS around it.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-feishu-delivery.png",
+      "source": "images/prompts/leadshunter/lh-feishu-delivery.md"
+    },
+    {
+      "id": "lh-lead-pool",
+      "category": "leadshunter",
+      "title": "线索池列表",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nLeadsHunter lead pool table UI 「线索池」.\nColumns: 意向等级 S3/S4 badges, 来源(抖音/小红书), 摘要, 城市, 组织, 负责人, 状态(待跟进/已指派), 更新时间.\nFilters: 仅同省, S3以上, 今日新增. Several realistic Chinese comment summaries about 试驾/智驾/价格, anonymized.\nSelected row expands a side drawer with AI 跟进建议.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-lead-pool.png",
+      "source": "images/prompts/leadshunter/lh-lead-pool.md"
+    },
+    {
+      "id": "lh-org-rbac",
+      "category": "leadshunter",
+      "title": "多租户组织权限",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAdmin settings page 「组织与权限」: org tree, roles admin / saler-admin / user, quota meters, data boundary note 「组织数据隔离」.\nUser table with Chinese names anonymized as 张*, 李*. Clean enterprise RBAC UI.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-org-rbac.png",
+      "source": "images/prompts/leadshunter/lh-org-rbac.md"
+    },
+    {
+      "id": "lh-post-sentiment",
+      "category": "leadshunter",
+      "title": "帖子情感分析",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nLeadsHunter post sentiment workspace: grid of post cards with sentiment tags 正向洞察/比较纠结/服务担忧,\nkeyword group chips, scenario selector 「新车 new_car」vs 「二手车 used_car」, product SKU 「MONA L03」.\nRight panel: AI 初判 + 人审队列入口. Training-ground aesthetics but production console.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-post-sentiment.png",
+      "source": "images/prompts/leadshunter/lh-post-sentiment.md"
+    },
+    {
+      "id": "lh-routing-four-roles",
+      "category": "leadshunter",
+      "title": "一信号四动作路由",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nRouting board UI: one center opportunity card, four destination role panels —\n销售/DCC 试驾机会卡, 市场/新媒体 内容机会, 售后/客服 服务关注, 店总/大区 经营信号.\nChinese copy matching automotive retail. Title 「一条信号 · 四种动作」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-routing-four-roles.png",
+      "source": "images/prompts/leadshunter/lh-routing-four-roles.md"
+    },
+    {
+      "id": "lh-signal-card-s4",
+      "category": "leadshunter",
+      "title": "S4 高优机会卡",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSingle large opportunity card UI titled 「高优 · S4」.\nQuote in Chinese: 「月底前想换车，周末能不能体验一次高峰路段智驾？」\nSections: 识别依据 (时间明确·行动明确·城市场景明确), 地域置信度 85 with breakdown 原文城市35 + 门店POI30 + 近期内容20,\n三层标签 chips: 意图 / 经营信号 / 动作. Buttons: 指派销售, 推送市场, 标记服务关注. Clean card on light canvas.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-signal-card-s4.png",
+      "source": "images/prompts/leadshunter/lh-signal-card-s4.md"
+    },
+    {
+      "id": "lh-task-engine",
+      "category": "leadshunter",
+      "title": "采集任务引擎",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTask engine monitor 「采集任务」: scheduled jobs for Douyin/Xiaohongshu keyword search & competitor account watch,\nretry counts, success rate chart, last run timestamps, TikHub connector status 「正常」as generic API connector (no trademark logos).\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-task-engine.png",
+      "source": "images/prompts/leadshunter/lh-task-engine.md"
+    },
+    {
+      "id": "lh-training-ground",
+      "category": "leadshunter",
+      "title": "训练场控制台",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nLH Training Ground web console: scenario picker 新车/二手车, product YAML list, crawl/judge/review-queue/eval tabs,\nlocal JSONL stats, big warning banner 「默认不写生产线索」. Developer-tool aesthetic still on brand colors.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/leadshunter/lh-training-ground.png",
+      "source": "images/prompts/leadshunter/lh-training-ground.md"
+    },
+    {
+      "id": "mkt-compare-before-after",
+      "category": "marketing",
+      "title": "Before/After 对比拼贴",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSingle webpage section mock split vertically: left Before chaotic data islands / workshop chats (desaturated),\nright After clean VECT profile + TACT workorder (brand colors). Center divider label 「从表格到作战系统」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-compare-before-after.png",
+      "source": "images/prompts/marketing/mkt-compare-before-after.md"
+    },
+    {
+      "id": "mkt-footer-ecosystem",
+      "category": "marketing",
+      "title": "产品生态墙",
+      "aspect": "21:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nUltra-wide ecosystem strip: five nodes AIGC / LeadsHunter / VECT / TACT / AI Analyst with short Chinese captions,\nconnected by thin lines. Web section component look.\n\nAspect ratio 21:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-footer-ecosystem.png",
+      "source": "images/prompts/marketing/mkt-footer-ecosystem.md"
+    },
+    {
+      "id": "mkt-hero-orchestrate",
+      "category": "marketing",
+      "title": "营销 Hero · 调度",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTACT landing hero: dominant dispatch cockpit + time cloud alert, headline space 「车辆还没延误，系统已经看见延误会在哪里发生」.\nWorkshop-precise UI, light mode, teal accent.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-hero-orchestrate.png",
+      "source": "images/prompts/marketing/mkt-hero-orchestrate.md"
+    },
+    {
+      "id": "mkt-hero-see",
+      "category": "marketing",
+      "title": "营销 Hero · 看见",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nMarketing landing hero for LeadsHunter: left Chinese headline area 「客户并没有沉默」, right dominant full-bleed product UI of signal ocean becoming lead cards.\nAvoid extra badges/stickers on the UI. One CTA group in UI chrome 「申请演示」. Light atmospheric cool gradient behind browser.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-hero-see.png",
+      "source": "images/prompts/marketing/mkt-hero-see.md"
+    },
+    {
+      "id": "mkt-hero-understand",
+      "category": "marketing",
+      "title": "营销 Hero · 理解",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nVECT landing hero: dominant customer profile UI with temperature drop, headline space 「在差评发生前，先完成一次挽救」.\nFull-bleed product plane, brand LAN Cloud visible, no floating promo stickers.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-hero-understand.png",
+      "source": "images/prompts/marketing/mkt-hero-understand.md"
+    },
+    {
+      "id": "mkt-og-square",
+      "category": "marketing",
+      "title": "社交分享 OG 方图",
+      "aspect": "1:1",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSquare OG image for LAN Cloud AI: brand wordmark 兰芯云朵, three mini UI thumbnails (LH/VECT/TACT) arranged cleanly,\ntagline 看见·理解·调度, forge teal accent, light background, no clutter, high legibility at small size.\n\nAspect ratio 1:1. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-og-square.png",
+      "source": "images/prompts/marketing/mkt-og-square.md"
+    },
+    {
+      "id": "mkt-pricing-console",
+      "category": "marketing",
+      "title": "开通/套餐控制台风",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSaaS plan selection UI (fictional): tiers 门店版/区域版/集团版 for 兰芯云朵 modules checkboxes LeadsHunter/VECT/TACT,\nChinese pricing placeholders ¥—, feature gates, CTA 「联系开通」. Honest B2B, not consumer freemium candy UI.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-pricing-console.png",
+      "source": "images/prompts/marketing/mkt-pricing-console.md"
+    },
+    {
+      "id": "mkt-security-gates",
+      "category": "marketing",
+      "title": "安全门禁说明 UI",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSecurity & automation boundary settings page: toggles disabled for 敏感风险外呼, 跨店写入, Agent写权限,\nlist of Phase0 rules in Chinese as read-only compliance cards. Trust-building enterprise UI.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/marketing/mkt-security-gates.png",
+      "source": "images/prompts/marketing/mkt-security-gates.md"
+    },
+    {
+      "id": "mobile-lh-dashboard",
+      "category": "mobile",
+      "title": "LH App 工作台",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nMobile dashboard: today's new leads count, S3/S4 chips, assigned-to-me list, bottom tabs 工作台/线索/消息/我的.\nPush permission banner subtle. Chinese UI.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-lh-dashboard.png",
+      "source": "images/prompts/mobile/mobile-lh-dashboard.md"
+    },
+    {
+      "id": "mobile-lh-lead-detail",
+      "category": "mobile",
+      "title": "LH App 线索详情",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nLead detail mobile screen: intent badge S4, AI summary, evidence quotes, 跟进建议, buttons 打电话(masked), 打开原帖, 更新状态.\nDeep link style. No real phone numbers — show 138****6677.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-lh-lead-detail.png",
+      "source": "images/prompts/mobile/mobile-lh-lead-detail.md"
+    },
+    {
+      "id": "mobile-lh-login",
+      "category": "mobile",
+      "title": "LH App 登录",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\niPhone 15 Pro frame, LeadsHunter mobile login screen in Chinese: brand mark, org account fields, primary CTA 「登录」,\nlight mode, forge teal button, secure store hint. Clean Expo/React Native aesthetic.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-lh-login.png",
+      "source": "images/prompts/mobile/mobile-lh-login.md"
+    },
+    {
+      "id": "mobile-lh-notifications",
+      "category": "mobile",
+      "title": "LH App 推送列表",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nNotifications list: 「新高优线索已指派」, 「同省线索待领取」, tap targets. iOS notification style inside app.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-lh-notifications.png",
+      "source": "images/prompts/mobile/mobile-lh-notifications.md"
+    },
+    {
+      "id": "mobile-tact-tech",
+      "category": "mobile",
+      "title": "TACT 技师手机派工",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTechnician phone UI for TACT: big next job card, station map pin B-03, start work CTA, photo capture slots 3.\nHigh contrast for workshop readability, still light mode brand colors.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-tact-tech.png",
+      "source": "images/prompts/mobile/mobile-tact-tech.md"
+    },
+    {
+      "id": "mobile-vect-rescue",
+      "category": "mobile",
+      "title": "VECT 挽救任务手机",
+      "aspect": "9:19.5",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nMobile task for service manager: customer A-017 risk 86, countdown 2h, script bullets, log outcome form.\nTitle 「挽救任务」. Compact VECT branding.\n\nAspect ratio 9:19.5. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/mobile/mobile-vect-rescue.png",
+      "source": "images/prompts/mobile/mobile-vect-rescue.md"
+    },
+    {
+      "id": "tact-accident-butler",
+      "category": "tact",
+      "title": "事故管家交期承诺",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAccident butler console: promised ETA 16:32, 「预计提前28分钟」, customer notification draft generated,\none red-risk vehicle card. Calendar strip of deliveries today. Calm trust-building UI.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-accident-butler.png",
+      "source": "images/prompts/tact/tact-accident-butler.md"
+    },
+    {
+      "id": "tact-digital-workorder",
+      "category": "tact",
+      "title": "数字工单唯一可信状态",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nDigital work order detail 「TACT-B204」progress 48%: fields 车型G9 颜色星云白 事故等级B 承诺交期17:00\n当前工序钣金 位置B-03 责任人陈工 下一工序喷漆.\nProcess rail: 接车✓ 拆检✓ 钣金(进行中) 喷漆 质检 交车. Evidence stream with photo placeholders (blurred car panels, no plates).\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-digital-workorder.png",
+      "source": "images/prompts/tact/tact-digital-workorder.md"
+    },
+    {
+      "id": "tact-dispatch-cockpit",
+      "category": "tact",
+      "title": "车间主管调度驾驶舱",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTACT workshop supervisor cockpit 「调度驾驶舱」.\nTotal station load 87%, bottleneck chip 「质检为今日瓶颈」, suggestion 「建议开放 Q-02」.\nFloor grid overview of stations B-01..Q-02 with vehicle chips. Work orders list with risk flags. Product title TACT.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-dispatch-cockpit.png",
+      "source": "images/prompts/tact/tact-dispatch-cockpit.md"
+    },
+    {
+      "id": "tact-event-audit",
+      "category": "tact",
+      "title": "事件审计时间线",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAudit timeline UI for a repair order: append-only events with actor, role, store, ruleSet version,\nidempotency key truncated, revision numbers. Banner 「命令不是事实 · 事件才是事实」. Developer-trust meets ops.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-event-audit.png",
+      "source": "images/prompts/tact/tact-event-audit.md"
+    },
+    {
+      "id": "tact-parts-wait",
+      "category": "tact",
+      "title": "缺件双角色恢复",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nParts wait workflow UI: timeline OpenPartsWait by technician, RecordPartsAvailability by parts role with evidence,\nResolvePartsWait by shop role. Clear dual-role gates, clocks: 执行时钟暂停 / 客户承诺时钟继续. Educational ops screen.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-parts-wait.png",
+      "source": "images/prompts/tact/tact-parts-wait.md"
+    },
+    {
+      "id": "tact-qc-rework",
+      "category": "tact",
+      "title": "质检与返工闭环",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nQC screen: pass/fail for operation, photo evidence grid, rework ticket assigned to paint team,\nstatus 返工中→复检. Distinguish 车间放行 vs 实际交车 badges. Strict audit feel.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-qc-rework.png",
+      "source": "images/prompts/tact/tact-qc-rework.md"
+    },
+    {
+      "id": "tact-region-capacity",
+      "category": "tact",
+      "title": "店长/区域产能时效",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nCapacity & cycle-time dashboard: average delivery cycle 2.8d (-0.4d), stranded vehicles 2, rework hotspot 喷漆,\nstore comparison bars. Title 「产能与时效」. Regional filter.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-region-capacity.png",
+      "source": "images/prompts/tact/tact-region-capacity.md"
+    },
+    {
+      "id": "tact-smart-dispatch",
+      "category": "tact",
+      "title": "可解释智能派工",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nExplainable dispatch UI: left job card 钣金修复 · 铝车身认证 · 110min · 交期17:00.\nRight three technician cards: 陈工 match72 load91%, 李工 match94 load63% selected, 周工 match48 skill不符 disabled.\nFooter AI建议 派给李工… 主管可调整·原因被保留. Clear comparison table aesthetic.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-smart-dispatch.png",
+      "source": "images/prompts/tact/tact-smart-dispatch.md"
+    },
+    {
+      "id": "tact-tech-queue",
+      "category": "tact",
+      "title": "技师个人任务队列",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTechnician mobile-desktop hybrid panel 「我的任务」: next job B204 钣金, standard time 110min,\nchecklist 完工必须上传3类照片, accept/reject buttons. Simple rugged-ops UI still light mode.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-tech-queue.png",
+      "source": "images/prompts/tact/tact-tech-queue.md"
+    },
+    {
+      "id": "tact-time-cloud",
+      "category": "tact",
+      "title": "智能时效云图",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nTime cloud heatmap 「智能时效云图」last 7 days average wait minutes for 拆检/钣金/喷漆/质检.\n质检 row glowing as longest wait 5 days. Alert banner: 灵犀预警 TACT-B204 质检预计排队43分钟 交期风险78% 建议开放Q-02.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/tact/tact-time-cloud.png",
+      "source": "images/prompts/tact/tact-time-cloud.md"
+    },
+    {
+      "id": "tact-workshop-chaos-before",
+      "category": "tact",
+      "title": "痛点·车间黑箱（Before）",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nBefore-state chaotic UI: floating chat bubbles in Chinese asking 车在哪/谁有空/何时好, lost vehicle card B204 「位置未知」,\npaper workorder photo thumbnail, no single source of truth. Desaturated, messy but still a UI collage for contrast.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot, clean organized cockpit",
+      "output": "images/generated/tact/tact-workshop-chaos-before.png",
+      "source": "images/prompts/tact/tact-workshop-chaos-before.md"
+    },
+    {
+      "id": "vect-ai-qc-transcript",
+      "category": "vect",
+      "title": "AI 智能质检",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nAI quality inspection screen: left audio waveform + Chinese transcript of service callback,\nhighlighted phrases 「还行吧」「不用了，没事，算了」.\nRight semantic tags 弱化表达 / 放弃沟通 / 等待抱怨 / 未获得解决, risk composition bars summing to 86 高风险,\nsuggested action: 2小时内服务经理回访 + 定向权益. Title 「AI 实时质检」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-ai-qc-transcript.png",
+      "source": "images/prompts/vect/vect-ai-qc-transcript.md"
+    },
+    {
+      "id": "vect-benefit-arsenal",
+      "category": "vect",
+      "title": "权益弹药库",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nBenefits inventory UI 「权益弹药库」: cards for 保养折扣券, 代步车, 延保体验, 精品券 with remaining quota,\neligibility rules, one-click attach to rescue task for customer A-017. Ops console style.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-benefit-arsenal.png",
+      "source": "images/prompts/vect/vect-benefit-arsenal.md"
+    },
+    {
+      "id": "vect-cockpit-store",
+      "category": "vect",
+      "title": "店长每日驾驶舱",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nVECT store manager cockpit 「每日驾驶舱」.\nKPIs: NPS GAP 还差 4 个推荐者, 风险池较昨日 +6, 关系温度均值 68, 等待超时集中在午后 sparkline.\nRisk pool table of customers with temperature and risk score. Title bar product name VECT · 客户生命周期.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-cockpit-store.png",
+      "source": "images/prompts/vect/vect-cockpit-store.md"
+    },
+    {
+      "id": "vect-customer-profile",
+      "category": "vect",
+      "title": "全功能客户档案",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nVECT full customer profile for 「客户 A-017 王先生 · 首年客户」.\nHeader: 责任 SA 刘晨, 关系温度 gauge 42/100 with drop from 82.\nTimeline events: 交付满意 +8, 预约两次改期 -12, 到店等待47分钟 -18, 回访「没事算了」-21, NPS 48h临期.\nTags: 首次保养, 高等待敏感, 隐性不满, 问卷临期, 历史好评客户. Panel title 「全功能客户档案」.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-customer-profile.png",
+      "source": "images/prompts/vect/vect-customer-profile.md"
+    },
+    {
+      "id": "vect-data-islands-before",
+      "category": "vect",
+      "title": "痛点·数据孤岛（Before）",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nMessy before-state UI collage (still product-like): eight disconnected mini tables/windows labeled\n预约记录 结算工单 回访结果 NPS问卷 投诉记录 权益发放 SA跟进 历史标签, center ghost customer card 「完整关系不可见 ?」.\nSlightly chaotic but readable, desaturated, to contrast with VECT profile shots.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot, organized dashboard",
+      "output": "images/generated/vect/vect-data-islands-before.png",
+      "source": "images/prompts/vect/vect-data-islands-before.md"
+    },
+    {
+      "id": "vect-loop-strip",
+      "category": "vect",
+      "title": "经营闭环条",
+      "aspect": "21:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nUltra-wide process strip UI inside product: 全功能档案 → AI智能质检 → 雷达预警 → 权益弹药库 → NPS自救 → 结果回写,\neach node a small card with icon. Horizontal scrollable board aesthetic, light background.\n\nAspect ratio 21:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-loop-strip.png",
+      "source": "images/prompts/vect/vect-loop-strip.md"
+    },
+    {
+      "id": "vect-nps-rescue",
+      "category": "vect",
+      "title": "NPS 自救锦囊",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nModal UI 「NPS 自救」before survey expiry: customer summary, recommended benefit from 权益弹药库,\nscript suggestions, checklist 透明解释等待原因 / 匹配定向权益 / 禁止原SA重复解释, CTA 「启动挽救任务」.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-nps-rescue.png",
+      "source": "images/prompts/vect/vect-nps-rescue.md"
+    },
+    {
+      "id": "vect-risk-radar",
+      "category": "vect",
+      "title": "雷达预警合成",
+      "aspect": "3:2",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nExplainable risk composition UI card: stacked contribution bars 负向语义32 预约改期18 等待超时21 问卷临期15,\nbig score 86, AI judgment paragraph in Chinese, mustNot / 建议动作 sections. No black-box vibe.\n\nAspect ratio 3:2. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-risk-radar.png",
+      "source": "images/prompts/vect/vect-risk-radar.md"
+    },
+    {
+      "id": "vect-role-cs-queue",
+      "category": "vect",
+      "title": "客服优先回访队列",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nCustomer service priority call queue 「优先回访」: 7 items ranked — AI质检高风险3, 未解决表达2, 48h问卷临期2.\nEach row shows risk reason snippet and countdown. Soft alert colors, not alarm red spam.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-role-cs-queue.png",
+      "source": "images/prompts/vect/vect-role-cs-queue.md"
+    },
+    {
+      "id": "vect-role-region-heat",
+      "category": "vect",
+      "title": "区域多店客情热力",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nRegional heat board 「多店客情热力」: 12 store cards, 5 rising risk highlighted, closed-loop rate bars,\ncommon issue chip 「预约准备」. Map-lite or grid layout for 湘鄂赣. Management density.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-role-region-heat.png",
+      "source": "images/prompts/vect/vect-role-region-heat.md"
+    },
+    {
+      "id": "vect-role-sa-tasks",
+      "category": "vect",
+      "title": "SA 今日客户任务",
+      "aspect": "16:9",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nSA role surface 「今日客户任务」list: 12 tasks — 3 预约临期, 2 低毛利解释, one escalated 「客户A-017 转服务经理」.\nSimple task cards with due times, customer temperature chips. Minimal chrome, operator-focused.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "output": "images/generated/vect/vect-role-sa-tasks.png",
+      "source": "images/prompts/vect/vect-role-sa-tasks.md"
+    }
+  ]
+}
