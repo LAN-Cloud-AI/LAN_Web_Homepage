@@ -2,6 +2,10 @@
 
 静态官网，面向 [Cloudflare Pages](https://pages.cloudflare.com/) 部署。
 
+- 正式域名：https://lancloudtech.com
+- 联系邮箱：lance@lancloudtech.com
+- 电话：17713573150
+- 公司：四川兰芯云朵智能科技有限公司
 - 站点入口：`index.html`
 - 图片与 Prompt：`images/`
 - 组织 GitHub：https://github.com/LAN-Cloud-AI

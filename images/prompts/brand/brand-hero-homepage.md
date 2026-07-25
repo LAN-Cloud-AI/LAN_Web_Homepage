@@ -22,6 +22,7 @@ MacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aestheti
 High fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.
 
 Homepage hero product collage for 兰芯云朵 official website: one wide browser window showing a command center that combines three product modules in tabs — LeadsHunter (公域线索), VECT (客户关系), TACT (车间调度).
+Browser address bar MUST show https://www.lancloudtech.com (never lancloudai.com).
 Left nav with logos and Chinese labels. Center shows a clean capability ribbon: 看见 → 理解 → 调度 → 判断.
 Subtle abstract soft gradient background outside the browser in cool gray-teal mist, not purple. Brand wordmark area top-left: 「兰芯云朵」.
 Premium marketing site screenshot quality, hero budget: brand + one headline area + one dominant UI plane.
@@ -38,6 +39,7 @@ purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark 
 ## 场景要点
 
 Homepage hero product collage for 兰芯云朵 official website: one wide browser window showing a command center that combines three product modules in tabs — LeadsHunter (公域线索), VECT (客户关系), TACT (车间调度).
+Browser address bar MUST show https://www.lancloudtech.com (never lancloudai.com).
 Left nav with logos and Chinese labels. Center shows a clean capability ribbon: 看见 → 理解 → 调度 → 判断.
 Subtle abstract soft gradient background outside the browser in cool gray-teal mist, not purple. Brand wordmark area top-left: 「兰芯云朵」.
 Premium marketing site screenshot quality, hero budget: brand + one headline area + one dominant UI plane.

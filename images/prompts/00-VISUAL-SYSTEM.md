@@ -14,6 +14,10 @@ Realistic Chinese UI labels (Simplified Chinese), believable automotive dealer d
 no real personal IDs, no real phone numbers, no license plates with real patterns.
 MacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.
 High fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.
+If a browser address bar is visible, use ONLY the official domain lancloudtech.com
+(e.g. https://www.lancloudtech.com, https://console.lancloudtech.com/..., https://vect.lancloudtech.com/..., https://tact.lancloudtech.com/...).
+Never use lancloudai.com, lancloud.com, or example.com as the product URL.
+Demo emails in UI must use @lancloudtech.com (never @example.com).
 ```
 
 ## 禁止（Negative，可统一追加）
@@ -22,7 +26,8 @@ High fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, pr
 purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default,
 stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter,
 cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic,
-newspaper layout, holographic, robot mascot
+newspaper layout, holographic, robot mascot,
+wrong domains (lancloudai.com, lancloud.com, example.com in address bar or emails)
 ```
 
 ## 画幅建议

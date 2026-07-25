@@ -17,7 +17,7 @@ if (!prefersReduced) {
         }
       }
     },
-    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 } else {
@@ -32,20 +32,7 @@ if (flowSpans.length && !prefersReduced) {
     index = (index + 1) % flowSpans.length;
   };
   tick();
-  setInterval(tick, 1400);
+  setInterval(tick, 1600);
 } else {
   flowSpans.forEach((span) => span.classList.add("is-active"));
 }
-
-document.querySelectorAll(".btn, .repo, .nav-cta").forEach((el) => {
-  el.addEventListener("pointermove", (event) => {
-    if (prefersReduced || !(el instanceof HTMLElement)) return;
-    const rect = el.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `translate(${x * 6}px, ${y * 4}px)`;
-  });
-  el.addEventListener("pointerleave", () => {
-    if (el instanceof HTMLElement) el.style.transform = "";
-  });
-});
