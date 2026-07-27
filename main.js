@@ -10,13 +10,62 @@ document.querySelectorAll(".lang-opt").forEach((btn) => {
 });
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canFineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 const nav = document.querySelector(".nav");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector("#primary-nav");
+
+const setMenuOpen = (open) => {
+  nav?.classList.toggle("is-menu-open", open);
+  document.body.classList.toggle("is-nav-open", open);
+  navToggle?.setAttribute("aria-expanded", open ? "true" : "false");
+};
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    setMenuOpen(!nav?.classList.contains("is-menu-open"));
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+
+  window.matchMedia("(max-width: 960px)").addEventListener("change", (event) => {
+    if (!event.matches) setMenuOpen(false);
+  });
+}
+
 const onScroll = () => {
   nav?.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
+
+/** Interval that auto-pauses while the tab is hidden. */
+const createVisibilityInterval = (fn, ms) => {
+  let id = null;
+  const start = () => {
+    if (id != null || document.hidden) return;
+    id = window.setInterval(fn, ms);
+  };
+  const stop = () => {
+    if (id == null) return;
+    window.clearInterval(id);
+    id = null;
+  };
+  const sync = () => {
+    if (document.hidden) stop();
+    else start();
+  };
+  document.addEventListener("visibilitychange", sync);
+  start();
+  return { start, stop };
+};
 
 if (!prefersReduced) {
   const io = new IntersectionObserver(
@@ -43,7 +92,7 @@ if (flowSpans.length && !prefersReduced) {
     index = (index + 1) % flowSpans.length;
   };
   tick();
-  setInterval(tick, 1600);
+  createVisibilityInterval(tick, 1600);
 } else {
   flowSpans.forEach((span) => span.classList.add("is-active"));
 }
@@ -69,7 +118,6 @@ const initDotCards = () => {
       dots.push(dot);
     }
     field.append(frag);
-    card._dots = dots;
 
     if (prefersReduced) {
       dots.forEach((dot, i) => {
@@ -78,7 +126,11 @@ const initDotCards = () => {
       continue;
     }
 
+    let twinkleId = null;
+    let visible = false;
+
     const twinkle = () => {
+      if (!visible || document.hidden) return;
       const flips = 4 + Math.floor(Math.random() * 5);
       for (let n = 0; n < flips; n += 1) {
         const dot = dots[Math.floor(Math.random() * dots.length)];
@@ -90,8 +142,36 @@ const initDotCards = () => {
       }
     };
 
-    twinkle();
-    card._twinkleId = window.setInterval(twinkle, 700 + Math.random() * 500);
+    const startTwinkle = () => {
+      if (twinkleId != null || !visible || document.hidden) return;
+      twinkle();
+      twinkleId = window.setInterval(twinkle, 700 + Math.random() * 500);
+    };
+
+    const stopTwinkle = () => {
+      if (twinkleId == null) return;
+      window.clearInterval(twinkleId);
+      twinkleId = null;
+    };
+
+    const visibilityIo = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          visible = entry.isIntersecting;
+          if (visible) startTwinkle();
+          else stopTwinkle();
+        }
+      },
+      { threshold: 0.12 }
+    );
+    visibilityIo.observe(card);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopTwinkle();
+      else if (visible) startTwinkle();
+    });
+
+    if (!canFineHover) continue;
 
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
@@ -137,7 +217,7 @@ if (beliefList && beliefItems.length) {
           active = (active + 1) % beliefItems.length;
         };
         cycle();
-        window.setInterval(cycle, 2400);
+        createVisibilityInterval(cycle, 2400);
       }, beliefItems.length * 380 + 500);
     };
 
