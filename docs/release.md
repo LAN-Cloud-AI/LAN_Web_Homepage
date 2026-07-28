@@ -2,7 +2,7 @@
 
 ## 目标
 
-将已验证的官网与 LeadsHunter 产品页发布到 Cloudflare Pages，并避免旧的不可变缓存图片继续展示。
+将已验证的官网与 LeadsHunter 产品页发布到 Cloudflare Workers 的 `lan-homepage`，并避免旧的不可变缓存图片继续展示。
 
 ## 常规流程
 
@@ -14,7 +14,7 @@
    git push origin main
    ```
 
-4. 若 Cloudflare Pages 已连接 `main`，在 Dashboard → Workers & Pages → 项目 → Deployments 中确认该提交状态为 **Success**。
+4. Cloudflare Workers Build 连接 `main` 后，在 Dashboard → Workers & Pages → `lan-homepage` → Deployments 中确认该提交状态为 **Success**。
 5. 用正式域名验证首页和 `/leadshunter/`；至少检查 HTML、CSS、JavaScript 与首屏 / 产品页关键 WebP 图。
 
 ## 缓存策略
@@ -23,16 +23,19 @@ HTML、CSS 和 JavaScript 应重新验证；生成图通常使用长时间 `immu
 
 ## Git 自动部署未触发时
 
-先在 Dashboard 核对项目、生产分支和 Git 连接。确认项目名后，使用已登录的 Wrangler 或设置 `CLOUDFLARE_API_TOKEN`。上传目录必须是**只包含生产静态文件**的显式目录；不要把仓库根目录、Mock、Prompt 或本地 QA 资料直接上传：
+先在 Dashboard 核对 Worker 名、生产分支和 Git 连接。确认 `lan-homepage` 后，使用已登录的 Wrangler 或设置 `CLOUDFLARE_API_TOKEN`。先运行受版本控制的打包脚本；它会生成只含生产静态文件的 `dist/`，而 `wrangler.jsonc` 只允许上传该目录。这样可以避免把 `.git/`、Mock、Prompt、内部文档与本地 QA 资料误当作静态资源，也能避免超大 Git pack 触发 Workers 的单资源限制：
 
 ```bash
-npx --yes wrangler@latest pages deploy <PRODUCTION_DIRECTORY> --project-name=<VERIFIED_PROJECT_NAME> --branch=main --commit-hash="$(git rev-parse HEAD)" --commit-message="$(git log -1 --pretty=%s)"
+node scripts/prepare-worker-assets.mjs
+node scripts/verify-worker-assets.mjs
+npx --yes wrangler@latest deploy
 ```
 
-Git 连接部署的生产内容以提交到仓库的文件为准；手工上传则必须由发布人员明确准备生产目录。
+Git 连接部署的生产内容以提交到仓库的文件为准；不要把 `wrangler.jsonc` 的 `assets.directory` 改回仓库根目录，也不要跳过 `prepare-worker-assets.mjs`，否则 Wrangler 会将整个 checkout（包括 `.git/`）误判为静态资源目录。
 
 ## 失败处理
 
 - Git 自动部署失败：修复后提交新版本，再推送 `main`。
-- 同一版本需重跑：在 Cloudflare Deployments 中使用 **Retry deployment**。
+- 日志出现 `Asset too large`：先运行 `node scripts/prepare-worker-assets.mjs` 与 `node scripts/verify-worker-assets.mjs`；确认 Dashboard 的 Build command 为 `node scripts/prepare-worker-assets.mjs`，且 `wrangler.jsonc` 的 `assets.directory` 为 `./dist`。
+- 同一版本需重跑：在 Cloudflare Deployments 中使用 **Retry build**。
 - 没有 Cloudflare 权限：不要尝试临时预览账号或新建项目；请拥有账号权限的成员在 Dashboard 执行部署 / 重试 / 定向清缓存。

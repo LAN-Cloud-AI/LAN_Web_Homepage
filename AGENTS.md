@@ -40,6 +40,9 @@ node scripts/verify-homepage-hero.mjs
 node scripts/verify-homepage-hero.test.mjs
 node scripts/verify-homepage-hero-regression.mjs
 node scripts/verify-leadshunter-route.mjs
+node scripts/prepare-worker-assets.mjs
+node scripts/verify-worker-assets.mjs
+npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.jsonc
 node --check main.js
 node --check i18n.js
 node --check leadshunter/leadshunter.js
@@ -50,4 +53,4 @@ git diff --check
 
 ## 发布
 
-优先让 Cloudflare Pages 从 GitHub `main` 自动发布；推送后在 Deployments 中确认成功。不要把 Git 自动部署与 `wrangler pages deploy` 混用，除非 Git 部署没有触发或用户明确要求一次性手工发布。发布、缓存与回退步骤见 `docs/release.md`。
+优先让 Cloudflare Workers Build 从 GitHub `main` 自动发布；推送后在 `lan-homepage` 的 Deployments 中确认成功。`scripts/prepare-worker-assets.mjs` 生成唯一允许上传的 `dist/`，`wrangler.jsonc` 必须指向它；不要把仓库根目录作为资产目录。每次发布前运行 `node scripts/verify-worker-assets.mjs`，确认 Git 元数据和本地 QA 文件没有进入 `dist/`。不要把 Git 自动部署与手工 `wrangler deploy` 混用，除非 Git 部署没有触发或用户明确要求一次性手工发布。发布、缓存与回退步骤见 `docs/release.md`。
