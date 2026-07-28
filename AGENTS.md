@@ -6,15 +6,22 @@
 
 - 首页：`/` → `index.html`
 - LeadsHunter：`/leadshunter/` → `leadshunter/index.html`
+- 云朵记账：`/internal-expense/` → `internal-expense/index.html`
+- 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
 - 首页逻辑与多语言：`main.js`、`i18n.js`
 - LeadsHunter 逻辑：`leadshunter/leadshunter.js`
+- 云朵记账逻辑：`internal-expense/internal-expense.js`
 - 站内资源必须使用相对路径；LeadsHunter 页面使用 `../images/...` 和 `../#contact`。
+- LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
+- 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
 
 本地预览：
 
 ```bash
 python3 -m http.server 18987
 ```
+
+- 云朵记账：http://127.0.0.1:18987/internal-expense/
 
 ## 设计与可访问性
 
@@ -40,16 +47,21 @@ node scripts/verify-homepage-hero.mjs
 node scripts/verify-homepage-hero.test.mjs
 node scripts/verify-homepage-hero-regression.mjs
 node scripts/verify-leadshunter-route.mjs
+node scripts/verify-wecom-card-route.mjs
+node scripts/verify-internal-expense-route.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.jsonc
 node --check main.js
 node --check i18n.js
 node --check leadshunter/leadshunter.js
+node --check internal-expense/internal-expense.js
+node --check contact/wecom/wecom-card.js
+swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-提交前还应手动检查首页与 `/leadshunter/` 的桌面、移动端、深色模式和折叠屏，确认没有横向溢出。
+提交前还应手动检查首页、`/leadshunter/` 与 `/internal-expense/` 的桌面、移动端、深色模式和折叠屏，确认没有横向溢出。
 
 ## 发布
 

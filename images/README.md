@@ -57,7 +57,7 @@ images/
 
 1. `brand/brand-hero-homepage` → `brand-hero-precision-atelier`（桌面 3:2 与移动 4:3 成对输出；高清流程见 [`prompts/brand/HERO-HD-CHECKLIST.md`](./prompts/brand/HERO-HD-CHECKLIST.md)）
 2. LeadsHunter 的六张 `lh-appstore-*-v2` 浅 / 深色产品图
-3. 首页三张 mobile-action 4:5 产品图
+3. 移动端当前直接复用 App Store 产品截图；`mobile-action` 仅保留为后续概念探索 Prompt，未部署生成资产
 
 ## 规范摘要
 

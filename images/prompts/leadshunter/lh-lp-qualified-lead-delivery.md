@@ -3,7 +3,7 @@
 - ID: `lh-lp-qualified-lead-delivery`
 - 画幅：3:2
 - 输出：`images/generated/leadshunter-page/lh-qualified-lead-delivery.png`
-- 用途：`/leadshunter/` 推送与销售交付模块
+- 用途：历史概念；当前 `/leadshunter/` 使用 App Store v2 产品图
 
 ## 完整 Prompt
 

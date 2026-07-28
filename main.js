@@ -55,9 +55,11 @@ if (navToggle && navLinks) {
 
 const onScroll = () => {
   nav?.classList.toggle("is-scrolled", window.scrollY > 12);
+  document.documentElement.classList.toggle("is-wechat-float-visible", window.scrollY > 240);
 };
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("load", onScroll, { once: true });
 
 /** Interval that auto-pauses while the tab is hidden. */
 const createVisibilityInterval = (fn, ms) => {

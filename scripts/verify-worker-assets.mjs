@@ -21,7 +21,22 @@ const walk = (directory, files = []) => {
 
 required(fs.existsSync(assetsRoot), "Worker asset directory is missing. Run node scripts/prepare-worker-assets.mjs first.");
 
-for (const file of ["index.html", "styles.css", "main.js", "i18n.js", "leadshunter/index.html", "leadshunter/leadshunter.css", "leadshunter/leadshunter.js"]) {
+for (const file of [
+  "index.html",
+  "styles.css",
+  "main.js",
+  "i18n.js",
+  "leadshunter/index.html",
+  "leadshunter/leadshunter.css",
+  "leadshunter/leadshunter.js",
+  "internal-expense/index.html",
+  "internal-expense/internal-expense.css",
+  "internal-expense/internal-expense.js",
+  "contact/wecom/index.html",
+  "contact/wecom/wecom-card.css",
+  "contact/wecom/wecom-card.js",
+  "images/contact/wecom-sales-manager-qr.png",
+]) {
   required(fs.existsSync(path.join(assetsRoot, file)), `Required production asset is missing: ${file}`);
 }
 
@@ -34,10 +49,10 @@ for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENT
 }
 
 const references = [];
-for (const source of ["index.html", "leadshunter/index.html"]) {
+for (const source of ["index.html", "leadshunter/index.html", "internal-expense/index.html", "contact/wecom/index.html"]) {
   const directory = path.dirname(path.join(assetsRoot, source));
   const content = fs.readFileSync(path.join(assetsRoot, source), "utf8");
-  const matches = content.match(/(?:\.\.\/|\.\/)?images\/generated\/[A-Za-z0-9_./-]+\.(?:png|webp)(?:\?[^\s\"'<,)]+)?/g) ?? [];
+  const matches = content.match(/(?:(?:\.\.\/)+|\.\/)?images\/[A-Za-z0-9_./-]+\.(?:png|webp|svg)(?:\?[^\s\"'<,)]+)?/g) ?? [];
   for (const reference of new Set(matches)) {
     const file = reference.split("?")[0];
     references.push({ source, reference, path: path.resolve(directory, file) });
@@ -52,4 +67,4 @@ const files = walk(assetsRoot);
 const oversized = files.filter((file) => fs.statSync(file).size > maxWorkerAssetBytes);
 required(oversized.length === 0, `Worker static assets exceed 25 MiB: ${oversized.map((file) => path.relative(assetsRoot, file)).join(", ")}`);
 
-console.log(`Worker static asset verification passed: ${files.length} files, ${references.length} generated-image references.`);
+console.log(`Worker static asset verification passed: ${files.length} files, ${references.length} image references.`);

@@ -48,18 +48,24 @@ const rootBlocks = (source) => {
   return blocks;
 };
 
-const simpleTarget = (member, className) => new RegExp(`^(?:[a-z][\\w-]*)?\\.${className}$`, "i").test(member);
+const selectorCompounds = (member) => member.trim().split(/\s*[>+~]\s*|\s+/).filter(Boolean);
+const hasClassToken = (compound, className) => new RegExp(`\\.${className}(?![\\w-])`, "i").test(compound);
+const isTerminalClass = (compound, className) => hasClassToken(compound, className) && !compound.includes("::");
+const normalizedMedia = (value) => value
+  .replace(/\s*([():])\s*/g, "$1")
+  .replace(/\s+/g, " ")
+  .trim();
 
 const selectorMemberTargets = (member, target) => {
-  const normalized = member.trim().replace(/\s+/g, " ");
-  const terminal = normalized.split(" ").at(-1);
-  if (target === "hero") return simpleTarget(terminal, "hero");
+  const compounds = selectorCompounds(member);
+  const terminal = compounds.at(-1) || "";
+  if (target === "hero") return isTerminalClass(terminal, "hero");
   if (target === "hero-background") {
-    return simpleTarget(terminal, "hero-background");
+    return isTerminalClass(terminal, "hero-background");
   }
-  if (target === "hero-copy") return simpleTarget(terminal, "hero-copy");
-  if (target === "hero-scrim") return /^(?:[a-z][\w-]*)?\.hero::before$/i.test(terminal);
-  const hasBackgroundAncestor = normalized.split(" ").slice(0, -1).some((part) => simpleTarget(part, "hero-background"));
+  if (target === "hero-copy") return isTerminalClass(terminal, "hero-copy");
+  if (target === "hero-scrim") return hasClassToken(terminal, "hero") && /::before$/i.test(terminal);
+  const hasBackgroundAncestor = compounds.slice(0, -1).some((part) => hasClassToken(part, "hero-background"));
   if (target === "background-media") return hasBackgroundAncestor && /^(?:picture|img)$/i.test(terminal);
   if (target === "background-image") return hasBackgroundAncestor && /^img$/i.test(terminal);
   return false;
@@ -72,11 +78,11 @@ const rulesForSelector = (source, target) => rootBlocks(source)
   .map((block) => block.body);
 
 const rulesForMedia = (source, query) => rootBlocks(source)
-  .filter((block) => block.prelude.startsWith("@media") && block.prelude.includes(query))
+  .filter((block) => normalizedMedia(block.prelude).startsWith("@media") && normalizedMedia(block.prelude).includes(normalizedMedia(query)))
   .flatMap((block) => rootBlocks(block.body).map((rule) => ({ ...rule, start: block.start })));
 
 const rulesForAnyMedia = (source, queries) => rootBlocks(source)
-  .filter((block) => block.prelude.startsWith("@media") && queries.some((query) => block.prelude.includes(query)))
+  .filter((block) => normalizedMedia(block.prelude).startsWith("@media") && queries.some((query) => normalizedMedia(block.prelude).includes(normalizedMedia(query))))
   .flatMap((block) => rootBlocks(block.body).map((rule) => ({ ...rule, start: block.start })));
 
 const declarationsForProperty = (rules, property) => {

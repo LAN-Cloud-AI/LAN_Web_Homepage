@@ -1,10 +1,11 @@
 # Prompt 索引
 
-> 共 **68** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **74** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
 | [品牌与通用](./brand/) (`brand`) | 6 |
+| [云朵记账](./internal-expense/) (`internal-expense`) | 6 |
 | [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 20 |
 | [VECT 理解](./vect/) (`vect`) | 11 |
 | [TACT 调度](./tact/) (`tact`) | 11 |
@@ -23,6 +24,17 @@
 | [`brand-logo-lockup-ui`](./brand/brand-logo-lockup-ui.md) | 侧栏品牌锁头 UI | 1:1 | Favicon周边/导航素材 |
 | [`brand-store-switcher`](./brand/brand-store-switcher.md) | 门店切换器顶栏 | 21:9 | 通用组件条 |
 
+## 云朵记账
+
+| ID | 标题 | 画幅 | 用途 |
+| --- | --- | --- | --- |
+| [`cloud-ledger-appstore-overview-v1`](./internal-expense/cloud-ledger-appstore-overview-v1.md) | App Store 画廊 · 经营总览（浅色） | 约 5:8 | 独立产品页首屏浅色图 |
+| [`cloud-ledger-appstore-overview-dark-v1`](./internal-expense/cloud-ledger-appstore-overview-dark-v1.md) | App Store 画廊 · 经营总览（深色） | 约 5:8 | 独立产品页首屏深色图 |
+| [`cloud-ledger-subscription-dashboard-v1`](./internal-expense/cloud-ledger-subscription-dashboard-v1.md) | App Store 画廊 · 订阅资产（浅色） | 3:2 | 订阅资产模块浅色图 |
+| [`cloud-ledger-subscription-dashboard-dark-v1`](./internal-expense/cloud-ledger-subscription-dashboard-dark-v1.md) | App Store 画廊 · 订阅资产（深色） | 3:2 | 订阅资产模块深色图 |
+| [`cloud-ledger-reimbursement-flow-v1`](./internal-expense/cloud-ledger-reimbursement-flow-v1.md) | App Store 画廊 · 报销闭环（浅色） | 约 5:8 | 报销闭环模块浅色图 |
+| [`cloud-ledger-reimbursement-flow-dark-v1`](./internal-expense/cloud-ledger-reimbursement-flow-dark-v1.md) | App Store 画廊 · 报销闭环（深色） | 约 5:8 | 报销闭环模块深色图 |
+
 ## LeadsHunter 看见
 
 | ID | 标题 | 画幅 | 用途 |
@@ -38,9 +50,9 @@
 | [`lh-task-engine`](./leadshunter/lh-task-engine.md) | 采集任务引擎 | 16:9 | LH 技术能力 |
 | [`lh-routing-four-roles`](./leadshunter/lh-routing-four-roles.md) | 一信号四动作路由 | 16:9 | LH 方法论图 |
 | [`lh-training-ground`](./leadshunter/lh-training-ground.md) | 训练场控制台 | 16:9 | Training Ground 公开能力 |
-| [`lh-lp-hero-lead-devices`](./leadshunter/lh-lp-hero-lead-devices.md) | 落地页 Hero · 线索设备编队 | 3:2 | LeadsHunter 独立产品页首屏 |
-| [`lh-lp-dashboard-laptop`](./leadshunter/lh-lp-dashboard-laptop.md) | 落地页 · 线索仪表盘笔记本 | 3:2 | 意向发现模块 |
-| [`lh-lp-qualified-lead-delivery`](./leadshunter/lh-lp-qualified-lead-delivery.md) | 落地页 · 高意向线索交付 | 3:2 | 推送与销售交付模块 |
+| [`lh-lp-hero-lead-devices`](./leadshunter/lh-lp-hero-lead-devices.md) | 落地页 Hero · 线索设备编队 | 3:2 | 历史概念（当前产品页未引用） |
+| [`lh-lp-dashboard-laptop`](./leadshunter/lh-lp-dashboard-laptop.md) | 落地页 · 线索仪表盘笔记本 | 3:2 | 历史概念（当前产品页未引用） |
+| [`lh-lp-qualified-lead-delivery`](./leadshunter/lh-lp-qualified-lead-delivery.md) | 落地页 · 高意向线索交付 | 3:2 | 历史概念（当前产品页未引用） |
 | [`lh-appstore-hero-overview-v2`](./leadshunter/lh-appstore-hero-overview-v2.md) | App Store 画廊 · 总览 Hero（浅色） | 约 5:8 | 独立产品页首屏浅色图 |
 | [`lh-appstore-hero-overview-dark-v2`](./leadshunter/lh-appstore-hero-overview-dark-v2.md) | App Store 画廊 · 总览 Hero（深色） | 约 5:8 | 独立产品页首屏深色图 |
 | [`lh-appstore-discovery-dashboard-v2`](./leadshunter/lh-appstore-discovery-dashboard-v2.md) | App Store 画廊 · 意向发现仪表盘（浅色） | 3:2 | 线索发现模块浅色图 |
@@ -88,11 +100,11 @@
 | [`mobile-lh-dashboard`](./mobile/mobile-lh-dashboard.md) | LH App 工作台 | 9:19.5 | App 主界面 |
 | [`mobile-lh-lead-detail`](./mobile/mobile-lh-lead-detail.md) | LH App 线索详情 | 9:19.5 | App 详情 |
 | [`mobile-lh-notifications`](./mobile/mobile-lh-notifications.md) | LH App 推送列表 | 9:19.5 | App 通知 |
-| [`mobile-lh-signal-action`](./mobile/mobile-lh-signal-action.md) | LeadsHunter 手机产品图 · 信号成为行动 | 4:5 | 首页手机端产品特写 |
+| [`mobile-lh-signal-action`](./mobile/mobile-lh-signal-action.md) | LeadsHunter 手机产品图 · 信号成为行动 | 4:5 | 备用移动端概念图（当前首页未引用） |
 | [`mobile-tact-tech`](./mobile/mobile-tact-tech.md) | TACT 技师手机派工 | 9:19.5 | TACT 一线移动 |
-| [`mobile-tact-next-job`](./mobile/mobile-tact-next-job.md) | TACT 手机产品图 · 可信工序节拍 | 4:5 | 首页手机端产品特写 |
+| [`mobile-tact-next-job`](./mobile/mobile-tact-next-job.md) | TACT 手机产品图 · 可信工序节拍 | 4:5 | 备用移动端概念图（当前首页未引用） |
 | [`mobile-vect-rescue`](./mobile/mobile-vect-rescue.md) | VECT 挽救任务手机 | 9:19.5 | VECT 移动动作 |
-| [`mobile-vect-rescue-action`](./mobile/mobile-vect-rescue-action.md) | VECT 手机产品图 · 关系温度挽救 | 4:5 | 首页手机端产品特写 |
+| [`mobile-vect-rescue-action`](./mobile/mobile-vect-rescue-action.md) | VECT 手机产品图 · 关系温度挽救 | 4:5 | 备用移动端概念图（当前首页未引用） |
 
 ## AI Analyst 判断
 
@@ -112,5 +124,5 @@
 | [`mkt-compare-before-after`](./marketing/mkt-compare-before-after.md) | Before/After 对比拼贴 | 16:9 | 通用转化模块 |
 | [`mkt-pricing-console`](./marketing/mkt-pricing-console.md) | 开通/套餐控制台风 | 16:9 | SaaS 商业化页 |
 | [`mkt-security-gates`](./marketing/mkt-security-gates.md) | 安全门禁说明 UI | 16:9 | 信任/安全页 |
-| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | OG Image |
+| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 备用 OG 概念图（当前站点使用官方 Logo） |
 | [`mkt-footer-ecosystem`](./marketing/mkt-footer-ecosystem.md) | 产品生态墙 | 21:9 | 页脚/生态条 |

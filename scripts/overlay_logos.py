@@ -73,11 +73,6 @@ def cover_and_stamp(
 # Manually tuned boxes: (x0, y0, x1, y1) on source PNG pixel coords.
 # Only company brand marks — not product icons or third-party logos.
 PLACEMENTS: dict[str, list[tuple[int, int, int, int]]] = {
-    # Outside lockup icon; in-app header brand icon
-    "brand/brand-hero-homepage.png": [
-        (24, 28, 96, 88),
-        (108, 212, 158, 262),
-    ],
     # Sidebar brand icon + browser tab favicon
     "leadshunter/lh-dashboard-manager.png": [
         (48, 154, 80, 188),
@@ -91,11 +86,6 @@ PLACEMENTS: dict[str, list[tuple[int, int, int, int]]] = {
     # Header brand icon (white cloud on dark bar)
     "tact/tact-digital-workorder.png": [
         (10, 6, 62, 50),
-    ],
-    # Main OG brand mark (icon only) + tiny sidebar mark in LH card
-    "marketing/mkt-og-square.png": [
-        (150, 100, 355, 300),
-        (85, 458, 135, 512),
     ],
 }
 
@@ -148,9 +138,8 @@ def main() -> None:
         # keep PNG without alpha for consistency with existing assets
         out.save(path, optimize=True)
         print("updated", rel, "placements", len(boxes))
-        if rel != "marketing/mkt-og-square.png":
-            export_webp(path)
-            print("  webp refreshed")
+        export_webp(path)
+        print("  webp refreshed")
     print("done")
 
 

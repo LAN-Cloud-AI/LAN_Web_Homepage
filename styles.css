@@ -1078,6 +1078,57 @@ html[data-locale="en"] .flow {
   font-weight: 500;
 }
 
+.wechat-float { display: none; }
+
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+  .wechat-float {
+    position: fixed;
+    right: max(1.5rem, env(safe-area-inset-right, 0px));
+    bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+    z-index: 30;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.85rem;
+    padding: 0.65rem 0.85rem 0.65rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--bg) 84%, transparent);
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.65rem);
+    transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s ease, background 0.2s ease;
+    backdrop-filter: saturate(160%) blur(16px);
+  }
+  .is-wechat-float-visible .wechat-float {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .wechat-float:hover {
+    border-color: color-mix(in srgb, var(--btn) 42%, var(--line));
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+  }
+  .wechat-float > span:last-child {
+    font-size: 1.18em;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .wechat-float:hover > span:last-child { transform: translateX(2px); }
+  .wechat-float-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #4caf72;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #4caf72 13%, transparent);
+  }
+}
+
 .footer {
   padding: 0;
   background: var(--bg-soft);
@@ -1470,7 +1521,9 @@ html[data-locale="en"] .flow {
   .nav-toggle-box span,
   .nav-links,
   .nav-links a,
-  .nav-lang-panel {
+  .nav-lang-panel,
+  .wechat-float,
+  .wechat-float > span:last-child {
     transition: none !important;
     animation: none !important;
   }

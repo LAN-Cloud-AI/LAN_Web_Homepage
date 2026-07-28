@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef3ff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />
+  <meta
+    name="description"
+    content="云朵记账：面向中小企业的开源订阅资产与报销管理产品，让固定支出与报销批次都清楚可追溯。"
+  />
+  <title>云朵记账 · 开源订阅与报销管理 · LAN Cloud AI</title>
+  <link rel="icon" href="../images/logo/WEB-logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../images/logo/WEB-logo-180.png" />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    media="(prefers-color-scheme: light)"
+    href="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp"
+    imagesrcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp 768w,
+                 ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp 992w"
+    imagesizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+  />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    media="(prefers-color-scheme: dark)"
+    href="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp"
+    imagesrcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.webp 768w,
+                 ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp 992w"
+    imagesizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+  />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="./internal-expense.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-nav" id="site-nav">
+    <a class="brand-lockup" href="../" aria-label="返回兰芯云朵官网">
+      <img src="../images/logo/WEB-logo.svg" width="30" height="29" alt="" />
+      <span class="brand-company">LAN Cloud AI</span>
+      <span class="brand-separator" aria-hidden="true">/</span>
+      <span class="brand-product">CLOUD LEDGER <span>云朵记账</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="product-nav">
+      菜单
+    </button>
+    <nav class="product-nav" id="product-nav" aria-label="云朵记账页面导航">
+      <a href="#subscriptions">订阅资产</a>
+      <a href="#reimbursements">报销闭环</a>
+      <a href="#open-source">开源与边界</a>
+      <a class="nav-cta" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener">查看源码</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">CLOUD LEDGER <span>云朵记账</span></p>
+          <p class="product-support">Internal Expense <span aria-hidden="true">·</span> 开源管理工具</p>
+          <h1 id="hero-title"><span class="copy-unit">每笔订阅都清楚，</span><br /><span class="copy-unit">每次报销都有据可查</span></h1>
+          <p class="hero-lede">
+            <span class="copy-unit">为中小企业统一梳理订阅、</span>
+            <span class="copy-unit">付款者与账期，</span>
+            <span class="copy-unit">把候选费用整理为可追溯的报销批次，</span>
+            <span class="copy-unit">让每一项日常支出都经得起回看。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener">在 GitHub 查看源码</a>
+            <a class="button button-secondary" href="#subscriptions">了解工作方式</a>
+          </div>
+          <ul class="proof-grid" aria-label="云朵记账核心能力">
+            <li><strong>订阅资产</strong><span>付款者、使用者与账期</span></li>
+            <li><strong>报销候选</strong><span>合单、状态与留痕</span></li>
+            <li><strong>持续可查</strong><span>历史记录可回溯</span></li>
+            <li><strong>开放透明</strong><span>Apache-2.0 开源</span></li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual appstore-visual appstore-visual-portrait">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <img
+              src="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png"
+              width="992"
+              height="1586"
+              alt="云朵记账的匿名订阅与报销总览产品展示图"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit">订阅与报销，</span><span class="copy-unit">在同一个清晰的工作台里。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="subscriptions" aria-labelledby="subscriptions-title">
+      <div class="page-shell story-grid subscription-grid">
+        <div class="story-copy">
+          <p class="eyebrow">订阅资产</p>
+          <h2 id="subscriptions-title"><span class="copy-unit">看清正在发生的</span><br /><span class="copy-unit">每一笔固定支出</span></h2>
+          <p>
+            <span class="copy-unit">把软件、服务与日常订阅，</span>
+            <span class="copy-unit">集中成一份资产清单。</span>
+            <span class="copy-unit">谁在付款、谁在使用、何时续费，</span>
+            <span class="copy-unit">都按条款与账期保留清晰上下文。</span>
+          </p>
+          <dl class="detail-list">
+            <div>
+              <dt><span class="copy-unit">版本化条款</span></dt>
+              <dd><span class="copy-unit">保留订阅变更的时间线，</span><span class="copy-unit">方便复盘当前约定。</span></dd>
+            </div>
+            <div>
+              <dt><span class="copy-unit">付款与使用归属</span></dt>
+              <dd><span class="copy-unit">将付款者与使用者分开记录，</span><span class="copy-unit">减少口头交接。</span></dd>
+            </div>
+            <div>
+              <dt><span class="copy-unit">续费节奏</span></dt>
+              <dd><span class="copy-unit">把临近账期的项目提前呈现，</span><span class="copy-unit">便于团队安排。</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="product-visual appstore-visual appstore-visual-landscape">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1.webp 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.webp 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1.png 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.png 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <img
+              src="../images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.png"
+              width="1536"
+              height="1024"
+              alt="云朵记账的匿名订阅资产工作台产品展示图"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit">用统一的资产视角，</span><span class="copy-unit">理解重复发生的经营支出。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-white" id="reimbursements" aria-labelledby="reimbursements-title">
+      <div class="page-shell story-grid reimbursement-grid">
+        <div class="story-copy reimbursement-copy">
+          <p class="eyebrow">报销闭环</p>
+          <h2 id="reimbursements-title"><span class="copy-unit">从候选费用，</span><br /><span class="copy-unit">到可追溯的报销批次</span></h2>
+          <p>
+            <span class="copy-unit">把待处理费用先作为候选记录，</span>
+            <span class="copy-unit">再按付款者整理进报销批次。</span>
+            <span class="copy-unit">汇率快照、审批与付款状态同步留痕，</span>
+            <span class="copy-unit">让一次报销的来处与去向都更清楚。</span>
+          </p>
+          <ol class="flow-list">
+            <li><span class="flow-number" aria-hidden="true">01</span><span><strong class="copy-unit">记录候选费用</strong><small><span class="copy-unit">先收集，</span><span class="copy-unit">不急着打断原有流程。</span></small></span></li>
+            <li><span class="flow-number" aria-hidden="true">02</span><span><strong class="copy-unit">按付款者合单</strong><small><span class="copy-unit">把同一付款者的项目，</span><span class="copy-unit">整理为可核对的批次。</span></small></span></li>
+            <li><span class="flow-number" aria-hidden="true">03</span><span><strong class="copy-unit">留存状态与快照</strong><small><span class="copy-unit">记录审批、付款与汇率时点，</span><span class="copy-unit">保留完整回溯路径。</span></small></span></li>
+          </ol>
+        </div>
+
+        <figure class="product-visual reimbursement-visual appstore-visual appstore-visual-portrait">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              type="image/webp"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1-768.webp 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              srcset="../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1-768.png 768w,
+                      ../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <img
+              src="../images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.png"
+              width="992"
+              height="1586"
+              alt="云朵记账的匿名报销候选与批次流程产品展示图"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit">从一笔候选费用开始，</span><span class="copy-unit">到一条完整的报销记录。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-open" id="open-source" aria-labelledby="open-source-title">
+      <div class="page-shell open-grid">
+        <div class="open-intro">
+          <p class="eyebrow">开源与数据边界</p>
+          <h2 id="open-source-title"><span class="copy-unit">把日常财务整理，</span><br /><span class="copy-unit">交给看得见的系统</span></h2>
+          <p>
+            <span class="copy-unit">云朵记账以 Apache-2.0 许可开源。</span>
+            <span class="copy-unit">团队可以阅读、部署和改进代码，</span>
+            <span class="copy-unit">也能持续保留订阅资产、报销批次，</span>
+            <span class="copy-unit">以及历史记录的上下文。</span>
+          </p>
+        </div>
+        <div class="boundary-grid" role="list" aria-label="云朵记账的数据边界">
+          <article role="listitem">
+            <span class="boundary-kicker">01</span>
+            <h3><span class="copy-unit">订阅资产可回看</span></h3>
+            <p><span class="copy-unit">围绕条款、账期、付款与使用归属，</span><span class="copy-unit">建立可持续更新的记录。</span></p>
+          </article>
+          <article role="listitem">
+            <span class="boundary-kicker">02</span>
+            <h3><span class="copy-unit">报销批次有来处</span></h3>
+            <p><span class="copy-unit">候选费用、合单关系与状态变化，</span><span class="copy-unit">在同一条路径中留痕。</span></p>
+          </article>
+          <article role="listitem">
+            <span class="boundary-kicker">03</span>
+            <h3><span class="copy-unit">账号边界更明确</span></h3>
+            <p><span class="copy-unit">账号资产不保存密码、OTP、MFA、</span><span class="copy-unit">token 或完整卡号。</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="page-shell contact-band-inner">
+        <div>
+          <p class="eyebrow">开始使用</p>
+          <h2 id="contact-title"><span class="copy-unit">把下一笔支出，</span><br /><span class="copy-unit">放进清楚的账里</span></h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener">在 GitHub 查看源码</a>
+          <a class="button button-secondary" href="../">返回兰芯云朵官网</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-inner">
+      <p><strong>云朵记账</strong><span aria-hidden="true"> · </span>Internal Expense<span aria-hidden="true"> · </span>Apache-2.0</p>
+      <p><span class="copy-unit">面向中小企业的开源订阅与报销管理。</span></p>
+      <a href="../">返回官网 <span aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+
+  <script src="./internal-expense.js"></script>
+</body>
+</html>

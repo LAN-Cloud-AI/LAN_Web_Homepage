@@ -5,7 +5,7 @@
 | ID | `mkt-og-square` |
 | 产品线 | `marketing` |
 | 画幅 | `1:1` |
-| 官网用途 | OG Image |
+| 官网用途 | 备用 OG 概念图（当前站点 OG 使用 `images/logo/WEB-logo.png`） |
 | 建议输出 | `images/generated/marketing/mkt-og-square.png` |
 
 ## 完整 Prompt（直接复制）

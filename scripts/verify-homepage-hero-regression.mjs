@@ -139,4 +139,32 @@ expectedFailure(
   "Foldable hero copy must stay inside one pane.",
 );
 
+expectedFailure(
+  "no-space combinator hero override",
+  page,
+  `${css}\nmain>.hero { position: static; }\n`,
+  "Hero must establish its clipped stacking context.",
+);
+
+expectedFailure(
+  "hero class-compound override",
+  page,
+  `${css}\n.hero.is-condensed { position: static; }\n`,
+  "Hero must establish its clipped stacking context.",
+);
+
+expectedFailure(
+  "hero pseudo-class override",
+  page,
+  `${css}\n.hero:hover { position: static; }\n`,
+  "Hero must establish its clipped stacking context.",
+);
+
+expectedFailure(
+  "compact mobile media override",
+  page,
+  `${css}\n@media screen and (max-width:640px) { .hero-background img { object-position: center 10%; } }\n`,
+  "Mobile hero needs the lower image focal point.",
+);
+
 console.log("Homepage hero verifier regression checks passed.");

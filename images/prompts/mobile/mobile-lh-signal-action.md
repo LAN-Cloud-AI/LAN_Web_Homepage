@@ -7,7 +7,7 @@
 | 视觉模式 | `mobile-action` |
 | 画幅 | `4:5` |
 | 目标分辨率 | `1122×1402` 左右 |
-| 官网用途 | 首页 LeadsHunter 产品区，`max-width: 640px` 专属图 |
+| 官网用途 | 备用移动端概念图（当前首页未引用） |
 | 建议输出 | `images/generated/mobile/mobile-lh-signal-action.png` |
 
 ## 完整 Prompt（直接复制）

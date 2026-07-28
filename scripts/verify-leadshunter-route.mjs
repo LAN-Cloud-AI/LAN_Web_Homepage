@@ -230,6 +230,13 @@ const homeLeadshunterStart = home.indexOf('<article class="product reveal" id="l
 const homeLeadshunterEnd = home.indexOf("</article>", homeLeadshunterStart);
 const homeLeadshunter = home.slice(homeLeadshunterStart, homeLeadshunterEnd);
 required(homeLeadshunter.includes('href="./leadshunter/"'), "Homepage LeadsHunter card must link to the product page.");
+required(!homeLeadshunter.includes("github.com/LAN-Cloud-AI/leadsHunter"), "Homepage LeadsHunter card must not expose the private repository.");
+required(!homeLeadshunter.includes("github.com/LAN-Cloud-AI/"), "Homepage LeadsHunter card must only link to the LH official site.");
 required(home.includes('<a href="./leadshunter/">LeadsHunter</a>'), "Homepage footer must link LeadsHunter to the product page.");
+required(!homeLeadshunter.includes("LH_Training_Ground"), "Homepage LeadsHunter card must not present the training-ground repository.");
+const openSectionStart = home.indexOf('<section class="section open" id="open">');
+const openSectionEnd = home.indexOf("</section>", openSectionStart);
+const openSection = home.slice(openSectionStart, openSectionEnd);
+required(openSection.includes('href="https://github.com/LAN-Cloud-AI/LH_Training_Ground"'), "Open-source section must link to the public training ground.");
 
 console.log("PASS: LeadsHunter route, assets, responsive shell, conversion CTA, and official-site links are present.");
