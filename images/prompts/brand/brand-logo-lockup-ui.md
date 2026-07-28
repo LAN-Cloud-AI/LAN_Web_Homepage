@@ -7,6 +7,7 @@
 | 画幅 | `1:1` |
 | 官网用途 | Favicon周边/导航素材 |
 | 建议输出 | `images/generated/brand/brand-logo-lockup-ui.png` |
+| Logo 参考 | `images/logo/WEB-logo-transparent.png` |
 
 ## 完整 Prompt（直接复制）
 
@@ -21,8 +22,9 @@ no real personal IDs, no real phone numbers, no license plates with real pattern
 MacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.
 High fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.
 
-Close crop of left sidebar brand lockup for 兰芯云朵 SaaS: small geometric cloud+circuit mark in forge teal,
-Chinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.
+Close crop of left sidebar brand lockup for 兰芯云朵 SaaS.
+Brand mark MUST match the official logo reference: forge-teal (#0E766E) rounded cloud silhouette with white terminal prompt inside (chevron ">" + underscore "_"). Flat vector. Do NOT invent circuit marks, lettermarks, or alternate icons.
+Next to the icon: Chinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.
 Square composition, lots of negative space, UI fragment only.
 
 Aspect ratio 1:1. UI screenshot, photoreal product interface.
@@ -31,11 +33,10 @@ Aspect ratio 1:1. UI screenshot, photoreal product interface.
 ## Negative Prompt
 
 ```text
-purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot
+purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot, wrong brand marks (circuit-cloud, lettermark L, rainbow cloud, purple logo)
 ```
 
 ## 场景要点
 
-Close crop of left sidebar brand lockup for 兰芯云朵 SaaS: small geometric cloud+circuit mark in forge teal,
-Chinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.
+Close crop of left sidebar brand lockup: official teal cloud + `>_` mark, Chinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.
 Square composition, lots of negative space, UI fragment only.

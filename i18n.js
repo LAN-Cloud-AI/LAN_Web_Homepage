@@ -54,11 +54,13 @@ const dict = {
     "nav.contact": "联系",
     "nav.cta": "预约沟通",
     "nav.menu": "菜单",
+    "nav.closeMenu": "关闭菜单",
     "lang.label": "选择语言",
+    "hero.eyebrow": "汽车经营智能系统",
     "hero.lede": "用 AI 重新定义汽车零售与售后<span class=\"lede-rest\">怎么被经营</span>",
     "hero.ctaPrimary": "预约沟通",
     "hero.ctaSecondary": "了解产品",
-    "hero.imgAlt": "兰芯云朵产品能力总览界面",
+    "hero.imgAlt": "汽车运营精密工作流视觉",
     "strip.see": "看见",
     "strip.understand": "理解",
     "strip.orchestrate": "调度",
@@ -73,6 +75,7 @@ const dict = {
     "lh.li1": "公域采集 → AI 评分 → 线索入池",
     "lh.li2": "多租户组织与属地化指派",
     "lh.li3": "训练场 Skill 可同步回生产",
+    "lh.page": "产品介绍",
     "lh.img1": "LeadsHunter 公域战情盘",
     "lh.img2": "S4 高优机会卡",
     "vect.title": "客户说「没事」，系统却看见他正在离开",
@@ -108,7 +111,7 @@ const dict = {
     "method.p6.t": "风险",
     "method.p6.d": "规则预警、AI 判断、升级条件",
     "beliefs.title": "我们相信什么",
-    "beliefs.imgAlt": "兰芯云朵信念：可信数据、责任动作、可解释与契约门禁",
+    "beliefs.imgAlt": "可信业务工作流视觉",
     "beliefs.b1": "<strong>AI 的第一份工作不是画图，</strong>是决定哪些数据值得相信。",
     "beliefs.b2": "<strong>看见风险还不够，</strong>必须把动作送到正确岗位。",
     "beliefs.b3": "<strong>自动化必须可解释、可审计；</strong>高风险动作保留人工与 Owner 确认。",
@@ -146,11 +149,13 @@ const dict = {
     "nav.contact": "聯繫",
     "nav.cta": "預約溝通",
     "nav.menu": "選單",
+    "nav.closeMenu": "關閉選單",
     "lang.label": "選擇語言",
+    "hero.eyebrow": "汽車營運智能系統",
     "hero.lede": "用 AI 重新定義汽車零售與售後<span class=\"lede-rest\">怎麼被經營</span>",
     "hero.ctaPrimary": "預約溝通",
     "hero.ctaSecondary": "了解產品",
-    "hero.imgAlt": "蘭芯雲朵產品能力總覽介面",
+    "hero.imgAlt": "汽車營運精密工作流程視覺",
     "strip.see": "看見",
     "strip.understand": "理解",
     "strip.orchestrate": "調度",
@@ -165,6 +170,7 @@ const dict = {
     "lh.li1": "公域採集 → AI 評分 → 線索入池",
     "lh.li2": "多租戶組織與屬地化指派",
     "lh.li3": "訓練場 Skill 可同步回生產",
+    "lh.page": "產品介紹",
     "lh.img1": "LeadsHunter 公域戰情盤",
     "lh.img2": "S4 高優機會卡",
     "vect.title": "客戶說「沒事」，系統卻看見他正在離開",
@@ -182,7 +188,7 @@ const dict = {
     "tact.li2": "技能 / 負載 / 交期綜合派工",
     "tact.li3": "事件可審計，Agent 只建議不越權",
     "tact.link": "TACT 倉庫",
-    "tact.img1": "TACT 數字工單",
+    "tact.img1": "TACT 數位工單",
     "tact.img2": "TACT 調度駕駛艙",
     "method.title": "管理系統的造法",
     "method.desc":
@@ -200,7 +206,7 @@ const dict = {
     "method.p6.t": "風險",
     "method.p6.d": "規則預警、AI 判斷、升級條件",
     "beliefs.title": "我們相信什麼",
-    "beliefs.imgAlt": "蘭芯雲朵信念：可信數據、責任動作、可解釋與契約門禁",
+    "beliefs.imgAlt": "可信業務工作流程視覺",
     "beliefs.b1": "<strong>AI 的第一份工作不是畫圖，</strong>是決定哪些數據值得相信。",
     "beliefs.b2": "<strong>看見風險還不夠，</strong>必須把動作送到正確崗位。",
     "beliefs.b3": "<strong>自動化必須可解釋、可審計；</strong>高風險動作保留人工與 Owner 確認。",
@@ -238,11 +244,13 @@ const dict = {
     "nav.contact": "Contact",
     "nav.cta": "Talk to us",
     "nav.menu": "Menu",
+    "nav.closeMenu": "Close menu",
     "lang.label": "Language",
+    "hero.eyebrow": "Automotive operations intelligence",
     "hero.lede": "AI that redefines how automotive retail and aftersales <span class=\"lede-rest\">are run</span>",
     "hero.ctaPrimary": "Talk to us",
     "hero.ctaSecondary": "Explore products",
-    "hero.imgAlt": "LAN Cloud AI product capability overview",
+    "hero.imgAlt": "Precision automotive operations workflow visual",
     "strip.see": "See",
     "strip.understand": "Understand",
     "strip.orchestrate": "Orchestrate",
@@ -258,7 +266,8 @@ const dict = {
     "lh.li1": "Public capture → AI scoring → lead pool",
     "lh.li2": "Multi-tenant orgs and territorial assignment",
     "lh.li3": "Training Ground skills sync back to production",
-    "lh.img1": "LeadsHunter public battlefield dashboard",
+    "lh.page": "Product page",
+    "lh.img1": "LeadsHunter public-signal dashboard",
     "lh.img2": "S4 high-priority opportunity card",
     "vect.title": 'Customers say "it\'s fine." The system sees they\'re leaving.',
     "vect.desc":
@@ -293,8 +302,7 @@ const dict = {
     "method.p6.t": "Risk",
     "method.p6.d": "Rule alerts, AI judgment, escalation rules",
     "beliefs.title": "What we believe",
-    "beliefs.imgAlt":
-      "LAN Cloud AI beliefs: trusted data, accountable action, explainability, contractual gates",
+    "beliefs.imgAlt": "Trusted operational workflow visual",
     "beliefs.b1":
       "<strong>AI's first job isn't drawing.</strong> It's deciding which data deserves trust.",
     "beliefs.b2":
@@ -392,6 +400,15 @@ export const applyI18n = (locale = resolveLocale()) => {
     const key = el.getAttribute("data-i18n-aria");
     const value = table[key];
     if (value != null) el.setAttribute("aria-label", value);
+  });
+
+  document.querySelectorAll(".nav-toggle").forEach((toggle) => {
+    const menuLabel = table["nav.menu"];
+    const closeLabel = table["nav.closeMenu"] || menuLabel;
+    toggle.dataset.menuLabel = menuLabel || "Menu";
+    toggle.dataset.closeMenuLabel = closeLabel || "Close menu";
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-label", isOpen ? toggle.dataset.closeMenuLabel : toggle.dataset.menuLabel);
   });
 
   const mail = document.querySelector("[data-i18n-mail-subject]");

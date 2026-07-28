@@ -16,15 +16,26 @@ const nav = document.querySelector(".nav");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector("#primary-nav");
 
-const setMenuOpen = (open) => {
+const setMenuOpen = (open, { restoreFocus = false } = {}) => {
   nav?.classList.toggle("is-menu-open", open);
   document.body.classList.toggle("is-nav-open", open);
   navToggle?.setAttribute("aria-expanded", open ? "true" : "false");
+  navToggle?.setAttribute(
+    "aria-label",
+    open ? navToggle.dataset.closeMenuLabel || "Close menu" : navToggle.dataset.menuLabel || "Menu"
+  );
+
+  if (open) {
+    window.requestAnimationFrame(() => navLinks?.querySelector("a")?.focus());
+  } else if (restoreFocus) {
+    navToggle?.focus();
+  }
 };
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
-    setMenuOpen(!nav?.classList.contains("is-menu-open"));
+    const isOpen = nav?.classList.contains("is-menu-open");
+    setMenuOpen(!isOpen, { restoreFocus: Boolean(isOpen) });
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
@@ -32,10 +43,12 @@ if (navToggle && navLinks) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMenuOpen(false);
+    if (event.key === "Escape" && nav?.classList.contains("is-menu-open")) {
+      setMenuOpen(false, { restoreFocus: true });
+    }
   });
 
-  window.matchMedia("(max-width: 960px)").addEventListener("change", (event) => {
+  window.matchMedia("(max-width: 1024px)").addEventListener("change", (event) => {
     if (!event.matches) setMenuOpen(false);
   });
 }

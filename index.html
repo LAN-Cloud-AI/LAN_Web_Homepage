@@ -19,12 +19,13 @@
   <link rel="icon" href="./images/logo/WEB-logo.svg" type="image/svg+xml" />
   <link rel="icon" href="./images/logo/WEB-logo-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="./images/logo/WEB-logo-180.png" />
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="nav">
     <a class="nav-brand" href="#top">
-      <img class="brand-logo" src="./images/logo/WEB-logo.svg" width="28" height="27" alt="" />
+      <img class="brand-logo" src="./images/logo/WEB-logo.svg" width="32" height="31" alt="" />
       <span data-i18n="nav.brand">兰芯云朵</span>
     </a>
     <nav class="nav-links" id="primary-nav">
@@ -34,17 +35,12 @@
       <a href="#open" data-i18n="nav.open">开源</a>
       <a href="#contact" data-i18n="nav.contact">联系</a>
       <div class="lang-switch nav-lang-panel" role="group" data-i18n-aria="lang.label" aria-label="选择语言">
-        <button type="button" class="lang-opt" data-locale="zh-Hans" aria-pressed="true">简</button>
-        <button type="button" class="lang-opt" data-locale="zh-Hant" aria-pressed="false">繁</button>
-        <button type="button" class="lang-opt" data-locale="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-opt" data-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button>
+        <button type="button" class="lang-opt" data-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button>
+        <button type="button" class="lang-opt" data-locale="en" aria-label="English" aria-pressed="false">EN</button>
       </div>
     </nav>
     <div class="nav-end">
-      <div class="lang-switch nav-lang-bar" role="group" data-i18n-aria="lang.label" aria-label="选择语言">
-        <button type="button" class="lang-opt" data-locale="zh-Hans" aria-pressed="true">简</button>
-        <button type="button" class="lang-opt" data-locale="zh-Hant" aria-pressed="false">繁</button>
-        <button type="button" class="lang-opt" data-locale="en" aria-pressed="false">EN</button>
-      </div>
       <a class="nav-cta" href="#contact"><span data-i18n="nav.cta">预约沟通</span> <span aria-hidden="true">›</span></a>
       <button
         type="button"
@@ -63,34 +59,53 @@
 
   <main id="top">
     <section class="hero">
+      <div class="hero-background" aria-hidden="true">
+        <picture>
+          <source
+            media="(horizontal-viewport-segments: 2), (spanning: single-fold-vertical)"
+            type="image/webp"
+            srcset="./images/generated/brand/brand-hero-precision-atelier-768.webp 768w,
+                    ./images/generated/brand/brand-hero-precision-atelier-1280.webp 1280w,
+                    ./images/generated/brand/brand-hero-precision-atelier.webp 1537w"
+            sizes="50vw"
+          />
+          <source
+            media="(max-width: 640px)"
+            type="image/webp"
+            srcset="./images/generated/brand/brand-hero-precision-atelier-mobile-768.webp 768w,
+                    ./images/generated/brand/brand-hero-precision-atelier-mobile-1280.webp 1280w,
+                    ./images/generated/brand/brand-hero-precision-atelier-mobile.webp 1448w"
+            sizes="100vw"
+          />
+          <source
+            media="(max-width: 640px)"
+            srcset="./images/generated/brand/brand-hero-precision-atelier-mobile.png"
+          />
+          <source
+            type="image/webp"
+            srcset="./images/generated/brand/brand-hero-precision-atelier-768.webp 768w,
+                    ./images/generated/brand/brand-hero-precision-atelier-1280.webp 1280w,
+                    ./images/generated/brand/brand-hero-precision-atelier.webp 1537w"
+            sizes="(max-width: 1024px) 100vw, min(100vw, 1120px)"
+          />
+          <img
+            src="./images/generated/brand/brand-hero-precision-atelier.png"
+            alt=""
+            width="1537"
+            height="1023"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </div>
       <div class="hero-copy">
-        <p class="eyebrow reveal">LAN Cloud AI</p>
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">汽车经营智能系统</p>
         <h1 class="reveal delay-1" data-i18n="nav.brand">兰芯云朵</h1>
         <p class="lede reveal delay-2" data-i18n-html="hero.lede">用 AI 重新定义汽车零售与售后<span class="lede-rest">怎么被经营</span></p>
         <div class="hero-actions reveal delay-3">
           <a class="btn primary" href="#contact" data-i18n="hero.ctaPrimary">预约沟通</a>
           <a class="btn ghost" href="#products"><span data-i18n="hero.ctaSecondary">了解产品</span> <span aria-hidden="true">›</span></a>
         </div>
-      </div>
-      <div class="hero-visual reveal delay-2">
-        <picture>
-          <source
-            type="image/webp"
-            srcset="./images/generated/brand/brand-hero-homepage-768.webp 768w,
-                    ./images/generated/brand/brand-hero-homepage-1280.webp 1280w,
-                    ./images/generated/brand/brand-hero-homepage.webp 1536w"
-            sizes="(max-width: 960px) 100vw, min(100vw, 1280px)"
-          />
-          <img
-            src="./images/generated/brand/brand-hero-homepage.png"
-            data-i18n-alt="hero.imgAlt"
-            alt="兰芯云朵产品能力总览界面"
-            width="1536"
-            height="1024"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
       </div>
     </section>
 
@@ -122,6 +137,7 @@
             <li data-i18n="lh.li3">训练场 Skill 可同步回生产</li>
           </ul>
           <div class="product-links">
+            <a class="text-link" href="./leadshunter/"><span data-i18n="lh.page">产品介绍</span><span aria-hidden="true">›</span></a>
             <a class="text-link" href="https://github.com/LAN-Cloud-AI/LH_Training_Ground" target="_blank" rel="noopener">Training Ground<span aria-hidden="true">›</span></a>
             <a class="text-link" href="https://github.com/LAN-Cloud-AI/leadsHunter" target="_blank" rel="noopener">leadsHunter<span aria-hidden="true">›</span></a>
           </div>
@@ -129,18 +145,26 @@
         <figure class="product-media">
           <picture>
             <source
+              media="(horizontal-viewport-segments: 2), (spanning: single-fold-vertical)"
               type="image/webp"
-              srcset="./images/generated/leadshunter/lh-dashboard-manager-768.webp 768w,
-                      ./images/generated/leadshunter/lh-dashboard-manager-1280.webp 1280w,
-                      ./images/generated/leadshunter/lh-dashboard-manager.webp 1536w"
-              sizes="(max-width: 960px) calc(100vw - 2.5rem), min(560px, 48vw)"
+              srcset="./images/generated/leadshunter/lh-dashboard-manager-768.webp?v=20260728 768w,
+                      ./images/generated/leadshunter/lh-dashboard-manager-1280.webp?v=20260728 1280w,
+                      ./images/generated/leadshunter/lh-dashboard-manager.webp?v=20260728 2560w"
+              sizes="50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="./images/generated/leadshunter/lh-dashboard-manager-768.webp?v=20260728 768w,
+                      ./images/generated/leadshunter/lh-dashboard-manager-1280.webp?v=20260728 1280w,
+                      ./images/generated/leadshunter/lh-dashboard-manager.webp?v=20260728 2560w"
+              sizes="(max-width: 1024px) calc(100vw - 2.5rem), min(560px, 48vw)"
             />
             <img
-              src="./images/generated/leadshunter/lh-dashboard-manager.png"
+              src="./images/generated/leadshunter/lh-dashboard-manager.png?v=20260728"
               data-i18n-alt="lh.img1"
               alt="LeadsHunter 公域战情盘"
-              width="1536"
-              height="1024"
+              width="2560"
+              height="1707"
               loading="lazy"
               decoding="async"
             />
@@ -148,13 +172,12 @@
           <picture class="float">
             <source
               type="image/webp"
-              srcset="./images/generated/leadshunter/lh-signal-card-s4-768.webp 768w,
-                      ./images/generated/leadshunter/lh-signal-card-s4-1024.webp 1024w,
-                      ./images/generated/leadshunter/lh-signal-card-s4.webp 1024w"
-              sizes="(max-width: 960px) 36vw, 210px"
+              srcset="./images/generated/leadshunter/lh-signal-card-s4-768.webp?v=20260728 768w,
+                      ./images/generated/leadshunter/lh-signal-card-s4-1024.webp?v=20260728 1024w"
+              sizes="(max-width: 1024px) 36vw, 210px"
             />
             <img
-              src="./images/generated/leadshunter/lh-signal-card-s4.png"
+              src="./images/generated/leadshunter/lh-signal-card-s4.png?v=20260728"
               data-i18n-alt="lh.img2"
               alt="S4 高优机会卡"
               width="1024"
@@ -180,18 +203,26 @@
         <figure class="product-media">
           <picture>
             <source
+              media="(horizontal-viewport-segments: 2), (spanning: single-fold-vertical)"
               type="image/webp"
-              srcset="./images/generated/vect/vect-customer-profile-768.webp 768w,
-                      ./images/generated/vect/vect-customer-profile-1280.webp 1280w,
-                      ./images/generated/vect/vect-customer-profile.webp 1536w"
-              sizes="(max-width: 960px) calc(100vw - 2.5rem), min(560px, 48vw)"
+              srcset="./images/generated/vect/vect-customer-profile-768.webp?v=20260728 768w,
+                      ./images/generated/vect/vect-customer-profile-1280.webp?v=20260728 1280w,
+                      ./images/generated/vect/vect-customer-profile.webp?v=20260728 2560w"
+              sizes="50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="./images/generated/vect/vect-customer-profile-768.webp?v=20260728 768w,
+                      ./images/generated/vect/vect-customer-profile-1280.webp?v=20260728 1280w,
+                      ./images/generated/vect/vect-customer-profile.webp?v=20260728 2560w"
+              sizes="(max-width: 1024px) calc(100vw - 2.5rem), min(560px, 48vw)"
             />
             <img
-              src="./images/generated/vect/vect-customer-profile.png"
+              src="./images/generated/vect/vect-customer-profile.png?v=20260728"
               data-i18n-alt="vect.img1"
               alt="VECT 全功能客户档案"
-              width="1536"
-              height="1024"
+              width="2560"
+              height="1707"
               loading="lazy"
               decoding="async"
             />
@@ -199,17 +230,17 @@
           <picture class="float secondary">
             <source
               type="image/webp"
-              srcset="./images/generated/vect/vect-ai-qc-transcript-768.webp 768w,
-                      ./images/generated/vect/vect-ai-qc-transcript-1280.webp 1280w,
-                      ./images/generated/vect/vect-ai-qc-transcript.webp 1536w"
-              sizes="(max-width: 960px) 36vw, 250px"
+              srcset="./images/generated/vect/vect-ai-qc-transcript-768.webp?v=20260728 768w,
+                      ./images/generated/vect/vect-ai-qc-transcript-1280.webp?v=20260728 1280w,
+                      ./images/generated/vect/vect-ai-qc-transcript.webp?v=20260728 2560w"
+              sizes="(max-width: 1024px) 36vw, 250px"
             />
             <img
-              src="./images/generated/vect/vect-ai-qc-transcript.png"
+              src="./images/generated/vect/vect-ai-qc-transcript.png?v=20260728"
               data-i18n-alt="vect.img2"
               alt="VECT AI 智能质检"
-              width="1536"
-              height="1024"
+              width="2560"
+              height="1707"
               loading="lazy"
               decoding="async"
             />
@@ -234,18 +265,26 @@
         <figure class="product-media">
           <picture>
             <source
+              media="(horizontal-viewport-segments: 2), (spanning: single-fold-vertical)"
               type="image/webp"
-              srcset="./images/generated/tact/tact-digital-workorder-768.webp 768w,
-                      ./images/generated/tact/tact-digital-workorder-1280.webp 1280w,
-                      ./images/generated/tact/tact-digital-workorder.webp 1536w"
-              sizes="(max-width: 960px) calc(100vw - 2.5rem), min(560px, 48vw)"
+              srcset="./images/generated/tact/tact-digital-workorder-768.webp?v=20260728 768w,
+                      ./images/generated/tact/tact-digital-workorder-1280.webp?v=20260728 1280w,
+                      ./images/generated/tact/tact-digital-workorder.webp?v=20260728 2560w"
+              sizes="50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="./images/generated/tact/tact-digital-workorder-768.webp?v=20260728 768w,
+                      ./images/generated/tact/tact-digital-workorder-1280.webp?v=20260728 1280w,
+                      ./images/generated/tact/tact-digital-workorder.webp?v=20260728 2560w"
+              sizes="(max-width: 1024px) calc(100vw - 2.5rem), min(560px, 48vw)"
             />
             <img
-              src="./images/generated/tact/tact-digital-workorder.png"
+              src="./images/generated/tact/tact-digital-workorder.png?v=20260728"
               data-i18n-alt="tact.img1"
               alt="TACT 数字工单"
-              width="1536"
-              height="1024"
+              width="2560"
+              height="1707"
               loading="lazy"
               decoding="async"
             />
@@ -253,17 +292,17 @@
           <picture class="float">
             <source
               type="image/webp"
-              srcset="./images/generated/tact/tact-dispatch-cockpit-768.webp 768w,
-                      ./images/generated/tact/tact-dispatch-cockpit-1280.webp 1280w,
-                      ./images/generated/tact/tact-dispatch-cockpit.webp 1536w"
-              sizes="(max-width: 960px) 36vw, 210px"
+              srcset="./images/generated/tact/tact-dispatch-cockpit-768.webp?v=20260728 768w,
+                      ./images/generated/tact/tact-dispatch-cockpit-1280.webp?v=20260728 1280w,
+                      ./images/generated/tact/tact-dispatch-cockpit.webp?v=20260728 2560w"
+              sizes="(max-width: 1024px) 36vw, 210px"
             />
             <img
-              src="./images/generated/tact/tact-dispatch-cockpit.png"
+              src="./images/generated/tact/tact-dispatch-cockpit.png?v=20260728"
               data-i18n-alt="tact.img2"
               alt="TACT 调度驾驶舱"
-              width="1536"
-              height="1024"
+              width="2560"
+              height="1707"
               loading="lazy"
               decoding="async"
             />
@@ -316,15 +355,15 @@
           <picture>
             <source
               type="image/webp"
-              srcset="./images/generated/brand/brand-beliefs-principles-768.webp 768w,
-                      ./images/generated/brand/brand-beliefs-principles-1280.webp 1280w,
-                      ./images/generated/brand/brand-beliefs-principles.webp 1536w"
-              sizes="(max-width: 960px) calc(100vw - 2.5rem), min(620px, 55vw)"
+              srcset="./images/generated/brand/brand-beliefs-quiet-system-768.webp 768w,
+                      ./images/generated/brand/brand-beliefs-quiet-system-1280.webp 1280w,
+                      ./images/generated/brand/brand-beliefs-quiet-system.webp 1536w"
+              sizes="(max-width: 1024px) calc(100vw - 2.5rem), min(620px, 55vw)"
             />
             <img
-              src="./images/generated/brand/brand-beliefs-principles.png"
+              src="./images/generated/brand/brand-beliefs-quiet-system.png"
               data-i18n-alt="beliefs.imgAlt"
-              alt="兰芯云朵信念：可信数据、责任动作、可解释与契约门禁"
+              alt="可信业务工作流视觉"
               width="1536"
               height="1024"
               loading="lazy"
@@ -415,7 +454,7 @@
         </div>
         <div class="footer-col">
           <h3 data-i18n="footer.products">产品</h3>
-          <a href="#leadshunter">LeadsHunter</a>
+          <a href="./leadshunter/">LeadsHunter</a>
           <a href="#vect">VECT</a>
           <a href="#tact">TACT</a>
         </div>
@@ -429,6 +468,13 @@
       </nav>
 
       <div class="footer-legal">
+        <div class="footer-lang">
+          <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="选择语言">
+            <button type="button" class="lang-opt" data-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button>
+            <button type="button" class="lang-opt" data-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button>
+            <button type="button" class="lang-opt" data-locale="en" aria-label="English" aria-pressed="false">EN</button>
+          </div>
+        </div>
         <p data-i18n="footer.company">四川兰芯云朵智能科技有限公司</p>
         <p data-i18n="footer.tax">统一社会信用代码：91510100MAEP9GMR9R</p>
         <p data-i18n="footer.address">中国（四川）自由贸易试验区成都高新区新程南一路19号3栋15层1501-1504号</p>

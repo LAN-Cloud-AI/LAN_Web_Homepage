@@ -1,14 +1,14 @@
 # Prompt 索引
 
-> 共 **55** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **68** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
-| [品牌与通用](./brand/) (`brand`) | 5 |
-| [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 11 |
+| [品牌与通用](./brand/) (`brand`) | 6 |
+| [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 20 |
 | [VECT 理解](./vect/) (`vect`) | 11 |
 | [TACT 调度](./tact/) (`tact`) | 11 |
-| [移动端](./mobile/) (`mobile`) | 6 |
+| [移动端](./mobile/) (`mobile`) | 9 |
 | [AI Analyst 判断](./analyst/) (`analyst`) | 3 |
 | [官网营销版式](./marketing/) (`marketing`) | 8 |
 
@@ -16,7 +16,8 @@
 
 | ID | 标题 | 画幅 | 用途 |
 | --- | --- | --- | --- |
-| [`brand-hero-homepage`](./brand/brand-hero-homepage.md) | 官网首页 Hero · 产品能力总览 | 16:9 | 首页首屏大图 |
+| [`brand-hero-homepage`](./brand/brand-hero-homepage.md) | 官网首页 Hero · 精密运营工坊 | 3:2 / 4:3 | 首页首屏无文字主视觉 |
+| [`brand-beliefs-quiet-system`](./brand/brand-beliefs-quiet-system.md) | 信念区 · 可信工作流 | 3:2 | Beliefs 桌面/平板配图 |
 | [`brand-capability-map`](./brand/brand-capability-map.md) | 能力地图四象限 | 16:9 | 关于/方法论页 |
 | [`brand-method-six-pillars`](./brand/brand-method-six-pillars.md) | 六要素方法论面板 | 3:2 | 方法论/关于页 |
 | [`brand-logo-lockup-ui`](./brand/brand-logo-lockup-ui.md) | 侧栏品牌锁头 UI | 1:1 | Favicon周边/导航素材 |
@@ -37,6 +38,15 @@
 | [`lh-task-engine`](./leadshunter/lh-task-engine.md) | 采集任务引擎 | 16:9 | LH 技术能力 |
 | [`lh-routing-four-roles`](./leadshunter/lh-routing-four-roles.md) | 一信号四动作路由 | 16:9 | LH 方法论图 |
 | [`lh-training-ground`](./leadshunter/lh-training-ground.md) | 训练场控制台 | 16:9 | Training Ground 公开能力 |
+| [`lh-lp-hero-lead-devices`](./leadshunter/lh-lp-hero-lead-devices.md) | 落地页 Hero · 线索设备编队 | 3:2 | LeadsHunter 独立产品页首屏 |
+| [`lh-lp-dashboard-laptop`](./leadshunter/lh-lp-dashboard-laptop.md) | 落地页 · 线索仪表盘笔记本 | 3:2 | 意向发现模块 |
+| [`lh-lp-qualified-lead-delivery`](./leadshunter/lh-lp-qualified-lead-delivery.md) | 落地页 · 高意向线索交付 | 3:2 | 推送与销售交付模块 |
+| [`lh-appstore-hero-overview-v2`](./leadshunter/lh-appstore-hero-overview-v2.md) | App Store 画廊 · 总览 Hero（浅色） | 约 5:8 | 独立产品页首屏浅色图 |
+| [`lh-appstore-hero-overview-dark-v2`](./leadshunter/lh-appstore-hero-overview-dark-v2.md) | App Store 画廊 · 总览 Hero（深色） | 约 5:8 | 独立产品页首屏深色图 |
+| [`lh-appstore-discovery-dashboard-v2`](./leadshunter/lh-appstore-discovery-dashboard-v2.md) | App Store 画廊 · 意向发现仪表盘（浅色） | 3:2 | 线索发现模块浅色图 |
+| [`lh-appstore-discovery-dashboard-dark-v2`](./leadshunter/lh-appstore-discovery-dashboard-dark-v2.md) | App Store 画廊 · 意向发现仪表盘（深色） | 3:2 | 线索发现模块深色图 |
+| [`lh-appstore-lead-delivery-v2`](./leadshunter/lh-appstore-lead-delivery-v2.md) | App Store 画廊 · 高意向线索交付（浅色） | 约 5:8 | 线索交付模块浅色图 |
+| [`lh-appstore-lead-delivery-dark-v2`](./leadshunter/lh-appstore-lead-delivery-dark-v2.md) | App Store 画廊 · 高意向线索交付（深色） | 高竖版 | 线索交付模块深色图 |
 
 ## VECT 理解
 
@@ -78,8 +88,11 @@
 | [`mobile-lh-dashboard`](./mobile/mobile-lh-dashboard.md) | LH App 工作台 | 9:19.5 | App 主界面 |
 | [`mobile-lh-lead-detail`](./mobile/mobile-lh-lead-detail.md) | LH App 线索详情 | 9:19.5 | App 详情 |
 | [`mobile-lh-notifications`](./mobile/mobile-lh-notifications.md) | LH App 推送列表 | 9:19.5 | App 通知 |
+| [`mobile-lh-signal-action`](./mobile/mobile-lh-signal-action.md) | LeadsHunter 手机产品图 · 信号成为行动 | 4:5 | 首页手机端产品特写 |
 | [`mobile-tact-tech`](./mobile/mobile-tact-tech.md) | TACT 技师手机派工 | 9:19.5 | TACT 一线移动 |
+| [`mobile-tact-next-job`](./mobile/mobile-tact-next-job.md) | TACT 手机产品图 · 可信工序节拍 | 4:5 | 首页手机端产品特写 |
 | [`mobile-vect-rescue`](./mobile/mobile-vect-rescue.md) | VECT 挽救任务手机 | 9:19.5 | VECT 移动动作 |
+| [`mobile-vect-rescue-action`](./mobile/mobile-vect-rescue-action.md) | VECT 手机产品图 · 关系温度挽救 | 4:5 | 首页手机端产品特写 |
 
 ## AI Analyst 判断
 

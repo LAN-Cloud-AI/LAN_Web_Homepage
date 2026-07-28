@@ -1,7 +1,67 @@
 {
   "version": 1,
-  "count": 55,
+  "count": 68,
   "items": [
+    {
+      "id": "lh-appstore-discovery-dashboard-dark-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 意向发现仪表盘（深色）",
+      "aspect": "3:2",
+      "prompt": "Use case: product-mockup\nAsset type: premium dark-mode horizontal App Store-style B2B intelligence dashboard.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\n深色午夜蓝/靛蓝 App Store 画廊背景中，居中正视的石墨黑与银色高端笔记本；屏幕为匿名深色 LeadsHunter 线索发现仪表盘，含左侧图标栏、KPI 卡片、四色意向分布带、多序列趋势图与紧凑状态表；钴蓝、淡紫、珊瑚与青绿色信号；无可读文字、数字、字母、Logo、水印、浏览器栏、人物或真实数据；所有关键内容保持在中心 16:10 安全裁切区。\n\nStyle/medium: crisp dark SaaS interface mockup with premium product photography, low-glare graphite hardware, controlled cobalt rim light, subtle midnight grid, and gentle studio shadow.",
+      "negative": "white or pale background, light-mode dashboard, purple neon, cyberpunk, oblique laptop, multiple devices, people, browser chrome, readable text, fake glyphs, platform logo, watermark, real dashboard screenshot",
+      "output": "images/generated/leadshunter-page/lh-appstore-discovery-dashboard-dark-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-discovery-dashboard-dark-v2.md"
+    },
+    {
+      "id": "lh-appstore-discovery-dashboard-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 意向发现仪表盘（浅色）",
+      "aspect": "3:2",
+      "prompt": "Use case: product-mockup\nAsset type: premium horizontal App Store-style B2B intelligence dashboard.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\nCreate a polished silver laptop centered on an ice-blue, high-key App Store editorial card. On its screen, show a language-neutral anonymous lead-intelligence dashboard with a restrained icon rail, compact geometric KPI cards, four colored intent-distribution bands, a clean multi-series trend chart, and a concise lower status table. The laptop is straight-on, physical and refined, with a soft studio shadow. Add a barely visible white grid and one quiet cobalt orbital line in the surrounding space.\n\nStyle/medium: premium product photography plus crisp light SaaS interface mockup, calm cool-white surface, powder blue and pale lilac panels, cobalt, teal, and restrained coral signals.\nComposition/framing: 3:2 landscape; keep all product detail inside a center 16:10 safe crop, with generous side breathing room for responsive placement.\nConstraints: no readable copy, letters, Chinese characters, numbers, logos, watermarks, browser chrome, people, platform marks, actual dashboard data, or fake gibberish typography.",
+      "negative": "dark or black laptop, dark-mode UI, neon, cyberpunk, angled perspective, multiple devices, cluttered desk, stock-photo people, readable text, fake dashboard labels, browser frame, logo, watermark",
+      "output": "images/generated/leadshunter-page/lh-appstore-discovery-dashboard-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-discovery-dashboard-v2.md"
+    },
+    {
+      "id": "lh-appstore-hero-overview-dark-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 总览 Hero（深色）",
+      "aspect": "5:8",
+      "prompt": "Use case: product-mockup\nAsset type: premium dark-mode App Store-style B2B lead-intelligence artwork.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\nCreate one premium product-marketing mockup that is a direct dark-mode companion to a clean centered tablet overview composition. Portrait 5:8, safely crop-friendly tall portrait framing. Seamless midnight navy and indigo studio card background, subtly luminous, with a very restrained radial cobalt bloom and barely visible grid texture; no white outer field. Exactly one centered, front-on thin black tablet with rounded corners, fully visible with generous breathing room. Its screen shows a detailed anonymous LeadsHunter-style B2B intelligence overview: a narrow left vertical icon rail made only of abstract geometric icons; four compact KPI cards with color blocks and sparklines but absolutely no text or numbers; an intent-distribution panel made of clean horizontal color bands; one wide trend-chart panel with abstract rising lines and tiny unlabeled points. UI uses dark cool slate and navy surfaces with cobalt blue, soft lilac, teal, and restrained coral signal accents. Polished premium product photography combined with high-fidelity dark SaaS interface mockup, suitable for an Apple App Store editorial feature. Crisp UI geometry, realistic anodized tablet edge, gentle studio shadow. No readable words, letters, Chinese characters, numerals, platform logos, branded marks, user data, watermarks, browser chrome, people, devices besides the one tablet, or fake gibberish typography.",
+      "negative": "white outer field, light-mode tablet, neon cyberpunk, purple haze, fake text, real dashboard screenshot, user information, browser UI, extra devices, people, logo, watermark, unreadable dense table",
+      "output": "images/generated/leadshunter-page/lh-appstore-hero-overview-dark-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-hero-overview-dark-v2.md"
+    },
+    {
+      "id": "lh-appstore-hero-overview-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 总览 Hero（浅色）",
+      "aspect": "5:8",
+      "prompt": "Use case: product-mockup\nAsset type: premium vertical App Store-style B2B lead-intelligence artwork.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\nCreate one premium vertical App Store-style B2B lead-intelligence product artwork: a single centered, flat-front compact tablet on a pale powder-blue, high-key campaign card. Its anonymous polished lead-management overview has an unlabeled icon rail, four geometric KPI cards, four intent-distribution bands, and a lower multi-line trend chart. Keep the tablet fully readable with generous breathing room.\n\nStyle/medium: polished App Store editorial product photography combined with a high-fidelity light SaaS interface mockup; subtle studio shadow, fine white grid texture, cool white hardware, restrained cobalt, lilac, teal, and coral signals.\nComposition/framing: tall portrait, approximately 5:8; one centered tablet; all important UI stays in the central safe area for mobile and foldable crops.\nConstraints: no readable copy, letters, Chinese characters, numbers, logos, watermarks, browser chrome, real data, people, or additional devices. Do not imitate a real application screenshot or use fake gibberish typography.",
+      "negative": "multiple devices, phone bezel, black or dark-mode background, neon, cyberpunk, generic fintech dashboard, dense tiny table, heavy glassmorphism, stock-photo people, gradients that reduce UI clarity, logo, watermark, readable or fake text",
+      "output": "images/generated/leadshunter-page/lh-appstore-hero-overview-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-hero-overview-v2.md"
+    },
+    {
+      "id": "lh-appstore-lead-delivery-dark-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 高意向线索交付（深色）",
+      "aspect": "864:1821",
+      "prompt": "Use case: product-mockup\nAsset type: premium dark-mode App Store feature-card visual for high-intent lead delivery.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\nPremium dark-mode App Store feature-card visual for a B2B AI lead-hunting product: a single centered graphite smartphone on a midnight navy/indigo studio background, dense anonymous high-intent lead-delivery UI with source previews, intent-score ring, structured AI summary, follow-up action module, and two small frosted routing cards behind it; indigo/cobalt rim light with restrained coral/mint accents; no readable text, numbers, logos, data, watermark, browser chrome, people, platform logos, or fake gibberish typography.\n\nComposition/framing: high vertical portrait; keep the full phone, score ring, summary, action module, and both routing cards visible inside the central safe zone so the artwork may be contained without cutting the handset.",
+      "negative": "light-mode phone, white background, platform icon, fake chat text, real customer data, phone brand, extra phones, readable letters or numbers, neon cyberpunk, people, browser chrome, logo, watermark",
+      "output": "images/generated/leadshunter-page/lh-appstore-lead-delivery-dark-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-lead-delivery-dark-v2.md"
+    },
+    {
+      "id": "lh-appstore-lead-delivery-v2",
+      "category": "leadshunter",
+      "title": "App Store 画廊 · 高意向线索交付（浅色）",
+      "aspect": "5:8",
+      "prompt": "Use case: product-mockup\nAsset type: premium vertical App Store feature-card visual for high-intent lead delivery.\nReference image role: use an authenticated LeadsHunter control-panel overview only as a private visual workflow reference. Never reproduce, display, or include its raw screenshot, account names, actual metrics, real leads, or customer data.\n\nCreate a portrait 4:5-safe composition with one contemporary white smartphone centered on a pale fog-blue App Store editorial background. The phone displays a detailed but anonymous LeadsHunter delivery flow: a high-intent card, abstract source preview, intent-score ring, structured AI summary, and a follow-up action module. Place two subtle frosted delivery-routing cards behind the phone. Use a fine blue orbit and a quiet white grid to make it feel airy, while retaining enough UI density for a credible product shot.\n\nStyle/medium: premium App Store product photography plus high-fidelity light SaaS/mobile interface mockup, white hardware, soft studio shadow, cobalt blue with restrained coral and mint signals.\nComposition/framing: tall portrait; keep the complete phone and the two supporting cards inside the mobile/foldable safe area.\nConstraints: no readable words, letters, Chinese characters, numbers, actual personal information, platform logos, brand logos, watermarks, browser chrome, people, or fake gibberish typography.",
+      "negative": "dark phone, black background, messaging-platform logo, readable chat, real lead data, phone brand mark, extra phones, overly empty screen, neon, cyberpunk, heavy glassmorphism, people, watermark",
+      "output": "images/generated/leadshunter-page/lh-appstore-lead-delivery-v2.png",
+      "source": "images/prompts/leadshunter/lh-appstore-lead-delivery-v2.md"
+    },
     {
       "id": "analyst-action-layers",
       "category": "analyst",
@@ -33,6 +93,16 @@
       "source": "images/prompts/analyst/analyst-quadrant.md"
     },
     {
+      "id": "brand-beliefs-quiet-system",
+      "category": "brand",
+      "title": "信念区 · 可信工作流",
+      "aspect": "3:2",
+      "prompt": "Use case: stylized-concept\nAsset type: premium data-trust visual for an automotive operations system\nTarget dimensions: 1536 x 1024 pixels, 3:2.\n\nShow four sparse signal clusters moving left to right through four elegant verification gates and resolving into one calm, verified operational record. Build the gates as restrained porcelain, frosted-acrylic and brushed-metal structures: a clear lens, a faceted evidence layer, a concentric explanation layer, and a precise contract-like final gate. Let one fine forge-teal signal path travel continuously through the composition.\n\nUse generous negative space, faint technical guide lines, soft gallery light, porcelain #F6F7F5, fog gray, charcoal hairlines, forge teal #0F766E, and restrained steel-blue details. No readable text, letters, Chinese characters, numerals, logos, wordmarks, watermark, browser frame, app chrome, people, or dashboard panels.",
+      "negative": "infographic labels, four text cards, logo, headline, browser chrome, dashboard, purple gradient, neon glow, dark mode, cyberpunk, heavy glassmorphism, isometric scene, stock photography, fake UI typography, watermark, visual clutter",
+      "output": "images/generated/brand/brand-beliefs-quiet-system.png",
+      "source": "images/prompts/brand/brand-beliefs-quiet-system.md"
+    },
+    {
       "id": "brand-capability-map",
       "category": "brand",
       "title": "能力地图四象限",
@@ -45,11 +115,11 @@
     {
       "id": "brand-hero-homepage",
       "category": "brand",
-      "title": "官网首页 Hero · 产品能力总览",
-      "aspect": "16:9",
-      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nHomepage hero product collage for 兰芯云朵 official website: one wide browser window showing a command center that combines three product modules in tabs — LeadsHunter (公域线索), VECT (客户关系), TACT (车间调度).\nLeft nav with logos and Chinese labels. Center shows a clean capability ribbon: 看见 → 理解 → 调度 → 判断.\nSubtle abstract soft gradient background outside the browser in cool gray-teal mist, not purple. Brand wordmark area top-left: 「兰芯云朵」.\nPremium marketing site screenshot quality, hero budget: brand + one headline area + one dominant UI plane.\n\nAspect ratio 16:9. UI screenshot, photoreal product interface.",
-      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
-      "output": "images/generated/brand/brand-hero-homepage.png",
+      "title": "官网首页 Hero · 精密运营工坊",
+      "aspect": "3:2 desktop / 4:3 mobile",
+      "prompt": "Use case: stylized-concept\nAsset type: desktop landing-page hero visual for an automotive operations system\nTarget dimensions: 1536 x 1024 pixels, 3:2.\n\nCreate a precision operating atelier: one elegant, calm physical-digital workbench. Center a refined unlabelled porcelain work surface with a subtle translucent automotive contour. Across it, run one luminous forge-teal operational progress path with a small number of clear checkpoint nodes. Use a few carefully spaced evidence/material tiles around the lower portion: brushed wheel metal, frosted glass, restrained leather or engineering material.\n\nThe image must feel tactile, assured, and premium — industrial design for a modern automotive operations platform — not a generic SaaS dashboard. Keep the main car outline and teal path inside the central 70% so the image remains attractive on tablets and folded panes.\n\nStyle/medium: premium 2.5D editorial industrial-design illustration; porcelain white, frosted acrylic, brushed aluminium, faint technical guide lines, and soft gallery daylight.\nColor palette: porcelain #F6F7F5, fog gray, charcoal hairlines, forge teal #0F766E, muted steel blue.\nConstraints: no readable text, letters, Chinese characters, numbers, logos, brand marks, watermark, browser chrome, phone/computer bezel, people, license plates, or fake UI panels.",
+      "negative": "purple gradient, neon glow, cyberpunk, dark mode, dense dashboard, browser chrome, side navigation, logo, wordmark, headline, readable text, fake gibberish typography, phone frame, stock photo people, license plate, heavy shadows, noisy glassmorphism, isometric scene, generic 3D car advertisement, watermark",
+      "output": "images/generated/brand/brand-hero-precision-atelier.png",
       "source": "images/prompts/brand/brand-hero-homepage.md"
     },
     {
@@ -57,8 +127,8 @@
       "category": "brand",
       "title": "侧栏品牌锁头 UI",
       "aspect": "1:1",
-      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nClose crop of left sidebar brand lockup for 兰芯云朵 SaaS: small geometric cloud+circuit mark in forge teal,\nChinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.\nSquare composition, lots of negative space, UI fragment only.\n\nAspect ratio 1:1. UI screenshot, photoreal product interface.",
-      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
+      "prompt": "Product UI mockup for LAN Cloud AI (兰芯云朵), a Chinese automotive retail & aftersales SaaS.\nClean light-mode enterprise interface, soft cool-gray canvas (#F4F6F8), charcoal text (#1A2332),\nsingle accent color forge teal (#0F766E), secondary steel blue (#334155) for charts.\nDense but readable SaaS layout like Linear + Notion + modern DMS: left sidebar, top bar with store switcher,\ncrisp 1px borders, subtle elevation, 8px grid, Inter/Noto Sans SC hybrid typography.\nRealistic Chinese UI labels (Simplified Chinese), believable automotive dealer data (anonymized),\nno real personal IDs, no real phone numbers, no license plates with real patterns.\nMacBook Pro browser chrome OR frameless app window. Sharp UI screenshot aesthetic, not 3D, not isometric.\nHigh fidelity, 4K, straight-on orthographic view, ample whitespace hierarchy, professional automotive ops software.\n\nClose crop of left sidebar brand lockup for 兰芯云朵 SaaS.\nBrand mark MUST match the official logo reference: forge-teal (#0E766E) rounded cloud silhouette with white terminal prompt inside (chevron \">\" + underscore \"_\"). Flat vector. Do NOT invent circuit marks, lettermarks, or alternate icons.\nNext to the icon: Chinese wordmark 「兰芯云朵」, English sublabel LAN Cloud AI, active nav item「工作台」highlighted.\nSquare composition, lots of negative space, UI fragment only.\n\nAspect ratio 1:1. UI screenshot, photoreal product interface.",
+      "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot, wrong brand marks (circuit-cloud, lettermark L, rainbow cloud, purple logo)",
       "output": "images/generated/brand/brand-logo-lockup-ui.png",
       "source": "images/prompts/brand/brand-logo-lockup-ui.md"
     },
@@ -131,6 +201,36 @@
       "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
       "output": "images/generated/leadshunter/lh-lead-pool.png",
       "source": "images/prompts/leadshunter/lh-lead-pool.md"
+    },
+    {
+      "id": "lh-lp-dashboard-laptop",
+      "category": "leadshunter",
+      "title": "落地页 · 线索仪表盘笔记本",
+      "aspect": "3:2",
+      "prompt": "Use case: product-mockup\nAsset type: LeadsHunter product landing-page dashboard visual\nReference image role: use the supplied LeadsHunter public-lead campaign only as style inspiration.\n\nCreate a front-facing premium silver laptop on an airy pale fog-blue canvas. Its screen shows a crisp abstract SaaS leads dashboard: a restrained left sidebar, four broad metric panels, a central multi-line intent trend chart, and lower lead-list modules. Make the dashboard feel credible and refined but language-neutral, with a single small coral-red attention signal. Add a faint white square-grid atmosphere and one quiet cobalt-blue orbital line in the open background.\n\nStyle/medium: high-key polished product campaign artwork, bright studio light, physical laptop hardware, soft natural shadow.\nColor palette: fog blue #EEF3FF, white, cool lilac, cobalt blue #4568F5, one coral #FF6E72 signal.\nComposition/framing: 3:2 landscape; laptop fills the central 75% with generous side breathing room.\nConstraints: no readable text, no letters, no Chinese characters, no numerals, no logos, no browser address bar, no watermarks, no people, no fake gibberish typography.",
+      "negative": "dark laptop, black background, neon, cyberpunk, browser chrome, desktop clutter, multiple devices, heavy reflections, watermark",
+      "output": "images/generated/leadshunter-page/lh-dashboard-laptop.png",
+      "source": "images/prompts/leadshunter/lh-lp-dashboard-laptop.md"
+    },
+    {
+      "id": "lh-lp-hero-lead-devices",
+      "category": "leadshunter",
+      "title": "落地页 Hero · 线索设备编队",
+      "aspect": "3:2",
+      "prompt": "Use case: stylized-concept\nAsset type: LeadsHunter product landing-page Hero artwork\nReference image role: use the supplied LeadsHunter public-lead campaign only as style and composition inspiration.\n\nCreate a premium pale fog-blue campaign visual for an automotive public-signal lead system. Center three elegant white smartphone devices in a poised, overlapping diagonal arrangement. Their screens show abstract sales-lead UI blocks: subtle cards, graph shapes, broad content strips, and a few restrained coral-red high-intent signals. Use faint white square-grid atmosphere and one thin cobalt-blue orbital line with generous breathing room around the devices.\n\nStyle/medium: high-key polished SaaS campaign illustration, soft studio shadows, white hardware, quiet lilac and powder-blue interfaces, tactile but airy.\nColor palette: fog blue #EEF3FF, white, soft lavender, cobalt blue #4568F5, small coral #FF6E72.\nComposition/framing: 3:2 landscape; central device group occupies about 70% of the frame and remains readable in a mobile center crop.\nConstraints: no readable text, no letters, no Chinese characters, no numerals, no logos, no platform logos, no device brand marks, no browser chrome, no people, no watermark, no fake gibberish typography.",
+      "negative": "neon, dark mode, purple gradients, cyberpunk, generic 3D car ads, dense dashboards, heavy glassmorphism, large empty phone bezels, stock-photo people, watermark",
+      "output": "images/generated/leadshunter-page/lh-hero-lead-devices.png",
+      "source": "images/prompts/leadshunter/lh-lp-hero-lead-devices.md"
+    },
+    {
+      "id": "lh-lp-qualified-lead-delivery",
+      "category": "leadshunter",
+      "title": "落地页 · 高意向线索交付",
+      "aspect": "3:2",
+      "prompt": "Use case: stylized-concept\nAsset type: LeadsHunter qualified-lead delivery visual\nReference image role: use the supplied LeadsHunter public-lead campaign only as style inspiration.\n\nCreate one premium front-facing white smartphone centered on an airy pale fog-blue campaign canvas. Its screen has an abstract anonymous customer-lead card with broad content blocks and one restrained coral-red high-intent indicator. Place two muted frosted delivery cards behind the phone as supporting evidence. Add faint white square-grid atmosphere and a single fine cobalt-blue orbital curve, using generous negative space and soft studio shadows.\n\nStyle/medium: polished high-key SaaS campaign illustration, tactile white hardware, powder-blue and soft-lilac UI.\nColor palette: fog blue #EEF3FF, white, soft lavender, cobalt blue #4568F5, small coral #FF6E72.\nComposition/framing: 3:2 landscape; phone remains centered and clear in a narrow mobile crop.\nConstraints: no readable text, no letters, no Chinese characters, no numerals, no platform logos, no brand logos, no watermarks, no fake typography, no people.",
+      "negative": "phone brand logo, black dark-mode UI, neon, cyberpunk, messaging-app logo, dense desktop tables, heavy glassmorphism, watermark",
+      "output": "images/generated/leadshunter-page/lh-qualified-lead-delivery.png",
+      "source": "images/prompts/leadshunter/lh-lp-qualified-lead-delivery.md"
     },
     {
       "id": "lh-org-rbac",
@@ -313,6 +413,26 @@
       "source": "images/prompts/mobile/mobile-lh-notifications.md"
     },
     {
+      "id": "mobile-lh-signal-action",
+      "category": "mobile",
+      "title": "LeadsHunter 手机产品图 · 信号成为行动",
+      "aspect": "4:5",
+      "prompt": "Use case: stylized-concept\nAsset type: mobile-first product feature visual for an automotive opportunity-signal system\nTarget dimensions: 1200 x 1500 pixels, 4:5 portrait.\n\nOne oversized porcelain opportunity card is the focal object. A sparse stream of fine forge-teal signal dots enters from the upper left, passes through a small confidence path, and resolves into one decisive priority node on the card. Add no more than two frosted evidence tiles.\n\nUse porcelain white, frosted acrylic, brushed aluminium, thin technical guide lines, forge teal #0F766E, restrained slate-blue detail, and soft gallery daylight. Keep important objects within x=10–90% and y=10–88%. No readable text, letters, Chinese characters, numbers, logos, watermark, phone frame, browser chrome, desktop sidebar, dense table, tiny controls, people, or fake UI typography.",
+      "negative": "dashboard, side navigation, mobile app screenshot, text labels, fake Chinese, logo, purple, neon, cyberpunk, dark mode, stock photos, heavy shadows, visual clutter",
+      "output": "images/generated/mobile/mobile-lh-signal-action.png",
+      "source": "images/prompts/mobile/mobile-lh-signal-action.md"
+    },
+    {
+      "id": "mobile-tact-next-job",
+      "category": "mobile",
+      "title": "TACT 手机产品图 · 可信工序节拍",
+      "aspect": "4:5",
+      "prompt": "Use case: stylized-concept\nAsset type: mobile-first product feature visual for an automotive workshop orchestration system\nTarget dimensions: 1200 x 1500 pixels, 4:5 portrait.\n\nPlace a minimal translucent vehicle contour at the center of a porcelain workshop board. Run one clear forge-teal operational progress rail vertically through four large checkpoint nodes. Include one small bright service-bay model near the lower part of the image and at most two restrained evidence/material tiles.\n\nUse frosted acrylic, brushed aluminium, thin technical guide lines, porcelain white, forge teal #0F766E, restrained steel-blue detail, and gallery-soft daylight. Keep important objects within x=10–90% and y=10–88%. No readable text, letters, Chinese characters, numbers, logos, watermark, phone frame, browser chrome, desktop sidebar, dense table, tiny controls, people, or fake UI typography.",
+      "negative": "dashboard, side navigation, mobile app screenshot, text labels, fake Chinese, logo, purple, neon, cyberpunk, dark mode, stock photos, heavy shadows, visual clutter",
+      "output": "images/generated/mobile/mobile-tact-next-job.png",
+      "source": "images/prompts/mobile/mobile-tact-next-job.md"
+    },
+    {
       "id": "mobile-tact-tech",
       "category": "mobile",
       "title": "TACT 技师手机派工",
@@ -331,6 +451,16 @@
       "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
       "output": "images/generated/mobile/mobile-vect-rescue.png",
       "source": "images/prompts/mobile/mobile-vect-rescue.md"
+    },
+    {
+      "id": "mobile-vect-rescue-action",
+      "category": "mobile",
+      "title": "VECT 手机产品图 · 关系温度挽救",
+      "aspect": "4:5",
+      "prompt": "Use case: stylized-concept\nAsset type: mobile-first product feature visual for an automotive customer-relationship system\nTarget dimensions: 1200 x 1500 pixels, 4:5 portrait.\n\nBuild one calm porcelain relationship-temperature halo as the focal object. A single forge-teal rescue path enters the halo, bends through a clear decision point, and exits toward a bright accountable-action node. Use exactly one small amber risk point and no more than two subtle evidence tiles.\n\nUse frosted acrylic, brushed aluminium, thin technical guide lines, porcelain white, forge teal #0F766E, restrained slate-blue detail, and soft gallery daylight. Keep important objects within x=10–90% and y=10–88%. No readable text, letters, Chinese characters, numbers, logos, watermark, phone frame, browser chrome, desktop sidebar, dense table, tiny controls, people, or fake UI typography.",
+      "negative": "dashboard, side navigation, mobile app screenshot, text labels, fake Chinese, logo, purple, neon, cyberpunk, dark mode, stock photos, heavy shadows, visual clutter",
+      "output": "images/generated/mobile/mobile-vect-rescue-action.png",
+      "source": "images/prompts/mobile/mobile-vect-rescue-action.md"
     },
     {
       "id": "tact-accident-butler",

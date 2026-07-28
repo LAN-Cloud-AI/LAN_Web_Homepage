@@ -1,8 +1,19 @@
 .DS_Store
 node_modules/
+.venv/
 .wrangler/
 dist/
 .env
 .env.*
+.dev.vars*
+!.dev.vars.example
 *.log
 *.code-workspace
+
+# Local visual-QA captures and authenticated reference screenshots
+mocks/
+design-qa.md
+
+# Derived visual artifacts and Python cache
+images/prototypes/
+scripts/__pycache__/
