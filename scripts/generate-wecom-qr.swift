@@ -6,7 +6,7 @@ import ImageIO
 import UniformTypeIdentifiers
 import Vision
 
-let payload = "https://work.weixin.qq.com/u/vc02eca5bffac64589?src=wx&bb=7a2bd84343"
+let payload = "https://work.weixin.qq.com/ct/wcde518f3ee4ac1b506616d06dedf1fb6f60"
 let outputPixels = 900
 let quietZoneModules = 4
 let outputURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)

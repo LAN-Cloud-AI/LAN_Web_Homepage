@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const payload = "https://work.weixin.qq.com/u/vc02eca5bffac64589?src=wx&bb=7a2bd84343";
+const payload = "https://work.weixin.qq.com/ct/wcde518f3ee4ac1b506616d06dedf1fb6f60";
 const defaultCopyUnits = ["我是兰芯云朵销售经理，", "这是我的企业微信，", "请您使用微信扫描二维码", "与我取得联系"];
 const wechatCopyUnits = ["我是兰芯云朵销售经理，", "请您长按二维码，", "添加我的企业微信"];
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -47,10 +47,10 @@ required(styles.includes("@media (min-width: 1025px) and (hover: hover) and (poi
 required(main.includes("is-wechat-float-visible"), "Scroll behavior must control the floating entry state.");
 required(main.includes("window.scrollY > 240"), "Floating entry must wait until the visitor has scrolled the page.");
 required(main.includes('window.addEventListener("load", onScroll, { once: true });'), "Floating entry must sync after initial deep-link layout.");
-required(i18n.includes('"contact.wecom": "添加微信"'), "Simplified Chinese needs the WeChat CTA label.");
-required(i18n.includes('"contact.wecom": "新增微信"'), "Traditional Chinese needs the WeChat CTA label.");
-required(i18n.includes('"contact.wecom": "Add WeChat"'), "English needs the WeChat CTA label.");
-required(productPage.includes('href="../contact/wecom/">添加微信</a>'), "LeadsHunter contact actions must link to the official WeChat card.");
+required(i18n.includes('"contact.wecom": "添加企业微信"'), "Simplified Chinese needs the WeChat CTA label.");
+required(i18n.includes('"contact.wecom": "新增企業微信"'), "Traditional Chinese needs the WeChat CTA label.");
+required(i18n.includes('"contact.wecom": "Add Work WeChat"'), "English needs the WeChat CTA label.");
+required(productPage.includes('href="../contact/wecom/">添加企业微信</a>'), "LeadsHunter contact actions must link to the official WeChat card.");
 
 required(card.includes('<html lang="zh-CN">'), "WeCom card must declare Chinese page language.");
 required(card.includes('href="#main-content"'), "WeCom card must provide a skip link.");
