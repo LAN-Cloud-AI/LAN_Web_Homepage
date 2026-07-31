@@ -7,6 +7,8 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const excludedDirectories = new Set([
   ".git",
   ".github",
+  ".cursor",
+  ".superpowers",
   ".venv",
   ".wrangler",
   "dist",
@@ -31,6 +33,8 @@ const excludedRootFiles = new Set([
   "AGENTS.md",
   "README.md",
   "design-qa.md",
+  "package.json",
+  "package-lock.json",
   "wrangler.jsonc",
 ]);
 

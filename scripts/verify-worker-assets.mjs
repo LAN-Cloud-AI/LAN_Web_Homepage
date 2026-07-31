@@ -40,11 +40,11 @@ for (const file of [
   required(fs.existsSync(path.join(assetsRoot, file)), `Required production asset is missing: ${file}`);
 }
 
-for (const forbidden of [".git", ".github", ".venv", ".wrangler", "node_modules", "docs", "mocks", "scripts", "images/prompts", "images/prototypes", "images/generated", "images/logo", "images/contact"]) {
+for (const forbidden of [".git", ".github", ".cursor", ".superpowers", ".venv", ".wrangler", "node_modules", "docs", "mocks", "scripts", "images/prompts", "images/prototypes", "images/generated", "images/logo", "images/contact"]) {
   required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Local-only path leaked into production assets: ${forbidden}`);
 }
 
-for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENTS.md", "README.md", "design-qa.md"]) {
+for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENTS.md", "README.md", "design-qa.md", "package.json", "package-lock.json"]) {
   required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Repository file leaked into production assets: ${forbidden}`);
 }
 
