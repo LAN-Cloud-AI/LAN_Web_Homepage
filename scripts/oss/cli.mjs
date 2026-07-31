@@ -8,6 +8,7 @@
  *   node scripts/oss/cli.mjs mkdir <prefix>
  *   node scripts/oss/cli.mjs put <localPath> <objectKey>
  *   node scripts/oss/cli.mjs sync-website-images
+ *   node scripts/oss/cli.mjs sync-miniprogram-images
  *   node scripts/oss/cli.mjs init-layout
  *   node scripts/oss/cli.mjs configure-bucket
  *   node scripts/oss/cli.mjs url <objectKey>
@@ -15,7 +16,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { createOssClient, joinKey, publicUrlForKey } from "./client.mjs";
-import { getOssEnv, webpagePrefix, assertEnvFileExists } from "./env.mjs";
+import {
+  getOssEnv,
+  webpagePrefix,
+  sharedPrefix,
+  miniprogramPrefix,
+  assertEnvFileExists,
+} from "./env.mjs";
 
 const usage = () => {
   console.log(`LAN Cloud OSS CLI
@@ -26,8 +33,9 @@ Commands:
   mkdir <prefix>               Create directory marker (.keep)
   put <local> <key>            Upload one file
   sync-website-images          Sync images/* (except prompts/prototypes) → lanxin/webpage/images/
+  sync-miniprogram-images      Sync mini program assets-oss/ → lanxin/apps/miniprogram/
   init-layout                  Create company directory tree
-  configure-bucket             Disable BPA, set CORS + public-read policy for webpage assets
+  configure-bucket             Disable BPA, set CORS + public-read policy for webpage/miniprogram assets
   url <key>                    Print public URL
 `);
 };
@@ -119,6 +127,7 @@ const COMPANY_LAYOUT = [
   "lanxin/apps/leadshunter/",
   "lanxin/apps/internal-expense/",
   "lanxin/apps/wecom/",
+  "lanxin/apps/miniprogram/",
   "lanxin/tmp/",
 ];
 
@@ -195,6 +204,49 @@ const cmdSyncWebsiteImages = async () => {
   }, null, 2));
 };
 
+const resolveMiniprogramRoot = (env) => {
+  if (process.env.MINIPROGRAM_ROOT) {
+    return path.resolve(process.env.MINIPROGRAM_ROOT);
+  }
+  return path.resolve(env.projectRoot, "../LAN_Wechat_Official_miniProgram");
+};
+
+const cmdSyncMiniprogramImages = async () => {
+  const env = getOssEnv();
+  const client = createOssClient();
+  const mpRoot = resolveMiniprogramRoot(env);
+  const assetsOss = path.join(mpRoot, "assets-oss");
+  try {
+    await fs.access(assetsOss);
+  } catch {
+    throw new Error(
+      `Mini program assets-oss/ not found at ${assetsOss}. Set MINIPROGRAM_ROOT if the repo lives elsewhere.`,
+    );
+  }
+
+  const remote = miniprogramPrefix(env);
+  const files = await walkFiles(assetsOss);
+  let uploaded = 0;
+  for (const file of files) {
+    const rel = path.relative(assetsOss, file).split(path.sep).join("/");
+    const key = joinKey(remote, rel);
+    await client.put(key, file, {
+      headers: {
+        "Content-Type": contentTypeFor(file),
+        "Cache-Control": "public, max-age=604800, immutable",
+        "Content-Disposition": "inline",
+      },
+    });
+    uploaded += 1;
+    console.log("uploaded", key);
+  }
+  console.log(JSON.stringify({
+    uploaded,
+    source: assetsOss,
+    publicBase: `${env.publicBaseUrl}/${remote}/`,
+  }, null, 2));
+};
+
 const setBlockPublicAccess = async (client, enabled) => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <PublicAccessBlockConfiguration>
@@ -239,25 +291,26 @@ const cmdConfigureBucket = async () => {
   ]);
   console.log("CORS updated");
 
-  // Public read only for webpage + shared brand prefixes
+  // Public read for webpage, shared brand, and mini program content images
   const policy = {
     Version: "1",
     Statement: [
       {
-        Sid: "PublicReadWebpageAndSharedBrand",
+        Sid: "PublicReadWebpageSharedBrandMiniprogram",
         Effect: "Allow",
         Principal: "*",
         Action: ["oss:GetObject"],
         Resource: [
           `acs:oss:*:*:${env.bucket}/${webpagePrefix(env)}/*`,
           `acs:oss:*:*:${env.bucket}/${sharedPrefix(env)}/brand/*`,
+          `acs:oss:*:*:${env.bucket}/${miniprogramPrefix(env)}/*`,
         ],
       },
     ],
   };
   try {
     await client.putBucketPolicy(env.bucket, policy);
-    console.log("bucket policy: public-read for webpage + shared/brand");
+    console.log("bucket policy: public-read for webpage + shared/brand + apps/miniprogram");
   } catch (error) {
     console.warn("bucket policy skipped:", error.message);
   }
@@ -286,6 +339,9 @@ try {
       break;
     case "sync-website-images":
       await cmdSyncWebsiteImages();
+      break;
+    case "sync-miniprogram-images":
+      await cmdSyncMiniprogramImages();
       break;
     case "init-layout":
       await cmdInitLayout();

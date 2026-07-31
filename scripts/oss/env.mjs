@@ -60,6 +60,9 @@ export const webpagePrefix = (env = getOssEnv({ requireKeys: false })) =>
 export const sharedPrefix = (env = getOssEnv({ requireKeys: false })) =>
   `${env.rootPrefix}/shared`;
 
+export const miniprogramPrefix = (env = getOssEnv({ requireKeys: false })) =>
+  `${env.rootPrefix}/apps/miniprogram`;
+
 export const assertEnvFileExists = () => {
   const candidates = [
     path.join(lanxinEnvRoot, "aliyun/oss.env"),

@@ -28,6 +28,7 @@ lanxin/
     leadshunter/
     internal-expense/
     wecom/
+    miniprogram/        # 微信小程序内容图（公开读；品牌图仍在小程序包内）
   tmp/                  # 临时上传，可定期清理
 ```
 
@@ -46,8 +47,9 @@ node scripts/oss/cli.mjs ping
 
 ```bash
 node scripts/oss/cli.mjs init-layout          # 创建目录占位
-node scripts/oss/cli.mjs configure-bucket     # CORS + 公开读策略（webpage/shared/brand）
+node scripts/oss/cli.mjs configure-bucket     # CORS + 公开读（webpage/shared/brand/miniprogram）
 node scripts/oss/cli.mjs sync-website-images  # 同步 images/generated 与 images/logo
+node scripts/oss/cli.mjs sync-miniprogram-images  # 同步小程序 assets-oss/（可用 MINIPROGRAM_ROOT）
 node scripts/oss/cli.mjs ls lanxin/webpage/
 node scripts/oss/cli.mjs put ./file.webp lanxin/webpage/images/generated/foo.webp
 node scripts/oss/cli.mjs url lanxin/webpage/images/logo/WEB-logo.svg
@@ -66,3 +68,5 @@ https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/gen
 ```
 
 本地预览仍可用仓库内 `images/`；发布前执行 `sync-website-images` 保证 OSS 与仓库一致。
+
+小程序内容图源在 `../LAN_Wechat_Official_miniProgram/assets-oss/`，同步命令 `sync-miniprogram-images`；微信后台须把本桶公开域名加入 downloadFile 合法域名（见小程序仓 `docs/oss.md`）。

@@ -18,8 +18,9 @@ alwaysApply: true
 - 公司根前缀：`lanxin/`
   - `lanxin/webpage/images/` — 官网公开图片（generated / logo）
   - `lanxin/shared/brand/` — 跨产品品牌资产
-  - `lanxin/apps/*` — 各业务资产
-  - `lanxin/tmp/` — 临时文件
+ - `lanxin/apps/miniprogram/` — 微信小程序内容图（公开读）
+ - `lanxin/apps/*` — 各业务资产
+ - `lanxin/tmp/` — 临时文件
 
 ## Agent 怎么用
 
@@ -29,6 +30,7 @@ node scripts/oss/cli.mjs ls lanxin/
 node scripts/oss/cli.mjs init-layout
 node scripts/oss/cli.mjs configure-bucket
 node scripts/oss/cli.mjs sync-website-images
+node scripts/oss/cli.mjs sync-miniprogram-images
 node scripts/oss/cli.mjs put <local> <objectKey>
 ```
 
