@@ -136,6 +136,7 @@ const dict = {
     "footer.tax": "统一社会信用代码：91510100MAEP9GMR9R",
     "footer.address":
       "中国（四川）自由贸易试验区成都高新区新程南一路19号3栋15层1501-1504号",
+    "footer.beian": "蜀ICP备2026002396号",
     "footer.copy": "Copyright © 2026 兰芯云朵. 保留所有权利.",
   },
   "zh-Hant": {
@@ -232,6 +233,7 @@ const dict = {
     "footer.tax": "統一社會信用代碼：91510100MAEP9GMR9R",
     "footer.address":
       "中國（四川）自由貿易試驗區成都高新區新程南一路19號3棟15層1501-1504號",
+    "footer.beian": "蜀ICP备2026002396号",
     "footer.copy": "Copyright © 2026 蘭芯雲朵. 保留所有權利.",
   },
   en: {
@@ -335,6 +337,7 @@ const dict = {
     "footer.tax": "Unified Social Credit Code: 91510100MAEP9GMR9R",
     "footer.address":
       "1501-1504, Floor 15, Building 3, No. 19 Xincheng South 1st Road, High-tech Zone, Chengdu, China (Sichuan) Pilot Free Trade Zone",
+    "footer.beian": "蜀ICP备2026002396号",
     "footer.copy": "Copyright © 2026 LAN Cloud AI. All rights reserved.",
   },
 };
