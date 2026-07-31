@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -45,8 +46,8 @@ required(productPage.includes('href="../"'), "The product page must provide a re
 required(productPage.includes('<script>document.documentElement.classList.add("js");</script>'), "The product page must progressively enhance its mobile menu.");
 required(productPage.includes('<meta name="theme-color" content="#eef3ff" media="(prefers-color-scheme: light)" />'), "The product page needs a light theme-color meta tag.");
 required(productPage.includes('<meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />'), "The product page needs a dark theme-color meta tag.");
-required(!productPage.includes('<link rel="preload" as="image" href="../images/generated/leadshunter-page/lh-appstore-hero-overview-v2.png"'), "Hero preload must not force a duplicate PNG download.");
-required(productPage.includes('imagesrcset="../images/generated/leadshunter-page/lh-appstore-hero-overview-v2-768.webp'), "Hero preload must select a responsive WebP candidate.");
+required(!productPage.includes(`rel="preload" as="image" href="${OSS_IMAGES_BASE}/generated/leadshunter-page/lh-appstore-hero-overview-v2.png"`), "Hero preload must not force a duplicate PNG download.");
+required(productPage.includes(`imagesrcset="${OSS_IMAGES_BASE}/generated/leadshunter-page/lh-appstore-hero-overview-v2-768.webp`), "Hero preload must select a responsive WebP candidate.");
 for (const asset of appStoreVisuals) {
   for (const variant of ["-768.webp", ".webp", "-768.png"]) {
     required(productPage.includes(`${asset}${variant}`), `${asset} is missing responsive source ${variant}`);

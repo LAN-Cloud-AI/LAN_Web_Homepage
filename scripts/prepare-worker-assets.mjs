@@ -19,6 +19,10 @@ const excludedDirectories = new Set([
 const excludedRelativeDirectories = new Set([
   "images/prompts",
   "images/prototypes",
+  // Website media is served from Aliyun OSS (lanxin/webpage/images/)
+  "images/generated",
+  "images/logo",
+  "images/contact",
 ]);
 
 const excludedRootFiles = new Set([

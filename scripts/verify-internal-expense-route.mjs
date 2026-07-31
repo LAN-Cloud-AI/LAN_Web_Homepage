@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -57,8 +58,8 @@ required(productPage.includes('href="../"'), "产品页必须提供返回兰芯�
 required(productPage.includes('<script>document.documentElement.classList.add("js");</script>'), "移动菜单必须渐进增强。");
 required(productPage.includes('<meta name="theme-color" content="#eef3ff" media="(prefers-color-scheme: light)" />'), "页面需要浅色 theme-color。");
 required(productPage.includes('<meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />'), "页面需要深色 theme-color。");
-required(!productPage.includes('<link rel="preload" as="image" href="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png"'), "Hero 预加载不得强制重复下载 PNG。");
-required(productPage.includes('imagesrcset="../images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp'), "Hero 预加载必须选择响应式 WebP 资源。");
+required(!productPage.includes(`rel="preload" as="image" href="${OSS_IMAGES_BASE}/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png"`), "Hero 预加载不得强制重复下载 PNG。");
+required(productPage.includes(`imagesrcset="${OSS_IMAGES_BASE}/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp`), "Hero 预加载必须选择响应式 WebP 资源。");
 const heroPreloadBlocks = [...productPage.matchAll(/<link\s+rel="preload"[\s\S]*?\/>/g)].map((match) => match[0]);
 const lightHeroPreload = heroPreloadBlocks.find((block) => block.includes("cloud-ledger-appstore-overview-v1.webp")) || "";
 const darkHeroPreload = heroPreloadBlocks.find((block) => block.includes("cloud-ledger-appstore-overview-dark-v1.webp")) || "";

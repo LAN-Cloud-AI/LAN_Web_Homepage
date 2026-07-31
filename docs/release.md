@@ -2,40 +2,73 @@
 
 ## 目标
 
-将已验证的官网与 LeadsHunter 产品页发布到 Cloudflare Workers 的 `lan-homepage`，并避免旧的不可变缓存图片继续展示。
+将已验证的官网静态资源发布到阿里云源站 `8.148.22.108`（SSH 别名 `lanxin-official`），由本机 Nginx 提供静态文件与源站 HTTPS；Cloudflare 橙云代理提供边缘 CDN / TLS。
+
+## 架构
+
+- DNS：Cloudflare `lancloudtech.com` / `www` → A `8.148.22.108`，**Proxied（橙云）**
+- 边缘 HTTPS：Cloudflare；源站回源：SSL/TLS **Full (Strict)**（源站 Let’s Encrypt）
+- 站点根：`/var/www/lancloudtech.com`
+- 内容：`scripts/prepare-worker-assets.mjs` 产出的 `dist/`（排除 mocks、prompts、docs 等）
+- 图片：阿里云 OSS（可不经 CF，见 `docs/oss.md`）
 
 ## 常规流程
 
-1. 在本地运行 README 中的全部验证命令，并确认 `git diff --check` 没有输出。
-2. 明确本次提交只包含生产代码、实际引用的图片和可追溯 Prompt；不要提交 `mocks/leadshunter/`、`images/prototypes/`、Python 缓存或本地 QA 截图。
-3. 提交并推送 `main`：
+1. 在本地运行 README 中的验证命令，并确认 `git diff --check` 没有输出。
+2. 明确本次提交只包含生产代码、实际引用的图片和可追溯 Prompt；不要提交 `mocks/`、`images/prototypes/`、Python 缓存或本地 QA 截图。
+3. 同步图片到 OSS，再打包并校验：
 
    ```bash
-   git push origin main
+   node scripts/oss/cli.mjs sync-website-images
+   node scripts/prepare-worker-assets.mjs
+   node scripts/verify-worker-assets.mjs
    ```
 
-4. Cloudflare Workers Build 连接 `main` 后，在 Dashboard → Workers & Pages → `lan-homepage` → Deployments 中确认该提交状态为 **Success**。
-5. 用正式域名验证首页和 `/leadshunter/`；至少检查 HTML、CSS、JavaScript 与首屏 / 产品页关键 WebP 图。
+   HTML 中的图片路径应指向
+   `https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/...`
+   （可用 `node scripts/oss/rewrite-html-assets.mjs` 批量改写）。`dist/` 不再打包本地 `images/generated|logo|contact`。
+
+4. 同步到源站：
+
+   ```bash
+   rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
+   ```
+
+5. 用正式域名验证：
+
+   - `https://lancloudtech.com/`
+   - `https://lancloudtech.com/leadshunter/`
+   - `https://lancloudtech.com/internal-expense/`
+   - `https://lancloudtech.com/contact/wecom/`
+   - 页脚备案号可见
 
 ## 缓存策略
 
-HTML、CSS 和 JavaScript 应重新验证；生成图通常使用长时间 `immutable` 缓存。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用；紧急发布可使用版本化 URL 参数。这会让已访问用户请求一个新的资源 URL。随后可在 Cloudflare Dashboard → Cache → Purge Cache → Custom Purge 中按完整 URL 清理相关边缘缓存，但它**不能**覆盖用户浏览器已保存的 `immutable` 本地缓存。不要因为视觉更新而执行全站 Purge Everything。
+Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。橙云下 Cloudflare 会缓存符合规则的边缘资源；图片主要在 OSS。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用。必要时在 Cloudflare Dashboard → Caching → Custom Purge 按 URL 清边缘缓存（不能清浏览器 `immutable` 本地缓存）。
 
-## Git 自动部署未触发时
+## Cloudflare 角色
 
-先在 Dashboard 核对 Worker 名、生产分支和 Git 连接。确认 `lan-homepage` 后，使用已登录的 Wrangler 或设置 `CLOUDFLARE_API_TOKEN`。先运行受版本控制的打包脚本；它会生成只含生产静态文件的 `dist/`，而 `wrangler.jsonc` 只允许上传该目录。这样可以避免把 `.git/`、Mock、Prompt、内部文档与本地 QA 资料误当作静态资源，也能避免超大 Git pack 触发 Workers 的单资源限制：
+- **橙云 CDN**：`lancloudtech.com` / `www` 保持 Proxied；SSL/TLS 模式为 **Full (Strict)**。
+- **不要**给 Worker `lan-homepage` 重新绑定正式域名（会抢占 DNS / 路由）。
+- 若需用 API 改 DNS：`source ~/.config/lanxin/bin/load-env.sh cloudflare`（`CLOUDFLARE_API_TOKEN` 已含 Zone DNS Write），可运行 `node scripts/cf-dns-point-origin.mjs`（默认 `proxied: true`；`CF_PROXIED=false` 可临时灰云）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
-```bash
-node scripts/prepare-worker-assets.mjs
-node scripts/verify-worker-assets.mjs
-npx --yes wrangler@latest deploy
-```
+## 证书与运维
 
-Git 连接部署的生产内容以提交到仓库的文件为准；不要把 `wrangler.jsonc` 的 `assets.directory` 改回仓库根目录，也不要跳过 `prepare-worker-assets.mjs`，否则 Wrangler 会将整个 checkout（包括 `.git/`）误判为静态资源目录。
+- 证书目录：`/etc/letsencrypt/live/lancloudtech.com/`
+- 续期：`certbot.timer`（系统已启用）；必要时手动 `certbot renew --dry-run`
+- Nginx 站点：`/etc/nginx/sites-available/lancloudtech.com`
+- 日志：`/var/log/nginx/lancloudtech.*.log`
+- 资源机（约 1.6G RAM）：仅跑 Nginx 静态站，不跑 Docker / Node 常驻进程
 
 ## 失败处理
 
-- Git 自动部署失败：修复后提交新版本，再推送 `main`。
-- 日志出现 `Asset too large`：先运行 `node scripts/prepare-worker-assets.mjs` 与 `node scripts/verify-worker-assets.mjs`；确认 Dashboard 的 Build command 为 `node scripts/prepare-worker-assets.mjs`，且 `wrangler.jsonc` 的 `assets.directory` 为 `./dist`。
-- 同一版本需重跑：在 Cloudflare Deployments 中使用 **Retry build**。
-- 没有 Cloudflare 权限：不要尝试临时预览账号或新建项目；请拥有账号权限的成员在 Dashboard 执行部署 / 重试 / 定向清缓存。
+- `rsync` 失败：检查 SSH 别名 `lanxin-official` 与密钥，确认目标目录权限为 `www-data` 可读。
+- HTTPS 异常：`nginx -t` 后 `systemctl reload nginx`；确认 80/443 安全组放行；Dashboard 确认 SSL 为 Full (Strict)，且 apex/www 仍为橙云指向源站 IP。
+- 证书续期失败：Let’s Encrypt HTTP-01 需能直连源站 80；橙云下一般仍可完成（CF 会回源）。查 `/var/log/letsencrypt/letsencrypt.log`。
+- 本机 dig 若出现 `198.18.x` Fake-IP，改用公网 DNS 或 `curl --resolve`；橙云时公网 A 记录为 Cloudflare Anycast IP，不是 `8.148.22.108`。
+
+## 回滚
+
+1. 临时绕过 CDN：将 apex / www 改为 DNS only（灰云），仍指向 `8.148.22.108`。
+2. 或重新为 `lan-homepage` Worker 绑定自定义域（会离开当前 Nginx 架构）。
+3. 源站 Nginx / OSS 可保留。

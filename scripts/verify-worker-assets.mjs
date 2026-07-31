@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const assetsRoot = path.join(root, "dist");
@@ -19,7 +20,7 @@ const walk = (directory, files = []) => {
   return files;
 };
 
-required(fs.existsSync(assetsRoot), "Worker asset directory is missing. Run node scripts/prepare-worker-assets.mjs first.");
+required(fs.existsSync(assetsRoot), "Asset directory is missing. Run node scripts/prepare-worker-assets.mjs first.");
 
 for (const file of [
   "index.html",
@@ -35,36 +36,30 @@ for (const file of [
   "contact/wecom/index.html",
   "contact/wecom/wecom-card.css",
   "contact/wecom/wecom-card.js",
-  "images/contact/wecom-sales-manager-qr.png",
 ]) {
   required(fs.existsSync(path.join(assetsRoot, file)), `Required production asset is missing: ${file}`);
 }
 
-for (const forbidden of [".git", ".github", ".venv", ".wrangler", "node_modules", "docs", "mocks", "scripts", "images/prompts", "images/prototypes"]) {
-  required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Local-only path leaked into Worker assets: ${forbidden}`);
+for (const forbidden of [".git", ".github", ".venv", ".wrangler", "node_modules", "docs", "mocks", "scripts", "images/prompts", "images/prototypes", "images/generated", "images/logo", "images/contact"]) {
+  required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Local-only path leaked into production assets: ${forbidden}`);
 }
 
 for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENTS.md", "README.md", "design-qa.md"]) {
-  required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Repository file leaked into Worker assets: ${forbidden}`);
+  required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Repository file leaked into production assets: ${forbidden}`);
 }
 
-const references = [];
-for (const source of ["index.html", "leadshunter/index.html", "internal-expense/index.html", "contact/wecom/index.html"]) {
-  const directory = path.dirname(path.join(assetsRoot, source));
+const htmlSources = ["index.html", "leadshunter/index.html", "internal-expense/index.html", "contact/wecom/index.html"];
+let ossReferences = 0;
+for (const source of htmlSources) {
   const content = fs.readFileSync(path.join(assetsRoot, source), "utf8");
-  const matches = content.match(/(?:(?:\.\.\/)+|\.\/)?images\/[A-Za-z0-9_./-]+\.(?:png|webp|svg)(?:\?[^\s\"'<,)]+)?/g) ?? [];
-  for (const reference of new Set(matches)) {
-    const file = reference.split("?")[0];
-    references.push({ source, reference, path: path.resolve(directory, file) });
-  }
-}
-
-for (const reference of references) {
-  required(fs.existsSync(reference.path), `Referenced Worker asset is missing: ${reference.source} → ${reference.reference}`);
+  required(!/(?:(?:\.\.\/)+|\.\/)images\//.test(content), `${source} still uses relative local images/ paths; rewrite to OSS.`);
+  const matches = content.match(new RegExp(`${OSS_IMAGES_BASE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/[A-Za-z0-9_./-]+\\.(?:png|webp|svg)`, "g")) ?? [];
+  required(matches.length > 0, `${source} must reference OSS images under ${OSS_IMAGES_BASE}/`);
+  ossReferences += new Set(matches).size;
 }
 
 const files = walk(assetsRoot);
 const oversized = files.filter((file) => fs.statSync(file).size > maxWorkerAssetBytes);
-required(oversized.length === 0, `Worker static assets exceed 25 MiB: ${oversized.map((file) => path.relative(assetsRoot, file)).join(", ")}`);
+required(oversized.length === 0, `Production static assets exceed 25 MiB: ${oversized.map((file) => path.relative(assetsRoot, file)).join(", ")}`);
 
-console.log(`Worker static asset verification passed: ${files.length} files, ${references.length} image references.`);
+console.log(`Production asset verification passed: ${files.length} files, ${ossReferences} OSS image references.`);

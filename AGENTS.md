@@ -51,7 +51,6 @@ node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
-npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.jsonc
 node --check main.js
 node --check i18n.js
 node --check leadshunter/leadshunter.js
@@ -65,4 +64,15 @@ git diff --check
 
 ## 发布
 
-优先让 Cloudflare Workers Build 从 GitHub `main` 自动发布；推送后在 `lan-homepage` 的 Deployments 中确认成功。`scripts/prepare-worker-assets.mjs` 生成唯一允许上传的 `dist/`，`wrangler.jsonc` 必须指向它；不要把仓库根目录作为资产目录。每次发布前运行 `node scripts/verify-worker-assets.mjs`，确认 Git 元数据和本地 QA 文件没有进入 `dist/`。不要把 Git 自动部署与手工 `wrangler deploy` 混用，除非 Git 部署没有触发或用户明确要求一次性手工发布。发布、缓存与回退步骤见 `docs/release.md`。
+生产托管为阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`）；Cloudflare 对 `lancloudtech.com` / `www` 开启橙云代理（CDN）。图片走阿里云 OSS 桶 `lan-cloud-webpage`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。
+
+发布前：
+
+```bash
+node scripts/oss/cli.mjs sync-website-images
+node scripts/prepare-worker-assets.mjs
+node scripts/verify-worker-assets.mjs
+rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
+```
+
+密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。不要重新绑定 Worker `lan-homepage` 到正式域名。详见 `docs/release.md`、`docs/oss.md`。

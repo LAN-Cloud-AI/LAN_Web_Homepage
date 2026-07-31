@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { verifyHero } from "./verify-homepage-hero.mjs";
+import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -22,7 +23,7 @@ verifyHero(page, css);
 
 expectedFailure(
   "hero image alternative text",
-  page.replace('src="./images/generated/brand/brand-hero-precision-atelier.png"\n            alt=""', 'src="./images/generated/brand/brand-hero-precision-atelier.png"\n            alt="兰芯云朵"'),
+  page.replace(`src="${OSS_IMAGES_BASE}/generated/brand/brand-hero-precision-atelier.png"\n            alt=""`, `src="${OSS_IMAGES_BASE}/generated/brand/brand-hero-precision-atelier.png"\n            alt="兰芯云朵"`),
   css,
   "Decorative hero artwork must have empty alternative text."
 );

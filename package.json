@@ -1,0 +1,32 @@
+{
+  "name": "lan_web_homepage",
+  "version": "1.0.0",
+  "description": "兰芯云朵的静态官网，面向汽车零售与售后经营场景；生产托管在阿里云源站 Nginx（`8.148.22.108`），Cloudflare 仅作 DNS（灰云）。",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "oss": "node scripts/oss/cli.mjs",
+    "oss:ping": "node scripts/oss/cli.mjs ping",
+    "oss:sync": "node scripts/oss/cli.mjs sync-website-images",
+    "oss:rewrite": "node scripts/oss/rewrite-html-assets.mjs",
+    "prepare:dist": "node scripts/prepare-worker-assets.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LAN-Cloud-AI/LAN_Web_Homepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/LAN-Cloud-AI/LAN_Web_Homepage/issues"
+  },
+  "homepage": "https://github.com/LAN-Cloud-AI/LAN_Web_Homepage#readme",
+  "dependencies": {
+    "ali-oss": "^6.23.0",
+    "dotenv": "^17.4.2"
+  }
+}

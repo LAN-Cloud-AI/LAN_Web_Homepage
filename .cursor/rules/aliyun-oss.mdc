@@ -1,0 +1,37 @@
+---
+description: 兰芯公司阿里云 OSS 统一存储操作规范（官网图片与公司资产）
+alwaysApply: true
+---
+
+# 阿里云 OSS（lan-cloud-webpage）
+
+## 凭证
+
+- **真相源**：`~/.config/lanxin/env/aliyun/oss.env`（见 `~/.config/lanxin/AGENTS.md`）
+- 本仓库 `.env` 为软链到 `~/.config/lanxin/env/projects/lan-web-homepage.env`；模板见 `.env.example`
+- 操作前确认已加载 `ALIYUN_ACCESS_KEY_ID` / `ALIYUN_ACCESS_KEY_SECRET`
+- **禁止**把 AccessKey 写进源码、文档、提交或聊天复述完整 Secret
+
+## 桶与目录
+
+- Bucket：`lan-cloud-webpage`（`oss-cn-wuhan-lr`）
+- 公司根前缀：`lanxin/`
+  - `lanxin/webpage/images/` — 官网公开图片（generated / logo）
+  - `lanxin/shared/brand/` — 跨产品品牌资产
+  - `lanxin/apps/*` — 各业务资产
+  - `lanxin/tmp/` — 临时文件
+
+## Agent 怎么用
+
+```bash
+node scripts/oss/cli.mjs ping
+node scripts/oss/cli.mjs ls lanxin/
+node scripts/oss/cli.mjs init-layout
+node scripts/oss/cli.mjs configure-bucket
+node scripts/oss/cli.mjs sync-website-images
+node scripts/oss/cli.mjs put <local> <objectKey>
+```
+
+- 官网图片上传后公开 URL：`${ALIYUN_OSS_PUBLIC_BASE_URL}/lanxin/webpage/images/...`
+- 站点生产资源应引用 OSS 公开 URL，不要把大图长期只放在源站磁盘
+- 详细约定见 `docs/oss.md`

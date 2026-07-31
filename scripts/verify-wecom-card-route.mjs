@@ -1,6 +1,7 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = process.cwd();
 const payload = "https://work.weixin.qq.com/ct/wcde518f3ee4ac1b506616d06dedf1fb6f60";
@@ -55,7 +56,7 @@ required(productPage.includes('href="../contact/wecom/">添加企业微信</a>')
 required(card.includes('<html lang="zh-CN">'), "WeCom card must declare Chinese page language.");
 required(card.includes('href="#main-content"'), "WeCom card must provide a skip link.");
 required(card.includes('<main id="main-content" tabindex="-1">'), "WeCom card main content must receive keyboard focus.");
-required(card.includes('src="../../images/contact/wecom-sales-manager-qr.png"'), "WeCom card must use the local QR image.");
+required(card.includes(`src="${OSS_IMAGES_BASE}/contact/wecom-sales-manager-qr.png"`), "WeCom card must use the OSS QR image.");
 required(!card.includes("work.weixin.qq.com"), "WeCom card must not offer a direct enterprise-WeChat jump.");
 required(!card.includes("打开企业微信"), "WeCom card must not present an external-enterprise-WeChat button.");
 required(card.includes('<div class="qr-tile">'), "WeCom QR must be a scan-only image tile, not a link.");
