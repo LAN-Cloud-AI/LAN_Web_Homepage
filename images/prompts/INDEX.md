@@ -1,11 +1,12 @@
 # Prompt 索引
 
-> 共 **74** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **80** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
 | [品牌与通用](./brand/) (`brand`) | 6 |
 | [云朵记账](./internal-expense/) (`internal-expense`) | 6 |
+| [AI 课程](./ai-course/) (`ai-course`) | 6 |
 | [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 20 |
 | [VECT 理解](./vect/) (`vect`) | 11 |
 | [TACT 调度](./tact/) (`tact`) | 11 |
@@ -23,6 +24,17 @@
 | [`brand-method-six-pillars`](./brand/brand-method-six-pillars.md) | 六要素方法论面板 | 3:2 | 方法论/关于页 |
 | [`brand-logo-lockup-ui`](./brand/brand-logo-lockup-ui.md) | 侧栏品牌锁头 UI | 1:1 | Favicon周边/导航素材 |
 | [`brand-store-switcher`](./brand/brand-store-switcher.md) | 门店切换器顶栏 | 21:9 | 通用组件条 |
+
+## AI 课程
+
+| ID | 标题 | 画幅 | 用途 |
+| --- | --- | --- | --- |
+| [`ai-course-hero-path-v1`](./ai-course/ai-course-hero-path-v1.md) | 课程总览 Hero · 能力进阶路径（浅色） | 16:9 | `/ai-course/` 总览 Hero 浅色 |
+| [`ai-course-hero-path-dark-v1`](./ai-course/ai-course-hero-path-dark-v1.md) | 课程总览 Hero · 能力进阶路径（深色） | 16:9 | `/ai-course/` 总览 Hero 深色 |
+| [`ai-course-fde-stages-v1`](./ai-course/ai-course-fde-stages-v1.md) | FDE 三阶段 · 抽象进程（浅色） | 16:9 | `/ai-course/fde/` 浅色 |
+| [`ai-course-fde-stages-dark-v1`](./ai-course/ai-course-fde-stages-dark-v1.md) | FDE 三阶段 · 抽象进程（深色） | 16:9 | `/ai-course/fde/` 深色 |
+| [`ai-course-mvp-3day-v1`](./ai-course/ai-course-mvp-3day-v1.md) | 三天 MVP · 业务到工具闭环（浅色） | 16:9 | `/ai-course/mvp-3day/` 浅色 |
+| [`ai-course-mvp-3day-dark-v1`](./ai-course/ai-course-mvp-3day-dark-v1.md) | 三天 MVP · 业务到工具闭环（深色） | 16:9 | `/ai-course/mvp-3day/` 深色 |
 
 ## 云朵记账
 

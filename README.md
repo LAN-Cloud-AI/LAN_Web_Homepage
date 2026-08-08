@@ -13,8 +13,10 @@
 - 首页：`/` → `index.html`
 - LeadsHunter 产品页：`/leadshunter/` → `leadshunter/index.html`
 - 云朵记账产品页：`/internal-expense/` → `internal-expense/index.html`
+- AI 课程：`/ai-course/` → `ai-course/index.html`；FDE 公开课表 `/ai-course/fde/`；三天定制课 `/ai-course/mvp-3day/`
 - 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
 - 云朵记账的首页开源卡片与页脚入口均指向站内产品页；公开 GitHub 源码链接仅保留在产品页内。
+- AI 课程的首页「培养」区块与页脚入口均指向站内 `/ai-course/`；公开页仅呈现课表摘要。
 - 首页提供简体、繁體与英文，并跟随系统浅色 / 深色模式；宽屏语言切换位于页脚，移动端位于导航菜单。
 - 首页 Hero 使用 `brand-hero-precision-atelier` 的桌面与移动响应式背景图；LeadsHunter 使用独立的 App Store 风格浅 / 深色产品图组。
 
@@ -31,6 +33,7 @@ python3 -m http.server 18987
 - http://127.0.0.1:18987/
 - http://127.0.0.1:18987/leadshunter/
 - http://127.0.0.1:18987/internal-expense/
+- http://127.0.0.1:18987/ai-course/
 - http://127.0.0.1:18987/contact/wecom/
 
 ## 验证
@@ -44,18 +47,21 @@ node scripts/verify-homepage-hero-regression.mjs
 node scripts/verify-leadshunter-route.mjs
 node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
+node scripts/verify-ai-course-route.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node --check main.js
 node --check i18n.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
+node --check ai-course/ai-course.js
+node --check ai-course/fde/course-summary.js
 node --check contact/wecom/wecom-card.js
 swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-还应在首页、`/leadshunter/` 与 `/internal-expense/` 手动检查桌面、320px 起的移动端、折叠屏、浅 / 深色模式与 `prefers-reduced-motion`，确保没有横向溢出。
+还应在首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 手动检查桌面、320px 起的移动端、折叠屏、浅 / 深色模式与 `prefers-reduced-motion`，确保没有横向溢出。
 
 ## 图片与 Prompt
 

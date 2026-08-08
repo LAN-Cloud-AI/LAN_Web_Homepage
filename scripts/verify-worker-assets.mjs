@@ -33,6 +33,12 @@ for (const file of [
   "internal-expense/index.html",
   "internal-expense/internal-expense.css",
   "internal-expense/internal-expense.js",
+  "ai-course/index.html",
+  "ai-course/ai-course.css",
+  "ai-course/ai-course.js",
+  "ai-course/fde/index.html",
+  "ai-course/fde/course-summary.js",
+  "ai-course/mvp-3day/index.html",
   "contact/wecom/index.html",
   "contact/wecom/wecom-card.css",
   "contact/wecom/wecom-card.js",
@@ -48,7 +54,15 @@ for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENT
   required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Repository file leaked into production assets: ${forbidden}`);
 }
 
-const htmlSources = ["index.html", "leadshunter/index.html", "internal-expense/index.html", "contact/wecom/index.html"];
+const htmlSources = [
+  "index.html",
+  "leadshunter/index.html",
+  "internal-expense/index.html",
+  "ai-course/index.html",
+  "ai-course/fde/index.html",
+  "ai-course/mvp-3day/index.html",
+  "contact/wecom/index.html",
+];
 let ossReferences = 0;
 for (const source of htmlSources) {
   const content = fs.readFileSync(path.join(assetsRoot, source), "utf8");

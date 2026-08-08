@@ -963,6 +963,86 @@ html[data-locale="en"] .flow {
   to { background-position: -100% 0; }
 }
 
+.academy {
+  background: var(--bg);
+}
+
+.academy-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+}
+
+.academy-copy .eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.academy-copy h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.academy-lede {
+  margin: 0.9rem 0 0;
+  max-width: 34rem;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.academy-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.academy-stats li {
+  min-width: 4.5rem;
+}
+
+.academy-stats strong {
+  display: block;
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.academy-stats span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.academy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.academy-visual {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.academy-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
 .open { background: var(--bg-soft); }
 .repo-grid {
   display: grid;
@@ -1350,7 +1430,8 @@ html[data-locale="en"] .flow {
   .js .nav.is-menu-open .nav-links a:nth-child(3) { transition-delay: 0.13s; }
   .js .nav.is-menu-open .nav-links a:nth-child(4) { transition-delay: 0.17s; }
   .js .nav.is-menu-open .nav-links a:nth-child(5) { transition-delay: 0.21s; }
-  .js .nav.is-menu-open .nav-lang-panel { transition-delay: 0.28s; }
+  .js .nav.is-menu-open .nav-links a:nth-child(6) { transition-delay: 0.25s; }
+  .js .nav.is-menu-open .nav-lang-panel { transition-delay: 0.32s; }
 
   html:not(.js) .nav-links {
     order: 3;
@@ -1387,6 +1468,9 @@ html[data-locale="en"] .flow {
   }
   .belief-list { text-align: left; }
   .belief-list li { font-size: 1.15rem; }
+  .academy-panel {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {

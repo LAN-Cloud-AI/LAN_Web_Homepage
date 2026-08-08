@@ -7,13 +7,16 @@
 - 首页：`/` → `index.html`
 - LeadsHunter：`/leadshunter/` → `leadshunter/index.html`
 - 云朵记账：`/internal-expense/` → `internal-expense/index.html`
+- AI 课程：`/ai-course/` → `ai-course/index.html`；FDE 公开课表 `/ai-course/fde/`；三天定制课 `/ai-course/mvp-3day/`
 - 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
 - 首页逻辑与多语言：`main.js`、`i18n.js`
 - LeadsHunter 逻辑：`leadshunter/leadshunter.js`
 - 云朵记账逻辑：`internal-expense/internal-expense.js`
+- AI 课程逻辑：`ai-course/ai-course.js`（FDE 课表数据：`ai-course/fde/course-summary.js`）
 - 站内资源必须使用相对路径；LeadsHunter 页面使用 `../images/...` 和 `../#contact`。
 - LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
+- AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
 
 本地预览：
 
@@ -22,6 +25,7 @@ python3 -m http.server 18987
 ```
 
 - 云朵记账：http://127.0.0.1:18987/internal-expense/
+- AI 课程：http://127.0.0.1:18987/ai-course/
 
 ## 设计与可访问性
 
@@ -49,18 +53,21 @@ node scripts/verify-homepage-hero-regression.mjs
 node scripts/verify-leadshunter-route.mjs
 node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
+node scripts/verify-ai-course-route.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node --check main.js
 node --check i18n.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
+node --check ai-course/ai-course.js
+node --check ai-course/fde/course-summary.js
 node --check contact/wecom/wecom-card.js
 swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-提交前还应手动检查首页、`/leadshunter/` 与 `/internal-expense/` 的桌面、移动端、深色模式和折叠屏，确认没有横向溢出。
+提交前还应手动检查首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 的桌面、移动端、深色模式和折叠屏，确认没有横向溢出。
 
 ## 发布
 

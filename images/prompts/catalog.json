@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 74,
+  "count": 80,
   "items": [
     {
       "id": "lh-appstore-discovery-dashboard-dark-v2",
@@ -741,6 +741,66 @@
       "negative": "purple gradient, neon glow, glassmorphism overload, cyberpunk, sci-fi HUD, dark mode default, stock photo people faces, watermark, blurry text, lorem ipsum Latin-only UI, emoji clutter, cartoon, low contrast, skeuomorphism, heavy drop shadows, rounded-full pill spam, cream terracotta aesthetic, newspaper layout, holographic, robot mascot",
       "output": "images/generated/vect/vect-role-sa-tasks.png",
       "source": "images/prompts/vect/vect-role-sa-tasks.md"
+    },
+    {
+      "id": "ai-course-hero-path-v1",
+      "category": "ai-course",
+      "title": "课程总览 Hero · 能力进阶路径（浅色）",
+      "aspect": "16:9",
+      "prompt": "Premium editorial talent-development visual: three ascending frosted-acrylic platforms on porcelain #F6F7F5 with forge-teal path; no text/logos/people.",
+      "negative": "classroom photo, people, logo, purple gradient, neon, dark mode, cyberpunk, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-hero-path-v1.png",
+      "source": "images/prompts/ai-course/ai-course-hero-path-v1.md"
+    },
+    {
+      "id": "ai-course-hero-path-dark-v1",
+      "category": "ai-course",
+      "title": "课程总览 Hero · 能力进阶路径（深色）",
+      "aspect": "16:9",
+      "prompt": "Dark companion: three ascending platforms on charcoal with luminous forge-teal path; no text/logos/people.",
+      "negative": "white background, people, logo, purple neon, cyberpunk, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-hero-path-dark-v1.png",
+      "source": "images/prompts/ai-course/ai-course-hero-path-dark-v1.md"
+    },
+    {
+      "id": "ai-course-fde-stages-v1",
+      "category": "ai-course",
+      "title": "FDE 三阶段 · 抽象进程（浅色）",
+      "aspect": "16:9",
+      "prompt": "Three horizontal ascending bands for FDE stages on porcelain with forge-teal guide line; no text/logos/people.",
+      "negative": "syllabus cards, people, logo, purple gradient, neon, dark mode, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-fde-stages-v1.png",
+      "source": "images/prompts/ai-course/ai-course-fde-stages-v1.md"
+    },
+    {
+      "id": "ai-course-fde-stages-dark-v1",
+      "category": "ai-course",
+      "title": "FDE 三阶段 · 抽象进程（深色）",
+      "aspect": "16:9",
+      "prompt": "Dark companion three-band FDE progression with luminous forge-teal guide; no text/logos/people.",
+      "negative": "white background, syllabus cards, people, logo, purple neon, cyberpunk, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-fde-stages-dark-v1.png",
+      "source": "images/prompts/ai-course/ai-course-fde-stages-dark-v1.md"
+    },
+    {
+      "id": "ai-course-mvp-3day-v1",
+      "category": "ai-course",
+      "title": "三天 MVP · 业务到工具闭环（浅色）",
+      "aspect": "16:9",
+      "prompt": "Closed loop from business problem to AI MVP capsule on porcelain with forge-teal signal; no text/logos/people.",
+      "negative": "calendar dates, people, sticky-note text, logo, purple gradient, neon, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-mvp-3day-v1.png",
+      "source": "images/prompts/ai-course/ai-course-mvp-3day-v1.md"
+    },
+    {
+      "id": "ai-course-mvp-3day-dark-v1",
+      "category": "ai-course",
+      "title": "三天 MVP · 业务到工具闭环（深色）",
+      "aspect": "16:9",
+      "prompt": "Dark companion closed-loop MVP workshop visual with luminous forge-teal signal; no text/logos/people.",
+      "negative": "white background, calendar dates, people, logo, purple neon, cyberpunk, fake UI typography",
+      "output": "images/generated/ai-course-page/ai-course-mvp-3day-dark-v1.png",
+      "source": "images/prompts/ai-course/ai-course-mvp-3day-dark-v1.md"
     }
   ]
 }
