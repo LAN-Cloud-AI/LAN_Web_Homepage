@@ -238,14 +238,6 @@ a:focus-visible {
   .card-actions { grid-template-columns: 1fr; }
 }
 
-@media (horizontal-viewport-segments: 2), (spanning: single-fold-vertical) {
-  main {
-    width: min(100%, calc(50vw - 1.5rem));
-    max-width: min(31rem, calc(50vw - 1.5rem));
-    margin-inline: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;

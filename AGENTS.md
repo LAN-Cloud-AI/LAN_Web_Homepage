@@ -34,7 +34,7 @@ python3 -m http.server 18987
 
 ## 设计与可访问性
 
-- 最高优先级：320px 起的移动端、折叠屏、浅 / 深色模式与 `prefers-reduced-motion`。
+- 最高优先级：320px 起的移动端、浅 / 深色模式与 `prefers-reduced-motion`。折叠屏只按视口宽度走响应式，不做左右双开 / `viewport-segments` 分栏。
 - 首页正文改动必须同步 `i18n.js` 的简体、繁体和英文；不要把同一文案重复写进图片。
 - 首页 Hero 图是装饰背景：保留完整 `<picture>` 响应式来源、`fetchpriority="high"`、空 `alt`、`aria-hidden` 与不拦截交互的背景层。
 - LeadsHunter 产品图必须保留浅 / 深色 WebP 与 PNG fallback；桌面尺寸上限、圆角裁切和无外阴影是既定视觉约束。
@@ -80,7 +80,7 @@ swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-提交前还应手动检查首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 的桌面、移动端、深色模式和折叠屏，确认没有横向溢出。
+提交前还应手动检查首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 的桌面、移动端与深色模式，确认没有横向溢出（折叠机按对应宽度断点验收即可）。
 
 ## 发布
 

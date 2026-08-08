@@ -798,13 +798,6 @@ button:focus-visible {
   .flow-list li { grid-template-columns: 1.9rem minmax(0, 1fr); }
 }
 
-@media (horizontal-viewport-segments: 2) and (min-width: 620px) {
-  .site-nav {
-    padding-right: max(1.5rem, env(safe-area-inset-right), env(viewport-segment-right 1 0));
-    padding-left: max(1.5rem, env(safe-area-inset-left), env(viewport-segment-left 0 0));
-  }
-}
-
 html.motion-ready .motion-enter {
   opacity: 0;
   transform: translateY(18px);

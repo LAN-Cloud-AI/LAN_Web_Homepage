@@ -120,17 +120,11 @@ export const verifyHero = (page, css) => {
   required(/\bfetchpriority="high"/.test(image), "Hero artwork must load at high priority.");
   required(/\bdecoding="async"/.test(image), "Hero artwork must decode asynchronously.");
 
-  const [foldable, mobileWebp, mobilePng, desktopWebp] = sourceTags(picture);
-  required(sourceTags(picture).length === 4, "Hero picture must retain its complete responsive source chain.");
+  const [mobileWebp, mobilePng, desktopWebp] = sourceTags(picture);
+  required(sourceTags(picture).length === 3, "Hero picture must retain its complete responsive source chain.");
   required(
-    hasAll(foldable, [
-      'media="(horizontal-viewport-segments: 2), (spanning: single-fold-vertical)"',
-      'type="image/webp"',
-      "brand-hero-precision-atelier-768.webp",
-      "brand-hero-precision-atelier-1280.webp",
-      "brand-hero-precision-atelier.webp",
-    ]),
-    "Hero picture must start with the foldable desktop WebP source.",
+    !picture.includes("horizontal-viewport-segments") && !picture.includes("spanning: single-fold"),
+    "Hero picture must not use fold dual-pane source switching; width-based responsive only.",
   );
   required(
     hasAll(mobileWebp, [
@@ -189,10 +183,10 @@ export const verifyHero = (page, css) => {
   required(hasFinalDeclarations(mobileRules.filter((rule) => ruleTargets(rule, "hero")).map((rule) => rule.body), {
     "min-height": "calc(100svh - 3.25rem)",
   }), "Mobile hero needs its responsive minimum height.");
-  const foldableRules = rulesForAnyMedia(css, ["(horizontal-viewport-segments: 2)", "(spanning: single-fold-vertical)"]);
-  required(hasFinalDeclarations(foldableRules.filter((rule) => ruleTargets(rule, "hero-copy")).map((rule) => rule.body), {
-    width: "100%", margin: "0",
-  }) && !foldableRules.some((rule) => rule.prelude.includes(".hero-visual")), "Foldable hero copy must stay inside one pane.");
+  required(
+    !css.includes("horizontal-viewport-segments") && !css.includes("spanning: single-fold"),
+    "Homepage CSS must not use fold dual-pane layout; rely on width breakpoints.",
+  );
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

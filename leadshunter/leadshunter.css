@@ -423,12 +423,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
   .footer-inner { grid-template-columns: 1fr; gap: 0.85rem; }
 }
 
-@media (horizontal-viewport-segments: 2), (spanning: single-fold-vertical) {
-  .hero-grid, .story-grid, .delivery-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: max(2rem, calc(env(viewport-segment-left 1 0) - env(viewport-segment-right 0 0) + 2rem)); }
-  .hero-visual, .delivery-grid .product-visual { width: min(27rem, 100%); margin: 0 auto; }
-  .delivery-grid .product-visual-delivery { width: min(24rem, 100%); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }

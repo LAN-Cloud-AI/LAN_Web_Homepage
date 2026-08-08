@@ -92,14 +92,10 @@ required(productCss.includes("color-scheme: light dark"), "页面必须公开浅
 required(productCss.includes("@media (prefers-color-scheme: dark)"), "页面需要深色主题覆盖层。");
 required(productCss.includes("@media (max-width: 920px)"), "页面需要平板/折叠屏的单栏断点。");
 required(productCss.includes("@media (max-width: 760px)"), "页面需要移动端断点。");
-required(productCss.includes("horizontal-viewport-segments: 2"), "页面需要横向折叠屏安全布局规则。");
-const foldableRuleStart = productCss.indexOf("@media (horizontal-viewport-segments: 2)");
-const foldableRuleEnd = productCss.indexOf("\nhtml.motion-ready", foldableRuleStart);
-const foldableRule = productCss.slice(foldableRuleStart, foldableRuleEnd);
-required(foldableRule.includes("viewport-segment-right"), "横向折叠屏需要避开铰链与安全区。");
-for (const selector of [".hero-grid", ".subscription-grid", ".reimbursement-grid", ".open-grid", ".boundary-grid"]) {
-  required(!foldableRule.includes(selector), `620–920px 横向折叠屏不能强制 ${selector} 变为双栏或多栏。`);
-}
+required(
+  !productCss.includes("horizontal-viewport-segments") && !productCss.includes("spanning: single-fold"),
+  "云朵记账不做折叠屏左右双开，只按宽度响应式适配。",
+);
 required(productCss.includes(".js .product-nav"), "移动菜单需要保留无 JavaScript 回退。");
 const mobileMenuPanelRule = productCss.match(/\.js \.product-nav\s*\{([\s\S]*?)\n\s*\}/)?.[1] || "";
 required(mobileMenuPanelRule.includes("background: var(--page)"), "打开的移动菜单必须使用实体背景遮蔽底层内容。");

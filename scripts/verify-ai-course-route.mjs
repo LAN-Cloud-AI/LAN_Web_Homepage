@@ -120,7 +120,11 @@ required(css.includes("word-break: normal"), "中文需要 normal word-break。"
 required(css.includes("line-break: strict"), "中文需要严格标点断行。");
 required(!css.includes("word-break: keep-all"), "中文页面不得使用 keep-all。");
 required(css.includes(".copy-unit"), "课程页需要 copy-unit 语义断行。");
-required(css.includes("horizontal-viewport-segments: 2"), "课程页需要折叠屏规则。");
+required(css.includes("@media (max-width: 720px)"), "课程页需要移动端响应式断点。");
+required(
+  !css.includes("horizontal-viewport-segments") && !css.includes("spanning: single-fold"),
+  "课程页不做折叠屏左右双开，只按宽度响应式适配。",
+);
 required(css.includes(".lang-switch"), "课程页样式必须包含语言切换。");
 required(css.includes(".footer-lang"), "课程页样式必须包含页脚语言切换区。");
 required(css.includes(".footer-dir"), "课程页样式必须包含首页同构页脚导航。");

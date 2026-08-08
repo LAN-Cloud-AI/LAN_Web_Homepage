@@ -49,9 +49,12 @@
     --focus: #7cc4ff;
   }
 
-  .site-nav a:hover,
-  .menu-toggle:hover {
+  .site-nav a:hover {
     background: rgba(255, 255, 255, 0.08);
+  }
+
+  .menu-toggle:hover {
+    background: color-mix(in srgb, var(--ink) 8%, transparent);
   }
 
   .btn.ghost {
@@ -227,9 +230,78 @@ html[data-locale="en"] .hero h1 .copy-unit {
 
 .menu-toggle {
   display: none;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
+  appearance: none;
   border: 1px solid var(--line);
+  margin: 0;
+  padding: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.menu-toggle:hover {
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.menu-toggle:active {
+  transform: scale(0.92);
+}
+
+.menu-toggle-box {
+  position: relative;
+  display: block;
+  width: 1.15rem;
+  height: 0.9rem;
+}
+
+.menu-toggle-box span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  border-radius: 1px;
+  background: currentColor;
+  transform-origin: center;
+  transition:
+    top 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.25s ease,
+    width 0.35s ease,
+    left 0.35s ease,
+    right 0.35s ease;
+}
+
+.menu-toggle-box span:nth-child(1) { top: 0; }
+.menu-toggle-box span:nth-child(2) { top: calc(50% - 0.75px); }
+.menu-toggle-box span:nth-child(3) { top: calc(100% - 1.5px); }
+
+.site-nav.is-menu-open .menu-toggle {
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.site-nav.is-menu-open .menu-toggle-box span:nth-child(1) {
+  top: calc(50% - 0.75px);
+  transform: rotate(45deg);
+}
+
+.site-nav.is-menu-open .menu-toggle-box span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.35);
+}
+
+.site-nav.is-menu-open .menu-toggle-box span:nth-child(3) {
+  top: calc(50% - 0.75px);
+  transform: rotate(-45deg);
 }
 
 .product-nav {
@@ -245,6 +317,7 @@ html[data-locale="en"] .hero h1 .copy-unit {
   color: var(--muted);
   border-radius: 999px;
   padding: 0.3rem 0.45rem;
+  text-decoration: none;
 }
 
 .product-nav a:hover {
@@ -1129,6 +1202,19 @@ html[data-locale="zh-Hant"] {
     transform: none;
     transition: none;
   }
+
+  .menu-toggle,
+  .menu-toggle-box span,
+  .product-nav,
+  .product-nav a {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .product-nav a {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 a:focus-visible,
@@ -1234,7 +1320,99 @@ button:focus-visible {
     display: inline-flex;
   }
 
-  .product-nav {
+  .js .product-nav {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    max-height: 0;
+    padding:
+      0
+      max(var(--pad), env(safe-area-inset-right, 0px))
+      0
+      max(var(--pad), env(safe-area-inset-left, 0px));
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    font-size: 1rem;
+    text-align: center;
+    transition:
+      max-height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.32s ease,
+      transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+      padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 0.3s ease,
+      box-shadow 0.35s ease,
+      visibility 0s linear 0.4s;
+  }
+
+  .js .site-nav.is-menu-open .product-nav {
+    max-height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px));
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transform: none;
+    padding-top: 0.65rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    border-bottom-color: var(--line);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    transition:
+      max-height 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.35s ease,
+      transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+      padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 0.3s ease,
+      box-shadow 0.35s ease,
+      visibility 0s;
+  }
+
+  .js .site-nav.is-menu-open {
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .js .product-nav a {
+    width: 100%;
+    justify-content: center;
+    opacity: 0;
+    padding: 0.7rem 0.85rem;
+    transform: translateY(12px);
+    border-radius: 4px;
+    transition:
+      opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .js .site-nav.is-menu-open .product-nav a {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .site-nav.is-menu-open .product-nav a:nth-child(1) { transition-delay: 0.05s; }
+  .js .site-nav.is-menu-open .product-nav a:nth-child(2) { transition-delay: 0.09s; }
+  .js .site-nav.is-menu-open .product-nav a:nth-child(3) { transition-delay: 0.13s; }
+  .js .site-nav.is-menu-open .product-nav a:nth-child(4) { transition-delay: 0.17s; }
+  .js .site-nav.is-menu-open .product-nav a:nth-child(5) { transition-delay: 0.21s; }
+
+  html:not(.js) .product-nav {
     display: none;
     position: absolute;
     top: calc(100% + 1px);
@@ -1244,13 +1422,11 @@ button:focus-visible {
     align-items: stretch;
     gap: 0.25rem;
     padding: 0.85rem var(--pad) 1.1rem;
-    background: var(--nav-bg-scrolled);
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
 
-  .site-nav.is-menu-open .product-nav {
+  html:not(.js) .site-nav.is-menu-open .product-nav {
     display: flex;
   }
 
@@ -1335,12 +1511,3 @@ button:focus-visible {
   }
 }
 
-@media (horizontal-viewport-segments: 2), (spanning: single-fold-vertical) {
-  .hero-copy {
-    max-width: min(40rem, 46vw);
-  }
-
-  .hero > .page-shell {
-    width: min(100%, var(--max));
-  }
-}

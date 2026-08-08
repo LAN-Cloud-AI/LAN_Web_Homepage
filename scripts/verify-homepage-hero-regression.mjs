@@ -134,10 +134,10 @@ expectedFailure(
 );
 
 expectedFailure(
-  "partial foldable media override",
+  "fold dual-pane layout regresses in",
   page,
-  `${css}\n@media screen and (horizontal-viewport-segments: 2) { .hero-copy { margin: 3rem; } }\n`,
-  "Foldable hero copy must stay inside one pane.",
+  `${css}\n@media (horizontal-viewport-segments: 2) { .hero { grid-template-columns: 1fr 1fr; } }\n`,
+  "Homepage CSS must not use fold dual-pane layout; rely on width breakpoints.",
 );
 
 expectedFailure(

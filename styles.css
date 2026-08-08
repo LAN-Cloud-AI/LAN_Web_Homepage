@@ -1630,52 +1630,6 @@ html[data-locale="en"] .flow {
   .flow i { display: none; }
 }
 
-/* When a real vertical hinge is exposed, keep a text block or visual inside a
-   single pane instead of allowing key content to sit under the fold. */
-@media (horizontal-viewport-segments: 2), (spanning: single-fold-vertical) {
-  :root {
-    --fold-gap: max(
-      1rem,
-      calc(env(viewport-segment-left 1 0) - env(viewport-segment-right 0 0))
-    );
-  }
-
-  .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: var(--fold-gap);
-    align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    text-align: left;
-  }
-  .hero-copy {
-    width: 100%;
-    margin: 0;
-  }
-  .hero-actions { justify-content: flex-start; }
-
-  .product,
-  .product.reverse,
-  .beliefs-split {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: var(--fold-gap);
-    align-items: center;
-  }
-  .product.reverse { direction: rtl; }
-  .product.reverse > * { direction: ltr; }
-
-  /* The <picture> source switches these panes back to desktop evidence.
-     Keep the real hinge layout wide and never crop it as a phone card. */
-  .product-media > picture:first-of-type { aspect-ratio: 3 / 2; }
-  .product-media > picture:first-of-type img { object-fit: contain; }
-
-  .method .pillars,
-  .repo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--fold-gap);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
