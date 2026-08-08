@@ -1,7 +1,9 @@
 import { applyI18n, resolveLocale, setLocale } from "./i18n.js";
+import { initFooterAccordion } from "./footer-accordion.js";
 import { initWechatShare, refreshWechatShare } from "./wechat-share.js";
 
 applyI18n();
+initFooterAccordion();
 initWechatShare("home", { getLocale: resolveLocale });
 
 document.querySelectorAll(".lang-opt").forEach((btn) => {

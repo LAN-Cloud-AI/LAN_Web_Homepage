@@ -1,7 +1,7 @@
 {
   "name": "lan_web_homepage",
   "version": "1.0.0",
-  "description": "兰芯云朵的静态官网，面向汽车零售与售后经营场景；生产托管在阿里云源站 Nginx（`8.148.22.108`），Cloudflare 仅作 DNS（灰云）。",
+  "description": "兰芯云朵的静态官网：大陆灰云直连阿里云 Nginx；海外（含港澳台）走 global.lancloudtech.com Cloudflare Pages。",
   "main": "main.js",
   "directories": {
     "doc": "docs"
@@ -11,7 +11,15 @@
     "oss:ping": "node scripts/oss/cli.mjs ping",
     "oss:sync": "node scripts/oss/cli.mjs sync-website-images",
     "oss:rewrite": "node scripts/oss/rewrite-html-assets.mjs",
-    "prepare:dist": "node scripts/prepare-worker-assets.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "seo:sync": "node scripts/patch-seo-heads.mjs && node scripts/generate-sitemap.mjs",
+    "seo:verify": "node scripts/verify-seo.mjs",
+    "geo:verify": "node scripts/verify-geo-host.mjs",
+    "prepare:dist": "node scripts/prepare-worker-assets.mjs",
+    "prepare:pages": "node scripts/prepare-pages-assets.mjs",
+    "deploy:pages": "node scripts/deploy-pages.mjs",
+    "deploy:geo-worker": "npx wrangler deploy --config workers/geo/wrangler.toml",
+    "dns:global": "node scripts/cf-dns-global-pages.mjs"
   },
   "repository": {
     "type": "git",

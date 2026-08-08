@@ -1,0 +1,6 @@
+# https://lancloudtech.com/
+User-agent: *
+Allow: /
+
+# Prefer apex canonical host (see <link rel="canonical"> on each page).
+Sitemap: https://lancloudtech.com/sitemap.xml

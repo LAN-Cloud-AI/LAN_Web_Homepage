@@ -9,6 +9,8 @@
 - 云朵记账：`/internal-expense/` → `internal-expense/index.html`
 - AI 课程：`/ai-course/` → `ai-course/index.html`；FDE 公开课表 `/ai-course/fde/`；三天定制课 `/ai-course/mvp-3day/`
 - 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
+- 网站地图：`/sitemap/` → `sitemap/index.html`；机器可读 `sitemap.xml` + `robots.txt`（路由清单见 `site-seo.js`）
+- 海外入口：`https://global.lancloudtech.com/`（Cloudflare Pages 项目 `lan-homepage-global`）；仅 `CN` 留主域，港澳台与其它地区由 `geo-host.js` + Worker `lan-geo` 导向 global；canonical / sitemap 仍用 apex
 - 首页逻辑与多语言：`main.js`、`i18n.js`
 - LeadsHunter 逻辑：`leadshunter/leadshunter.js`
 - 云朵记账逻辑：`internal-expense/internal-expense.js`
@@ -20,7 +22,7 @@
 - AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
 - 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名走 `lan-wechat-jssdk` 的 workers.dev（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
 
-本地预览：
+本地预览（`geo-host.js` 对 localhost 不分流）：
 
 ```bash
 python3 -m http.server 18987
@@ -28,6 +30,7 @@ python3 -m http.server 18987
 
 - 云朵记账：http://127.0.0.1:18987/internal-expense/
 - AI 课程：http://127.0.0.1:18987/ai-course/
+- 强制主域/海外：生产环境加 `?host=cn` / `?host=global`
 
 ## 设计与可访问性
 
@@ -57,11 +60,15 @@ node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
 node scripts/verify-ai-course-route.mjs
 node scripts/verify-wechat-share.mjs
+node scripts/verify-seo.mjs
+node scripts/verify-geo-host.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node --check main.js
 node --check i18n.js
 node --check share-meta.js
+node --check site-seo.js
+node --check geo-host.js
 node --check wechat-share.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
@@ -77,7 +84,7 @@ git diff --check
 
 ## 发布
 
-生产托管为阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`）；Cloudflare 仅作 DNS，`lancloudtech.com` / `www` 为**灰云**直连源站。图片走阿里云 OSS 桶 `lan-cloud-webpage`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`。
+生产双轨：大陆主域 `lancloudtech.com` / `www` → 阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`，Cloudflare **灰云**）；海外（含港澳台）→ `global.lancloudtech.com` Cloudflare Pages。图片走阿里云 OSS 桶 `lan-cloud-webpage`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`；地理分流走 `https://lan-geo.mingxuan400.workers.dev/`。
 
 发布前：
 
@@ -85,7 +92,9 @@ git diff --check
 node scripts/oss/cli.mjs sync-website-images
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
+node scripts/verify-geo-host.mjs
 rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
+npm run deploy:pages
 ```
 
-密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。灰云切换：`CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`。不要重新绑定 Worker `lan-homepage` 到正式域名。详见 `docs/release.md`、`docs/oss.md`。
+密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。灰云切换：`CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`。`global` DNS：`npm run dns:global`。不要重新绑定 Worker `lan-homepage` 到正式主域。详见 `docs/release.md`、`docs/oss.md`。

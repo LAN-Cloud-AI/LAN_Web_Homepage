@@ -1,4 +1,5 @@
 import { resolveLocale } from "../i18n.js";
+import { initFooterAccordion } from "../footer-accordion.js";
 import {
   LOCALE_STORAGE_KEY,
   applyCourseI18n,
@@ -192,4 +193,5 @@ if (shareRoute) {
   initWechatShare(shareRoute, { getLocale: resolveLocale });
 }
 
+initFooterAccordion();
 refreshPage();

@@ -585,7 +585,14 @@ h1 {
 
 .footer-inner strong { color: var(--ink); }
 
-.footer-inner > a:last-child {
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  justify-content: flex-end;
+}
+
+.footer-actions a {
   color: var(--blue);
   font-size: 0.84rem;
   font-weight: 780;
@@ -593,7 +600,7 @@ h1 {
   white-space: nowrap;
 }
 
-.footer-inner > a:last-child:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.footer-actions a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 a:focus-visible,
 button:focus-visible {

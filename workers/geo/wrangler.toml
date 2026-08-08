@@ -1,0 +1,10 @@
+name = "lan-geo"
+main = "src/index.js"
+compatibility_date = "2026-07-28"
+workers_dev = true
+
+# Geo lookup for host steering (apex ↔ global.lancloudtech.com).
+# Clients call this Worker on workers.dev; do not bind zone path routes.
+
+[vars]
+SERVICE_NAME = "lan-geo"

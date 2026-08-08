@@ -301,7 +301,8 @@ h2 { margin-bottom: 1.1rem; font-size: clamp(2rem, 3.8vw, 3.7rem); font-weight: 
 .site-footer { padding: 1.8rem 0 max(1.8rem, env(safe-area-inset-bottom)); background: var(--footer-bg); }
 .footer-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.25rem; }
 .footer-inner p { margin: 0; color: var(--footer-ink); font-size: 0.82rem; line-height: var(--leading-detail); }
-.footer-inner > a:last-child { color: var(--blue); font-size: 0.84rem; font-weight: 780; text-decoration: none; }
+.footer-actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.1rem; justify-content: flex-end; }
+.footer-actions a { color: var(--blue); font-size: 0.84rem; font-weight: 780; text-decoration: none; }
 
 a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 
