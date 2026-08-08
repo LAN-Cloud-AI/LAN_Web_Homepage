@@ -18,6 +18,7 @@
 - 云朵记账的首页开源卡片与页脚入口均指向站内产品页；公开 GitHub 源码链接仅保留在产品页内。
 - AI 课程的首页「培养」区块与页脚入口均指向站内 `/ai-course/`；公开页仅呈现课表摘要。
 - 首页与 AI 课程页均提供简体、繁體与英文，共享同一语言偏好；语言切换均位于页脚（首页移动端另在导航菜单保留一份）。
+- 每个公开 HTML 路由均有独立微信 / OG 分享封面（`images/generated/share/og-*-v2.png`）；微信内分享经 `/api/wechat/jssdk`（Worker `lan-wechat-jssdk`）。
 - 首页 Hero 使用 `brand-hero-precision-atelier` 的桌面与移动响应式背景图；LeadsHunter 使用独立的 App Store 风格浅 / 深色产品图组。
 
 ## 本地预览
@@ -48,10 +49,13 @@ node scripts/verify-leadshunter-route.mjs
 node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
 node scripts/verify-ai-course-route.mjs
+node scripts/verify-wechat-share.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node --check main.js
 node --check i18n.js
+node --check share-meta.js
+node --check wechat-share.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js

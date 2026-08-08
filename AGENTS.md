@@ -18,6 +18,7 @@
 - LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
 - AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
+- 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名 Worker 在 `workers/wechat-jssdk/`（路径路由 `/api/wechat/*`，不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
 
 本地预览：
 
@@ -55,10 +56,13 @@ node scripts/verify-leadshunter-route.mjs
 node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
 node scripts/verify-ai-course-route.mjs
+node scripts/verify-wechat-share.mjs
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node --check main.js
 node --check i18n.js
+node --check share-meta.js
+node --check wechat-share.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js

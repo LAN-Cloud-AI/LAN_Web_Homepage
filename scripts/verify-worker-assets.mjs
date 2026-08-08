@@ -27,6 +27,8 @@ for (const file of [
   "styles.css",
   "main.js",
   "i18n.js",
+  "share-meta.js",
+  "wechat-share.js",
   "leadshunter/index.html",
   "leadshunter/leadshunter.css",
   "leadshunter/leadshunter.js",
@@ -47,7 +49,7 @@ for (const file of [
   required(fs.existsSync(path.join(assetsRoot, file)), `Required production asset is missing: ${file}`);
 }
 
-for (const forbidden of [".git", ".github", ".cursor", ".superpowers", ".venv", ".wrangler", "node_modules", "docs", "mocks", "scripts", "images/prompts", "images/prototypes", "images/generated", "images/logo", "images/contact"]) {
+for (const forbidden of [".git", ".github", ".cursor", ".superpowers", ".venv", ".venv-share", ".wrangler", "node_modules", "docs", "mocks", "scripts", "workers", "images/prompts", "images/prototypes", "images/generated", "images/logo", "images/contact", ".config-templates"]) {
   required(!fs.existsSync(path.join(assetsRoot, forbidden)), `Local-only path leaked into production assets: ${forbidden}`);
 }
 

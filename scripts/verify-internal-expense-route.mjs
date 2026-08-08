@@ -162,7 +162,7 @@ for (const phrase of ["开源订阅与报销管理", "開源訂閱與報銷管�
 }
 
 required(promptIndex.includes("云朵记账"), "Prompt 索引必须记录云朵记账资产组。");
-required(catalog.count === 80, "Prompt catalog 计数必须更新为 80。");
+required(catalog.count === 87, "Prompt catalog 计数必须更新为 87。");
 for (const scene of scenes) {
   const item = catalog.items.find((candidate) => candidate.id === scene);
   required(item, `Prompt catalog 缺少 ${scene}。`);

@@ -40,16 +40,35 @@
    - `https://lancloudtech.com/leadshunter/`
    - `https://lancloudtech.com/internal-expense/`
    - `https://lancloudtech.com/contact/wecom/`
+   - `https://lancloudtech.com/ai-course/`
    - 页脚备案号可见
+   - 各路由 `<head>` 的 `og:image` 指向 OSS `.../images/generated/share/og-*-v2.png`（互不相同）
+
+## 微信分享卡片
+
+1. **链接预览卡**：靠各页静态 `og:*` + `itemprop`；抓取器不跑 JS。改封面必须换版本化文件名（如 `og-home-v2.png`）并更新 HTML / `share-meta.js`，否则微信会强缓存旧图。
+2. **微信内自定义分享**：前端 `wechat-share.js` → `GET /api/wechat/jssdk?url=...` → Worker `lan-wechat-jssdk`（见 `workers/wechat-jssdk/`）。
+3. 部署签名 Worker（与静态站分开）：
+
+   ```bash
+   source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage
+   # 首次：写入 ~/.config/lanxin/env/wechat/oa.env，并 wrangler secret put WECHAT_OA_APP_ID / WECHAT_OA_APP_SECRET
+   cd workers/wechat-jssdk
+   npx wrangler deploy
+   ```
+
+4. 公众号后台把 `lancloudtech.com` 配进 **JS接口安全域名**；密钥不得进仓库。未配置密钥时接口返回 `503`，前端静默降级为 OG 预览卡。
+5. 真机验收：微信内打开各路由 → ··· → 发送给朋友 / 分享到朋友圈；另把链接发给文件传输助手检查预览卡。
 
 ## 缓存策略
 
-Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。橙云下 Cloudflare 会缓存符合规则的边缘资源；图片主要在 OSS。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用。必要时在 Cloudflare Dashboard → Caching → Custom Purge 按 URL 清边缘缓存（不能清浏览器 `immutable` 本地缓存）。
+Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。橙云下 Cloudflare 会缓存符合规则的边缘资源；图片主要在 OSS。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用。必要时在 Cloudflare Dashboard → Caching → Custom Purge 按 URL 清边缘缓存（不能清浏览器 `immutable` 本地缓存）。微信分享预览卡缓存更强，务必版本化 `og:image` 文件名。
 
 ## Cloudflare 角色
 
 - **橙云 CDN**：`lancloudtech.com` / `www` 保持 Proxied；SSL/TLS 模式为 **Full (Strict)**。
 - **不要**给 Worker `lan-homepage` 重新绑定正式域名（会抢占 DNS / 路由）。
+- 微信 JS-SDK 签名使用独立 Worker `lan-wechat-jssdk`，仅绑定路径路由 `lancloudtech.com/api/wechat/*`（及 www）。
 - 若需用 API 改 DNS：`source ~/.config/lanxin/bin/load-env.sh cloudflare`（`CLOUDFLARE_API_TOKEN` 已含 Zone DNS Write），可运行 `node scripts/cf-dns-point-origin.mjs`（默认 `proxied: true`；`CF_PROXIED=false` 可临时灰云）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
 ## 证书与运维

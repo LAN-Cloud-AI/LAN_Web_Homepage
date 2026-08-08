@@ -10,12 +10,15 @@ const excludedDirectories = new Set([
   ".cursor",
   ".superpowers",
   ".venv",
+  ".venv-share",
   ".wrangler",
+  ".config-templates",
   "dist",
   "docs",
   "mocks",
   "node_modules",
   "scripts",
+  "workers",
 ]);
 
 const excludedRelativeDirectories = new Set([

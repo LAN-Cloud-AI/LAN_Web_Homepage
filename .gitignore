@@ -18,3 +18,5 @@ design-qa.md
 # Derived visual artifacts and Python cache
 images/prototypes/
 scripts/__pycache__/
+
+.venv-share/

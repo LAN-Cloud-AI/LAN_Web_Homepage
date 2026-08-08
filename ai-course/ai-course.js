@@ -1,3 +1,4 @@
+import { resolveLocale } from "../i18n.js";
 import {
   LOCALE_STORAGE_KEY,
   applyCourseI18n,
@@ -5,6 +6,13 @@ import {
   getStageMeta,
 } from "./ai-course-i18n.js";
 import { getFdePublicCourses } from "./fde/course-summary.js";
+import { initWechatShare, refreshWechatShare } from "../wechat-share.js";
+
+const courseShareRouteByPage = {
+  hub: "ai-course",
+  fde: "ai-course-fde",
+  mvp: "ai-course-mvp-3day",
+};
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -172,7 +180,16 @@ document.querySelectorAll(".lang-opt").forEach((btn) => {
       /* ignore */
     }
     refreshPage(locale);
+    refreshWechatShare(locale);
   });
 });
+
+const shareRoute =
+  document.body?.dataset?.shareRoute ||
+  courseShareRouteByPage[document.body?.dataset?.coursePage || ""] ||
+  null;
+if (shareRoute) {
+  initWechatShare(shareRoute, { getLocale: resolveLocale });
+}
 
 refreshPage();

@@ -1,11 +1,16 @@
-import { applyI18n, setLocale } from "./i18n.js";
+import { applyI18n, resolveLocale, setLocale } from "./i18n.js";
+import { initWechatShare, refreshWechatShare } from "./wechat-share.js";
 
 applyI18n();
+initWechatShare("home", { getLocale: resolveLocale });
 
 document.querySelectorAll(".lang-opt").forEach((btn) => {
   btn.addEventListener("click", () => {
     const locale = btn.getAttribute("data-locale");
-    if (locale) setLocale(locale);
+    if (locale) {
+      setLocale(locale);
+      refreshWechatShare(locale);
+    }
   });
 });
 

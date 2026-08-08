@@ -1,6 +1,6 @@
 # Prompt 索引
 
-> 共 **80** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **87** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
@@ -12,6 +12,7 @@
 | [TACT 调度](./tact/) (`tact`) | 11 |
 | [移动端](./mobile/) (`mobile`) | 9 |
 | [AI Analyst 判断](./analyst/) (`analyst`) | 3 |
+| [微信 / OG 分享卡](./share/) (`share`) | 7 |
 | [官网营销版式](./marketing/) (`marketing`) | 8 |
 
 ## 品牌与通用
@@ -126,6 +127,19 @@
 | [`analyst-quadrant`](./analyst/analyst-quadrant.md) | 巡检×投诉四象限 | 16:9 | 反常识洞察 |
 | [`analyst-action-layers`](./analyst/analyst-action-layers.md) | 三层行动翻译 | 16:9 | 洞察→动作 |
 
+
+## 微信 / OG 分享卡
+
+| ID | 标题 | 画幅 | 用途 |
+| --- | --- | --- | --- |
+| [`og-home-v2`](./share/og-home-v2.md) | 官网首页微信分享卡 | 1:1 | `/` |
+| [`og-leadshunter-v2`](./share/og-leadshunter-v2.md) | LeadsHunter 微信分享卡 | 1:1 | `/leadshunter/` |
+| [`og-internal-expense-v2`](./share/og-internal-expense-v2.md) | 云朵记账微信分享卡 | 1:1 | `/internal-expense/` |
+| [`og-ai-course-v2`](./share/og-ai-course-v2.md) | AI 课程总览微信分享卡 | 1:1 | `/ai-course/` |
+| [`og-ai-course-fde-v2`](./share/og-ai-course-fde-v2.md) | FDE 课表微信分享卡 | 1:1 | `/ai-course/fde/` |
+| [`og-ai-course-mvp-3day-v2`](./share/og-ai-course-mvp-3day-v2.md) | 三天定制课微信分享卡 | 1:1 | `/ai-course/mvp-3day/` |
+| [`og-wecom-v2`](./share/og-wecom-v2.md) | 企业微信名片微信分享卡 | 1:1 | `/contact/wecom/` |
+
 ## 官网营销版式
 
 | ID | 标题 | 画幅 | 用途 |
@@ -136,5 +150,5 @@
 | [`mkt-compare-before-after`](./marketing/mkt-compare-before-after.md) | Before/After 对比拼贴 | 16:9 | 通用转化模块 |
 | [`mkt-pricing-console`](./marketing/mkt-pricing-console.md) | 开通/套餐控制台风 | 16:9 | SaaS 商业化页 |
 | [`mkt-security-gates`](./marketing/mkt-security-gates.md) | 安全门禁说明 UI | 16:9 | 信任/安全页 |
-| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 备用 OG 概念图（当前站点使用官方 Logo） |
+| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 历史备用概念；线上已改用 `share/og-*-v2` |
 | [`mkt-footer-ecosystem`](./marketing/mkt-footer-ecosystem.md) | 产品生态墙 | 21:9 | 页脚/生态条 |

@@ -1,0 +1,22 @@
+name = "lan-wechat-jssdk"
+main = "src/index.js"
+compatibility_date = "2026-07-28"
+workers_dev = true
+
+# Path routes on the production zone (do NOT bind lan-homepage assets Worker).
+# Requires zone route privileges via CLOUDFLARE_API_TOKEN.
+routes = [
+  { pattern = "lancloudtech.com/api/wechat/*", zone_name = "lancloudtech.com" },
+  { pattern = "www.lancloudtech.com/api/wechat/*", zone_name = "lancloudtech.com" },
+]
+
+# Optional KV for access_token / jsapi_ticket caching.
+# Create once: wrangler kv namespace create WECHAT_CACHE
+# Then paste the id below and uncomment.
+# [[kv_namespaces]]
+# binding = "WECHAT_CACHE"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+# Non-secret flags only. App credentials go into Worker Secrets / .dev.vars.
+SERVICE_NAME = "lan-wechat-jssdk"

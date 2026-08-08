@@ -155,7 +155,7 @@ for (const phrase of [
 }
 
 required(promptIndex.includes("AI 课程"), "Prompt 索引必须记录 AI 课程资产组。");
-required(catalog.count === 80, "Prompt catalog 计数必须更新为 80。");
+required(catalog.count === 87, "Prompt catalog 计数必须更新为 87。");
 for (const scene of scenes) {
   const item = catalog.items.find((candidate) => candidate.id === scene);
   required(item, `Prompt catalog 缺少 ${scene}。`);

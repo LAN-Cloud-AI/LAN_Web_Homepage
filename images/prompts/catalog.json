@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 80,
+  "count": 87,
   "items": [
     {
       "id": "lh-appstore-discovery-dashboard-dark-v2",
@@ -801,6 +801,76 @@
       "negative": "white background, calendar dates, people, logo, purple neon, cyberpunk, fake UI typography",
       "output": "images/generated/ai-course-page/ai-course-mvp-3day-dark-v1.png",
       "source": "images/prompts/ai-course/ai-course-mvp-3day-dark-v1.md"
+    },
+    {
+      "id": "og-home-v2",
+      "category": "share",
+      "title": "官网首页微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-home-v2.png",
+      "source": "images/prompts/share/og-home-v2.md"
+    },
+    {
+      "id": "og-leadshunter-v2",
+      "category": "share",
+      "title": "LeadsHunter 微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-leadshunter-v2.png",
+      "source": "images/prompts/share/og-leadshunter-v2.md"
+    },
+    {
+      "id": "og-internal-expense-v2",
+      "category": "share",
+      "title": "云朵记账微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-internal-expense-v2.png",
+      "source": "images/prompts/share/og-internal-expense-v2.md"
+    },
+    {
+      "id": "og-ai-course-v2",
+      "category": "share",
+      "title": "AI 课程总览微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-ai-course-v2.png",
+      "source": "images/prompts/share/og-ai-course-v2.md"
+    },
+    {
+      "id": "og-ai-course-fde-v2",
+      "category": "share",
+      "title": "FDE 课表微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-ai-course-fde-v2.png",
+      "source": "images/prompts/share/og-ai-course-fde-v2.md"
+    },
+    {
+      "id": "og-ai-course-mvp-3day-v2",
+      "category": "share",
+      "title": "三天定制课微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-ai-course-mvp-3day-v2.png",
+      "source": "images/prompts/share/og-ai-course-mvp-3day-v2.md"
+    },
+    {
+      "id": "og-wecom-v2",
+      "category": "share",
+      "title": "企业微信名片微信分享卡",
+      "aspect": "1:1",
+      "prompt": "Use the official LAN Cloud AI white-background logo (images/logo/WEB-logo.png) as the entire 1:1 WeChat / Open Graph share card.",
+      "negative": "purple gradient, neon glow, cluttered dashboard, real customer data, watermark",
+      "output": "images/generated/share/og-wecom-v2.png",
+      "source": "images/prompts/share/og-wecom-v2.md"
     }
   ]
 }
