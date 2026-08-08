@@ -376,6 +376,12 @@ const htmlLang = {
   en: "en",
 };
 
+export const t = (key, locale = resolveLocale()) => {
+  const resolved = dict[locale] ? locale : "zh-Hans";
+  const table = dict[resolved];
+  return table[key] ?? dict["zh-Hans"][key] ?? null;
+};
+
 export const applyI18n = (locale = resolveLocale()) => {
   const resolved = dict[locale] ? locale : "zh-Hans";
   const table = dict[resolved];

@@ -68,14 +68,6 @@
     background: #222224;
   }
 
-  .site-footer {
-    color: #a1a1a6;
-  }
-
-  .site-footer a:hover {
-    color: var(--ink);
-  }
-
   img {
     opacity: 0.96;
   }
@@ -135,6 +127,15 @@ button {
   word-break: normal;
   line-break: strict;
   overflow-wrap: break-word;
+}
+
+.hero h1 .copy-unit {
+  display: inline;
+  white-space: nowrap;
+}
+
+html[data-locale="en"] .hero h1 .copy-unit {
+  white-space: normal;
 }
 
 .skip-link {
@@ -263,14 +264,63 @@ button {
   color: #fff;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+}
+
+.lang-opt {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0.45rem 0.65rem;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-opt + .lang-opt {
+  border-left: 1px solid var(--line);
+}
+
+.lang-opt:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.lang-opt.is-active {
+  color: #fff;
+  background: var(--btn);
+}
+
+html[data-locale="zh-Hant"] {
+  --font-cjk: "PingFang HK", "PingFang SC";
+  --font-display: var(--font-sf), var(--font-cjk), sans-serif;
+  --font-sans: var(--font-sf), var(--font-cjk), sans-serif;
+}
+
 .hero {
   position: relative;
   min-height: calc(100svh - 3.25rem);
   display: grid;
   align-content: end;
-  padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4rem);
+  justify-items: stretch;
+  padding: clamp(3rem, 8vw, 5.5rem) var(--page-pad-inline-end) clamp(2.5rem, 6vw, 4rem) var(--page-pad-inline-start);
   overflow: hidden;
   isolation: isolate;
+  text-align: left;
 }
 
 .hero-background {
@@ -309,8 +359,26 @@ button {
   }
 }
 
+.hero > .page-shell {
+  width: min(100%, var(--max));
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
 .hero-copy {
   width: min(100%, 40rem);
+  max-width: 40rem;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-copy > * {
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
 }
 
 .eyebrow {
@@ -320,15 +388,18 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--teal);
+  text-align: left;
 }
 
 .hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
-  line-height: 1.05;
+  font-size: clamp(2.35rem, 6.2vw, 4.2rem);
+  line-height: 1.12;
   letter-spacing: -0.035em;
   font-weight: 700;
+  text-align: left;
+  text-wrap: balance;
 }
 
 .hero h1 em {
@@ -338,17 +409,34 @@ button {
 
 .hero-lede {
   margin: 1.15rem 0 0;
-  max-width: 34rem;
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  line-height: 1.55;
+  max-width: 36rem;
+  font-size: clamp(1.02rem, 2.1vw, 1.22rem);
+  line-height: 1.6;
   color: var(--muted);
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.hero-lede .copy-unit {
+  display: inline;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   gap: 0.75rem;
   margin-top: 1.75rem;
+  width: 100%;
+}
+
+.hero .stat-row {
+  width: 100%;
+  max-width: 36rem;
+  margin-top: 2rem;
+  text-align: left;
+  justify-items: start;
 }
 
 .btn {
@@ -852,25 +940,120 @@ button {
   margin-top: 1.5rem;
 }
 
-.site-footer {
-  padding: 2.5rem var(--page-pad-inline-end) 3rem var(--page-pad-inline-start);
+.footer {
+  padding: 0;
+  background: var(--bg-soft);
   border-top: 1px solid var(--line);
-  color: var(--muted);
+  color: #6e6e73;
+  font-size: 0.75rem;
+  line-height: 1.33337;
 }
 
-.site-footer-inner {
-  width: min(100%, var(--max));
-  margin-inline: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding:
+    1.25rem
+    var(--page-pad-inline-end)
+    max(1.75rem, calc(1rem + env(safe-area-inset-bottom, 0px)))
+    var(--page-pad-inline-start);
 }
 
-.site-footer a {
-  color: var(--link);
+.footer-dir {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+  padding: 0.35rem 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-col {
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+
+.footer-col h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.footer-col a {
+  color: #6e6e73;
+  font-size: 0.75rem;
+  font-weight: 400;
+  width: fit-content;
+  min-height: 0;
+  padding: 0.2rem 0;
+  line-height: 1.35;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-legal {
+  padding-top: 0.85rem;
+  display: grid;
+  gap: 0.18rem;
+}
+
+.footer-lang {
+  margin-bottom: 0.4rem;
+}
+
+.footer-lang .lang-opt {
+  min-width: 2.25rem;
+  min-height: 2rem;
+  padding: 0.32rem 0.55rem;
+}
+
+.footer-legal p {
+  margin: 0;
+  color: #6e6e73;
+  font-size: 0.75rem;
+  max-width: 52rem;
+  line-height: 1.35;
+}
+
+.footer-beian {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-beian:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    color: #a1a1a6;
+  }
+
+  .footer-col a {
+    color: #a1a1a6;
+  }
+
+  .footer-col a:hover,
+  .footer-col h3 {
+    color: var(--ink);
+  }
+
+  .footer-legal p {
+    color: #86868b;
+  }
 }
 
 .reveal {
@@ -926,6 +1109,49 @@ button:focus-visible {
   .stat-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .footer-dir {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.5rem;
+    padding: 0 0 0.85rem;
+  }
+
+  .footer-col {
+    gap: 0.1rem;
+  }
+
+  .footer-col h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.875rem;
+  }
+
+  .footer-col a {
+    font-size: 0.8125rem;
+    padding: 0.28rem 0;
+    min-height: 2.5rem;
+  }
+
+  .footer-inner {
+    padding-top: 1rem;
+  }
+
+  .footer-legal {
+    padding-top: 0.75rem;
+  }
+
+  .footer-lang .lang-opt {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .footer-legal p {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 720px) {
@@ -964,11 +1190,27 @@ button:focus-visible {
   .hero {
     min-height: calc(100svh - 3.25rem);
     padding-top: 2.75rem;
+    padding-bottom: 2.25rem;
     align-content: end;
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 10vw, 2.85rem);
+    font-size: clamp(2.05rem, 9.2vw, 2.75rem);
+    line-height: 1.15;
+  }
+
+  .hero-lede {
+    font-size: 1.02rem;
+    line-height: 1.58;
+    max-width: 28rem;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    min-height: 2.85rem;
   }
 
   .lesson-card {
@@ -980,15 +1222,50 @@ button:focus-visible {
 @media (max-width: 420px) {
   .stat-row {
     grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .stat-row dd {
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.95rem, 9.5vw, 2.35rem);
+  }
+
+  .hero h1 .copy-unit {
+    white-space: normal;
+  }
+
+  html[data-locale="zh-Hans"] .hero h1 .copy-unit,
+  html[data-locale="zh-Hant"] .hero h1 .copy-unit {
+    white-space: nowrap;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 340px) {
+  html[data-locale="zh-Hans"] .hero h1 .copy-unit,
+  html[data-locale="zh-Hant"] .hero h1 .copy-unit {
+    white-space: normal;
   }
 }
 
 @media (horizontal-viewport-segments: 2), (spanning: single-fold-vertical) {
   .hero-copy {
     max-width: min(40rem, 46vw);
+  }
+
+  .hero > .page-shell {
+    width: min(100%, var(--max));
   }
 }

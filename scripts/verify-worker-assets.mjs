@@ -36,6 +36,7 @@ for (const file of [
   "ai-course/index.html",
   "ai-course/ai-course.css",
   "ai-course/ai-course.js",
+  "ai-course/ai-course-i18n.js",
   "ai-course/fde/index.html",
   "ai-course/fde/course-summary.js",
   "ai-course/mvp-3day/index.html",

@@ -12,7 +12,8 @@
 - 首页逻辑与多语言：`main.js`、`i18n.js`
 - LeadsHunter 逻辑：`leadshunter/leadshunter.js`
 - 云朵记账逻辑：`internal-expense/internal-expense.js`
-- AI 课程逻辑：`ai-course/ai-course.js`（FDE 课表数据：`ai-course/fde/course-summary.js`）
+- AI 课程逻辑：`ai-course/ai-course.js` + `ai-course/ai-course-i18n.js`（与首页共享 `lancloud.locale`；FDE 课表数据：`ai-course/fde/course-summary.js`）
+- AI 课程页提供简体 / 繁體 / 英文，页脚语言切换与首页一致，并共享 `lancloud.locale`。
 - 站内资源必须使用相对路径；LeadsHunter 页面使用 `../images/...` 和 `../#contact`。
 - LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
@@ -61,6 +62,7 @@ node --check i18n.js
 node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js
+node --check ai-course/ai-course-i18n.js
 node --check ai-course/fde/course-summary.js
 node --check contact/wecom/wecom-card.js
 swift scripts/generate-wecom-qr.swift --verify

@@ -1,3 +1,11 @@
+import {
+  LOCALE_STORAGE_KEY,
+  applyCourseI18n,
+  courseT,
+  getStageMeta,
+} from "./ai-course-i18n.js";
+import { getFdePublicCourses } from "./fde/course-summary.js";
+
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const nav = document.querySelector(".site-nav");
@@ -8,6 +16,13 @@ const setMenuOpen = (open, { restoreFocus = false } = {}) => {
   nav?.classList.toggle("is-menu-open", open);
   document.body.classList.toggle("is-nav-open", open);
   menuToggle?.setAttribute("aria-expanded", open ? "true" : "false");
+  if (menuToggle) {
+    const isOpen = Boolean(open);
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? menuToggle.dataset.closeMenuLabel || "Close menu" : menuToggle.dataset.menuLabel || "Menu"
+    );
+  }
 
   if (open) {
     window.requestAnimationFrame(() => productNav?.querySelector("a")?.focus());
@@ -43,10 +58,12 @@ const onScroll = () => {
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
-const revealItems = document.querySelectorAll(".reveal");
-if (prefersReduced || !("IntersectionObserver" in window)) {
-  revealItems.forEach((item) => item.classList.add("is-in"));
-} else {
+const observeReveals = (scope = document) => {
+  const revealItems = scope.querySelectorAll(".reveal:not(.is-in)");
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-in"));
+    return;
+  }
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -58,7 +75,7 @@ if (prefersReduced || !("IntersectionObserver" in window)) {
     { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
   );
   revealItems.forEach((item) => observer.observe(item));
-}
+};
 
 const escapeHTML = (value) =>
   String(value).replace(/[&<>"']/g, (character) =>
@@ -71,32 +88,12 @@ const escapeHTML = (value) =>
     })[character]
   );
 
-const stageMeta = {
-  foundation: {
-    label: "初阶",
-    title: "AI 与 Agent 应用实践",
-    blurb: "建立可靠使用 AI 与设计任务工作流的基础。",
-    meta: "4 课 · 16 课时",
-  },
-  prototype: {
-    label: "中阶",
-    title: "业务发现与模块化构建",
-    blurb: "从真实业务问题走向可运行的全栈 MVP。",
-    meta: "10 课 · 40 课时",
-  },
-  delivery: {
-    label: "高阶",
-    title: "生产交付与业务落地",
-    blurb: "把 MVP 扩展为可治理、可验证的生产交付。",
-    meta: "7 课 · 28 课时",
-  },
-};
-
-const renderFdeSchedule = () => {
+const renderFdeSchedule = (locale) => {
   const root = document.querySelector("[data-fde-schedule]");
-  const courses = window.FDE_PUBLIC_COURSES;
-  if (!root || !Array.isArray(courses)) return;
+  if (!root) return;
 
+  const courses = getFdePublicCourses(locale);
+  const stageMeta = getStageMeta(locale);
   const order = ["foundation", "prototype", "delivery"];
   const grouped = Object.fromEntries(order.map((key) => [key, []]));
 
@@ -119,7 +116,7 @@ const renderFdeSchedule = () => {
                   .map((item) => `<li class="copy-unit">${escapeHTML(item)}</li>`)
                   .join("")}
               </ul>
-              <p class="lesson-output"><span>主要产出 · </span><span class="copy-unit">${escapeHTML(course.summaryOutput)}</span></p>
+              <p class="lesson-output"><span>${escapeHTML(courseT("fde.outputLabel", locale))}</span><span class="copy-unit">${escapeHTML(course.summaryOutput)}</span></p>
               <p class="lesson-duration">${escapeHTML(course.duration)}</p>
             </div>
           </article>`
@@ -137,22 +134,45 @@ const renderFdeSchedule = () => {
     })
     .join("");
 
-  const nestedReveals = root.querySelectorAll(".reveal");
-  if (prefersReduced || !("IntersectionObserver" in window)) {
-    nestedReveals.forEach((item) => item.classList.add("is-in"));
-  } else {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
-    );
-    nestedReveals.forEach((item) => observer.observe(item));
-  }
+  observeReveals(root);
 };
 
-renderFdeSchedule();
+const refreshStageCards = (locale) => {
+  const stageMeta = getStageMeta(locale);
+  document.querySelectorAll("[data-stage-card]").forEach((card) => {
+    const key = card.getAttribute("data-stage-card");
+    const meta = stageMeta[key];
+    if (!meta) return;
+    const label = card.querySelector("[data-stage-label]");
+    const title = card.querySelector("[data-stage-title]");
+    const blurb = card.querySelector("[data-stage-blurb]");
+    const info = card.querySelector("[data-stage-meta]");
+    if (label) label.textContent = `0${["foundation", "prototype", "delivery"].indexOf(key) + 1} · ${meta.label}`;
+    if (title) title.textContent = meta.title;
+    if (blurb) blurb.textContent = meta.blurb;
+    if (info) info.textContent = meta.meta;
+  });
+};
+
+const refreshPage = (locale) => {
+  const resolved = applyCourseI18n(locale);
+  refreshStageCards(resolved);
+  renderFdeSchedule(resolved);
+  observeReveals(document);
+  return resolved;
+};
+
+document.querySelectorAll(".lang-opt").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const locale = btn.getAttribute("data-locale");
+    if (!locale) return;
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+    } catch {
+      /* ignore */
+    }
+    refreshPage(locale);
+  });
+});
+
+refreshPage();

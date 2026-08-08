@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = process.cwd();
@@ -24,9 +25,11 @@ for (const file of [
   "ai-course/index.html",
   "ai-course/ai-course.css",
   "ai-course/ai-course.js",
+  "ai-course/ai-course-i18n.js",
   "ai-course/fde/index.html",
   "ai-course/fde/course-summary.js",
   "ai-course/mvp-3day/index.html",
+  "i18n.js",
   ...promptSources,
   ...scenes.flatMap((scene) => [
     `images/generated/ai-course-page/${scene}.png`,
@@ -43,6 +46,7 @@ const fde = read("ai-course/fde/index.html");
 const mvp = read("ai-course/mvp-3day/index.html");
 const css = read("ai-course/ai-course.css");
 const js = read("ai-course/ai-course.js");
+const courseI18n = read("ai-course/ai-course-i18n.js");
 const summary = read("ai-course/fde/course-summary.js");
 const home = read("index.html");
 const i18n = read("i18n.js");
@@ -59,25 +63,55 @@ for (const id of ["top", "agenda", "principles", "contact"]) {
   required(mvp.includes(`id="${id}"`), `三天定制课页缺少 #${id}。`);
 }
 
-required(hub.includes("从 AI 应用到"), "课程总览必须使用确认过的主标题。");
-required(hub.includes("一线"), "课程总览必须突出一线 FDE。");
+required(hub.includes('data-course-page="hub"'), "总览页必须声明 data-course-page。");
+required(fde.includes('data-course-page="fde"'), "FDE 页必须声明 data-course-page。");
+required(mvp.includes('data-course-page="mvp"'), "三天课页必须声明 data-course-page。");
+required(hub.includes('type="module" src="./ai-course.js"'), "总览页必须以 module 加载课程脚本。");
+required(fde.includes('type="module" src="../ai-course.js"'), "FDE 页必须以 module 加载课程脚本。");
+required(mvp.includes('type="module" src="../ai-course.js"'), "三天课页必须以 module 加载课程脚本。");
+
+for (const page of [hub, fde, mvp]) {
+  required(page.includes('class="footer"'), "课程页必须使用与首页一致的 footer。");
+  required(page.includes('class="footer-lang"'), "语言切换必须放在 footer。");
+  required(page.includes('data-locale="zh-Hans"'), "课程页必须提供简体切换。");
+  required(page.includes('data-locale="zh-Hant"'), "课程页必须提供繁体切换。");
+  required(page.includes('data-locale="en"'), "课程页必须提供英文切换。");
+  required(page.includes('class="lang-switch"'), "课程页必须有语言切换控件。");
+  required(!page.includes('id="product-nav"') || !page.slice(page.indexOf('id="product-nav"'), page.indexOf("</nav>", page.indexOf('id="product-nav"'))).includes("lang-switch"), "顶栏导航不得再放语言切换。");
+  required(page.includes('data-i18n="footer.company"'), "页脚必须包含公司信息 i18n。");
+  required(page.includes("蜀ICP备2026002396号") || page.includes('data-i18n="footer.beian"'), "页脚必须包含备案号。");
+  required((page.match(/data-i18n=/g) || []).length >= 12, "课程页必须大量使用 data-i18n。");
+}
+
 required(hub.includes('href="./fde/"'), "课程总览必须链到 FDE 子页。");
 required(hub.includes('href="./mvp-3day/"'), "课程总览必须链到三天定制课子页。");
 required(hub.includes('href="../#contact"') || hub.includes('href="../contact/wecom/"'), "课程总览 CTA 必须指向站内联系。");
-required(fde.includes("window.FDE_PUBLIC_COURSES") === false, "FDE 页应通过独立 course-summary.js 注入数据。");
-required(fde.includes('src="./course-summary.js"'), "FDE 页必须加载公开课表数据。");
 required(fde.includes('data-fde-schedule'), "FDE 页必须有课表渲染容器。");
-required(summary.includes("window.FDE_PUBLIC_COURSES"), "公开课表数据必须导出 FDE_PUBLIC_COURSES。");
-required((summary.match(/number: "/g) || []).length === 21, "公开课表必须包含 21 课。");
-required(!summary.includes("示范"), "公开课表不得包含示范细节。");
+required(summary.includes("FDE_PUBLIC_COURSES_BY_LOCALE"), "公开课表必须按 locale 导出。");
+required(summary.includes("getFdePublicCourses"), "公开课表必须提供 getFdePublicCourses。");
+required(summary.includes('"zh-Hans"') && summary.includes('"zh-Hant"') && summary.includes('"en"'), "课表必须包含简繁英三语。");
+required(!summary.includes("示范细节"), "公开课表不得包含示范细节。");
 required(!fde.includes("course-outline"), "公网页不得引用完整教学大纲文件。");
-required(mvp.includes("业务场景识别与 AI 任务定义") || mvp.includes("业务场景识别与AI任务定义"), "三天课必须包含 Day1 主题。");
-required(mvp.includes("DAY"), "三天课必须呈现 Day 标记。");
+required(mvp.includes('data-i18n="mvp.day1Title"'), "三天课 Day1 标题必须走 i18n。");
 required(hub.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-hero-path-v1`), "总览页必须引用 OSS Hero 图。");
 required(fde.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-fde-stages-v1`), "FDE 页必须引用 OSS 阶段图。");
 required(mvp.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-mvp-3day-v1`), "三天课页必须引用 OSS 闭环图。");
 required(!hub.includes("./images/") && !hub.includes("../images/"), "课程页不得使用本地 images/ 相对路径。");
 required(!/(?:github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System)/.test(hub + fde + mvp), "公开入口不得直链课程仓 GitHub。");
+
+required(courseI18n.includes('from "../i18n.js"'), "课程 i18n 必须复用首页 locale 存储。");
+required(courseI18n.includes("LOCALE_STORAGE_KEY"), "课程 i18n 必须共享 locale storage key。");
+required(courseI18n.includes('"zh-Hans"') && courseI18n.includes('"zh-Hant"') && courseI18n.includes("en:"), "课程 i18n 必须包含三语字典。");
+for (const phrase of [
+  "从 AI 应用到一线 FDE",
+  "從 AI 應用到一線 FDE",
+  "From AI application to frontline FDE",
+  "21 课公开课表",
+  "21 課公開課表",
+  "21-lesson public schedule",
+]) {
+  required(courseI18n.includes(phrase), `课程 i18n 缺少文案：${phrase}`);
+}
 
 required(css.includes("color-scheme: light dark"), "课程页必须支持浅/深色。");
 required(css.includes("@media (prefers-color-scheme: dark)"), "课程页需要深色主题。");
@@ -87,9 +121,14 @@ required(css.includes("line-break: strict"), "中文需要严格标点断行。"
 required(!css.includes("word-break: keep-all"), "中文页面不得使用 keep-all。");
 required(css.includes(".copy-unit"), "课程页需要 copy-unit 语义断行。");
 required(css.includes("horizontal-viewport-segments: 2"), "课程页需要折叠屏规则。");
+required(css.includes(".lang-switch"), "课程页样式必须包含语言切换。");
+required(css.includes(".footer-lang"), "课程页样式必须包含页脚语言切换区。");
+required(css.includes(".footer-dir"), "课程页样式必须包含首页同构页脚导航。");
 required(js.includes("menu-toggle"), "课程页需要移动菜单。");
 required(js.includes("IntersectionObserver"), "课程页需要进场动效。");
 required(js.includes("renderFdeSchedule"), "共享脚本必须渲染 FDE 课表。");
+required(js.includes("applyCourseI18n"), "共享脚本必须应用课程 i18n。");
+required(js.includes("getFdePublicCourses"), "共享脚本必须按 locale 读取课表。");
 
 const academyStart = home.indexOf('<section class="section academy" id="academy">');
 required(academyStart >= 0, "首页必须新增 #academy 培养区块。");
@@ -125,4 +164,14 @@ for (const scene of scenes) {
   required(item.source === `images/prompts/ai-course/${scene}.md`, `${scene} catalog 源文件路径不正确。`);
 }
 
-console.log("PASS: AI course routes, public curriculum boundary, homepage academy, and assets are present.");
+const summaryModule = await import(pathToFileURL(path.join(root, "ai-course/fde/course-summary.js")).href);
+for (const locale of ["zh-Hans", "zh-Hant", "en"]) {
+  const courses = summaryModule.getFdePublicCourses(locale);
+  required(Array.isArray(courses) && courses.length === 21, `${locale} 课表必须包含 21 课。`);
+  required(courses.every((course) => course.title && course.summaryObjectives?.length === 2), `${locale} 每课必须有标题与两条收获。`);
+}
+required(summaryModule.getFdePublicCourses("zh-Hans")[0].title.includes("基本概念"), "简体课表内容异常。");
+required(summaryModule.getFdePublicCourses("zh-Hant")[0].title.includes("基本概念"), "繁体课表内容异常。");
+required(summaryModule.getFdePublicCourses("en")[0].title.toLowerCase().includes("agent"), "英文课表内容异常。");
+
+console.log("PASS: AI course routes, trilingual i18n, public curriculum boundary, and assets are present.");
