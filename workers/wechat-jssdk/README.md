@@ -2,9 +2,15 @@
 
 Cloudflare Worker that signs WeChat Official Account JS-SDK configs for `lancloudtech.com`.
 
+Site DNS is **grey-cloud** (direct to origin Nginx). The browser calls this Worker on **workers.dev**, not via a zone path route.
+
 ## Endpoint
 
-`GET /api/wechat/jssdk?url=<encoded absolute page URL without hash>`
+Production (used by [`wechat-share.js`](../../wechat-share.js)):
+
+`GET https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk?url=<encoded absolute page URL without hash>`
+
+Also accepts path `/jssdk` for local `wrangler dev`.
 
 Returns:
 
@@ -17,7 +23,7 @@ Returns:
 }
 ```
 
-Allowed origins: `https://lancloudtech.com`, `https://www.lancloudtech.com`.
+Signed page URLs must be `https://lancloudtech.com` or `https://www.lancloudtech.com` (no hash).
 
 ## Secrets
 
@@ -29,13 +35,10 @@ WECHAT_OA_APP_ID=...
 WECHAT_OA_APP_SECRET=...
 ```
 
-Aggregate into `~/.config/lanxin/env/projects/lan-web-homepage.env`, then:
-
 ```bash
 source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage
-cd workers/wechat-jssdk
-npx wrangler secret put WECHAT_OA_APP_ID
-npx wrangler secret put WECHAT_OA_APP_SECRET
+npx wrangler secret put WECHAT_OA_APP_ID --config workers/wechat-jssdk/wrangler.toml
+npx wrangler secret put WECHAT_OA_APP_SECRET --config workers/wechat-jssdk/wrangler.toml
 ```
 
 ## Deploy

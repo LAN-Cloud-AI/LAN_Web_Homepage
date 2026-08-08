@@ -18,7 +18,7 @@
 - LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
 - AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
-- 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名 Worker 在 `workers/wechat-jssdk/`（路径路由 `/api/wechat/*`，不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
+- 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名走 `lan-wechat-jssdk` 的 workers.dev（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
 
 本地预览：
 
@@ -77,7 +77,7 @@ git diff --check
 
 ## 发布
 
-生产托管为阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`）；Cloudflare 对 `lancloudtech.com` / `www` 开启橙云代理（CDN）。图片走阿里云 OSS 桶 `lan-cloud-webpage`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。
+生产托管为阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`）；Cloudflare 仅作 DNS，`lancloudtech.com` / `www` 为**灰云**直连源站。图片走阿里云 OSS 桶 `lan-cloud-webpage`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`。
 
 发布前：
 
@@ -88,4 +88,4 @@ node scripts/verify-worker-assets.mjs
 rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
 ```
 
-密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。不要重新绑定 Worker `lan-homepage` 到正式域名。详见 `docs/release.md`、`docs/oss.md`。
+密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。灰云切换：`CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`。不要重新绑定 Worker `lan-homepage` 到正式域名。详见 `docs/release.md`、`docs/oss.md`。

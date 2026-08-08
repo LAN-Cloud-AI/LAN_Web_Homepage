@@ -3,12 +3,8 @@ main = "src/index.js"
 compatibility_date = "2026-07-28"
 workers_dev = true
 
-# Path routes on the production zone (do NOT bind lan-homepage assets Worker).
-# Requires zone route privileges via CLOUDFLARE_API_TOKEN.
-routes = [
-  { pattern = "lancloudtech.com/api/wechat/*", zone_name = "lancloudtech.com" },
-  { pattern = "www.lancloudtech.com/api/wechat/*", zone_name = "lancloudtech.com" },
-]
+# Site traffic is grey-cloud (DNS only) to origin Nginx.
+# JS-SDK clients call this Worker on workers.dev; do not bind zone path routes.
 
 # Optional KV for access_token / jsapi_ticket caching.
 # Create once: wrangler kv namespace create WECHAT_CACHE

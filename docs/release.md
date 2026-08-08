@@ -2,15 +2,16 @@
 
 ## 目标
 
-将已验证的官网静态资源发布到阿里云源站 `8.148.22.108`（SSH 别名 `lanxin-official`），由本机 Nginx 提供静态文件与源站 HTTPS；Cloudflare 橙云代理提供边缘 CDN / TLS。
+将已验证的官网静态资源发布到阿里云源站 `8.148.22.108`（SSH 别名 `lanxin-official`），由本机 Nginx 提供静态文件与 HTTPS（Let’s Encrypt）；Cloudflare **仅 DNS（灰云）**，访客直连源站。
 
 ## 架构
 
-- DNS：Cloudflare `lancloudtech.com` / `www` → A `8.148.22.108`，**Proxied（橙云）**
-- 边缘 HTTPS：Cloudflare；源站回源：SSL/TLS **Full (Strict)**（源站 Let’s Encrypt）
+- DNS：Cloudflare `lancloudtech.com` / `www` → A `8.148.22.108`，**DNS only（灰云）**
+- HTTPS：源站 Let’s Encrypt（RSA，`certbot.timer` 自动续期）
 - 站点根：`/var/www/lancloudtech.com`
 - 内容：`scripts/prepare-worker-assets.mjs` 产出的 `dist/`（排除 mocks、prompts、docs 等）
-- 图片：阿里云 OSS（可不经 CF，见 `docs/oss.md`）
+- 图片：阿里云 OSS（不经 CF，见 `docs/oss.md`）
+- 微信 JS-SDK：Cloudflare Worker `lan-wechat-jssdk` 的 **workers.dev** URL（灰云下不再使用 zone 路径路由）
 
 ## 常规流程
 
@@ -47,14 +48,13 @@
 ## 微信分享卡片
 
 1. **链接预览卡**：靠各页静态 `og:*` + `itemprop`；抓取器不跑 JS。改封面必须换版本化文件名（如 `og-home-v2.png`）并更新 HTML / `share-meta.js`，否则微信会强缓存旧图。
-2. **微信内自定义分享**：前端 `wechat-share.js` → `GET /api/wechat/jssdk?url=...` → Worker `lan-wechat-jssdk`（见 `workers/wechat-jssdk/`）。
+2. **微信内自定义分享**：前端 `wechat-share.js` → `GET https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk?url=...`（见 `workers/wechat-jssdk/`）。
 3. 部署签名 Worker（与静态站分开）：
 
    ```bash
    source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage
    # 首次：写入 ~/.config/lanxin/env/wechat/oa.env，并 wrangler secret put WECHAT_OA_APP_ID / WECHAT_OA_APP_SECRET
-   cd workers/wechat-jssdk
-   npx wrangler deploy
+   npx wrangler deploy --config workers/wechat-jssdk/wrangler.toml
    ```
 
 4. 公众号后台把 `lancloudtech.com` 配进 **JS接口安全域名**；密钥不得进仓库。未配置密钥时接口返回 `503`，前端静默降级为 OG 预览卡。
@@ -62,14 +62,14 @@
 
 ## 缓存策略
 
-Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。橙云下 Cloudflare 会缓存符合规则的边缘资源；图片主要在 OSS。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用。必要时在 Cloudflare Dashboard → Caching → Custom Purge 按 URL 清边缘缓存（不能清浏览器 `immutable` 本地缓存）。微信分享预览卡缓存更强，务必版本化 `og:image` 文件名。
+Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。图片主要在 OSS。图片内容有变化时，优先使用带版本或内容哈希的新文件名，并同步更新 HTML 引用。微信分享预览卡缓存很强，务必版本化 `og:image` 文件名。
 
 ## Cloudflare 角色
 
-- **橙云 CDN**：`lancloudtech.com` / `www` 保持 Proxied；SSL/TLS 模式为 **Full (Strict)**。
-- **不要**给 Worker `lan-homepage` 重新绑定正式域名（会抢占 DNS / 路由）。
-- 微信 JS-SDK 签名使用独立 Worker `lan-wechat-jssdk`，仅绑定路径路由 `lancloudtech.com/api/wechat/*`（及 www）。
-- 若需用 API 改 DNS：`source ~/.config/lanxin/bin/load-env.sh cloudflare`（`CLOUDFLARE_API_TOKEN` 已含 Zone DNS Write），可运行 `node scripts/cf-dns-point-origin.mjs`（默认 `proxied: true`；`CF_PROXIED=false` 可临时灰云）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
+- **灰云 DNS only**：`lancloudtech.com` / `www` → A `8.148.22.108`，`proxied: false`；访客 TLS 直连源站。
+- **不要**给 Worker `lan-homepage` 重新绑定正式域名。
+- 微信 JS-SDK 签名使用独立 Worker `lan-wechat-jssdk` 的 **workers.dev** 地址（不绑 zone 路径路由）。
+- DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（灰云）或省略/`CF_PROXIED=true`（橙云回滚）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
 ## 证书与运维
 
@@ -82,12 +82,11 @@ Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。橙云下 Cloud
 ## 失败处理
 
 - `rsync` 失败：检查 SSH 别名 `lanxin-official` 与密钥，确认目标目录权限为 `www-data` 可读。
-- HTTPS 异常：`nginx -t` 后 `systemctl reload nginx`；确认 80/443 安全组放行；Dashboard 确认 SSL 为 Full (Strict)，且 apex/www 仍为橙云指向源站 IP。
-- 证书续期失败：Let’s Encrypt HTTP-01 需能直连源站 80；橙云下一般仍可完成（CF 会回源）。查 `/var/log/letsencrypt/letsencrypt.log`。
-- 本机 dig 若出现 `198.18.x` Fake-IP，改用公网 DNS 或 `curl --resolve`；橙云时公网 A 记录为 Cloudflare Anycast IP，不是 `8.148.22.108`。
+- HTTPS 异常：`nginx -t` 后 `systemctl reload nginx`；确认安全组放行公网 80/443；灰云下 `curl -IIhttps://lancloudtech.com` 应见 `Server: nginx`。
+- 证书续期失败：Let’s Encrypt HTTP-01 需能直连源站 80。查 `/var/log/letsencrypt/letsencrypt.log`。续期保持 `key_type = rsa`，避免再签易触发旧橙云 525 的 ECDSA/YE 链。
+- 本机 dig 若出现 `198.18.x` Fake-IP，改用未劫持的公共 DNS、源站上 dig，或 `curl --resolve lancloudtech.com:443:8.148.22.108`。
 
 ## 回滚
 
-1. 临时绕过 CDN：将 apex / www 改为 DNS only（灰云），仍指向 `8.148.22.108`。
-2. 或重新为 `lan-homepage` Worker 绑定自定义域（会离开当前 Nginx 架构）。
-3. 源站 Nginx / OSS 可保留。
+1. 恢复橙云：`CF_PROXIED=true node scripts/cf-dns-point-origin.mjs`（需同时恢复 Worker zone 路由，并把 `wechat-share.js` 改回同源 `/api/wechat/jssdk`）。
+2. 源站 Nginx / OSS 可保留。

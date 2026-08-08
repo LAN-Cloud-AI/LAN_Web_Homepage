@@ -87,7 +87,7 @@ const worker = read("workers/wechat-jssdk/src/index.js");
 const prepare = read("scripts/prepare-worker-assets.mjs");
 
 required(shareMeta.includes("SHARE_BY_ROUTE"), "share-meta.js must export SHARE_BY_ROUTE.");
-required(wechatShare.includes("/api/wechat/jssdk"), "wechat-share.js must call the jssdk endpoint.");
+required(wechatShare.includes("workers.dev") && wechatShare.includes("/api/wechat/jssdk"), "wechat-share.js must call the workers.dev jssdk endpoint.");
 required(wechatShare.includes("updateAppMessageShareData"), "wechat-share.js must configure friend share.");
 required(wechatShare.includes("updateTimelineShareData"), "wechat-share.js must configure timeline share.");
 required(worker.includes("WECHAT_OA_APP_ID"), "Worker must read OA AppID secret.");

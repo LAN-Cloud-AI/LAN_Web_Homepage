@@ -1,6 +1,6 @@
 # 兰芯云朵官网 · LAN Cloud AI
 
-兰芯云朵的静态官网，面向汽车零售与售后经营场景；生产托管在阿里云源站 Nginx（`8.148.22.108`），Cloudflare 橙云代理（CDN + HTTPS）。
+兰芯云朵的静态官网，面向汽车零售与售后经营场景；生产托管在阿里云源站 Nginx（`8.148.22.108`），Cloudflare 灰云 DNS 直连源站 HTTPS。
 
 - 正式域名：https://lancloudtech.com
 - 联系邮箱：lance@lancloudtech.com
@@ -18,7 +18,7 @@
 - 云朵记账的首页开源卡片与页脚入口均指向站内产品页；公开 GitHub 源码链接仅保留在产品页内。
 - AI 课程的首页「培养」区块与页脚入口均指向站内 `/ai-course/`；公开页仅呈现课表摘要。
 - 首页与 AI 课程页均提供简体、繁體与英文，共享同一语言偏好；语言切换均位于页脚（首页移动端另在导航菜单保留一份）。
-- 每个公开 HTML 路由均有独立微信 / OG 分享封面（`images/generated/share/og-*-v2.png`）；微信内分享经 `/api/wechat/jssdk`（Worker `lan-wechat-jssdk`）。
+- 每个公开 HTML 路由均有独立微信 / OG 分享封面（`images/generated/share/og-*-v2.png`）；微信内分享签名经 Worker `lan-wechat-jssdk`（workers.dev）。
 - 首页 Hero 使用 `brand-hero-precision-atelier` 的桌面与移动响应式背景图；LeadsHunter 使用独立的 App Store 风格浅 / 深色产品图组。
 
 ## 本地预览
@@ -77,7 +77,7 @@ git diff --check
 
 完整发布、证书与回滚说明见 [docs/release.md](./docs/release.md)。OSS 目录与 Agent 操作见 [docs/oss.md](./docs/oss.md)。
 
-生产：访客 → Cloudflare CDN（橙云）→ 阿里云 Nginx；图片走 OSS 桶 `lan-cloud-webpage`。日常发布：
+生产：访客 → Cloudflare 灰云 DNS → 阿里云 Nginx；图片走 OSS 桶 `lan-cloud-webpage`。日常发布：
 
 ```bash
 node scripts/oss/cli.mjs sync-website-images

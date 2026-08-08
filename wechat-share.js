@@ -1,7 +1,8 @@
 import { getSharePayload } from "./share-meta.js";
 
 const JWEIXIN_SRC = "https://res.wx.qq.com/open/js/jweixin-1.6.0.js";
-const SIGN_ENDPOINT = "/api/wechat/jssdk";
+// Grey-cloud DNS sends site traffic to origin Nginx; JS-SDK signing stays on Workers.
+const SIGN_ENDPOINT = "https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk";
 
 let activeRouteId = null;
 let localeGetter = () => "zh-Hans";
