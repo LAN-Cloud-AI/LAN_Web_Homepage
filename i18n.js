@@ -46,6 +46,8 @@ const dict = {
     "meta.title": "兰芯云朵 · LAN Cloud AI",
     "meta.description":
       "兰芯云朵用 AI 重新定义汽车零售与售后：看见公域信号，理解客户关系，调度车间流转。",
+    "meta.shareTitle": "兰芯云朵",
+    "meta.shareDescription": "汽车经营智能系统",
     "nav.brand": "兰芯云朵",
     "nav.products": "产品",
     "nav.method": "造法",
@@ -153,6 +155,8 @@ const dict = {
     "meta.title": "蘭芯雲朵 · LAN Cloud AI",
     "meta.description":
       "蘭芯雲朵用 AI 重新定義汽車零售與售後：看見公域訊號，理解客戶關係，調度車間流轉。",
+    "meta.shareTitle": "蘭芯雲朵",
+    "meta.shareDescription": "汽車經營智能系統",
     "nav.brand": "蘭芯雲朵",
     "nav.products": "產品",
     "nav.method": "造法",
@@ -260,6 +264,8 @@ const dict = {
     "meta.title": "LAN Cloud AI",
     "meta.description":
       "LAN Cloud AI redefines automotive retail and aftersales with AI: see public signals, understand customer relationships, orchestrate workshop flow.",
+    "meta.shareTitle": "LAN Cloud AI",
+    "meta.shareDescription": "Automotive ops intelligence",
     "nav.brand": "LAN Cloud AI",
     "nav.products": "Products",
     "nav.method": "Method",
@@ -406,11 +412,19 @@ export const applyI18n = (locale = resolveLocale()) => {
   const desc = document.querySelector('meta[name="description"]');
   if (desc && table["meta.description"]) desc.setAttribute("content", table["meta.description"]);
 
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle && title) ogTitle.setAttribute("content", title);
-
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc && table["meta.description"]) ogDesc.setAttribute("content", table["meta.description"]);
+  // Keep share-card fields short; do not overwrite them with longer SEO meta.
+  const shareTitle = table["meta.shareTitle"] || title;
+  const shareDescription = table["meta.shareDescription"] || table["meta.description"];
+  const setMeta = (selector, value) => {
+    if (!value) return;
+    document.querySelectorAll(selector).forEach((el) => el.setAttribute("content", value));
+  };
+  setMeta('meta[property="og:title"]', shareTitle);
+  setMeta('meta[property="og:description"]', shareDescription);
+  setMeta('meta[name="twitter:title"]', shareTitle);
+  setMeta('meta[name="twitter:description"]', shareDescription);
+  setMeta('meta[itemprop="name"]', shareTitle);
+  setMeta('meta[itemprop="description"]', shareDescription);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");

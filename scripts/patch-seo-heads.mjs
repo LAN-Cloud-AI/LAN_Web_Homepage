@@ -94,9 +94,9 @@ for (const route of PUBLIC_ROUTES) {
   let html = fs.readFileSync(file, "utf8");
 
   const share = route.inShareMeta ? SHARE_BY_ROUTE[route.id] : null;
-  const ogDesc = copy.ogDescription || copy.description;
-  const twitterTitle = share?.locales?.["zh-Hans"]?.title || copy.title;
-  const twitterDesc = share?.locales?.["zh-Hans"]?.desc || ogDesc;
+  const shareTitle = share?.locales?.["zh-Hans"]?.title || copy.title;
+  const shareDesc =
+    share?.locales?.["zh-Hans"]?.desc || copy.ogDescription || copy.description;
 
   html = upsertMeta(html, {
     attr: "name",
@@ -112,8 +112,19 @@ for (const route of PUBLIC_ROUTES) {
       `$1\n  <meta property="og:locale:alternate" content="zh_TW" />\n  <meta property="og:locale:alternate" content="en_US" />`
     );
   }
-  html = upsertTwitter(html, "twitter:title", twitterTitle);
-  html = upsertTwitter(html, "twitter:description", twitterDesc);
+  // Share cards stay short; SEO document title/description remain in pageCopy + <title>.
+  if (share) {
+    html = upsertOg(html, "og:title", shareTitle);
+    html = upsertOg(html, "og:description", shareDesc);
+    html = upsertMeta(html, { attr: "itemprop", key: "name", content: shareTitle });
+    html = upsertMeta(html, {
+      attr: "itemprop",
+      key: "description",
+      content: shareDesc,
+    });
+  }
+  html = upsertTwitter(html, "twitter:title", shareTitle);
+  html = upsertTwitter(html, "twitter:description", shareDesc);
 
   const jsonLd = buildWebPageJsonLd(route.id, {
     title: copy.title,

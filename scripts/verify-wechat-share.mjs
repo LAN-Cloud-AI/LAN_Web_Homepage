@@ -1,10 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { SHARE_BY_ROUTE } from "../share-meta.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const exists = (relative) => fs.existsSync(path.join(root, relative));
+
+/** WeChat friend-card title/desc stay on one line when kept short. */
+const MAX_SHARE_TITLE = 16;
+const MAX_SHARE_DESC = 22;
 
 const required = (condition, message) => {
   if (!condition) {
@@ -100,12 +105,48 @@ const urls = new Set();
 for (const route of routes) {
   const html = read(route.html);
   const localImage = `images/generated/share/${path.basename(route.image)}`;
+  const share = SHARE_BY_ROUTE[route.id];
+  required(share, `share-meta.js missing route ${route.id}`);
+  const zh = share.locales["zh-Hans"];
+  required(zh?.title && zh?.desc, `${route.id} needs zh-Hans title/desc`);
+  required(
+    [...zh.title].length <= MAX_SHARE_TITLE,
+    `${route.id} zh title too long for one WeChat card (${[...zh.title].length}>${MAX_SHARE_TITLE}): ${zh.title}`
+  );
+  required(
+    [...zh.desc].length <= MAX_SHARE_DESC,
+    `${route.id} zh desc too long for one WeChat card (${[...zh.desc].length}>${MAX_SHARE_DESC}): ${zh.desc}`
+  );
+  for (const [locale, copy] of Object.entries(share.locales)) {
+    required(
+      [...copy.title].length <= MAX_SHARE_TITLE + 8,
+      `${route.id} ${locale} title too long: ${copy.title}`
+    );
+    required(
+      [...copy.desc].length <= MAX_SHARE_DESC + 10,
+      `${route.id} ${locale} desc too long: ${copy.desc}`
+    );
+  }
   required(exists(localImage), `Missing share image ${localImage}`);
   required(html.includes(`property="og:url" content="${route.url}"`), `${route.id} needs og:url`);
   required(html.includes(`property="og:image" content="${route.image}"`), `${route.id} needs route-specific og:image`);
   required(html.includes(`itemprop="image" content="${route.image}"`), `${route.id} needs itemprop image`);
-  required(html.includes('itemprop="name"'), `${route.id} needs itemprop name`);
-  required(html.includes('itemprop="description"'), `${route.id} needs itemprop description`);
+  required(
+    html.includes(`property="og:title" content="${zh.title}"`),
+    `${route.id} og:title must match short share-meta copy`
+  );
+  required(
+    html.includes(`property="og:description" content="${zh.desc}"`),
+    `${route.id} og:description must match short share-meta copy`
+  );
+  required(
+    html.includes(`itemprop="name" content="${zh.title}"`),
+    `${route.id} itemprop name must match short share-meta copy`
+  );
+  required(
+    html.includes(`itemprop="description" content="${zh.desc}"`),
+    `${route.id} itemprop description must match short share-meta copy`
+  );
   required(html.includes(`data-share-route="${route.id}"`), `${route.id} needs data-share-route`);
   required(read(route.wiredIn).includes(route.wireNeedle), `${route.id} must wire WeChat share via ${route.wiredIn}`);
   const imageName = path.basename(route.image);
@@ -114,6 +155,14 @@ for (const route of routes) {
   images.add(route.image);
   urls.add(route.url);
 }
+
+const i18n = read("i18n.js");
+required(i18n.includes("meta.shareTitle"), "Homepage i18n must define meta.shareTitle.");
+required(i18n.includes("meta.shareDescription"), "Homepage i18n must define meta.shareDescription.");
+required(
+  i18n.includes('meta[property="og:title"]') && i18n.includes("shareTitle"),
+  "Homepage i18n must apply short shareTitle to og:title."
+);
 
 required(images.size === routes.length, "Each route must have a unique og:image.");
 required(urls.size === routes.length, "Each route must have a unique og:url.");
