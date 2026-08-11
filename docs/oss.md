@@ -7,11 +7,12 @@
 | Bucket | `lan-cloud-webpage` |
 | 地域 | 华中1（武汉-本地地域）`oss-cn-wuhan-lr` |
 | Endpoint | `https://oss-cn-wuhan-lr.aliyuncs.com` |
-| 公开基址 | `https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com` |
+| OSS 源站 | `https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com` |
+| 公开基址（CDN） | `https://img.lancloudtech.com` |
 | 根前缀 | `lanxin/` |
 | RAM 用户 | `lan-cloud-oss-agent`（AccessKey 真相源：`~/.config/lanxin/env/aliyun/oss.env`） |
 
-Cloudflare / 源站 Nginx 继续托管 HTML/CSS/JS；**图片等静态媒体走 OSS**。
+Cloudflare / 源站 Nginx 继续托管 HTML/CSS/JS；**图片等静态媒体存 OSS，公开访问一律走阿里云 CDN `img.lancloudtech.com`**（`ALIYUN_OSS_PUBLIC_BASE_URL`）。
 
 ## 目录约定
 
@@ -64,9 +65,9 @@ node scripts/oss/cli.mjs url lanxin/webpage/images/logo/WEB-logo.svg
 生产页面图片 URL 形如：
 
 ```
-https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/generated/...
+https://img.lancloudtech.com/lanxin/webpage/images/generated/...
 ```
 
 本地预览仍可用仓库内 `images/`；发布前执行 `sync-website-images` 保证 OSS 与仓库一致。
 
-小程序内容图源在 `../LAN_Wechat_Official_miniProgram/assets-oss/`，同步命令 `sync-miniprogram-images`；微信后台须把本桶公开域名加入 downloadFile 合法域名（见小程序仓 `docs/oss.md`）。
+小程序内容图源在 `../LAN_Wechat_Official_miniProgram/assets-oss/`，同步命令 `sync-miniprogram-images`；微信后台须把 CDN 域名 `img.lancloudtech.com` 加入 downloadFile 合法域名（见小程序仓 `docs/oss.md`）。

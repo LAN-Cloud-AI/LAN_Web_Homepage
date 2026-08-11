@@ -39,7 +39,7 @@ export const getOssEnv = ({ requireKeys = true } = {}) => {
   };
 
   if (!env.publicBaseUrl) {
-    env.publicBaseUrl = `https://${env.bucket}.${env.region}.aliyuncs.com`;
+    env.publicBaseUrl = "https://img.lancloudtech.com";
   }
 
   if (requireKeys) {

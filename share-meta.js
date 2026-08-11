@@ -1,7 +1,7 @@
 export const SITE_ORIGIN = "https://lancloudtech.com";
 
 export const OSS_SHARE_BASE =
-  "https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/generated/share";
+  "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
 
 /** @typedef {"home"|"leadshunter"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
 

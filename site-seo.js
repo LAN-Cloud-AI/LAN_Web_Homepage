@@ -12,7 +12,7 @@ export const ORGANIZATION = {
   url: `${SITE_ORIGIN}/`,
   logo: {
     "@type": "ImageObject",
-    url: "https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/logo/WEB-logo.svg",
+    url: "https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg",
   },
   email: "lance@lancloudtech.com",
   telephone: "+86-17380566771",

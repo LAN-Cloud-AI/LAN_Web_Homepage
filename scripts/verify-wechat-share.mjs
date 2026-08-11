@@ -19,7 +19,7 @@ const required = (condition, message) => {
 };
 
 const OSS_SHARE =
-  "https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/generated/share";
+  "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
 
 const routes = [
   {

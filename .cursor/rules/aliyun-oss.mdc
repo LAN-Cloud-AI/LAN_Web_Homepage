@@ -34,6 +34,7 @@ node scripts/oss/cli.mjs sync-miniprogram-images
 node scripts/oss/cli.mjs put <local> <objectKey>
 ```
 
-- 官网图片上传后公开 URL：`${ALIYUN_OSS_PUBLIC_BASE_URL}/lanxin/webpage/images/...`
-- 站点生产资源应引用 OSS 公开 URL，不要把大图长期只放在源站磁盘
+- 公开访问基址：`ALIYUN_OSS_PUBLIC_BASE_URL=https://img.lancloudtech.com`（阿里云 CDN；源站仍为桶 `lan-cloud-webpage`）
+- 官网图片上传后公开 URL：`https://img.lancloudtech.com/lanxin/webpage/images/...`
+- 站点生产资源应引用 CDN 公开 URL，不要直链 OSS 源站域名，也不要把大图长期只放在源站磁盘
 - 详细约定见 `docs/oss.md`

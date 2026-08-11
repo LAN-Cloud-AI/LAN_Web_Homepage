@@ -32,7 +32,7 @@
    ```
 
    HTML 中的图片路径应指向
-   `https://lan-cloud-webpage.oss-cn-wuhan-lr.aliyuncs.com/lanxin/webpage/images/...`
+   `https://img.lancloudtech.com/lanxin/webpage/images/...`
    （可用 `node scripts/oss/rewrite-html-assets.mjs` 批量改写）。`dist/` 不再打包本地 `images/generated|logo|contact`。
 
 4. 同步到源站，并部署海外 Pages（及首次/变更时的 geo Worker + global DNS）：
