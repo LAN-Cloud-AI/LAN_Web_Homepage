@@ -10,8 +10,8 @@
 
 ## 站点与路由
 
-- 首页：`/` → `index.html`
-- LeadsHunter 产品页：`/leadshunter/` → `leadshunter/index.html`
+- 首页：`/` → `index.html`（`#leadshunter` 产品卡指向独立官网）
+- LeadsHunter 官网：`https://leadshunter.lancloudtech.com/`；公司站 `/leadshunter/` 仅跳转
 - 云朵记账产品页：`/internal-expense/` → `internal-expense/index.html`
 - AI 课程：`/ai-course/` → `ai-course/index.html`；FDE 公开课表 `/ai-course/fde/`；三天定制课 `/ai-course/mvp-3day/`
 - 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
@@ -19,7 +19,7 @@
 - AI 课程的首页「培养」区块与页脚入口均指向站内 `/ai-course/`；公开页仅呈现课表摘要。
 - 首页与 AI 课程页均提供简体、繁體与英文，共享同一语言偏好；语言切换均位于页脚（首页移动端另在导航菜单保留一份）。
 - 每个公开 HTML 路由均有独立微信 / OG 分享封面（`images/generated/share/og-*-v2.png`）；微信内分享签名经 Worker `lan-wechat-jssdk`（workers.dev）。
-- 首页 Hero 使用 `brand-hero-precision-atelier` 的桌面与移动响应式背景图；LeadsHunter 使用独立的 App Store 风格浅 / 深色产品图组。
+- 首页 Hero 使用 `brand-hero-precision-atelier` 的桌面与移动响应式背景图；线索猎手完整产品介绍在独立官网。
 
 ## 本地预览
 
@@ -32,7 +32,7 @@ python3 -m http.server 18987
 打开：
 
 - http://127.0.0.1:18987/
-- http://127.0.0.1:18987/leadshunter/
+- http://127.0.0.1:18987/leadshunter/（跳转到线索猎手官网）
 - http://127.0.0.1:18987/internal-expense/
 - http://127.0.0.1:18987/ai-course/
 - http://127.0.0.1:18987/contact/wecom/
@@ -56,7 +56,6 @@ node --check main.js
 node --check i18n.js
 node --check share-meta.js
 node --check wechat-share.js
-node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js
 node --check ai-course/fde/course-summary.js
@@ -65,7 +64,7 @@ swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-还应在首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 手动检查桌面、320px 起的移动端、折叠屏、浅 / 深色模式与 `prefers-reduced-motion`，确保没有横向溢出。
+还应在首页、`/internal-expense/` 与 `/ai-course/` 手动检查桌面、320px 起的移动端、折叠屏、浅 / 深色模式与 `prefers-reduced-motion`，确保没有横向溢出。首页线索猎手入口应打开 `https://leadshunter.lancloudtech.com/`。
 
 ## 图片与 Prompt
 

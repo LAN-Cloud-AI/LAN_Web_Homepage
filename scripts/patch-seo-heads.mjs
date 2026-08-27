@@ -17,12 +17,6 @@ const pageCopy = {
       "兰芯云朵用 AI 重新定义汽车零售与售后：看见公域信号，理解客户关系，调度车间流转。",
     ogDescription: "看见 → 理解 → 调度 → 判断。先在真实门店验证，再契约先行地 SaaS 化。",
   },
-  leadshunter: {
-    title: "LeadsHunter 线索猎手 · LAN Cloud AI",
-    description:
-      "LeadsHunter 线索猎手：用 AI 识别公开内容中的真实购车意向，把高价值线索直接交给销售。",
-    ogDescription: "用 AI 识别公开内容中的真实购车意向，把高价值线索直接交给销售。",
-  },
   "internal-expense": {
     title: "云朵记账 · 开源订阅与报销管理 · LAN Cloud AI",
     description:

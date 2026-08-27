@@ -16,7 +16,6 @@ const required = (condition, message) => {
 
 const htmlRoutes = [
   "index.html",
-  "leadshunter/index.html",
   "internal-expense/index.html",
   "ai-course/index.html",
   "ai-course/fde/index.html",

@@ -29,7 +29,6 @@ const home = read("index.html");
 const styles = read("styles.css");
 const main = read("main.js");
 const i18n = read("i18n.js");
-const productPage = read("leadshunter/index.html");
 const card = read("contact/wecom/index.html");
 const cardCss = read("contact/wecom/wecom-card.css");
 const cardJs = read("contact/wecom/wecom-card.js");
@@ -51,7 +50,6 @@ required(main.includes('window.addEventListener("load", onScroll, { once: true }
 required(i18n.includes('"contact.wecom": "添加企业微信"'), "Simplified Chinese needs the WeChat CTA label.");
 required(i18n.includes('"contact.wecom": "新增企業微信"'), "Traditional Chinese needs the WeChat CTA label.");
 required(i18n.includes('"contact.wecom": "Add Work WeChat"'), "English needs the WeChat CTA label.");
-required(productPage.includes('href="../contact/wecom/">添加企业微信</a>'), "LeadsHunter contact actions must link to the official WeChat card.");
 
 required(card.includes('<html lang="zh-CN">'), "WeCom card must declare Chinese page language.");
 required(card.includes('href="#main-content"'), "WeCom card must provide a skip link.");

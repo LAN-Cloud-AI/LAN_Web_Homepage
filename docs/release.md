@@ -51,7 +51,8 @@
    - `https://lancloudtech.com/`
    - `https://global.lancloudtech.com/`（海外；响应头含 `X-Robots-Tag: noindex`）
    - `https://lan-geo.mingxuan400.workers.dev/` 返回 `region`
-   - `https://lancloudtech.com/leadshunter/`
+   - `https://lancloudtech.com/leadshunter/`（应 301 / 跳转到 `https://leadshunter.lancloudtech.com/`）
+   - `https://leadshunter.lancloudtech.com/`
    - `https://lancloudtech.com/internal-expense/`
    - `https://lancloudtech.com/contact/wecom/`
    - `https://lancloudtech.com/ai-course/`
@@ -64,6 +65,7 @@
 1. 路由真相源：`site-seo.js` 的 `PUBLIC_ROUTES`（与 `share-meta.js` 路径对齐，另含 `/sitemap/`）。
 2. 变更公开路由后执行：`npm run seo:sync`（同步各页 head + 重写 `sitemap.xml`），再 `npm run seo:verify`。
 3. 生产需可访问：`/robots.txt`、`/sitemap.xml`、`/sitemap/`；canonical 一律使用 apex `https://lancloudtech.com`。
+4. 线索猎手独立官网 `https://leadshunter.lancloudtech.com/` 由 `LH_WebPage` 单独部署；公司站只保留首页产品卡、页脚与网站地图索引，以及 `/leadshunter/` 跳转。
 
 ## 微信分享卡片
 

@@ -4,6 +4,9 @@ export { SITE_ORIGIN };
 
 export const SITE_NAME = "兰芯云朵 · LAN Cloud AI";
 
+/** 线索猎手独立官网；公司站 /leadshunter/ 仅作跳转，不再作为产品页。 */
+export const LEADSHUNTER_SITE = "https://leadshunter.lancloudtech.com/";
+
 export const ORGANIZATION = {
   "@type": "Organization",
   "@id": `${SITE_ORIGIN}/#organization`,
@@ -24,10 +27,10 @@ export const ORGANIZATION = {
     addressRegion: "四川",
     addressCountry: "CN",
   },
-  sameAs: ["https://github.com/LAN-Cloud-AI"],
+  sameAs: ["https://github.com/LAN-Cloud-AI", LEADSHUNTER_SITE],
 };
 
-/** @typedef {"home"|"leadshunter"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} SeoRouteId */
+/** @typedef {"home"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} SeoRouteId */
 
 /**
  * Public indexable routes. Paths must stay in sync with SHARE_BY_ROUTE (+ sitemap HTML).
@@ -46,14 +49,6 @@ export const PUBLIC_ROUTES = [
     path: "/",
     html: "index.html",
     priority: "1.0",
-    changefreq: "weekly",
-    inShareMeta: true,
-  },
-  {
-    id: "leadshunter",
-    path: "/leadshunter/",
-    html: "leadshunter/index.html",
-    priority: "0.9",
     changefreq: "weekly",
     inShareMeta: true,
   },
@@ -150,6 +145,19 @@ export const buildWebPageJsonLd = (routeId, page) => {
           }
         : {}),
       ...(page.type ? { additionalType: page.type } : {}),
+      ...(routeId === "home"
+        ? {
+            mentions: [
+              {
+                "@type": "SoftwareApplication",
+                name: "线索猎手",
+                alternateName: "LeadsHunter",
+                url: LEADSHUNTER_SITE,
+                author: { "@id": ORGANIZATION["@id"] },
+              },
+            ],
+          }
+        : {}),
     },
   ];
 

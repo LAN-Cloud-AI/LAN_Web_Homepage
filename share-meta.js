@@ -3,7 +3,7 @@ export const SITE_ORIGIN = "https://lancloudtech.com";
 export const OSS_SHARE_BASE =
   "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
 
-/** @typedef {"home"|"leadshunter"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
+/** @typedef {"home"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
 
 /**
  * Canonical share cards for each HTML route.
@@ -29,26 +29,6 @@ export const SHARE_BY_ROUTE = {
       en: {
         title: "LAN Cloud AI",
         desc: "Automotive ops intelligence",
-      },
-    },
-  },
-  leadshunter: {
-    path: "/leadshunter/",
-    image: `${OSS_SHARE_BASE}/og-leadshunter-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
-    locales: {
-      "zh-Hans": {
-        title: "LeadsHunter",
-        desc: "AI 发现购车线索",
-      },
-      "zh-Hant": {
-        title: "LeadsHunter",
-        desc: "AI 發現購車線索",
-      },
-      en: {
-        title: "LeadsHunter",
-        desc: "AI finds car-buying leads",
       },
     },
   },

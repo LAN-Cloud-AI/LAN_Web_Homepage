@@ -4,20 +4,19 @@
 
 ## 站点与路由
 
-- 首页：`/` → `index.html`
-- LeadsHunter：`/leadshunter/` → `leadshunter/index.html`
+- 首页：`/` → `index.html`（产品卡 `#leadshunter` 指向独立官网）
+- LeadsHunter：公开入口 `https://leadshunter.lancloudtech.com/`；公司站 `/leadshunter/` 仅 301 / 跳转，不再作为产品页
 - 云朵记账：`/internal-expense/` → `internal-expense/index.html`
 - AI 课程：`/ai-course/` → `ai-course/index.html`；FDE 公开课表 `/ai-course/fde/`；三天定制课 `/ai-course/mvp-3day/`
 - 企业微信名片：`/contact/wecom/` → `contact/wecom/index.html`
 - 网站地图：`/sitemap/` → `sitemap/index.html`；机器可读 `sitemap.xml` + `robots.txt`（路由清单见 `site-seo.js`）
 - 海外入口：`https://global.lancloudtech.com/`（Cloudflare Pages 项目 `lan-homepage-global`）；仅 `CN` 留主域，港澳台与其它地区由 `geo-host.js` + Worker `lan-geo` 导向 global；canonical / sitemap 仍用 apex
 - 首页逻辑与多语言：`main.js`、`i18n.js`
-- LeadsHunter 逻辑：`leadshunter/leadshunter.js`
 - 云朵记账逻辑：`internal-expense/internal-expense.js`
 - AI 课程逻辑：`ai-course/ai-course.js` + `ai-course/ai-course-i18n.js`（与首页共享 `lancloud.locale`；FDE 课表数据：`ai-course/fde/course-summary.js`）
 - AI 课程页提供简体 / 繁體 / 英文，页脚语言切换与首页一致，并共享 `lancloud.locale`。
-- 站内资源必须使用相对路径；LeadsHunter 页面使用 `../images/...` 和 `../#contact`。
-- LeadsHunter 的公开导航与 CTA 一律指向本项目的 `/leadshunter/` 官网路由；不得以 GitHub 仓库作为公开入口。
+- 站内资源必须使用相对路径。
+- LeadsHunter 的公开导航与 CTA 一律指向独立官网 `https://leadshunter.lancloudtech.com/`；不得以 GitHub 仓库或已退役的 `/leadshunter/` 产品页作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
 - AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
 - 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名走 `lan-wechat-jssdk` 的 workers.dev（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
@@ -28,6 +27,7 @@
 python3 -m http.server 18987
 ```
 
+- 线索猎手跳转：http://127.0.0.1:18987/leadshunter/ → `https://leadshunter.lancloudtech.com/`
 - 云朵记账：http://127.0.0.1:18987/internal-expense/
 - AI 课程：http://127.0.0.1:18987/ai-course/
 - 强制主域/海外：生产环境加 `?host=cn` / `?host=global`
@@ -70,7 +70,6 @@ node --check share-meta.js
 node --check site-seo.js
 node --check geo-host.js
 node --check wechat-share.js
-node --check leadshunter/leadshunter.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js
 node --check ai-course/ai-course-i18n.js
@@ -80,7 +79,7 @@ swift scripts/generate-wecom-qr.swift --verify
 git diff --check
 ```
 
-提交前还应手动检查首页、`/leadshunter/`、`/internal-expense/` 与 `/ai-course/` 的桌面、移动端与深色模式，确认没有横向溢出（折叠机按对应宽度断点验收即可）。
+提交前还应手动检查首页、`/internal-expense/` 与 `/ai-course/` 的桌面、移动端与深色模式，确认没有横向溢出（折叠机按对应宽度断点验收即可）。首页线索猎手入口应打开独立官网。
 
 ## 发布
 

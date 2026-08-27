@@ -31,14 +31,6 @@ const routes = [
     wireNeedle: 'initWechatShare("home"',
   },
   {
-    id: "leadshunter",
-    html: "leadshunter/index.html",
-    url: "https://lancloudtech.com/leadshunter/",
-    image: `${OSS_SHARE}/og-leadshunter-v2.png`,
-    wiredIn: "leadshunter/index.html",
-    wireNeedle: 'initWechatShare("leadshunter")',
-  },
-  {
     id: "internal-expense",
     html: "internal-expense/index.html",
     url: "https://lancloudtech.com/internal-expense/",

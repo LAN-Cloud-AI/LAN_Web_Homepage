@@ -34,6 +34,11 @@ export const preparePagesAssets = async () => {
     /* fallback */
   }
   await fs.writeFile(path.join(dist, "_headers"), headers, "utf8");
+  try {
+    await fs.copyFile(path.join(root, "_redirects"), path.join(dist, "_redirects"));
+  } catch {
+    /* optional */
+  }
   return dist;
 };
 
