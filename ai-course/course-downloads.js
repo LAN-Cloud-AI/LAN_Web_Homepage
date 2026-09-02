@@ -2,11 +2,11 @@
  * WorkBuddy 课堂资源下载：
  * 国内走阿里云 CDN img.lancloudtech.com（灰云 DNS，不经 CF 代理）；
  * 海外走 Cloudflare R2 自定义域名 files.lancloudtech.com（橙云）。
- * GitHub 课程仓只作同步源，不得作为公开下载入口。
+ * GitHub 课程仓 main 只作同步源，不得作为公开下载入口。
  */
 
 export const COURSE_DOWNLOAD_GITHUB_REPO = "LAN-Cloud-AI/LAN_AI_Course_System";
-export const COURSE_DOWNLOAD_GITHUB_REF = "codex/workbuddy-complete-course-release";
+export const COURSE_DOWNLOAD_GITHUB_REF = "main";
 export const COURSE_DOWNLOAD_GITHUB_DIR =
   "docs/demos/lanxin-workbuddy-beginner-2h/WorkBuddy完整入门-发布包";
 

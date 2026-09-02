@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
-import { COURSE_DOWNLOADS } from "../ai-course/course-downloads.js";
+import { COURSE_DOWNLOADS, COURSE_DOWNLOAD_GITHUB_REF } from "../ai-course/course-downloads.js";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -105,6 +105,7 @@ required(hub.includes('data-course-download="textbook"'), "课程总览必须提
 required(hub.includes('data-course-download="practice"'), "课程总览必须提供学员练习包下载。");
 required(hub.includes(COURSE_DOWNLOADS.textbook.cn) && hub.includes(COURSE_DOWNLOADS.practice.cn), "国内下载必须走 img.lancloudtech.com OSS/CDN。");
 required(hub.includes(COURSE_DOWNLOADS.textbook.global) && hub.includes(COURSE_DOWNLOADS.practice.global), "海外下载必须走 files.lancloudtech.com R2。");
+required(COURSE_DOWNLOAD_GITHUB_REF === "main", "课堂包同步源必须是课程仓 main，不得跟功能分支。");
 required(COURSE_DOWNLOADS.textbook.cn.startsWith("https://img.lancloudtech.com/"), "国内教材不得走 Cloudflare 站点域名。");
 required(COURSE_DOWNLOADS.practice.cn.startsWith("https://img.lancloudtech.com/"), "国内练习包不得走 Cloudflare 站点域名。");
 required(!COURSE_DOWNLOADS.textbook.cn.includes("global.lancloudtech.com"), "国内下载不得走海外 Pages。");

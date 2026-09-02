@@ -1,28 +1,8 @@
 import { spawn } from "node:child_process";
 import { loadR2WebsiteEnv } from "./env.mjs";
 
-export const putR2Object = async ({ key, file, contentType, contentDisposition, cacheControl }) => {
-  const env = loadR2WebsiteEnv();
-  const args = [
-    "wrangler",
-    "r2",
-    "object",
-    "put",
-    `${env.bucket}/${key}`,
-    "--remote",
-    "--file",
-    file,
-    "--content-type",
-    contentType,
-  ];
-  if (contentDisposition) {
-    args.push("--content-disposition", contentDisposition);
-  }
-  if (cacheControl) {
-    args.push("--cache-control", cacheControl);
-  }
-
-  const output = await new Promise((resolve, reject) => {
+const runWranglerPut = (env, args) =>
+  new Promise((resolve, reject) => {
     const child = spawn("npx", args, {
       cwd: "/tmp",
       env: {
@@ -48,12 +28,43 @@ export const putR2Object = async ({ key, file, contentType, contentDisposition, 
     });
   });
 
-  return {
-    bucket: env.bucket,
-    key,
-    url: `${env.publicBaseUrl}/${key.split("/").map(encodeURIComponent).join("/")}`,
-    ...output,
-  };
+export const putR2Object = async ({ key, file, contentType, contentDisposition, cacheControl, retries = 3 }) => {
+  const env = loadR2WebsiteEnv();
+  const args = [
+    "wrangler",
+    "r2",
+    "object",
+    "put",
+    `${env.bucket}/${key}`,
+    "--remote",
+    "--file",
+    file,
+    "--content-type",
+    contentType,
+  ];
+  if (contentDisposition) {
+    args.push("--content-disposition", contentDisposition);
+  }
+  if (cacheControl) {
+    args.push("--cache-control", cacheControl);
+  }
+
+  let lastError;
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      const output = await runWranglerPut(env, args);
+      return {
+        bucket: env.bucket,
+        key,
+        url: `${env.publicBaseUrl}/${key.split("/").map(encodeURIComponent).join("/")}`,
+        ...output,
+      };
+    } catch (error) {
+      lastError = error;
+      console.warn(`R2 put ${key} attempt ${attempt}/${retries} failed: ${error.message}`);
+    }
+  }
+  throw lastError;
 };
 
 export const purgeR2PublicUrls = async (urls) => {
