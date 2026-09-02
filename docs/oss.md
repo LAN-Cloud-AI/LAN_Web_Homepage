@@ -80,3 +80,5 @@ https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/
 ```
 
 `img.lancloudtech.com` 的 Cloudflare DNS 必须保持 **灰云**（CNAME → 阿里云 CDN `*.w.kunlunaq.com`）。不要橙云代理该主机，否则国内下载会绕进 CF。维护命令：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后 `npm run dns:img`。海外页的同一入口走课程仓 GitHub raw，不经该 CDN。
+
+桶防盗链必须显式包含 apex `https://lancloudtech.com`。`https://*.lancloudtech.com` **匹配不到**主域，从官网点击下载会返回 `0003-00000503` / `You are denied by bucket referer policy`。空 Referer 保持允许（地址栏直开教材）。更新：`node scripts/oss/cli.mjs configure-bucket`。

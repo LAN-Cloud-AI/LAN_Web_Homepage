@@ -66,7 +66,7 @@ export const syncAiCourseDownloads = async () => {
       headers: {
         "Content-Type": item.contentType,
         "Content-Disposition": contentDisposition(item),
-        "Cache-Control": "public, max-age=3600",
+        "Cache-Control": item.id === "textbook" ? "public, max-age=300, must-revalidate" : "public, max-age=3600",
         "x-oss-object-acl": "public-read",
       },
     });

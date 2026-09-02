@@ -267,6 +267,26 @@ const setBlockPublicAccess = async (client, enabled) => {
   });
 };
 
+const PUBLIC_REFERERS = [
+  "https://lancloudtech.com",
+  "http://lancloudtech.com",
+  "https://*.lancloudtech.com",
+  "http://*.lancloudtech.com",
+  "https://store.lancloudtech.com",
+  "http://store.lancloudtech.com",
+  "https://servicewechat.com",
+  "https://*.servicewechat.com",
+  "http://127.0.0.1:18987",
+  "http://localhost:18987",
+  "http://127.0.0.1:8010",
+  "http://localhost:8010",
+];
+
+const putBucketRefererAllowlist = async (client, env) => {
+  // Apex https://lancloudtech.com is NOT matched by https://*.lancloudtech.com.
+  await client.putBucketReferer(env.bucket, true, PUBLIC_REFERERS);
+};
+
 const cmdConfigureBucket = async () => {
   const env = getOssEnv();
   const client = createOssClient();
@@ -285,6 +305,7 @@ const cmdConfigureBucket = async () => {
       allowedOrigin: [
         "https://lancloudtech.com",
         "https://www.lancloudtech.com",
+        "https://global.lancloudtech.com",
         "http://127.0.0.1:18987",
         "http://localhost:18987",
       ],
@@ -295,6 +316,13 @@ const cmdConfigureBucket = async () => {
     },
   ]);
   console.log("CORS updated");
+
+  try {
+    await putBucketRefererAllowlist(client, env);
+    console.log("referer allowlist: apex + *.lancloudtech.com + WeChat + local preview");
+  } catch (error) {
+    console.warn("bucket referer change skipped:", error.message);
+  }
 
   // Public read for webpage, shared brand, and mini program content images
   const policy = {
