@@ -1,6 +1,7 @@
 /**
- * Pull WorkBuddy classroom packs from the private course repo and publish to OSS.
- * Domestic pages then download via img.lancloudtech.com (Aliyun CDN, CF DNS only).
+ * Pull WorkBuddy classroom packs from the private course repo and publish to:
+ * - Aliyun OSS (domestic: img.lancloudtech.com, grey-cloud DNS only)
+ * - Cloudflare R2 (overseas: files.lancloudtech.com, orange-cloud)
  */
 import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
@@ -8,6 +9,7 @@ import os from "node:os";
 import path from "node:path";
 import { COURSE_DOWNLOADS, COURSE_DOWNLOAD_GITHUB_REF, COURSE_DOWNLOAD_GITHUB_REPO } from "../../ai-course/course-downloads.js";
 import { createOssClient } from "./client.mjs";
+import { purgeR2PublicUrls, putR2Object } from "../r2/put-object.mjs";
 
 const rfc5987Filename = (filename) =>
   `UTF-8''${encodeURIComponent(filename).replace(/['()*]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`)}`;
@@ -70,14 +72,31 @@ export const syncAiCourseDownloads = async () => {
         "x-oss-object-acl": "public-read",
       },
     });
+    const r2 = await putR2Object({
+      key: item.r2Key,
+      file: dest,
+      contentType: item.contentType,
+      contentDisposition: contentDisposition(item),
+      cacheControl: item.id === "textbook" ? "public, max-age=300, must-revalidate" : "public, max-age=3600",
+    });
     uploaded.push({
       id: item.id,
       key: item.ossKey,
+      r2Key: item.r2Key,
       bytes,
       url: item.cn,
+      globalUrl: item.global,
       etag: result.res?.headers?.etag,
+      r2Url: r2.url,
     });
-    console.log(`uploaded ${item.ossKey} (${bytes} bytes)`);
+    console.log(`uploaded OSS ${item.ossKey} and R2 ${item.r2Key} (${bytes} bytes)`);
+  }
+
+  try {
+    await purgeR2PublicUrls(uploaded.map((item) => item.globalUrl));
+    console.log("purged Cloudflare cache for files.lancloudtech.com objects");
+  } catch (error) {
+    console.warn("R2 cache purge skipped:", error.message);
   }
 
   await fs.rm(tmp, { recursive: true, force: true });

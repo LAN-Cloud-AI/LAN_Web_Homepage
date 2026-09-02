@@ -104,17 +104,16 @@ required(hub.includes('href="#resources"'), "课程总览导航必须链到资�
 required(hub.includes('data-course-download="textbook"'), "课程总览必须提供离线教材下载。");
 required(hub.includes('data-course-download="practice"'), "课程总览必须提供学员练习包下载。");
 required(hub.includes(COURSE_DOWNLOADS.textbook.cn) && hub.includes(COURSE_DOWNLOADS.practice.cn), "国内下载必须走 img.lancloudtech.com OSS/CDN。");
-required(hub.includes(COURSE_DOWNLOADS.textbook.global) && hub.includes(COURSE_DOWNLOADS.practice.global), "海外下载必须走课程仓 GitHub raw。");
+required(hub.includes(COURSE_DOWNLOADS.textbook.global) && hub.includes(COURSE_DOWNLOADS.practice.global), "海外下载必须走 files.lancloudtech.com R2。");
 required(COURSE_DOWNLOADS.textbook.cn.startsWith("https://img.lancloudtech.com/"), "国内教材不得走 Cloudflare 站点域名。");
 required(COURSE_DOWNLOADS.practice.cn.startsWith("https://img.lancloudtech.com/"), "国内练习包不得走 Cloudflare 站点域名。");
 required(!COURSE_DOWNLOADS.textbook.cn.includes("global.lancloudtech.com"), "国内下载不得走海外 Pages。");
-required(COURSE_DOWNLOADS.textbook.global.includes("/raw/"), "海外教材必须是 GitHub raw 下载，而不是 blob 预览页。");
-required(COURSE_DOWNLOADS.practice.global.includes("/raw/"), "海外练习包必须是 GitHub raw 下载，而不是 blob 预览页。");
-const hubWithoutGlobalHref = hub.replace(/data-href-global="[^"]+"/g, "");
-required(
-  !/github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System/.test(hubWithoutGlobalHref),
-  "课程仓 GitHub 只能作为海外下载备链，不能当作默认公开入口。",
-);
+required(!COURSE_DOWNLOADS.practice.cn.includes("files.lancloudtech.com"), "国内下载不得走海外 R2。");
+required(COURSE_DOWNLOADS.textbook.global.startsWith("https://files.lancloudtech.com/"), "海外教材必须走 Cloudflare R2 自定义域名。");
+required(COURSE_DOWNLOADS.practice.global.startsWith("https://files.lancloudtech.com/"), "海外练习包必须走 Cloudflare R2 自定义域名。");
+required(!COURSE_DOWNLOADS.textbook.global.includes("github.com"), "海外教材不得再走 GitHub。");
+required(!COURSE_DOWNLOADS.practice.global.includes("github.com"), "海外练习包不得再走 GitHub。");
+required(!/github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System/.test(hub), "课程总览不得直链课程仓 GitHub。");
 required(js.includes("applyCourseDownloads"), "共享脚本必须按地理路径切换下载地址。");
 required(js.includes("course-downloads.js"), "共享脚本必须加载下载地址模块。");
 

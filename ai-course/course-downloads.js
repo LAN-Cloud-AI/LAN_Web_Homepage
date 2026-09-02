@@ -1,6 +1,8 @@
 /**
- * WorkBuddy 课堂资源下载：国内走阿里云 CDN（灰云 DNS，不经 CF 代理），海外走 GitHub raw。
- * 对象在桶 lan-cloud-webpage，公开前缀 lanxin/webpage/assets/（已 public-read）。
+ * WorkBuddy 课堂资源下载：
+ * 国内走阿里云 CDN img.lancloudtech.com（灰云 DNS，不经 CF 代理）；
+ * 海外走 Cloudflare R2 自定义域名 files.lancloudtech.com（橙云）。
+ * GitHub 课程仓只作同步源，不得作为公开下载入口。
  */
 
 export const COURSE_DOWNLOAD_GITHUB_REPO = "LAN-Cloud-AI/LAN_AI_Course_System";
@@ -11,9 +13,8 @@ export const COURSE_DOWNLOAD_GITHUB_DIR =
 export const COURSE_DOWNLOAD_OSS_PREFIX =
   "https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner";
 
-const GITHUB_RAW_PREFIX = `https://github.com/${COURSE_DOWNLOAD_GITHUB_REPO}/raw/${COURSE_DOWNLOAD_GITHUB_REF}/${encodeURI(
-  COURSE_DOWNLOAD_GITHUB_DIR
-).replace(/#/g, "%23")}`;
+export const COURSE_DOWNLOAD_R2_PREFIX =
+  "https://files.lancloudtech.com/ai-course/workbuddy-beginner";
 
 const COOKIE_NAME = "lan_geo_host";
 const CN_HOSTS = new Set(["lancloudtech.com", "www.lancloudtech.com"]);
@@ -38,9 +39,10 @@ export const COURSE_DOWNLOADS = {
     id: "textbook",
     filename: "Workbuddy完整入门.html",
     ossKey: "lanxin/webpage/assets/ai-course/workbuddy-beginner/Workbuddy完整入门.html",
+    r2Key: "ai-course/workbuddy-beginner/Workbuddy完整入门.html",
     githubPath: `${COURSE_DOWNLOAD_GITHUB_DIR}/Workbuddy完整入门.html`,
     cn: `${COURSE_DOWNLOAD_OSS_PREFIX}/Workbuddy%E5%AE%8C%E6%95%B4%E5%85%A5%E9%97%A8.html`,
-    global: `${GITHUB_RAW_PREFIX}/Workbuddy%E5%AE%8C%E6%95%B4%E5%85%A5%E9%97%A8.html`,
+    global: `${COURSE_DOWNLOAD_R2_PREFIX}/Workbuddy%E5%AE%8C%E6%95%B4%E5%85%A5%E9%97%A8.html`,
     disposition: "inline",
     contentType: "text/html; charset=utf-8",
   },
@@ -48,9 +50,10 @@ export const COURSE_DOWNLOADS = {
     id: "practice",
     filename: "WorkBuddy课堂练习包.zip",
     ossKey: "lanxin/webpage/assets/ai-course/workbuddy-beginner/WorkBuddy课堂练习包.zip",
+    r2Key: "ai-course/workbuddy-beginner/WorkBuddy课堂练习包.zip",
     githubPath: `${COURSE_DOWNLOAD_GITHUB_DIR}/WorkBuddy课堂练习包.zip`,
     cn: `${COURSE_DOWNLOAD_OSS_PREFIX}/WorkBuddy%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E5%8C%85.zip`,
-    global: `${GITHUB_RAW_PREFIX}/WorkBuddy%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E5%8C%85.zip`,
+    global: `${COURSE_DOWNLOAD_R2_PREFIX}/WorkBuddy%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A0%E5%8C%85.zip`,
     disposition: "attachment",
     contentType: "application/zip",
   },

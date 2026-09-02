@@ -51,7 +51,7 @@ node scripts/oss/cli.mjs init-layout          # 创建目录占位
 node scripts/oss/cli.mjs configure-bucket     # CORS + 公开读（webpage/shared/brand/miniprogram）
 node scripts/oss/cli.mjs sync-website-images  # 同步 images/generated 与 images/logo
 node scripts/oss/cli.mjs sync-miniprogram-images  # 同步小程序 assets-oss/（可用 MINIPROGRAM_ROOT）
-node scripts/oss/cli.mjs sync-ai-course-downloads # 从课程仓拉取 WorkBuddy 教材/练习包
+node scripts/oss/cli.mjs sync-ai-course-downloads # 从课程仓拉取 WorkBuddy 教材/练习包 → OSS + R2
 node scripts/oss/cli.mjs ls lanxin/webpage/
 node scripts/oss/cli.mjs put ./file.webp lanxin/webpage/images/generated/foo.webp
 node scripts/oss/cli.mjs url lanxin/webpage/images/logo/WEB-logo.svg
@@ -79,6 +79,8 @@ AI 课程课堂包放在 `lanxin/webpage/assets/ai-course/`，公开 URL 形如�
 https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/...
 ```
 
-`img.lancloudtech.com` 的 Cloudflare DNS 必须保持 **灰云**（CNAME → 阿里云 CDN `*.w.kunlunaq.com`）。不要橙云代理该主机，否则国内下载会绕进 CF。维护命令：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后 `npm run dns:img`。海外页的同一入口走课程仓 GitHub raw，不经该 CDN。
+`img.lancloudtech.com` 的 Cloudflare DNS 必须保持 **灰云**（CNAME → 阿里云 CDN `*.w.kunlunaq.com`）。不要橙云代理该主机，否则国内下载会绕进 CF。维护命令：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后 `npm run dns:img`。
+
+海外同一入口走 Cloudflare R2 自定义域名 `https://files.lancloudtech.com/ai-course/...`（橙云，桶 `lan-ai-course`）。课件约 33MB，不能放进 Pages。维护：`npm run dns:files`；同步仍用 `sync-ai-course-downloads`（私有课程仓只作拉取源）。R2 凭证在 `~/.config/lanxin/env/cloudflare/r2-website.env`。
 
 桶防盗链必须显式包含 apex `https://lancloudtech.com`。`https://*.lancloudtech.com` **匹配不到**主域，从官网点击下载会返回 `0003-00000503` / `You are denied by bucket referer policy`。空 Referer 保持允许（地址栏直开教材）。更新：`node scripts/oss/cli.mjs configure-bucket`。

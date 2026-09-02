@@ -36,7 +36,7 @@ Commands:
   put <local> <key>            Upload one file
   sync-website-images          Sync images/* (except prompts/prototypes) → lanxin/webpage/images/
   sync-miniprogram-images      Sync mini program assets-oss/ → lanxin/apps/miniprogram/
-  sync-ai-course-downloads     Sync WorkBuddy classroom packs from the course repo → OSS
+  sync-ai-course-downloads     Sync WorkBuddy classroom packs from the course repo → OSS + R2
   init-layout                  Create company directory tree
   configure-bucket             Disable BPA, set CORS + public-read policy for webpage/miniprogram assets
   url <key>                    Print public URL

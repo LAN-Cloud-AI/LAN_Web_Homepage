@@ -31,6 +31,7 @@ required(exists("scripts/prepare-pages-assets.mjs"), "prepare-pages-assets.mjs m
 required(exists("scripts/deploy-pages.mjs"), "deploy-pages.mjs must exist.");
 required(exists("scripts/cf-dns-global-pages.mjs"), "cf-dns-global-pages.mjs must exist.");
 required(exists("scripts/cf-dns-img-cdn.mjs"), "cf-dns-img-cdn.mjs must exist.");
+required(exists("scripts/cf-r2-files-domain.mjs"), "cf-r2-files-domain.mjs must exist.");
 required(exists("scripts/load-cloudflare-pages-env.mjs"), "Pages env loader must exist.");
 
 const geoHost = read("geo-host.js");
@@ -38,6 +39,7 @@ const geoWorker = read("workers/geo/src/index.js");
 const preparePages = read("scripts/prepare-pages-assets.mjs");
 const dnsGlobal = read("scripts/cf-dns-global-pages.mjs");
 const dnsImg = read("scripts/cf-dns-img-cdn.mjs");
+const dnsFiles = read("scripts/cf-r2-files-domain.mjs");
 
 required(geoHost.includes('GLOBAL_HOST = "global.lancloudtech.com"'), "geo-host.js must target global.lancloudtech.com.");
 required(geoHost.includes("lan-geo.mingxuan400.workers.dev"), "geo-host.js must call lan-geo workers.dev.");
@@ -56,6 +58,10 @@ required(!dnsGlobal.includes("upsertA(\"lancloudtech.com\")"), "DNS global scrip
 required(dnsImg.includes("img.lancloudtech.com"), "img DNS script must manage img host.");
 required(dnsImg.includes("proxied: false"), "img CNAME must stay grey-cloud / DNS only.");
 required(dnsImg.includes("kunlun"), "img CNAME must stay on Aliyun CDN.");
+required(dnsFiles.includes("files.lancloudtech.com"), "files DNS script must manage files host.");
+required(dnsFiles.includes("lan-ai-course") || dnsFiles.includes("env.bucket"), "files DNS script must attach the website R2 bucket.");
+required(dnsFiles.includes("proxied: true") || dnsFiles.includes("proxied !== true"), "files CNAME must stay orange-cloud.");
+required(!dnsFiles.includes("upsertA(\"lancloudtech.com\")"), "files DNS script must not rewrite apex.");
 
 for (const file of htmlRoutes) {
   const html = read(file);
@@ -70,5 +76,6 @@ for (const file of htmlRoutes) {
 const pkg = read("package.json");
 required(pkg.includes("deploy:pages"), "package.json must expose deploy:pages.");
 required(pkg.includes("deploy:geo-worker"), "package.json must expose deploy:geo-worker.");
+required(pkg.includes("dns:files"), "package.json must expose dns:files.");
 
 console.log(`PASS: Geo host steering — ${htmlRoutes.length} pages, lan-geo Worker, Pages _headers, global DNS script.`);
