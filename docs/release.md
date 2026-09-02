@@ -14,7 +14,7 @@
 - HTTPS：源站 Let’s Encrypt（RSA）；Pages 由 Cloudflare 托管证书
 - 站点根（源站）：`/var/www/lancloudtech.com`
 - 内容：`scripts/prepare-worker-assets.mjs` / `prepare-pages-assets.mjs` 产出的 `dist/`（Pages 额外写入 `_headers`：`X-Robots-Tag: noindex, follow`）
-- 图片：阿里云 OSS（不经 CF，见 `docs/oss.md`）
+- 图片 / 课程下载包：阿里云 OSS + CDN `img.lancloudtech.com`（Cloudflare **灰云**，不经 CF 代理；见 `docs/oss.md`）
 - 分流：前端 [`geo-host.js`](../geo-host.js) + Worker `lan-geo`（`https://lan-geo.mingxuan400.workers.dev/`）；微信/爬虫不跳；`?host=cn|global` 可覆盖
 - 微信 JS-SDK：Worker `lan-wechat-jssdk` 的 **workers.dev** URL（不绑 zone 路径）
 - SEO：canonical / sitemap 仍指向 apex `https://lancloudtech.com`
@@ -42,6 +42,7 @@
    npm run deploy:geo-worker          # 首次或 Worker 有变更
    npm run deploy:pages               # 自动读 ~/.config/lanxin/env/cloudflare/pages.env
    npm run dns:global                 # 首次或 DNS 漂移时（同上 pages.env）
+   npm run dns:img                    # 确认 img.lancloudtech.com 保持灰云 → 阿里云 CDN
    ```
 
 5. 用正式域名验证：
@@ -92,7 +93,7 @@ Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。图片主要在
 - **橙云 Pages（海外）**：`global.lancloudtech.com` → Pages `lan-homepage-global`；`npm run dns:global`。
 - **不要**给 Worker `lan-homepage` 重新绑定正式主域。
 - Geo：`lan-geo` workers.dev；微信 JS-SDK：`lan-wechat-jssdk` workers.dev（均不绑 zone 路径）。
-- DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（主域灰云）或 `npm run dns:global`（海外子域）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
+- DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（主域灰云）、`npm run dns:img`（`img` 灰云直连阿里云 CDN）或 `npm run dns:global`（海外子域）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
 ## 证书与运维
 

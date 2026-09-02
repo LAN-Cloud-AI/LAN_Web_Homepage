@@ -21,7 +21,7 @@ lanxin/
   webpage/
     images/generated/   # 官网生成图（公开读）
     images/logo/        # 官网 Logo（公开读）
-    assets/             # 其它官网静态资源
+    assets/             # 其它官网静态资源（含 ai-course 课堂下载包）
   shared/
     brand/              # 跨产品品牌（公开读）
     docs/               # 内部文档素材（默认私有）
@@ -51,6 +51,7 @@ node scripts/oss/cli.mjs init-layout          # 创建目录占位
 node scripts/oss/cli.mjs configure-bucket     # CORS + 公开读（webpage/shared/brand/miniprogram）
 node scripts/oss/cli.mjs sync-website-images  # 同步 images/generated 与 images/logo
 node scripts/oss/cli.mjs sync-miniprogram-images  # 同步小程序 assets-oss/（可用 MINIPROGRAM_ROOT）
+node scripts/oss/cli.mjs sync-ai-course-downloads # 从课程仓拉取 WorkBuddy 教材/练习包
 node scripts/oss/cli.mjs ls lanxin/webpage/
 node scripts/oss/cli.mjs put ./file.webp lanxin/webpage/images/generated/foo.webp
 node scripts/oss/cli.mjs url lanxin/webpage/images/logo/WEB-logo.svg
@@ -71,3 +72,11 @@ https://img.lancloudtech.com/lanxin/webpage/images/generated/...
 本地预览仍可用仓库内 `images/`；发布前执行 `sync-website-images` 保证 OSS 与仓库一致。
 
 小程序内容图源在 `../LAN_Wechat_Official_miniProgram/assets-oss/`，同步命令 `sync-miniprogram-images`；微信后台须把 CDN 域名 `img.lancloudtech.com` 加入 downloadFile 合法域名（见小程序仓 `docs/oss.md`）。
+
+AI 课程课堂包放在 `lanxin/webpage/assets/ai-course/`，公开 URL 形如：
+
+```
+https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/...
+```
+
+`img.lancloudtech.com` 的 Cloudflare DNS 必须保持 **灰云**（CNAME → 阿里云 CDN `*.w.kunlunaq.com`）。不要橙云代理该主机，否则国内下载会绕进 CF。维护命令：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后 `npm run dns:img`。海外页的同一入口走课程仓 GitHub raw，不经该 CDN。

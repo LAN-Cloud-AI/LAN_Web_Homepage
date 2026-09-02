@@ -10,6 +10,8 @@
     "oss": "node scripts/oss/cli.mjs",
     "oss:ping": "node scripts/oss/cli.mjs ping",
     "oss:sync": "node scripts/oss/cli.mjs sync-website-images",
+    "oss:sync-course": "node scripts/oss/cli.mjs sync-ai-course-downloads",
+    "dns:img": "node scripts/cf-dns-img-cdn.mjs",
     "oss:rewrite": "node scripts/oss/rewrite-html-assets.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "seo:sync": "node scripts/patch-seo-heads.mjs && node scripts/generate-sitemap.mjs",

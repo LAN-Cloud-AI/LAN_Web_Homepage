@@ -9,6 +9,7 @@
  *   node scripts/oss/cli.mjs put <localPath> <objectKey>
  *   node scripts/oss/cli.mjs sync-website-images
  *   node scripts/oss/cli.mjs sync-miniprogram-images
+ *   node scripts/oss/cli.mjs sync-ai-course-downloads
  *   node scripts/oss/cli.mjs init-layout
  *   node scripts/oss/cli.mjs configure-bucket
  *   node scripts/oss/cli.mjs url <objectKey>
@@ -23,6 +24,7 @@ import {
   miniprogramPrefix,
   assertEnvFileExists,
 } from "./env.mjs";
+import { syncAiCourseDownloads } from "./sync-ai-course-downloads.mjs";
 
 const usage = () => {
   console.log(`LAN Cloud OSS CLI
@@ -34,6 +36,7 @@ Commands:
   put <local> <key>            Upload one file
   sync-website-images          Sync images/* (except prompts/prototypes) → lanxin/webpage/images/
   sync-miniprogram-images      Sync mini program assets-oss/ → lanxin/apps/miniprogram/
+  sync-ai-course-downloads     Sync WorkBuddy classroom packs from the course repo → OSS
   init-layout                  Create company directory tree
   configure-bucket             Disable BPA, set CORS + public-read policy for webpage/miniprogram assets
   url <key>                    Print public URL
@@ -58,6 +61,7 @@ const contentTypeFor = (filePath) => {
       ".woff2": "font/woff2",
       ".txt": "text/plain; charset=utf-8",
       ".md": "text/markdown; charset=utf-8",
+      ".zip": "application/zip",
     }[ext] || "application/octet-stream"
   );
 };
@@ -122,6 +126,7 @@ const COMPANY_LAYOUT = [
   "lanxin/webpage/images/generated/",
   "lanxin/webpage/images/logo/",
   "lanxin/webpage/assets/",
+  "lanxin/webpage/assets/ai-course/",
   "lanxin/shared/brand/",
   "lanxin/shared/docs/",
   "lanxin/apps/leadshunter/",
@@ -342,6 +347,10 @@ try {
       break;
     case "sync-miniprogram-images":
       await cmdSyncMiniprogramImages();
+      break;
+    case "sync-ai-course-downloads":
+      assertEnvFileExists();
+      console.log(JSON.stringify(await syncAiCourseDownloads(), null, 2));
       break;
     case "init-layout":
       await cmdInitLayout();

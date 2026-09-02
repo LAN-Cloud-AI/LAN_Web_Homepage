@@ -7,6 +7,7 @@ import {
   getStageMeta,
 } from "./ai-course-i18n.js";
 import { getFdePublicCourses } from "./fde/course-summary.js";
+import { applyCourseDownloads } from "./course-downloads.js";
 import { initWechatShare, refreshWechatShare } from "../wechat-share.js";
 
 const courseShareRouteByPage = {
@@ -167,6 +168,7 @@ const refreshPage = (locale) => {
   const resolved = applyCourseI18n(locale);
   refreshStageCards(resolved);
   renderFdeSchedule(resolved);
+  applyCourseDownloads();
   observeReveals(document);
   return resolved;
 };

@@ -18,7 +18,7 @@
 - 站内资源必须使用相对路径。
 - LeadsHunter 的公开导航与 CTA 一律指向独立官网 `https://leadshunter.lancloudtech.com/`；不得以 GitHub 仓库或已退役的 `/leadshunter/` 产品页作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
-- AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案或直链课程仓 GitHub。
+- AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案。`/ai-course/` 的学员资源下载除外：国内走 OSS/CDN `img.lancloudtech.com`（Cloudflare **灰云**，直连阿里云），海外走课程仓 GitHub raw；不得把课程仓当作培养主入口。
 - 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名走 `lan-wechat-jssdk` 的 workers.dev（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
 
 本地预览（`geo-host.js` 对 localhost 不分流）：
@@ -30,7 +30,7 @@ python3 -m http.server 18987
 - 线索猎手跳转：http://127.0.0.1:18987/leadshunter/ → `https://leadshunter.lancloudtech.com/`
 - 云朵记账：http://127.0.0.1:18987/internal-expense/
 - AI 课程：http://127.0.0.1:18987/ai-course/
-- 强制主域/海外：生产环境加 `?host=cn` / `?host=global`
+- 强制主域/海外：生产环境加 `?host=cn` / `?host=global`（本机也可用该参数切换 AI 课程资源下载：国内 OSS / 海外 GitHub）
 
 ## 设计与可访问性
 
@@ -73,6 +73,7 @@ node --check wechat-share.js
 node --check internal-expense/internal-expense.js
 node --check ai-course/ai-course.js
 node --check ai-course/ai-course-i18n.js
+node --check ai-course/course-downloads.js
 node --check ai-course/fde/course-summary.js
 node --check contact/wecom/wecom-card.js
 swift scripts/generate-wecom-qr.swift --verify
@@ -89,6 +90,7 @@ git diff --check
 
 ```bash
 node scripts/oss/cli.mjs sync-website-images
+node scripts/oss/cli.mjs sync-ai-course-downloads
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs
 node scripts/verify-geo-host.mjs
@@ -96,4 +98,4 @@ rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
 npm run deploy:pages
 ```
 
-密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。灰云切换：`CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`。`global` DNS：`npm run dns:global`。不要重新绑定 Worker `lan-homepage` 到正式主域。详见 `docs/release.md`、`docs/oss.md`。
+密钥真相源在 `~/.config/lanxin/`（先读 `~/.config/lanxin/AGENTS.md`）；本仓库 `.env` 仅为软链。用 `node scripts/oss/cli.mjs` 操作存储桶；Cloudflare 用 `CLOUDFLARE_API_TOKEN`（日常）/ `CLOUDFLARE_BOOTSTRAP_API_TOKEN`（创建 Token）。灰云切换：`CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`。`global` DNS：`npm run dns:global`。`img` CDN 灰云：`npm run dns:img`。不要重新绑定 Worker `lan-homepage` 到正式主域。详见 `docs/release.md`、`docs/oss.md`。

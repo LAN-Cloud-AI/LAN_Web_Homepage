@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
+import { COURSE_DOWNLOADS } from "../ai-course/course-downloads.js";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -26,6 +27,7 @@ for (const file of [
   "ai-course/ai-course.css",
   "ai-course/ai-course.js",
   "ai-course/ai-course-i18n.js",
+  "ai-course/course-downloads.js",
   "ai-course/fde/index.html",
   "ai-course/fde/course-summary.js",
   "ai-course/mvp-3day/index.html",
@@ -53,7 +55,7 @@ const i18n = read("i18n.js");
 const catalog = JSON.parse(read("images/prompts/catalog.json"));
 const promptIndex = read("images/prompts/INDEX.md");
 
-for (const id of ["top", "paths", "principles", "contact"]) {
+for (const id of ["top", "paths", "principles", "resources", "contact"]) {
   required(hub.includes(`id="${id}"`), `课程总览缺少 #${id}。`);
 }
 for (const id of ["top", "stages", "schedule", "contact"]) {
@@ -97,7 +99,24 @@ required(hub.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-her
 required(fde.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-fde-stages-v1`), "FDE 页必须引用 OSS 阶段图。");
 required(mvp.includes(`${OSS_IMAGES_BASE}/generated/ai-course-page/ai-course-mvp-3day-v1`), "三天课页必须引用 OSS 闭环图。");
 required(!hub.includes("./images/") && !hub.includes("../images/"), "课程页不得使用本地 images/ 相对路径。");
-required(!/(?:github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System)/.test(hub + fde + mvp), "公开入口不得直链课程仓 GitHub。");
+required(!/(?:github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System)/.test(fde + mvp), "FDE / 三天课页不得直链课程仓 GitHub。");
+required(hub.includes('href="#resources"'), "课程总览导航必须链到资源下载。");
+required(hub.includes('data-course-download="textbook"'), "课程总览必须提供离线教材下载。");
+required(hub.includes('data-course-download="practice"'), "课程总览必须提供学员练习包下载。");
+required(hub.includes(COURSE_DOWNLOADS.textbook.cn) && hub.includes(COURSE_DOWNLOADS.practice.cn), "国内下载必须走 img.lancloudtech.com OSS/CDN。");
+required(hub.includes(COURSE_DOWNLOADS.textbook.global) && hub.includes(COURSE_DOWNLOADS.practice.global), "海外下载必须走课程仓 GitHub raw。");
+required(COURSE_DOWNLOADS.textbook.cn.startsWith("https://img.lancloudtech.com/"), "国内教材不得走 Cloudflare 站点域名。");
+required(COURSE_DOWNLOADS.practice.cn.startsWith("https://img.lancloudtech.com/"), "国内练习包不得走 Cloudflare 站点域名。");
+required(!COURSE_DOWNLOADS.textbook.cn.includes("global.lancloudtech.com"), "国内下载不得走海外 Pages。");
+required(COURSE_DOWNLOADS.textbook.global.includes("/raw/"), "海外教材必须是 GitHub raw 下载，而不是 blob 预览页。");
+required(COURSE_DOWNLOADS.practice.global.includes("/raw/"), "海外练习包必须是 GitHub raw 下载，而不是 blob 预览页。");
+const hubWithoutGlobalHref = hub.replace(/data-href-global="[^"]+"/g, "");
+required(
+  !/github\.com\/LAN-Cloud-AI\/LAN_AI_Course_System/.test(hubWithoutGlobalHref),
+  "课程仓 GitHub 只能作为海外下载备链，不能当作默认公开入口。",
+);
+required(js.includes("applyCourseDownloads"), "共享脚本必须按地理路径切换下载地址。");
+required(js.includes("course-downloads.js"), "共享脚本必须加载下载地址模块。");
 
 required(courseI18n.includes('from "../i18n.js"'), "课程 i18n 必须复用首页 locale 存储。");
 required(courseI18n.includes("LOCALE_STORAGE_KEY"), "课程 i18n 必须共享 locale storage key。");
@@ -109,6 +128,15 @@ for (const phrase of [
   "21 课公开课表",
   "21 課公開課表",
   "21-lesson public schedule",
+  "资源下载",
+  "資源下載",
+  "Downloads",
+  "离线教材",
+  "離線教材",
+  "Offline textbook",
+  "学员练习",
+  "學員練習",
+  "Classroom practice",
 ]) {
   required(courseI18n.includes(phrase), `课程 i18n 缺少文案：${phrase}`);
 }
