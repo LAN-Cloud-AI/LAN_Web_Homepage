@@ -4,6 +4,7 @@
  * - Cloudflare R2 (overseas: files.lancloudtech.com, orange-cloud)
  */
 import { spawn } from "node:child_process";
+import { createWriteStream } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -19,37 +20,29 @@ const contentDisposition = (item) => {
   return `${item.disposition}; filename="${asciiFallback}"; filename*=${rfc5987Filename(item.filename)}`;
 };
 
-const runGhJson = (apiPath) =>
+const downloadGhRaw = (apiPath, dest) =>
   new Promise((resolve, reject) => {
-    const child = spawn("gh", ["api", apiPath], { stdio: ["ignore", "pipe", "pipe"] });
-    const chunks = [];
+    const stream = createWriteStream(dest);
+    const child = spawn("gh", ["api", "-H", "Accept: application/vnd.github.raw", apiPath], {
+      stdio: ["ignore", "pipe", "pipe"],
+    });
     const errors = [];
-    child.stdout.on("data", (chunk) => chunks.push(chunk));
+    child.stdout.pipe(stream);
     child.stderr.on("data", (chunk) => errors.push(chunk));
     child.on("error", reject);
+    stream.on("error", reject);
     child.on("close", (code) => {
-      const stderr = Buffer.concat(errors).toString("utf8").trim();
-      if (code !== 0) {
-        reject(new Error(stderr || `gh api exited ${code}`));
-        return;
-      }
-      try {
-        resolve(JSON.parse(Buffer.concat(chunks).toString("utf8")));
-      } catch (error) {
-        reject(error);
-      }
+      stream.end(async () => {
+        const stderr = Buffer.concat(errors).toString("utf8").trim();
+        if (code !== 0) {
+          reject(new Error(stderr || `gh api exited ${code}`));
+          return;
+        }
+        const stat = await fs.stat(dest);
+        resolve(stat.size);
+      });
     });
   });
-
-const downloadToFile = async (url, dest, headers = {}) => {
-  const res = await fetch(url, { headers, redirect: "follow" });
-  if (!res.ok) {
-    throw new Error(`download ${res.status} ${url}`);
-  }
-  const bytes = Buffer.from(await res.arrayBuffer());
-  await fs.writeFile(dest, bytes);
-  return bytes.length;
-};
 
 export const syncAiCourseDownloads = async () => {
   const client = createOssClient();
@@ -58,12 +51,8 @@ export const syncAiCourseDownloads = async () => {
 
   for (const item of Object.values(COURSE_DOWNLOADS)) {
     const apiPath = `repos/${COURSE_DOWNLOAD_GITHUB_REPO}/contents/${encodeURI(item.githubPath)}?ref=${encodeURIComponent(COURSE_DOWNLOAD_GITHUB_REF)}`;
-    const meta = await runGhJson(apiPath);
-    if (!meta?.download_url) {
-      throw new Error(`GitHub did not return download_url for ${item.githubPath}`);
-    }
     const dest = path.join(tmp, item.filename);
-    const bytes = await downloadToFile(meta.download_url, dest);
+    const bytes = await downloadGhRaw(apiPath, dest);
     const result = await client.put(item.ossKey, dest, {
       headers: {
         "Content-Type": item.contentType,
