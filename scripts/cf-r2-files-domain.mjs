@@ -1,6 +1,6 @@
 /**
  * Ensure files.lancloudtech.com → R2 bucket lan-ai-course (orange-cloud custom domain).
- * Also installs a Cache Everything rule so the ~33MB HTML courseware is edge-cached.
+ * Also installs a Cache Everything rule so the ~39MB HTML courseware is edge-cached.
  *
  * Does not modify apex / www / img grey-cloud records.
  */

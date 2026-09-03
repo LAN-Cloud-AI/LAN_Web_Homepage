@@ -93,7 +93,7 @@ Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。图片主要在
 
 - **灰云 DNS only（主域）**：`lancloudtech.com` / `www` → A `8.148.22.108`，`proxied: false`；访客 TLS 直连源站。
 - **橙云 Pages（海外）**：`global.lancloudtech.com` → Pages `lan-homepage-global`；`npm run dns:global`。
-- **橙云 R2（海外课件）**：`files.lancloudtech.com` → 桶 `lan-ai-course`；`npm run dns:files`。不要把 33MB 课件放进 Pages。
+- **橙云 R2（海外课件）**：`files.lancloudtech.com` → 桶 `lan-ai-course`；`npm run dns:files`。不要把约 39MB 的课件放进 Pages。
 - **不要**给 Worker `lan-homepage` 重新绑定正式主域。
 - Geo：`lan-geo` workers.dev；微信 JS-SDK：`lan-wechat-jssdk` workers.dev（均不绑 zone 路径）。
 - DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（主域灰云）、`npm run dns:img`（`img` 灰云直连阿里云 CDN）、`npm run dns:global`（海外子域）或 `npm run dns:files`（海外课件 R2）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
