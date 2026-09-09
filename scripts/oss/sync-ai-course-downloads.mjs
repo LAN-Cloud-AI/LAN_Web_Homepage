@@ -16,7 +16,7 @@ const rfc5987Filename = (filename) =>
   `UTF-8''${encodeURIComponent(filename).replace(/['()*]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`)}`;
 
 const contentDisposition = (item) => {
-  const asciiFallback = item.id === "textbook" ? "Workbuddy-complete-intro.html" : "WorkBuddy-classroom-exercises.zip";
+  const asciiFallback = item.id === "textbook" ? "Workbuddy-complete-intro.html" : "lesson-1-practice.zip";
   return `${item.disposition}; filename="${asciiFallback}"; filename*=${rfc5987Filename(item.filename)}`;
 };
 
