@@ -1,11 +1,6 @@
-import { resolveLocale } from "../i18n.js";
+import { persistLocale, resolveLocale, setLocale } from "../i18n.js";
 import { initFooterAccordion } from "../footer-accordion.js";
-import {
-  LOCALE_STORAGE_KEY,
-  applyCourseI18n,
-  courseT,
-  getStageMeta,
-} from "./ai-course-i18n.js";
+import { applyCourseI18n, courseT, getStageMeta } from "./ai-course-i18n.js";
 import { getFdePublicCourses } from "./fde/course-summary.js";
 import { applyCourseDownloads } from "./course-downloads.js";
 import { initWechatShare, refreshWechatShare } from "../wechat-share.js";
@@ -177,13 +172,9 @@ document.querySelectorAll(".lang-opt").forEach((btn) => {
   btn.addEventListener("click", () => {
     const locale = btn.getAttribute("data-locale");
     if (!locale) return;
-    try {
-      localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-    } catch {
-      /* ignore */
-    }
-    refreshPage(locale);
+    persistLocale(locale);
     refreshWechatShare(locale);
+    setLocale(locale);
   });
 });
 

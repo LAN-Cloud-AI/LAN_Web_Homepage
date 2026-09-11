@@ -19,6 +19,7 @@ const excludedDirectories = new Set([
   "node_modules",
   "scripts",
   "workers",
+  "ops",
 ]);
 
 const excludedRelativeDirectories = new Set([

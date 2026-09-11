@@ -49,6 +49,7 @@ required(!hop.includes("initWechatShare"), "Legacy hop page must not keep the re
 required(redirects.includes("/leadshunter"), "_redirects must cover the old /leadshunter path.");
 required(redirects.includes(official), "_redirects must send /leadshunter traffic to the official site.");
 required(redirects.includes("301"), "_redirects must use a permanent hop.");
+required(!/\/\*\s+\/index\.html\s+200/.test(redirects), "Pages _redirects must not soft-404 via SPA catch-all.");
 
 required(siteSeo.includes("LEADSHUNTER_SITE"), "site-seo.js must export the official LeadsHunter origin.");
 required(siteSeo.includes(official), "Company Organization sameAs / mentions must include the official LeadsHunter site.");

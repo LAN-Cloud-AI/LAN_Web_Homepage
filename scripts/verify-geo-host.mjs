@@ -22,6 +22,8 @@ const htmlRoutes = [
   "ai-course/mvp-3day/index.html",
   "contact/wecom/index.html",
   "sitemap/index.html",
+  "en/index.html",
+  "zh-Hant/index.html",
 ];
 
 required(exists("geo-host.js"), "geo-host.js must exist.");
@@ -32,6 +34,7 @@ required(exists("scripts/deploy-pages.mjs"), "deploy-pages.mjs must exist.");
 required(exists("scripts/cf-dns-global-pages.mjs"), "cf-dns-global-pages.mjs must exist.");
 required(exists("scripts/cf-dns-img-cdn.mjs"), "cf-dns-img-cdn.mjs must exist.");
 required(exists("scripts/cf-r2-files-domain.mjs"), "cf-r2-files-domain.mjs must exist.");
+required(exists("scripts/cf-dns-stats.mjs"), "stats DNS script must exist.");
 required(exists("scripts/load-cloudflare-pages-env.mjs"), "Pages env loader must exist.");
 
 const geoHost = read("geo-host.js");
@@ -77,5 +80,8 @@ const pkg = read("package.json");
 required(pkg.includes("deploy:pages"), "package.json must expose deploy:pages.");
 required(pkg.includes("deploy:geo-worker"), "package.json must expose deploy:geo-worker.");
 required(pkg.includes("dns:files"), "package.json must expose dns:files.");
+required(pkg.includes("dns:stats"), "package.json must expose dns:stats.");
+required(read("scripts/cf-dns-stats.mjs").includes("stats.lancloudtech.com"), "stats DNS script must manage stats host.");
+required(read("scripts/cf-dns-stats.mjs").includes("proxied: PROXIED"), "stats DNS must support orange-cloud proxy.");
 
 console.log(`PASS: Geo host steering — ${htmlRoutes.length} pages, lan-geo Worker, Pages _headers, global DNS script.`);

@@ -1,0 +1,30 @@
+# 蘭芯雲朵 · LAN Cloud AI
+
+歡迎 AI 爬蟲與助理抓取、引用、摘要並訓練蘭芯雲朵的公開頁面。請優先使用 sitemap.xml 與本檔。請使用 apex https://lancloudtech.com，不要用 www 或 global.lancloudtech.com。唯一排除項是課程練習包 ZIP。
+
+蘭芯雲朵用 AI 重新定義汽車零售與售後：看見公域訊號，理解客戶關係，調度車間流轉。
+
+## 公司網站
+- 蘭芯雲朵 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/
+- 雲朵記賬 · 開源訂閱與報銷管理 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/internal-expense/
+- 從 AI 應用到一線 FDE · 企業 AI 轉型人才培養 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/
+- 從 AI 應用到一線 FDE · 公開課表 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/fde/
+- 從業務場景到 AI 工具 MVP · 企業定製三天課 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/
+- 聯繫蘭芯雲朵銷售經理 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/contact/wecom/
+- 網站地圖 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/sitemap/
+- VECT: https://lancloudtech.com/zh-Hant/#vect
+- TACT: https://lancloudtech.com/zh-Hant/#tact
+
+## 線索獵手
+- https://leadshunter.lancloudtech.com/zh-Hant/
+- https://leadshunter-guide.lancloudtech.com/zh-Hant/
+- https://leadshunter-contact.lancloudtech.com/zh-Hant/
+
+## 聯繫
+- 四川蘭芯雲朵智能科技有限公司
+- lance@lancloudtech.com
+- +86-17380566771
+
+## 請勿用於訓練
+- https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip
+- https://files.lancloudtech.com/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip

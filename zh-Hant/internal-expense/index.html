@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef3ff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="雲朵記賬：面向中小企業的開源訂閱資產與報銷管理產品，讓固定支出與報銷批次都清楚可追溯。" />
+  <title>雲朵記賬 · 開源訂閱與報銷管理 · LAN Cloud AI</title>
+  <link rel="canonical" href="https://lancloudtech.com/zh-Hant/internal-expense/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://lancloudtech.com/internal-expense/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://lancloudtech.com/zh-Hant/internal-expense/" />
+  <link rel="alternate" hreflang="en" href="https://lancloudtech.com/en/internal-expense/" />
+  <link rel="alternate" hreflang="x-default" href="https://lancloudtech.com/internal-expense/" />
+  <meta name="twitter:image:alt" content="雲朵記賬分享圖" />
+  <meta property="og:image:alt" content="雲朵記賬分享圖" />
+  <meta name="twitter:description" content="開源訂閱與報銷" />
+  <meta name="twitter:title" content="雲朵記賬" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="蘭芯雲朵 · LAN Cloud AI" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lancloudtech.com/zh-Hant/internal-expense/" />
+  <meta property="og:title" content="雲朵記賬" />
+  <meta property="og:description" content="開源訂閱與報銷" />
+  <meta property="og:image" content="https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-internal-expense-v2.png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="1000" />
+  <meta itemprop="name" content="雲朵記賬" />
+  <meta itemprop="description" content="開源訂閱與報銷" />
+  <meta itemprop="image" content="https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-internal-expense-v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-internal-expense-v2.png" />
+  <link rel="icon" href="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo-180.png" />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    media="(prefers-color-scheme: light)"
+    href="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp"
+    imagesrcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp 768w,
+                 https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp 992w"
+    imagesizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+  />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    media="(prefers-color-scheme: dark)"
+    href="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp"
+    imagesrcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.webp 768w,
+                 https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp 992w"
+    imagesizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+  />
+  <script src="/geo-host.js" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="/internal-expense/internal-expense.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lancloudtech.com/#organization",
+      "name": "四川兰芯云朵智能科技有限公司",
+      "alternateName": [
+        "兰芯云朵",
+        "LAN Cloud AI"
+      ],
+      "url": "https://lancloudtech.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg"
+      },
+      "email": "lance@lancloudtech.com",
+      "telephone": "+86-17380566771",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "中国（四川）自由贸易试验区成都高新区新程南一路19号3栋15层1501-1504号",
+        "addressLocality": "成都",
+        "addressRegion": "四川",
+        "addressCountry": "CN"
+      },
+      "sameAs": [
+        "https://github.com/LAN-Cloud-AI",
+        "https://leadshunter.lancloudtech.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lancloudtech.com/#website",
+      "url": "https://lancloudtech.com/",
+      "name": "蘭芯雲朵 · LAN Cloud AI",
+      "alternateName": [
+        "兰芯云朵",
+        "蘭芯雲朵",
+        "LAN Cloud AI"
+      ],
+      "description": "蘭芯雲朵用 AI 重新定義汽車零售與售後：看見公域訊號，理解客戶關係，調度車間流轉。",
+      "publisher": {
+        "@id": "https://lancloudtech.com/#organization"
+      },
+      "inLanguage": [
+        "zh-CN",
+        "zh-Hant",
+        "en"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://lancloudtech.com/zh-Hant/internal-expense/#webpage",
+      "url": "https://lancloudtech.com/zh-Hant/internal-expense/",
+      "name": "雲朵記賬 · 開源訂閱與報銷管理 · LAN Cloud AI",
+      "description": "雲朵記賬：面向中小企業的開源訂閱資產與報銷管理產品，讓固定支出與報銷批次都清楚可追溯。",
+      "isPartOf": {
+        "@id": "https://lancloudtech.com/#website"
+      },
+      "about": {
+        "@id": "https://lancloudtech.com/#organization"
+      },
+      "inLanguage": "zh-Hant",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-internal-expense-v2.png",
+        "width": 1000,
+        "height": 1000
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "蘭芯雲朵",
+          "item": "https://lancloudtech.com/zh-Hant/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "雲朵記賬 · 開源訂閱與報銷管理 · LAN Cloud AI",
+          "item": "https://lancloudtech.com/zh-Hant/internal-expense/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-lan-analytics="umami"></script>
+</head>
+<body data-share-route="internal-expense">
+  <a class="skip-link" href="#main" data-i18n="expense.skip">跳到主要內容</a>
+
+  <header class="site-nav" id="site-nav">
+    <a class="brand-lockup" href="/zh-Hant/" data-i18n-aria="expense.brandAria" aria-label="返回蘭芯雲朵官網">
+      <img src="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg" width="30" height="29" alt="" />
+      <span class="brand-company">LAN Cloud AI</span>
+      <span class="brand-separator" aria-hidden="true">/</span>
+      <span class="brand-product">CLOUD LEDGER <span data-i18n="expense.product">雲朵記賬</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="product-nav" data-i18n="expense.menu">選單</button>
+    <nav class="product-nav" id="product-nav" data-i18n-aria="expense.navLabel" aria-label="雲朵記賬頁面導航">
+      <a href="#subscriptions" data-i18n="expense.nav.subs">訂閱資產</a>
+      <a href="#reimbursements" data-i18n="expense.nav.reimb">報銷閉環</a>
+      <a href="#open-source" data-i18n="expense.nav.open">開源與邊界</a>
+      <a class="nav-cta" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener" data-i18n="expense.nav.source">查看源碼</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">CLOUD LEDGER <span data-i18n="expense.product">雲朵記賬</span></p>
+          <p class="product-support">Internal Expense <span aria-hidden="true">·</span> <span data-i18n="expense.support">開源管理工具</span></p>
+          <h1 id="hero-title"><span class="copy-unit" data-i18n="expense.h1a">每筆訂閱都清楚，</span><br /><span class="copy-unit" data-i18n="expense.h1b">每次報銷都有據可查</span></h1>
+          <p class="hero-lede">
+            <span class="copy-unit" data-i18n="expense.lede1">為中小企業統一梳理訂閱、</span>
+            <span class="copy-unit" data-i18n="expense.lede2">付款者與賬期，</span>
+            <span class="copy-unit" data-i18n="expense.lede3">把候選費用整理為可追溯的報銷批次，</span>
+            <span class="copy-unit" data-i18n="expense.lede4">讓每一項日常支出都經得起回看。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener" data-i18n="expense.ctaSource">在 GitHub 查看源碼</a>
+            <a class="button button-secondary" href="#subscriptions" data-i18n="expense.ctaHow">了解工作方式</a>
+          </div>
+          <ul class="proof-grid" data-i18n-aria="expense.proofLabel" aria-label="雲朵記賬核心能力">
+            <li><strong data-i18n="expense.p1t">訂閱資產</strong><span data-i18n="expense.p1d">付款者、使用者與賬期</span></li>
+            <li><strong data-i18n="expense.p2t">報銷候選</strong><span data-i18n="expense.p2d">合單、狀態與留痕</span></li>
+            <li><strong data-i18n="expense.p3t">持續可查</strong><span data-i18n="expense.p3d">歷史記錄可回溯</span></li>
+            <li><strong data-i18n="expense.p4t">開放透明</strong><span data-i18n="expense.p4d">Apache-2.0 開源</span></li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual appstore-visual appstore-visual-portrait">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-dark-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <img
+              src="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-appstore-overview-v1.png"
+              width="992"
+              height="1586"
+              alt="雲朵記賬的匿名訂閱與報銷總覽產品展示圖"
+              data-i18n-alt="expense.heroAlt"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit" data-i18n="expense.heroFig1">訂閱與報銷，</span><span class="copy-unit" data-i18n="expense.heroFig2">在同一個清晰的工作臺裡。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="subscriptions" aria-labelledby="subscriptions-title">
+      <div class="page-shell story-grid subscription-grid">
+        <div class="story-copy">
+          <p class="eyebrow" data-i18n="expense.subsEyebrow">訂閱資產</p>
+          <h2 id="subscriptions-title"><span class="copy-unit" data-i18n="expense.subsH2a">看清正在發生的</span><br /><span class="copy-unit" data-i18n="expense.subsH2b">每一筆固定支出</span></h2>
+          <p>
+            <span class="copy-unit" data-i18n="expense.subsP1">把軟件、服務與日常訂閱，</span>
+            <span class="copy-unit" data-i18n="expense.subsP2">集中成一份資產清單。</span>
+            <span class="copy-unit" data-i18n="expense.subsP3">誰在付款、誰在使用、何時續費，</span>
+            <span class="copy-unit" data-i18n="expense.subsP4">都按條款與賬期保留清晰上下文。</span>
+          </p>
+          <dl class="detail-list">
+            <div>
+              <dt><span class="copy-unit" data-i18n="expense.subsDt1">版本化條款</span></dt>
+              <dd><span class="copy-unit" data-i18n="expense.subsDd1a">保留訂閱變更的時間線，</span><span class="copy-unit" data-i18n="expense.subsDd1b">方便復盤當前約定。</span></dd>
+            </div>
+            <div>
+              <dt><span class="copy-unit" data-i18n="expense.subsDt2">付款與使用歸屬</span></dt>
+              <dd><span class="copy-unit" data-i18n="expense.subsDd2a">將付款者與使用者分開記錄，</span><span class="copy-unit" data-i18n="expense.subsDd2b">減少口頭交接。</span></dd>
+            </div>
+            <div>
+              <dt><span class="copy-unit" data-i18n="expense.subsDt3">續費節奏</span></dt>
+              <dd><span class="copy-unit" data-i18n="expense.subsDd3a">把臨近賬期的項目提前呈現，</span><span class="copy-unit" data-i18n="expense.subsDd3b">便於團隊安排。</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="product-visual appstore-visual appstore-visual-landscape">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1.webp 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.webp 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1.png 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <source
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.png 1536w"
+              sizes="(max-width: 920px) calc(100vw - 2.5rem), 600px"
+            />
+            <img
+              src="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.png"
+              width="1536"
+              height="1024"
+              alt="雲朵記賬的匿名訂閱資產工作臺產品展示圖"
+              data-i18n-alt="expense.subsAlt"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit" data-i18n="expense.subsFig1">用統一的資產視角，</span><span class="copy-unit" data-i18n="expense.subsFig2">理解重複發生的經營支出。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-white" id="reimbursements" aria-labelledby="reimbursements-title">
+      <div class="page-shell story-grid reimbursement-grid">
+        <div class="story-copy reimbursement-copy">
+          <p class="eyebrow" data-i18n="expense.reimbEyebrow">報銷閉環</p>
+          <h2 id="reimbursements-title"><span class="copy-unit" data-i18n="expense.reimbH2a">從候選費用，</span><br /><span class="copy-unit" data-i18n="expense.reimbH2b">到可追溯的報銷批次</span></h2>
+          <p>
+            <span class="copy-unit" data-i18n="expense.reimbP1">把待處理費用先作為候選記錄，</span>
+            <span class="copy-unit" data-i18n="expense.reimbP2">再按付款者整理進報銷批次。</span>
+            <span class="copy-unit" data-i18n="expense.reimbP3">匯率快照、審批與付款狀態同步留痕，</span>
+            <span class="copy-unit" data-i18n="expense.reimbP4">讓一次報銷的來處與去向都更清楚。</span>
+          </p>
+          <ol class="flow-list">
+            <li><span class="flow-number" aria-hidden="true">01</span><span><strong class="copy-unit" data-i18n="expense.flow1t">記錄候選費用</strong><small><span class="copy-unit" data-i18n="expense.flow1a">先收集，</span><span class="copy-unit" data-i18n="expense.flow1b">不急著打斷原有流程。</span></small></span></li>
+            <li><span class="flow-number" aria-hidden="true">02</span><span><strong class="copy-unit" data-i18n="expense.flow2t">按付款者合單</strong><small><span class="copy-unit" data-i18n="expense.flow2a">把同一付款者的項目，</span><span class="copy-unit" data-i18n="expense.flow2b">整理為可核對的批次。</span></small></span></li>
+            <li><span class="flow-number" aria-hidden="true">03</span><span><strong class="copy-unit" data-i18n="expense.flow3t">留存狀態與快照</strong><small><span class="copy-unit" data-i18n="expense.flow3a">記錄審批、付款與匯率時點，</span><span class="copy-unit" data-i18n="expense.flow3b">保留完整回溯路徑。</span></small></span></li>
+          </ol>
+        </div>
+
+        <figure class="product-visual reimbursement-visual appstore-visual appstore-visual-portrait">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              type="image/webp"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1-768.webp 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.webp 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-dark-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <source
+              srcset="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1-768.png 768w,
+                      https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.png 992w"
+              sizes="(max-width: 920px) min(27rem, calc(100vw - 2.5rem)), 432px"
+            />
+            <img
+              src="https://img.lancloudtech.com/lanxin/webpage/images/generated/cloud-ledger-page/cloud-ledger-reimbursement-flow-v1.png"
+              width="992"
+              height="1586"
+              alt="雲朵記賬的匿名報銷候選與批次流程產品展示圖"
+              data-i18n-alt="expense.reimbAlt"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption><span class="copy-unit" data-i18n="expense.reimbFig1">從一筆候選費用開始，</span><span class="copy-unit" data-i18n="expense.reimbFig2">到一條完整的報銷記錄。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-open" id="open-source" aria-labelledby="open-source-title">
+      <div class="page-shell open-grid">
+        <div class="open-intro">
+          <p class="eyebrow" data-i18n="expense.openEyebrow">開源與數據邊界</p>
+          <h2 id="open-source-title"><span class="copy-unit" data-i18n="expense.openH2a">把日常財務整理，</span><br /><span class="copy-unit" data-i18n="expense.openH2b">交給看得見的系統</span></h2>
+          <p>
+            <span class="copy-unit" data-i18n="expense.openP1">雲朵記賬以 Apache-2.0 許可開源。</span>
+            <span class="copy-unit" data-i18n="expense.openP2">團隊可以閱讀、部署和改進代碼，</span>
+            <span class="copy-unit" data-i18n="expense.openP3">也能持續保留訂閱資產、報銷批次，</span>
+            <span class="copy-unit" data-i18n="expense.openP4">以及歷史記錄的上下文。</span>
+          </p>
+        </div>
+        <div class="boundary-grid" role="list" data-i18n-aria="expense.boundLabel" aria-label="雲朵記賬的數據邊界">
+          <article role="listitem">
+            <span class="boundary-kicker">01</span>
+            <h3><span class="copy-unit" data-i18n="expense.b1t">訂閱資產可回看</span></h3>
+            <p><span class="copy-unit" data-i18n="expense.b1a">圍繞條款、賬期、付款與使用歸屬，</span><span class="copy-unit" data-i18n="expense.b1b">建立可持續更新的記錄。</span></p>
+          </article>
+          <article role="listitem">
+            <span class="boundary-kicker">02</span>
+            <h3><span class="copy-unit" data-i18n="expense.b2t">報銷批次有來處</span></h3>
+            <p><span class="copy-unit" data-i18n="expense.b2a">候選費用、合單關係與狀態變化，</span><span class="copy-unit" data-i18n="expense.b2b">在同一條路徑中留痕。</span></p>
+          </article>
+          <article role="listitem">
+            <span class="boundary-kicker">03</span>
+            <h3><span class="copy-unit" data-i18n="expense.b3t">賬號邊界更明確</span></h3>
+            <p><span class="copy-unit" data-i18n="expense.b3a">賬號資產不保存密碼、OTP、MFA、</span><span class="copy-unit" data-i18n="expense.b3b">token 或完整卡號。</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="page-shell contact-band-inner">
+        <div>
+          <p class="eyebrow" data-i18n="expense.contactEyebrow">開始使用</p>
+          <h2 id="contact-title"><span class="copy-unit" data-i18n="expense.contactH2a">把下一筆支出，</span><br /><span class="copy-unit" data-i18n="expense.contactH2b">放進清楚的賬裡</span></h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense" target="_blank" rel="noopener" data-i18n="expense.ctaSource">在 GitHub 查看源碼</a>
+          <a class="button button-secondary" href="/zh-Hant/" data-i18n="expense.backHome">返回蘭芯雲朵官網</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-inner">
+      <p><strong data-i18n="expense.product">雲朵記賬</strong><span aria-hidden="true"> · </span>Internal Expense<span aria-hidden="true"> · </span>Apache-2.0</p>
+      <p><span class="copy-unit" data-i18n="expense.footerTag">面向中小企業的開源訂閱與報銷管理。</span></p>
+      <div class="footer-actions">
+        <a href="/zh-Hant/sitemap/" data-i18n="footer.sitemap">網站地圖</a>
+        <a href="/zh-Hant/" data-i18n="expense.backHome">返回蘭芯雲朵官網</a>
+        <nav class="page-lang" data-i18n-aria="lang.label" aria-label="選擇語言">
+          <button type="button" class="lang-opt" data-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button>
+          <button type="button" class="lang-opt" data-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button>
+          <button type="button" class="lang-opt" data-locale="en" aria-label="English" aria-pressed="false">EN</button>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/internal-expense/internal-expense.js"></script>
+  <script type="module" src="/locale-boot.js"></script>
+</body>
+</html>

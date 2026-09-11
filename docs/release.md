@@ -13,6 +13,7 @@
 - DNS：`global.lancloudtech.com` → CNAME `lan-homepage-global.pages.dev`，**proxied（橙云）**
 - HTTPS：源站 Let’s Encrypt（RSA）；Pages 由 Cloudflare 托管证书
 - 站点根（源站）：`/var/www/lancloudtech.com`
+- Nginx 配置真相源：[`ops/nginx/lancloudtech.com.conf`](../ops/nginx/lancloudtech.com.conf)；安装 `npm run nginx:apply`（SSH `lanxin-official-direct`）。`www` 301 到 apex；未知路径真 404；`/leadshunter` 301 到线索猎手官网。
 - 内容：`scripts/prepare-worker-assets.mjs` / `prepare-pages-assets.mjs` 产出的 `dist/`（Pages 额外写入 `_headers`：`X-Robots-Tag: noindex, follow`）
 - 图片 / 国内课程下载包：阿里云 OSS + CDN `img.lancloudtech.com`（Cloudflare **灰云**，不经 CF 代理；见 `docs/oss.md`）
 - 海外课程下载包：Cloudflare R2 `files.lancloudtech.com`（橙云，桶 `lan-ai-course`；`npm run dns:files`）
@@ -66,9 +67,22 @@
 ## SEO / 网站地图
 
 1. 路由真相源：`site-seo.js` 的 `PUBLIC_ROUTES`（与 `share-meta.js` 路径对齐，另含 `/sitemap/`）。
-2. 变更公开路由后执行：`npm run seo:sync`（同步各页 head + 重写 `sitemap.xml`），再 `npm run seo:verify`。
+2. 变更公开路由或文案后执行：`npm run seo:sync`（同步 head、生成 `/en/` `/zh-Hant/`、重写 `sitemap.xml`），再 `npm run seo:verify`。不要手改 `en/`、`zh-Hant/`。
 3. 生产需可访问：`/robots.txt`、`/sitemap.xml`、`/sitemap/`；canonical 一律使用 apex `https://lancloudtech.com`。
 4. 线索猎手独立官网 `https://leadshunter.lancloudtech.com/` 由 `LH_WebPage` 单独部署；公司站只保留首页产品卡、页脚与网站地图索引，以及 `/leadshunter/` 跳转。
+5. 公开站欢迎 AI 抓取与训练：`robots.txt` 写 `ai-train=yes` 并显式 Allow GPTBot / ClaudeBot / Google-Extended / Bytespider 等。`llms.txt` 是给模型的站点大纲。课件 ZIP 仍排除：`npm run files:robots` 把 ZIP-only robots 发到 `files.lancloudtech.com` 与 `img.lancloudtech.com`。橙云 AI Crawl Control 保持 Block 关闭；不要再打开托管 robots。`global.lancloudtech.com` 继续 `noindex`（地理副本，不作为收录源）。
+6. 发布顺序：先 `npm run nginx:apply` 并 `nginx -t` → `rsync dist/` → `npm run deploy:pages` → 三站 LH deploy → `npm run cf:ai-crawlers`。抽检 `www` / `/index.html` / `/leadshunter/` 为 301，乱路径为真 404，`/en/` 与 `/zh-Hant/` 的 `lang` / title / hreflang 正确。
+
+## 访问统计（Umami）
+
+- **书签入口**（不要写进官网导航、页脚、sitemap 或 `llms.txt`）：`https://stats.lancloudtech.com`
+- 把该 URL 存进 1Password / 浏览器书签。页面上不放「统计」链接。
+- 打开后直接进 Umami 自带登录。管理员账号在 `~/.config/lanxin/env/umami/ops.env`（`UMAMI_ADMIN_USERNAME` / `UMAMI_ADMIN_PASSWORD`）。不要把密码写进仓库或聊天。
+- 统计域不再套 Cloudflare Access；控制台只靠 Umami 登录。`npm run cf:access-stats` 会清掉 `stats` 上残留的 Access 应用。
+- 收集脚本 `/u.js` 与接口 `/api/a` 保持公开。
+- 首次或重建：`npm run umami:apply`（源站 Docker + 证书 + 四个 website id）→ `npm run seo:sync` 后按上面顺序发布。
+- `dns:stats` 默认橙云指向源站 `8.148.22.108`。签发证书时脚本会先灰云再切回橙云。
+- 上线抽检：`npm run seo:live`（含 `/u.js` 200、公开页埋点、课件 ZIP 训练 UA 403）。无痕打开任一埋点页后，Realtime 应出现击。
 
 ## 微信分享卡片
 

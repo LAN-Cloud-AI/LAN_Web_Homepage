@@ -15,14 +15,21 @@
     "dns:files": "node scripts/cf-r2-files-domain.mjs",
     "oss:rewrite": "node scripts/oss/rewrite-html-assets.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
-    "seo:sync": "node scripts/patch-seo-heads.mjs && node scripts/generate-sitemap.mjs",
+    "seo:sync": "node scripts/patch-seo-heads.mjs && node scripts/generate-locale-pages.mjs && node scripts/generate-sitemap.mjs",
     "seo:verify": "node scripts/verify-seo.mjs",
+    "nginx:apply": "node scripts/apply-nginx.mjs",
+    "umami:apply": "node scripts/apply-umami.mjs",
+    "dns:stats": "node scripts/cf-dns-stats.mjs",
+    "cf:access-stats": "node scripts/cf-access-stats.mjs",
     "geo:verify": "node scripts/verify-geo-host.mjs",
     "prepare:dist": "node scripts/prepare-worker-assets.mjs",
     "prepare:pages": "node scripts/prepare-pages-assets.mjs",
     "deploy:pages": "node scripts/deploy-pages.mjs",
     "deploy:geo-worker": "npx wrangler deploy --config workers/geo/wrangler.toml",
-    "dns:global": "node scripts/cf-dns-global-pages.mjs"
+    "dns:global": "node scripts/cf-dns-global-pages.mjs",
+    "cf:ai-crawlers": "node scripts/cf-allow-ai-crawlers.mjs",
+    "files:robots": "node scripts/sync-files-robots.mjs",
+    "seo:live": "node scripts/verify-live-seo.mjs"
   },
   "repository": {
     "type": "git",

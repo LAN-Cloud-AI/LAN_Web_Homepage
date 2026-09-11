@@ -1,0 +1,30 @@
+# LAN Cloud AI
+
+AI crawlers and assistants are welcome to fetch, cite, summarize, and train on LAN Cloud public pages. Prefer sitemap.xml and this file. Use apex https://lancloudtech.com, not www or global.lancloudtech.com. The only exclusion is course ZIP practice packs.
+
+LAN Cloud AI redefines automotive retail and aftersales with AI: see public signals, understand customer relationships, orchestrate workshop flow.
+
+## Company site
+- LAN Cloud AI: https://lancloudtech.com/en/
+- Cloud Ledger · Open-source subscriptions and expenses · LAN Cloud AI: https://lancloudtech.com/en/internal-expense/
+- From AI application to frontline FDE · LAN Cloud AI Academy: https://lancloudtech.com/en/ai-course/
+- From AI application to frontline FDE · Public schedule · LAN Cloud AI: https://lancloudtech.com/en/ai-course/fde/
+- From a business scene to an AI tool MVP · 3-day workshop · LAN Cloud AI: https://lancloudtech.com/en/ai-course/mvp-3day/
+- Contact LAN Cloud AI sales · LAN Cloud AI: https://lancloudtech.com/en/contact/wecom/
+- Sitemap · LAN Cloud AI: https://lancloudtech.com/en/sitemap/
+- VECT: https://lancloudtech.com/en/#vect
+- TACT: https://lancloudtech.com/en/#tact
+
+## LeadsHunter
+- https://leadshunter.lancloudtech.com/en/
+- https://leadshunter-guide.lancloudtech.com/en/
+- https://leadshunter-contact.lancloudtech.com/en/
+
+## Contact
+- Sichuan Lanxin Yunduo Intelligent Technology Co., Ltd.
+- lance@lancloudtech.com
+- +86-17380566771
+
+## Do not train on
+- https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip
+- https://files.lancloudtech.com/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip

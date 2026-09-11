@@ -1,0 +1,30 @@
+# 兰芯云朵 · LAN Cloud AI
+
+欢迎 AI 爬虫与助理抓取、引用、摘要并训练兰芯云朵的公开页面。请优先使用 sitemap.xml 与本文件。请使用 apex https://lancloudtech.com，不要用 www 或 global.lancloudtech.com。唯一排除项是课程练习包 ZIP。
+
+兰芯云朵用 AI 重新定义汽车零售与售后：看见公域信号，理解客户关系，调度车间流转。
+
+## 公司网站
+- 兰芯云朵 · LAN Cloud AI: https://lancloudtech.com/
+- 云朵记账 · 开源订阅与报销管理 · LAN Cloud AI: https://lancloudtech.com/internal-expense/
+- 从 AI 应用到一线 FDE · 企业 AI 转型人才培养 · 兰芯云朵: https://lancloudtech.com/ai-course/
+- 从 AI 应用到一线 FDE · 公开课表 · 兰芯云朵: https://lancloudtech.com/ai-course/fde/
+- 从业务场景到 AI 工具 MVP · 企业定制三天课 · 兰芯云朵: https://lancloudtech.com/ai-course/mvp-3day/
+- 联系兰芯云朵销售经理 · LAN Cloud AI: https://lancloudtech.com/contact/wecom/
+- 网站地图 · 兰芯云朵: https://lancloudtech.com/sitemap/
+- VECT: https://lancloudtech.com/#vect
+- TACT: https://lancloudtech.com/#tact
+
+## 线索猎手
+- https://leadshunter.lancloudtech.com/
+- https://leadshunter-guide.lancloudtech.com/
+- https://leadshunter-contact.lancloudtech.com/
+
+## 联系
+- 四川兰芯云朵智能科技有限公司
+- lance@lancloudtech.com
+- +86-17380566771
+
+## 请勿用于训练
+- https://img.lancloudtech.com/lanxin/webpage/assets/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip
+- https://files.lancloudtech.com/ai-course/workbuddy-beginner/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%BB%83%E4%B9%A0%E5%8C%85.zip

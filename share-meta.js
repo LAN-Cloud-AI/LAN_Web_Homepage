@@ -1,4 +1,6 @@
-export const SITE_ORIGIN = "https://lancloudtech.com";
+import { SITE_ORIGIN, absoluteLocaleUrl } from "./site-identity.js";
+
+export { SITE_ORIGIN };
 
 export const OSS_SHARE_BASE =
   "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
@@ -145,7 +147,7 @@ export const getSharePayload = (routeId, locale = "zh-Hans") => {
   return {
     title: copy.title,
     desc: copy.desc,
-    link: `${SITE_ORIGIN}${route.path}`,
+    link: absoluteLocaleUrl(route.path, locale),
     imgUrl: route.image,
     imageWidth: route.imageWidth,
     imageHeight: route.imageHeight,

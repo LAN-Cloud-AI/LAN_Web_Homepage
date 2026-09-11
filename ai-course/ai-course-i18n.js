@@ -1,15 +1,13 @@
 import {
   LOCALE_STORAGE_KEY,
   LOCALES,
+  persistLocale,
   resolveLocale,
+  setLocale,
   t as homeT,
 } from "../i18n.js";
-
-const htmlLang = {
-  "zh-Hans": "zh-CN",
-  "zh-Hant": "zh-TW",
-  en: "en",
-};
+import { SHARE_BY_ROUTE } from "../share-meta.js";
+import { HTML_LANG, isSiteLocale, DEFAULT_LOCALE } from "../site-identity.js";
 
 const stageMetaByLocale = {
   "zh-Hans": {
@@ -692,6 +690,9 @@ const dict = {
 
 export { LOCALES, LOCALE_STORAGE_KEY, stageMetaByLocale };
 
+export const getCourseTable = (locale = DEFAULT_LOCALE) =>
+  dict[isSiteLocale(locale) ? locale : DEFAULT_LOCALE];
+
 export const courseT = (key, locale = resolveLocale()) => {
   const table = dict[locale] || dict["zh-Hans"];
   return table[key] ?? dict["zh-Hans"][key] ?? homeT(key, locale) ?? key;
@@ -701,9 +702,9 @@ export const getStageMeta = (locale = resolveLocale()) =>
   stageMetaByLocale[locale] || stageMetaByLocale["zh-Hans"];
 
 export const applyCourseI18n = (locale = resolveLocale()) => {
-  const resolved = dict[locale] ? locale : "zh-Hans";
+  const resolved = isSiteLocale(locale) ? locale : DEFAULT_LOCALE;
   const table = dict[resolved];
-  document.documentElement.lang = htmlLang[resolved] || "zh-CN";
+  document.documentElement.lang = HTML_LANG[resolved] || "zh-CN";
   document.documentElement.dataset.locale = resolved;
 
   document.querySelectorAll("[data-locale]").forEach((el) => {
@@ -723,6 +724,23 @@ export const applyCourseI18n = (locale = resolveLocale()) => {
     if (desc && table[`meta.${page}.description`]) {
       desc.setAttribute("content", table[`meta.${page}.description`]);
     }
+  }
+
+  const shareRoute =
+    document.body?.dataset?.shareRoute ||
+    ({ hub: "ai-course", fde: "ai-course-fde", mvp: "ai-course-mvp-3day" }[page] || null);
+  const share = shareRoute ? SHARE_BY_ROUTE[shareRoute] : null;
+  const shareCopy = share?.locales?.[resolved];
+  if (shareCopy) {
+    const setMeta = (selector, value) => {
+      document.querySelectorAll(selector).forEach((el) => el.setAttribute("content", value));
+    };
+    setMeta('meta[property="og:title"]', shareCopy.title);
+    setMeta('meta[property="og:description"]', shareCopy.desc);
+    setMeta('meta[name="twitter:title"]', shareCopy.title);
+    setMeta('meta[name="twitter:description"]', shareCopy.desc);
+    setMeta('meta[itemprop="name"]', shareCopy.title);
+    setMeta('meta[itemprop="description"]', shareCopy.desc);
   }
 
   const lookup = (key) => table[key] ?? homeT(key, resolved);
@@ -766,12 +784,4 @@ export const applyCourseI18n = (locale = resolveLocale()) => {
   return resolved;
 };
 
-export const setCourseLocale = (locale) => {
-  const next = dict[locale] ? locale : "zh-Hans";
-  try {
-    localStorage.setItem(LOCALE_STORAGE_KEY, next);
-  } catch {
-    /* ignore */
-  }
-  return applyCourseI18n(next);
-};
+export const setCourseLocale = (locale) => setLocale(locale);

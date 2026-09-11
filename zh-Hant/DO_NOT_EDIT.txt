@@ -1,0 +1,2 @@
+由 scripts/generate-locale-pages.mjs 生成，请勿手改。
+请运行：npm run seo:sync
