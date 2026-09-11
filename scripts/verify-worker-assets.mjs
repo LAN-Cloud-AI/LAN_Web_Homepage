@@ -80,6 +80,9 @@ for (const source of htmlSources) {
   ossReferences += new Set(matches).size;
 }
 
+const baiduVerify = fs.readdirSync(assetsRoot).filter((name) => /^baidu_verify_[A-Za-z0-9-]+\.html$/.test(name));
+required(baiduVerify.length > 0, "Baidu site-verification HTML must be copied into dist/");
+
 const files = walk(assetsRoot);
 const oversized = files.filter((file) => fs.statSync(file).size > maxWorkerAssetBytes);
 required(oversized.length === 0, `Production static assets exceed 25 MiB: ${oversized.map((file) => path.relative(assetsRoot, file)).join(", ")}`);

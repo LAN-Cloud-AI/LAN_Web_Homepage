@@ -29,7 +29,8 @@
     "dns:global": "node scripts/cf-dns-global-pages.mjs",
     "cf:ai-crawlers": "node scripts/cf-allow-ai-crawlers.mjs",
     "files:robots": "node scripts/sync-files-robots.mjs",
-    "seo:live": "node scripts/verify-live-seo.mjs"
+    "seo:live": "node scripts/verify-live-seo.mjs",
+    "seo:baidu": "node scripts/baidu-submit.mjs"
   },
   "repository": {
     "type": "git",

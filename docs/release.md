@@ -72,6 +72,7 @@
 4. 线索猎手独立官网 `https://leadshunter.lancloudtech.com/` 由 `LH_WebPage` 单独部署；公司站只保留首页产品卡、页脚与网站地图索引，以及 `/leadshunter/` 跳转。
 5. 公开站欢迎 AI 抓取与训练：`robots.txt` 写 `ai-train=yes` 并显式 Allow GPTBot / ClaudeBot / Google-Extended / Bytespider 等。`llms.txt` 是给模型的站点大纲。课件 ZIP 仍排除：`npm run files:robots` 把 ZIP-only robots 发到 `files.lancloudtech.com` 与 `img.lancloudtech.com`。橙云 AI Crawl Control 保持 Block 关闭；不要再打开托管 robots。`global.lancloudtech.com` 继续 `noindex`（地理副本，不作为收录源）。
 6. 发布顺序：先 `npm run nginx:apply` 并 `nginx -t` → `rsync dist/` → `npm run deploy:pages` → 三站 LH deploy → `npm run cf:ai-crawlers`。抽检 `www` / `/index.html` / `/leadshunter/` 为 301，乱路径为真 404，`/en/` 与 `/zh-Hant/` 的 `lang` / title / hreflang 正确。
+7. 公开路由变更后推百度普通收录：`npm run seo:baidu`（token 在 `~/.config/lanxin/env/baidu/ziyuan.env`）。新站日配额很小，先推简体：`npm run seo:baidu -- --zh-only`。
 
 ## 访问统计（Umami）
 

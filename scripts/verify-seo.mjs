@@ -26,6 +26,9 @@ required(exists("llms.txt"), "llms.txt must exist.");
 required(exists("404.html"), "404.html must exist.");
 required(exists("scripts/generate-sitemap.mjs"), "Sitemap generator must exist.");
 required(exists("scripts/generate-locale-pages.mjs"), "Locale page generator must exist.");
+required(exists("scripts/baidu-submit.mjs"), "Baidu URL submit script must exist.");
+required(read("scripts/baidu-submit.mjs").includes("BAIDU_ZIYUAN_TOKEN"), "Baidu submit must read the lanxin token env.");
+required(!/token=[A-Za-z0-9]{8,}/.test(read("scripts/baidu-submit.mjs")), "Baidu submit must not hardcode the API token.");
 
 const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
@@ -129,6 +132,12 @@ required(exists("ops/nginx/lancloudtech.com.conf"), "Versioned Nginx config must
 const nginx = read("ops/nginx/lancloudtech.com.conf");
 required(nginx.includes("server_name www.lancloudtech.com"), "Nginx must isolate the www vhost.");
 required(nginx.includes("return 301 https://lancloudtech.com$request_uri"), "www and HTTP must 301 to apex.");
+required(
+  nginx.includes("baidu_verify_[A-Za-z0-9-]+"),
+  "Nginx must serve hyphenated Baidu verify files on www without a cross-host 301.",
+);
+const baiduVerify = fs.readdirSync(root).filter((name) => /^baidu_verify_[A-Za-z0-9-]+\.html$/.test(name));
+required(baiduVerify.length > 0, "A Baidu site-verification HTML file must live at the site root.");
 required(nginx.includes("try_files $uri $uri/ $uri.html =404"), "Nginx must hard-404 unknown paths.");
 required(nginx.includes("location ^~ /leadshunter"), "Nginx must 301 /leadshunter to the product site.");
 required(nginx.includes("$lan_index_canonical"), "Nginx must canonicalize client /index.html without looping directory indexes.");
