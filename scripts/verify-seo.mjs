@@ -44,7 +44,7 @@ required(!/User-agent:\s*\*\s*\nDisallow:\s*\//.test(filesRobots), "files robots
 required(sitemap.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), "sitemap.xml must use the sitemaps.org schema.");
 required(sitemap.includes("xmlns:xhtml"), "sitemap.xml must declare xhtml for hreflang.");
 required(i18n.includes('"footer.sitemap"'), "i18n must include footer.sitemap in locales.");
-required(i18n.includes('"hero.h1"'), "i18n must include a semantic homepage H1.");
+required(i18n.includes('"hero.h1a"') && i18n.includes('"hero.h1b"'), "i18n must include the two-line homepage slogan.");
 
 const shareIds = new Set(Object.keys(SHARE_BY_ROUTE));
 for (const route of PUBLIC_ROUTES) {
@@ -105,7 +105,7 @@ required(
 const home = read("index.html");
 required(home.includes('href="./sitemap/"'), "Homepage footer must link to /sitemap/.");
 required(home.includes('data-i18n="footer.sitemap"'), "Homepage sitemap link must be i18n-aware.");
-required(home.includes('data-i18n="hero.h1"'), "Homepage H1 must use hero.h1.");
+required(home.includes('data-i18n="hero.h1a"') && home.includes('data-i18n="hero.h1b"'), "Homepage H1 must use the two-line slogan keys.");
 required(home.includes("VECT"), "Homepage JSON-LD mentions should still leave VECT in the page.");
 
 const hub = read("ai-course/index.html");

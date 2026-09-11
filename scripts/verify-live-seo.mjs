@@ -37,7 +37,7 @@ required(
 
 const { res: missing, text: missingBody } = await fetchText("https://lancloudtech.com/this-path-does-not-exist-seo/");
 required(missing.status === 404, `unknown path must 404, got ${missing.status}`);
-required(!missingBody.includes('data-i18n="hero.h1"'), "404 body must not be the homepage.");
+required(!missingBody.includes('data-i18n="hero.h1a"'), "404 body must not be the homepage.");
 
 const { res: en, text: enHtml } = await fetchText("https://lancloudtech.com/en/");
 required(en.status === 200, `/en/ must 200, got ${en.status}`);
