@@ -92,3 +92,10 @@ LeadsHunter 与云朵记账改用无设备外框的平面界面图，取消笔�
 - 页脚与汉堡菜单提供系统 / 白天 / 黑夜选择。site-theme 同步 CSS、图片与粒子；使用 `lancloud.theme` 和跨公司子域的 `lancloud_theme` cookie，LeadsHunter 接入相同偏好。
 - `build:company` 包含统一 shell、SEO、三语页面和粒子 404；发布包为 JS / CSS 添加指纹并保留稳定基础文件，避免已缓存 HTML 失去原资源路径。
 - 正常页面在主域允许索引，国际地理副本保持 noindex，canonical / sitemap 仍统一为 apex；不因视觉或动效改动覆盖静态 SEO 元信息。
+
+### 2026-09-14：实践卡片与联系区统一
+
+- 线索猎手配图容器使用透明背景，延续所属产品卡片的玉绿渐变；浅深色都覆盖旧蓝底样式。
+- 首页商城卡片与云朵记账共用 3:2 完整平面界面、留白和 `practice-visual` 慢速轨道粒子。商城不再使用购物袋插画，实践详情也沿用同套商城界面。
+- 新资源为 `commerce-interface-luminous-v1` 与 `commerce-interface-luminous-dark-v1`，各有 1536 PNG / WebP 和 768 WebP；提示词见 marketing 同名文件。
+- 企业微信优先呈现为白色主按钮，邮箱为辅助文本链接；四个方向每 2.5 秒渐变切换，用户选择后保留其意图。窄屏按钮可自然换行，说明区预留高度，减少轮播造成的布局位移。

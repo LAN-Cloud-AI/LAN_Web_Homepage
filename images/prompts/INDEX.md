@@ -197,3 +197,10 @@
 - [cloud-ledger-interface-luminous-dark-v1](./internal-expense/cloud-ledger-interface-luminous-dark-v1.md)：云朵记账 · 深色完整界面。
 - [commerce-workflow-luminous-v1](./marketing/commerce-workflow-luminous-v1.md)：商城与会员增长 · 玉绿业务闭环（浅色）。
 - [commerce-workflow-luminous-dark-v1](./marketing/commerce-workflow-luminous-dark-v1.md)：商城与会员增长 · 玉绿业务闭环（深色）。
+
+## 2026-09-14 商城完整界面
+
+商城首页卡片改用与云朵记账同系列的完整平面界面。内置 image_gen 编辑生成，1536 × 1024 PNG，附原宽和 768 × 512 WebP；暖白 / 墨绿成对，无设备边框、真实数据或静态粒子。
+
+- [commerce-interface-luminous-v1](./marketing/commerce-interface-luminous-v1.md)：商城与会员增长 · 浅色完整界面。
+- [commerce-interface-luminous-dark-v1](./marketing/commerce-interface-luminous-dark-v1.md)：商城与会员增长 · 深色完整界面。

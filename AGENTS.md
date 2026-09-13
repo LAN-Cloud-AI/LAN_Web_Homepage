@@ -18,6 +18,7 @@
 - 网站地图：`/sitemap/` → `sitemap/index.html`；机器可读 `sitemap.xml` + `robots.txt`（路由清单见 `site-seo.js`）
 - 海外入口：`https://global.lancloudtech.com/`（Cloudflare Pages 项目 `lan-homepage-global`）；仅 `CN` 留主域，港澳台与其它地区由 `geo-host.js` + Worker `lan-geo` 导向 global；canonical / sitemap 仍用 apex
 - 公司三页逻辑与视觉：`company.js`、`company.css`；三语文案：`redesign-copy.js`，并入 `i18n.js`。全站头部、页脚与菜单由 `scripts/site-shell.mjs`、`scripts/apply-site-shell.mjs`、`site-shell.js` / `.css` 统一维护；不要为子页另造主导航。菜单顺序、当前页标识和语言路径必须一致。
+- 公司三页联系区以企业微信为白色主按钮，邮箱为辅助链接。`company-inquiry.js` 管理四个交流方向的 2500ms 渐变轮播；可见时运行，手动选择和有效 `?inquiry=` 锁定方向，悬停、聚焦、后台和离屏停止计时，减少动效时保留手动选择。自动切换不触发点击统计；微信链接、邮件主题和 `data-umami-event-topic` 必须同步。
 - 新版动效：风格在 `docs/visual-style-v2.md`，叙事在 `docs/motion-storyboard.md`。首页控制器为 `company-hero-motion.js` / `.css`，ThreeUI 适配场景源为 `scripts/motion/hero-scene.js`；`company-hero-scene.js` 是生成包，勿手改。`npm run build:company` 包含本地依赖打包；单独场景修改可 `npm run build:motion` 后重新 prepare:dist。整页粒子为 `company-particle-fields.js` / `.css`，共同风格为 `company-luminous.css`。`company-motion-preference.js` 必须先于 Hero / fields 初始化，清除历史暂停偏好。动效默认开启，保留重播；系统减少动效、节省流量、WebGL 不可用时自动回退，离屏与后台停止计算。`npm run verify:motion` 验证播放、降级、BFCache、调度和 GPU 清理。
 - `npm run build:company` 依次打包动效、生成公司三页、应用统一 site-shell，再同步 SEO、三语静态页与三语粒子 404。课程或共享菜单改动也通过此完整流水线更新。运行时翻译只更新正文；SEO 标题、描述和分享元信息以静态路由生成为唯一来源。
 - `site-theme.js` 在首屏绘制前读取 `lancloud.theme`，支持 `system` / `light` / `dark`，默认跟随系统；实际主题写入 `html[data-theme]`。页脚与汉堡菜单都有开关，CSS、picture 和粒子使用同一主题，运行时通过 `lan:theme-change` 同步。`lancloud_theme` cookie（Domain=lancloudtech.com）在公司主域、国际子域和 LeadsHunter 间共享偏好；不要另建互相冲突的主题存储。
@@ -80,6 +81,7 @@ node scripts/verify-preview-routing.mjs
 node scripts/verify-site-analytics.mjs
 node scripts/verify-site-shell.mjs
 node --test scripts/verify-site-theme.test.mjs scripts/verify-notfound.test.mjs
+node --test scripts/verify-company-inquiry.test.mjs
 npm run verify:motion
 node scripts/prepare-worker-assets.mjs
 node scripts/verify-worker-assets.mjs

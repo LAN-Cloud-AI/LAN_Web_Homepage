@@ -29,6 +29,7 @@ for (const asset of requiredAssets) {
 const home = read("index.html");
 const styles = read("company.css");
 const main = read("company.js");
+const inquiry = read("company-inquiry.js");
 const card = read("contact/wecom/index.html");
 const cardCss = read("contact/wecom/wecom-card.css");
 const cardJs = read("contact/wecom/wecom-card.js");
@@ -41,12 +42,12 @@ required(contactStart >= 0, "Homepage must retain its contact section.");
 required(/<a\b[^>]*href="\.\/contact\/wecom\/"[^>]*>[\s\S]*?data-i18n="new.wecom"[\s\S]*?<\/a>/.test(contact), "Homepage contact section must expose a labeled link to the local WeCom card.");
 required(!home.includes('class="wechat-float"'), "The redesigned homepage must provide WeCom through its contact section without a floating control.");
 required(contact.includes('href="mailto:lance@lancloudtech.com'), "Homepage must retain an email channel alongside WeCom.");
-required(contact.includes('aria-live="polite"'), "Inquiry choices must announce updated context accessibly.");
+required(contact.includes('id="inquiry-hint"') && inquiry.includes('setAttribute("aria-live", "off")'), "Inquiry context must remain readable without repeatedly announcing automatic changes.");
 for (const topic of ["product", "training", "global", "project"]) {
   required(new RegExp(`<button\\b(?=[^>]*type="button")(?=[^>]*data-inquiry="${topic}")(?=[^>]*aria-pressed="(?:true|false)")[^>]*>`).test(contact), `Inquiry choice ${topic} must be a keyboard-operable button with selection state.`);
 }
 required(styles.includes(".contact-options"), "Homepage contact channels need responsive layout styling.");
-required(main.includes("selectInquiry") && main.includes("email.href"), "Inquiry selection must carry context into the email draft.");
+required(main.includes("initInquiry({ copy, locale })") && inquiry.includes("email.href") && inquiry.includes("wecom.href"), "Shared inquiry selection must carry context into the email draft and WeCom destination.");
 for (const locale of ["zh-Hans", "zh-Hant", "en"]) {
   required(getI18nTable(locale)["new.wecom"], `${locale} needs a translated WeCom contact label.`);
 }

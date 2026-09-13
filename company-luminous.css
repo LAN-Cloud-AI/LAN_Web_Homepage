@@ -9,7 +9,7 @@ body{background:var(--paper)}
 .product,.solution-card,.practice-card,.solution-detail-visual,.work-image{border-radius:24px}
 .product{background:linear-gradient(140deg,#f8fbf7,#eaf3ed)}
 /* Interface artwork stays complete, including the first and last rows. */
-.product-visual{background:var(--canvas);padding:28px 24px 36px;min-width:0}
+.product-visual{background:transparent;padding:28px 24px 36px;min-width:0}
 .product-visual picture{width:100%;max-width:100%}
 .product-visual img,.practice-visual img,.work-image picture img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;mix-blend-mode:normal}
 .practice-grid{grid-template-columns:1fr 1fr}
@@ -37,6 +37,9 @@ body{background:var(--paper)}
 .contact{isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 75% 120%,#216953,transparent 70%),#123e30;border:1px solid #39806380;border-radius:28px;min-height:350px}
 .contact-heading,.contact-options{position:relative;z-index:2}
 .contact-heading{max-width:460px}
+.contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px 24px}
+.contact .contact-actions .text-link{margin:0}
+.contact-actions .button-light{flex-shrink:0}
 .page-hero{position:relative;isolation:isolate;overflow:hidden;padding-top:100px;padding-bottom:84px}
 .page-hero h1,.page-hero>p,.page-jumps{position:relative;z-index:1}
 .page-hero>p:last-of-type{max-width:610px}
@@ -56,6 +59,7 @@ body{background:var(--paper)}
 
  html[data-theme="dark"]{--paper:#091813;--canvas:#11271f;--ink:#e7f2e9;--muted:#9fb9aa;--line:#294638;--green:#9eddbb;--green-pale:#194a35;--panel:#18392a}
  html[data-theme="dark"] .product{background:linear-gradient(130deg,#123528,#10291f)}
+ html[data-theme="dark"] .product-visual{background:transparent}
  html[data-theme="dark"] .artist-visual{background:radial-gradient(ellipse at 50% 30%,#1b3d2e,var(--canvas))}
  html[data-theme="dark"] .artist-visual div{background:radial-gradient(ellipse at 50% 90%,#91b89d 0 30%,#4d7660 31% 60%,#244a37 61%);border-color:#315443;box-shadow:0 10px 30px #020e092b}
  html[data-theme="dark"] .artist-visual div:nth-child(2){background:linear-gradient(130deg,#788263 35%,#aaa987 36% 55%,#3d503b 56%)}
