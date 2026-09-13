@@ -5,193 +5,192 @@ import { fileURLToPath } from "node:url";
 const required = (condition, message) => {
   if (!condition) throw new Error(message);
 };
+const attributes = (tag) => Object.fromEntries([...tag.matchAll(/\s([\w:-]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g)]
+  .map((match) => [match[1].toLowerCase(), match[2] ?? match[3] ?? match[4] ?? ""]));
+const hasClass = (tag, name) => (attributes(tag).class || "").split(/\s+/).includes(name);
 
-const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-const balancedBlock = (source, openingBrace) => {
-  let depth = 0;
-  for (let index = openingBrace; index < source.length; index += 1) {
-    if (source[index] === "{") depth += 1;
-    if (source[index] === "}") depth -= 1;
-    if (depth === 0) return source.slice(openingBrace + 1, index);
-  }
-  return "";
-};
-
-const elementBlock = (source, tag, openingTag) => {
-  const start = source.indexOf(openingTag);
+function element(source, tag, predicate = () => true) {
+  const tokens = [...source.matchAll(new RegExp(`<\\/?${tag}\\b[^>]*>`, "gi"))];
+  const start = tokens.findIndex((token) => !token[0].startsWith("</") && predicate(token[0]));
   if (start < 0) return "";
-  const tags = new RegExp(`<\\/?${tag}\\b[^>]*>`, "g");
-  tags.lastIndex = start;
   let depth = 0;
-  let match;
-  while ((match = tags.exec(source))) {
-    if (match[0].startsWith(`</${tag}`)) depth -= 1;
-    else depth += 1;
-    if (depth === 0) return source.slice(start, tags.lastIndex);
+  for (const token of tokens.slice(start)) {
+    depth += token[0].startsWith("</") ? -1 : 1;
+    if (depth === 0) return source.slice(tokens[start].index, token.index + token[0].length);
   }
   return "";
-};
+}
 
-const rootBlocks = (source) => {
-  const blocks = [];
+function splitTopLevel(source, separator) {
+  const pieces = [];
+  let start = 0, depth = 0, quote = "";
+  for (let index = 0; index < source.length; index += 1) {
+    const char = source[index];
+    if (quote) {
+      if (char === quote && source[index - 1] !== "\\") quote = "";
+    } else if (char === '"' || char === "'") quote = char;
+    else if (char === "(") depth += 1;
+    else if (char === ")") depth -= 1;
+    else if (char === separator && depth === 0) {
+      pieces.push(source.slice(start, index).trim());
+      start = index + 1;
+    }
+  }
+  pieces.push(source.slice(start).trim());
+  return pieces;
+}
+
+function cssRules(source, media = []) {
+  const rules = [];
+  source = source.replace(/\/\*[\s\S]*?\*\//g, "");
   let cursor = 0;
   while (cursor < source.length) {
-    const openingBrace = source.indexOf("{", cursor);
-    if (openingBrace < 0) break;
-    const body = balancedBlock(source, openingBrace);
-    const closingBrace = openingBrace + body.length + 1;
-    const prelude = source.slice(cursor, openingBrace).replace(/\/\*[\s\S]*?\*\//g, "").trim();
-    if (prelude) blocks.push({ start: cursor, prelude, body });
-    cursor = closingBrace + 1;
+    const opening = source.indexOf("{", cursor);
+    if (opening < 0) break;
+    let end = opening + 1, depth = 1, quote = "";
+    for (; end < source.length && depth; end += 1) {
+      const char = source[end];
+      if (quote) {
+        if (char === quote && source[end - 1] !== "\\") quote = "";
+      } else if (char === '"' || char === "'") quote = char;
+      else if (char === "{") depth += 1;
+      else if (char === "}") depth -= 1;
+    }
+    required(depth === 0, "Hero stylesheet contains an unclosed CSS block.");
+    const selector = source.slice(cursor, opening).trim();
+    const body = source.slice(opening + 1, end - 1);
+    if (/^@media\b/i.test(selector)) rules.push(...cssRules(body, [...media, selector]));
+    else if (/^@(?:supports|layer|container)\b/i.test(selector)) rules.push(...cssRules(body, media));
+    else if (!selector.startsWith("@")) {
+      const declarations = splitTopLevel(body, ";").flatMap((declaration) => {
+        const colon = declaration.indexOf(":");
+        return colon < 0 ? [] : [[declaration.slice(0, colon).trim().toLowerCase(), declaration.slice(colon + 1).trim()]];
+      });
+      rules.push({ selector, media, declarations });
+    }
+    cursor = end;
   }
-  return blocks;
+  return rules;
+}
+
+const normalized = (value) => value.toLowerCase().replace(/\s*!important\s*$/, "").trim();
+const classPattern = (name) => new RegExp(`\\.${name}(?![\\w-])`);
+const terminal = (selector) => selector.trim().split(/\s*[>+~]\s*|\s+/).at(-1);
+const targets = (rule, name) => splitTopLevel(rule.selector, ",").some((selector) => {
+  const end = terminal(selector);
+  return classPattern(name).test(end) && !end.includes("::");
+});
+const values = (rules, property) => rules.flatMap((rule) => rule.declarations
+  .filter(([name]) => name === property).map(([, value]) => normalized(value)));
+const everyValue = (rules, property, predicate) => {
+  const found = values(rules, property);
+  return found.length > 0 && found.every(predicate);
+};
+const containsMedia = (rule, feature) => rule.media.some((media) => media.replace(/\s+/g, "").includes(feature));
+const hiddenAttribute = (tag) => {
+  const attrs = attributes(tag);
+  return "hidden" in attrs || attrs["aria-hidden"] === "true";
 };
 
-const selectorCompounds = (member) => member.trim().split(/\s*[>+~]\s*|\s+/).filter(Boolean);
-const hasClassToken = (compound, className) => new RegExp(`\\.${className}(?![\\w-])`, "i").test(compound);
-const isTerminalClass = (compound, className) => hasClassToken(compound, className) && !compound.includes("::");
-const normalizedMedia = (value) => value
-  .replace(/\s*([():])\s*/g, "$1")
-  .replace(/\s+/g, " ")
-  .trim();
+function checkSource(source) {
+  const attrs = attributes(source);
+  required(!attrs.type || ["image/webp", "image/avif", "image/png", "image/jpeg"].includes(attrs.type),
+    "Hero sources must use a supported image MIME type.");
+  const candidates = (attrs.srcset || "").split(",").map((candidate) => candidate.trim().match(/^(\S+)\s+(\d+)w$/));
+  required(candidates.length >= 2 && candidates.every((match) => match && Number(match[2]) > 0
+    && /\.(?:webp|avif|png|jpe?g)(?:[?#].*)?$/i.test(match[1])), "Hero sources need valid image candidates with width descriptors.");
+  const widths = candidates.map((match) => Number(match[2]));
+  required(new Set(widths).size === widths.length && new Set(candidates.map((match) => match[1])).size === candidates.length,
+    "Hero responsive candidates must have distinct widths and URLs.");
+  const sizes = splitTopLevel(attrs.sizes || "", ",");
+  required(sizes.every((size) => {
+    // Check the source size separately from an optional leading media condition.
+    const length = size.replace(/^\([^)]*\)\s*/, "");
+    return /^(?:\d*\.?\d+(?:px|vw|vh|vmin|vmax|rem|em)|(?:calc|min|max|clamp)\(.+\))$/i.test(length)
+      && [...length.matchAll(/(\d*\.?\d+)(?:px|vw|vh|vmin|vmax|rem|em)/g)].some((match) => Number(match[1]) > 0);
+  }), "Hero width candidates need nonempty, usable sizes attributes.");
+  return attrs;
+}
 
-const selectorMemberTargets = (member, target) => {
-  const compounds = selectorCompounds(member);
-  const terminal = compounds.at(-1) || "";
-  if (target === "hero") return isTerminalClass(terminal, "hero");
-  if (target === "hero-background") {
-    return isTerminalClass(terminal, "hero-background");
-  }
-  if (target === "hero-copy") return isTerminalClass(terminal, "hero-copy");
-  if (target === "hero-scrim") return hasClassToken(terminal, "hero") && /::before$/i.test(terminal);
-  const hasBackgroundAncestor = compounds.slice(0, -1).some((part) => hasClassToken(part, "hero-background"));
-  if (target === "background-media") return hasBackgroundAncestor && /^(?:picture|img)$/i.test(terminal);
-  if (target === "background-image") return hasBackgroundAncestor && /^img$/i.test(terminal);
-  return false;
-};
-
-const ruleTargets = (rule, target) => rule.prelude.split(",").some((member) => selectorMemberTargets(member, target));
-
-const rulesForSelector = (source, target) => rootBlocks(source)
-  .filter((block) => ruleTargets(block, target))
-  .map((block) => block.body);
-
-const rulesForMedia = (source, query) => rootBlocks(source)
-  .filter((block) => normalizedMedia(block.prelude).startsWith("@media") && normalizedMedia(block.prelude).includes(normalizedMedia(query)))
-  .flatMap((block) => rootBlocks(block.body).map((rule) => ({ ...rule, start: block.start })));
-
-const rulesForAnyMedia = (source, queries) => rootBlocks(source)
-  .filter((block) => normalizedMedia(block.prelude).startsWith("@media") && queries.some((query) => normalizedMedia(block.prelude).includes(normalizedMedia(query))))
-  .flatMap((block) => rootBlocks(block.body).map((rule) => ({ ...rule, start: block.start })));
-
-const declarationsForProperty = (rules, property) => {
-  const matcher = new RegExp(`(?:^|;)\\s*${escapeRegExp(property)}\\s*:\\s*([^;{}]+?)(?:;|$)`, "g");
-  const values = [];
-  for (const rule of rules) {
-    for (const match of rule.matchAll(matcher)) values.push(match[1].trim().replace(/\s+/g, " "));
-  }
-  return values;
-};
-
-const hasFinalDeclarations = (rules, declarations) => Object.entries(declarations)
-  .every(([property, value]) => {
-    const values = declarationsForProperty(rules, property);
-    return values.length > 0 && values.every((candidate) => candidate === value);
-  });
-const sourceTags = (picture) => [...picture.matchAll(/<source\b[^>]*>/g)].map(([tag]) => tag);
-const hasAll = (source, values) => values.every((value) => source.includes(value));
-
-export const verifyHero = (page, css) => {
-  const hero = elementBlock(page, "section", '<section class="hero">');
+export function verifyHero(page, css) {
+  // Ignore decoys in comments and scripts instead of checking whole-file substrings.
+  page = page.replace(/<!--[\s\S]*?-->/g, "").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  const hero = element(page, "section", (tag) => hasClass(tag, "hero"));
   required(hero, "Hero section is required.");
-
-  const heroBackground = elementBlock(hero, "div", '<div class="hero-background" aria-hidden="true">');
-  required(heroBackground, "Hero artwork must be a decorative background layer.");
-  const heroCopyAt = hero.indexOf('<div class="hero-copy"');
-  required(heroCopyAt >= 0 && hero.indexOf(heroBackground) < heroCopyAt, "Hero background must precede hero copy.");
-  required(!heroBackground.includes("data-i18n-alt"), "Decorative hero artwork must not be localized as content.");
-
-  const picture = elementBlock(heroBackground, "picture", "<picture>");
+  required(!hiddenAttribute(hero.match(/^<[^>]+>/)[0]), "Hero content must remain accessible.");
+  const background = element(hero, "div", (tag) => hasClass(tag, "hero-background"));
+  required(background && attributes(background.match(/^<[^>]+>/)[0])["aria-hidden"] === "true",
+    "Hero artwork must be a decorative background layer.");
+  const copy = element(hero, "div", (tag) => hasClass(tag, "hero-copy"));
+  required(copy && !background.includes(copy) && !hiddenAttribute(copy.match(/^<[^>]+>/)[0]),
+    "Hero copy must be accessible outside the decorative background.");
+  const heading = element(copy, "h1");
+  required(heading && !hiddenAttribute(heading.match(/^<[^>]+>/)[0])
+    && heading.replace(/<[^>]*>/g, "").replace(/&(?:nbsp|#160);/g, " ").trim(), "Hero needs a visible text h1 in its copy.");
+  required(!background.includes("data-i18n-alt"), "Decorative hero artwork must not be localized as content.");
+  const picture = element(background, "picture");
   required(picture, "Hero background must use a picture element.");
-  const images = [...picture.matchAll(/<img\b[^>]*>/g)].map(([tag]) => tag);
-  const image = images.at(-1) || "";
-  required(images.length === 1 && /\balt=""/.test(image), "Decorative hero artwork must have empty alternative text.");
-  required(/\bfetchpriority="high"/.test(image), "Hero artwork must load at high priority.");
-  required(/\bdecoding="async"/.test(image), "Hero artwork must decode asynchronously.");
+  const images = [...picture.matchAll(/<img\b[^>]*>/gi)];
+  const image = attributes(images[0]?.[0] || "");
+  required(images.length === 1 && image.alt === "", "Decorative hero artwork must have empty alternative text.");
+  required(image.fetchpriority === "high" && image.loading !== "lazy", "Hero artwork must load at high priority without lazy loading.");
+  required(image.decoding === "async", "Hero artwork must decode asynchronously.");
+  required(/^\d+$/.test(image.width || "") && Number(image.width) > 0
+    && /^\d+$/.test(image.height || "") && Number(image.height) > 0, "Hero image needs positive intrinsic width and height.");
+  required(/\.png(?:[?#].*)?$/i.test(image.src || ""), "Hero picture needs a PNG image fallback.");
+  const sources = [...picture.matchAll(/<source\b[^>]*>/gi)].map(([tag]) => tag);
+  required(sources.length >= 2, "Hero needs width-responsive and default image sources.");
+  required(sources.every((tag) => picture.indexOf(tag) < images[0].index), "Hero sources must precede the fallback image.");
+  const sourceAttrs = sources.map(checkSource);
+  required(sourceAttrs.some((attrs) => /\(\s*max-width\s*:\s*[\d.]+(?:px|em|rem)\s*\)/i.test(attrs.media || ""))
+    && !sourceAttrs.at(-1).media && sourceAttrs.slice(0, -1).every((attrs) => attrs.media),
+    "Hero responsive sources must precede the default source.");
 
-  const [mobileWebp, mobilePng, desktopWebp] = sourceTags(picture);
-  required(sourceTags(picture).length === 3, "Hero picture must retain its complete responsive source chain.");
-  required(
-    !picture.includes("horizontal-viewport-segments") && !picture.includes("spanning: single-fold"),
-    "Hero picture must not use fold dual-pane source switching; width-based responsive only.",
-  );
-  required(
-    hasAll(mobileWebp, [
-      'media="(max-width: 640px)"', 'type="image/webp"', 'sizes="100vw"',
-      "brand-hero-precision-atelier-mobile-768.webp",
-      "brand-hero-precision-atelier-mobile-1280.webp",
-      "brand-hero-precision-atelier-mobile.webp",
-    ]),
-    "Hero picture must include the mobile WebP source.",
-  );
-  required(
-    hasAll(mobilePng, ['media="(max-width: 640px)"', "brand-hero-precision-atelier-mobile.png"]),
-    "Hero picture must include the mobile PNG fallback.",
-  );
-  required(
-    hasAll(desktopWebp, [
-      'type="image/webp"',
-      "brand-hero-precision-atelier-768.webp",
-      "brand-hero-precision-atelier-1280.webp",
-      "brand-hero-precision-atelier.webp",
-      'sizes="(max-width: 1024px) 100vw, min(100vw, 1120px)"',
-    ]),
-    "Hero picture must finish with the desktop WebP source.",
-  );
-
-  required(!hero.includes("hero-visual") && !css.includes(".hero-visual"), "Standalone hero image selectors must be removed.");
-  required(hasFinalDeclarations(rulesForSelector(css, "hero"), {
-    position: "relative", isolation: "isolate", "min-height": "min(50rem, calc(100svh - 3.25rem))", overflow: "hidden", background: "var(--bg-deep)",
-  }), "Hero must establish its clipped stacking context.");
-  required(hasFinalDeclarations(rulesForSelector(css, "hero-background"), {
-    position: "absolute", inset: "0", "z-index": "0", "pointer-events": "none",
-  }), "Hero background needs its own inert CSS layer.");
-  required(hasFinalDeclarations(rulesForSelector(css, "background-media"), {
-    display: "block", width: "100%", height: "100%",
-  }), "Hero picture must fill the background layer.");
-  required(hasFinalDeclarations(rulesForSelector(css, "background-image"), {
-    "object-fit": "cover", "object-position": "center 57%",
-  }), "Hero image must cover with the desktop focal point.");
-  required(hasFinalDeclarations(rulesForSelector(css, "hero-scrim"), {
-    content: '""', position: "absolute", inset: "0", "z-index": "1", "pointer-events": "none", background: "linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.84) 41%, rgba(250, 252, 253, 0.22) 70%, rgba(248, 251, 252, 0.48) 100%)",
-  }), "Hero needs a readable image scrim.");
-  required(hasFinalDeclarations(rulesForSelector(css, "hero-copy"), {
-    position: "relative", "z-index": "2", "max-width": "740px", margin: "0 auto 2.15rem",
-  }), "Hero copy must remain above the artwork.");
-
-  const darkRules = rulesForMedia(css, "(prefers-color-scheme: dark)")
-    .filter((rule) => rule.start > css.indexOf(".hero::before {") && ruleTargets(rule, "hero-scrim"))
-    .map((rule) => rule.body);
-  required(hasFinalDeclarations(darkRules, {
-    background: "linear-gradient(180deg, rgba(8, 12, 18, 0.90) 0%, rgba(8, 12, 18, 0.76) 46%, rgba(8, 12, 18, 0.36) 72%, rgba(8, 12, 18, 0.58) 100%)",
-  }), "Hero needs the specified dark-mode scrim.");
-  const mobileRules = rulesForMedia(css, "(max-width: 640px)");
-  required(hasFinalDeclarations(mobileRules.filter((rule) => ruleTargets(rule, "background-image")).map((rule) => rule.body), {
-    "object-position": "50% 64%",
-  }), "Mobile hero needs the lower image focal point.");
-  required(hasFinalDeclarations(mobileRules.filter((rule) => ruleTargets(rule, "hero")).map((rule) => rule.body), {
-    "min-height": "calc(100svh - 3.25rem)",
-  }), "Mobile hero needs its responsive minimum height.");
-  required(
-    !css.includes("horizontal-viewport-segments") && !css.includes("spanning: single-fold"),
-    "Homepage CSS must not use fold dual-pane layout; rely on width breakpoints.",
-  );
-};
+  const rules = cssRules(css);
+  const heroRules = rules.filter((rule) => targets(rule, "hero"));
+  const backgroundRules = rules.filter((rule) => targets(rule, "hero-background"));
+  const copyRules = rules.filter((rule) => targets(rule, "hero-copy"));
+  const unconditional = (selected) => selected.filter((rule) => rule.media.length === 0);
+  required(values(unconditional(heroRules), "position").length && values(unconditional(heroRules), "isolation").length
+    && everyValue(heroRules, "position", (value) => ["relative", "absolute", "fixed", "sticky"].includes(value))
+    && everyValue(heroRules, "isolation", (value) => value === "isolate"), "Hero must establish an isolated positioning context.");
+  const decorationRules = rules.filter((rule) => classPattern("hero-background").test(rule.selector));
+  required(values(unconditional(backgroundRules), "position").length && values(unconditional(backgroundRules), "pointer-events").length
+    && everyValue(backgroundRules, "position", (value) => value === "absolute")
+    && values(decorationRules, "pointer-events").every((value) => value === "none")
+    && everyValue(backgroundRules, "pointer-events", (value) => value === "none"), "Hero background must stay positioned and inert.");
+  required(values(unconditional(copyRules), "position").length
+    && everyValue(copyRules, "position", (value) => ["relative", "absolute", "fixed", "sticky"].includes(value)),
+    "Hero copy must participate in the positioned content layer.");
+  const backdropLayers = values(backgroundRules, "z-index");
+  const copyLayers = values(copyRules, "z-index").map((value) => value === "auto" ? "0" : value);
+  if (!copyLayers.length) copyLayers.push("0");
+  required(values(unconditional(backgroundRules), "z-index").length && [...backdropLayers, ...copyLayers].every((value) => /^-?\d+$/.test(value))
+    && Math.max(...backdropLayers.map(Number)) < Math.min(...copyLayers.map(Number)), "Hero artwork must remain below the copy layer.");
+  const contentRules = rules.filter((rule) => targets(rule, "hero") || targets(rule, "hero-copy") || targets(rule, "hero-line")
+    || splitTopLevel(rule.selector, ",").some((selector) => classPattern("hero").test(selector) && terminal(selector) === "h1"));
+  required(!values(contentRules, "display").includes("none") && !values(contentRules, "visibility").some((value) => ["hidden", "collapse"].includes(value))
+    && !values(contentRules, "opacity").some((value) => Number(value) === 0), "Hero text must not be hidden by CSS.");
+  const darkRules = rules.filter((rule) => containsMedia(rule, "(prefers-color-scheme:dark)"));
+  const heroVisualRules = darkRules.filter((rule) => classPattern("hero").test(rule.selector) || classPattern("hero-background").test(rule.selector));
+  const darkTextRules = darkRules.filter((rule) => /(?:^|[,\s])(?::root|html|body)(?:$|[,\s])/.test(rule.selector)
+    || /\.hero(?:$|[\s.#:]|-(?:copy|line|intro|foot))/.test(rule.selector));
+  required(heroVisualRules.some((rule) => rule.declarations.some(([name]) => ["background", "background-color", "filter", "opacity"].includes(name)))
+    && darkTextRules.some((rule) => rule.declarations.some(([name]) => ["color", "--ink", "--muted"].includes(name))),
+    "Hero needs dark-mode foreground and artwork treatments.");
+  const reducedRules = rules.filter((rule) => containsMedia(rule, "(prefers-reduced-motion:reduce)"));
+  const globalMotionRules = reducedRules.filter((rule) => splitTopLevel(rule.selector, ",").includes("*"));
+  required(everyValue(globalMotionRules, "animation", (value) => value === "none")
+    && everyValue(globalMotionRules, "transition", (value) => value === "none"), "Reduced motion must disable decorative animations and transitions.");
+  const reducedHeroRules = reducedRules.filter((rule) => /\.hero(?:\b|-)/.test(rule.selector));
+  required([...values(reducedHeroRules, "animation"), ...values(reducedHeroRules, "animation-name"), ...values(reducedHeroRules, "transition")]
+    .every((value) => value === "none"), "Reduced-motion hero rules must not restart motion.");
+  required(everyValue(reducedRules.filter((rule) => splitTopLevel(rule.selector, ",").includes("html")), "scroll-behavior", (value) => value === "auto"),
+    "Reduced motion must disable smooth document scrolling.");
+}
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const root = process.cwd();
-  const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
-  verifyHero(read("index.html"), read("styles.css"));
-  console.log("Homepage hero background verification passed.");
+  verifyHero(fs.readFileSync(path.join(root, "index.html"), "utf8"), fs.readFileSync(path.join(root, "company.css"), "utf8"));
+  console.log("Homepage hero accessibility, responsive image and theme checks passed; visual contrast is reviewed in the browser.");
 }

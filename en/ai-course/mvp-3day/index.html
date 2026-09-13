@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <title>From a business scene to an AI tool MVP · 3-day workshop · LAN Cloud AI</title>
-  <meta name="description" content="A three-day enterprise workshop: spot the scene, design the workflow, and ship a verifiable AI tool MVP." />
+  <meta name="description" content="A three-day enterprise workshop covering use-case selection, workflow design, and MVP implementation. View the schedule for free; training scope and fees are agreed separately." />
   <link rel="canonical" href="https://lancloudtech.com/en/ai-course/mvp-3day/" />
   <link rel="alternate" hreflang="zh-CN" href="https://lancloudtech.com/ai-course/mvp-3day/" />
   <link rel="alternate" hreflang="zh-Hant" href="https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/" />
@@ -39,6 +39,7 @@
   <script src="/geo-host.js" defer></script>
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/ai-course/ai-course.css" />
+  <link rel="stylesheet" href="/ai-course/redesign.css" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,7 +69,8 @@
       "sameAs": [
         "https://github.com/LAN-Cloud-AI",
         "https://leadshunter.lancloudtech.com/"
-      ]
+      ],
+      "description": "LAN Cloud AI provides automotive AI products, aftersales workflow solutions, and hands-on enterprise AI training across customer acquisition, relationships, and workshop coordination."
     },
     {
       "@type": "WebSite",
@@ -80,7 +82,7 @@
         "蘭芯雲朵",
         "LAN Cloud AI"
       ],
-      "description": "LAN Cloud AI redefines automotive retail and aftersales with AI: see public signals, understand customer relationships, orchestrate workshop flow.",
+      "description": "LAN Cloud AI provides automotive AI products, aftersales workflow solutions, and hands-on enterprise AI training across customer acquisition, relationships, and workshop coordination.",
       "publisher": {
         "@id": "https://lancloudtech.com/#organization"
       },
@@ -95,7 +97,7 @@
       "@id": "https://lancloudtech.com/en/ai-course/mvp-3day/#webpage",
       "url": "https://lancloudtech.com/en/ai-course/mvp-3day/",
       "name": "From a business scene to an AI tool MVP · 3-day workshop · LAN Cloud AI",
-      "description": "A three-day enterprise workshop: spot the scene, design the workflow, and ship a verifiable AI tool MVP.",
+      "description": "A three-day enterprise workshop covering use-case selection, workflow design, and MVP implementation. View the schedule for free; training scope and fees are agreed separately.",
       "isPartOf": {
         "@id": "https://lancloudtech.com/#website"
       },
@@ -108,6 +110,10 @@
         "url": "https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-ai-course-mvp-3day-v2.png",
         "width": 1000,
         "height": 1000
+      },
+      "isAccessibleForFree": true,
+      "mainEntity": {
+        "@id": "https://lancloudtech.com/en/ai-course/mvp-3day/#course"
       }
     },
     {
@@ -129,19 +135,20 @@
     },
     {
       "@type": "Course",
+      "@id": "https://lancloudtech.com/en/ai-course/mvp-3day/#course",
       "name": "3-day enterprise workshop",
-      "description": "A three-day enterprise workshop: spot the scene, design the workflow, and ship a verifiable AI tool MVP.",
+      "description": "A three-day enterprise workshop covering use-case selection, workflow design, and MVP implementation. View the schedule for free; training scope and fees are agreed separately.",
       "provider": {
         "@id": "https://lancloudtech.com/#organization"
       },
       "inLanguage": "en",
-      "isAccessibleForFree": true,
+      "isAccessibleForFree": false,
       "timeRequired": "P3D"
     }
   ]
 }
   </script>
-  <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-lan-analytics="umami"></script>
+  <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-domains="lancloudtech.com,www.lancloudtech.com,global.lancloudtech.com" data-lan-analytics="umami"></script>
 </head>
 <body data-course-page="mvp" data-share-route="ai-course-mvp-3day">
   <a class="skip-link" href="#agenda" data-i18n="skip.agenda">Skip to three-day agenda</a>
@@ -158,14 +165,20 @@
         <span></span><span></span><span></span>
       </span>
     </button>
-    <nav class="product-nav" id="product-nav" data-i18n-aria="nav.mvpLabel" aria-label="3-day course navigation">
-      <a href="/en/ai-course/" data-i18n="nav.hub">Overview</a>
-      <a href="#agenda" data-i18n="nav.agenda">Agenda</a>
-      <a href="#principles" data-i18n="nav.deliveryPrinciples">Principles</a>
-      <a href="/en/ai-course/fde/" data-i18n="nav.fde">FDE schedule</a>
-      <a class="nav-cta" href="/en/#contact" data-i18n="nav.cta">Talk to us</a>
+    <nav class="product-nav" id="product-nav" data-i18n-aria="company.navLabel" aria-label="LAN Cloud AI site navigation">
+      <a href="/en/#products" data-i18n="company.products">Products & solutions</a>
+      <a href="/en/#academy" data-i18n="company.academy">AI training</a>
+      <a href="/en/#practice" data-i18n="company.practice">Projects & practice</a>
+      <a href="/en/#method" data-i18n="company.method">About LAN</a>
+      <a class="nav-cta" href="/en/?inquiry=training#contact" data-i18n="company.contact">Contact</a>
     </nav>
   </header>
+
+  <nav class="course-local-nav page-shell" data-i18n-aria="company.courseNav" aria-label="Course navigation">
+    <a href="/en/ai-course/" data-i18n="nav.hub">Overview</a>
+    <a href="/en/ai-course/fde/" data-i18n="nav.fde">FDE schedule</a>
+    <a href="/en/ai-course/mvp-3day/" aria-current="page" data-i18n="nav.mvp">3-day custom</a>
+  </nav>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
@@ -201,16 +214,14 @@
       <div class="page-shell">
         <div class="hero-copy">
           <p class="eyebrow reveal" data-i18n="mvp.eyebrow">Enterprise Custom · 3-day studio</p>
-          <h1 id="hero-title" class="reveal delay-1" data-i18n-html="mvp.heroTitle"><span class="copy-unit">From business scene to</span><br /><span class="copy-unit"><em>AI tool MVP</em></span></span><br />
-            <span class="copy-unit"><em>AI 工具 MVP</em></span>
-          </h1>
+          <h1 id="hero-title" class="reveal delay-1" data-i18n-html="mvp.heroTitle"><span class="copy-unit">From business scene to</span><br /><span class="copy-unit"><em>AI tool MVP</em></span></span><br /><span class="copy-unit"><em>AI 工具 MVP</em></span></h1>
           <p class="hero-lede reveal delay-2">
             <span class="copy-unit" data-i18n="mvp.lede1">Start from a real enterprise need,</span>
             <span class="copy-unit" data-i18n="mvp.lede2">and finish high-value scene selection, AI workflow design, MVP build, and business validation in three days.</span>
           </p>
           <div class="hero-actions reveal delay-3">
             <a class="btn primary" href="#agenda" data-i18n="mvp.ctaPrimary">View the agenda</a>
-            <a class="btn ghost" href="/en/#contact"><span data-i18n="mvp.ctaSecondary">Talk to us</span> <span aria-hidden="true">›</span></a>
+            <a class="btn ghost" href="/en/?inquiry=training#contact"><span data-i18n="mvp.ctaSecondary">Talk to us</span> <span aria-hidden="true">›</span></a>
           </div>
           <dl class="stat-row reveal delay-3" data-i18n-aria="mvp.statsLabel" aria-label="Program overview">
             <div><dt data-i18n="mvp.statDays">Duration</dt><dd><strong>3</strong><span data-i18n="mvp.statDaysUnit">days</span></dd></div>
@@ -391,7 +402,7 @@
           <p class="copy-unit" data-i18n="mvp.contactLede">If your company already has a clear pain point, talk with us about whether the three-day custom course fits.</p>
           <div class="contact-actions">
             <a class="text-link" href="/en/contact/wecom/"><span data-i18n="mvp.contactWecom">Add Work WeChat</span> <span aria-hidden="true">›</span></a>
-            <a class="text-link" href="/en/#contact"><span data-i18n="mvp.contactTalk">Talk to us</span> <span aria-hidden="true">›</span></a>
+            <a class="text-link" href="/en/?inquiry=training#contact"><span data-i18n="mvp.contactTalk">Talk to us</span> <span aria-hidden="true">›</span></a>
           </div>
         </div>
       </div>
@@ -408,11 +419,11 @@
             </button>
           </h3>
           <div class="footer-col-panel" id="footer-panel-explore" role="region" aria-labelledby="footer-toggle-explore">
-            <a href="/en/#products" data-i18n="nav.products">Products</a>
-            <a href="/en/#method" data-i18n="nav.method">Method</a>
-            <a href="/en/#beliefs" data-i18n="nav.beliefs">Beliefs</a>
-            <a href="/en/ai-course/" data-i18n="nav.academy">Academy</a>
-            <a href="/en/#open" data-i18n="nav.open">Open Source</a>
+      <a href="/en/#products" data-i18n="company.products">Products & solutions</a>
+      <a href="/en/#academy" data-i18n="company.academy">AI training</a>
+      <a href="/en/#practice" data-i18n="company.practice">Projects & practice</a>
+      <a href="/en/#method" data-i18n="company.method">About LAN</a>
+      <a href="/en/?inquiry=training#contact" data-i18n="company.contact">Contact</a>
           </div>
         </div>
         <div class="footer-col">
@@ -423,10 +434,10 @@
           </h3>
           <div class="footer-col-panel" id="footer-panel-products" role="region" aria-labelledby="footer-toggle-products">
             <a href="https://leadshunter.lancloudtech.com/" target="_blank" rel="noopener">LeadsHunter</a>
-            <a href="/en/internal-expense/">云朵记账</a>
-            <a href="/en/ai-course/">AI 课程</a>
-            <a href="/en/#vect">VECT</a>
-            <a href="/en/#tact">TACT</a>
+            <a href="/en/internal-expense/" data-i18n="company.ledger">Cloud Ledger</a>
+            <a href="/en/ai-course/" data-i18n="company.academy">AI training</a>
+            <a href="/en/solutions/#vect">VECT</a>
+            <a href="/en/solutions/#tact">TACT</a>
           </div>
         </div>
         <div class="footer-col">

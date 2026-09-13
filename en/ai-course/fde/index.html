@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <title>From AI application to frontline FDE · Public schedule · LAN Cloud AI</title>
-  <meta name="description" content="LAN Cloud AI FDE public schedule: 84 hours, 21 lessons, three stages to delivery." />
+  <meta name="description" content="View the FDE schedule for free: 84 hours, 21 lessons, and three stages. Enterprise training is a separate paid service with scope and fees agreed individually." />
   <link rel="canonical" href="https://lancloudtech.com/en/ai-course/fde/" />
   <link rel="alternate" hreflang="zh-CN" href="https://lancloudtech.com/ai-course/fde/" />
   <link rel="alternate" hreflang="zh-Hant" href="https://lancloudtech.com/zh-Hant/ai-course/fde/" />
@@ -39,6 +39,7 @@
   <script src="/geo-host.js" defer></script>
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/ai-course/ai-course.css" />
+  <link rel="stylesheet" href="/ai-course/redesign.css" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,7 +69,8 @@
       "sameAs": [
         "https://github.com/LAN-Cloud-AI",
         "https://leadshunter.lancloudtech.com/"
-      ]
+      ],
+      "description": "LAN Cloud AI provides automotive AI products, aftersales workflow solutions, and hands-on enterprise AI training across customer acquisition, relationships, and workshop coordination."
     },
     {
       "@type": "WebSite",
@@ -80,7 +82,7 @@
         "蘭芯雲朵",
         "LAN Cloud AI"
       ],
-      "description": "LAN Cloud AI redefines automotive retail and aftersales with AI: see public signals, understand customer relationships, orchestrate workshop flow.",
+      "description": "LAN Cloud AI provides automotive AI products, aftersales workflow solutions, and hands-on enterprise AI training across customer acquisition, relationships, and workshop coordination.",
       "publisher": {
         "@id": "https://lancloudtech.com/#organization"
       },
@@ -95,7 +97,7 @@
       "@id": "https://lancloudtech.com/en/ai-course/fde/#webpage",
       "url": "https://lancloudtech.com/en/ai-course/fde/",
       "name": "From AI application to frontline FDE · Public schedule · LAN Cloud AI",
-      "description": "LAN Cloud AI FDE public schedule: 84 hours, 21 lessons, three stages to delivery.",
+      "description": "View the FDE schedule for free: 84 hours, 21 lessons, and three stages. Enterprise training is a separate paid service with scope and fees agreed individually.",
       "isPartOf": {
         "@id": "https://lancloudtech.com/#website"
       },
@@ -108,6 +110,10 @@
         "url": "https://img.lancloudtech.com/lanxin/webpage/images/generated/share/og-ai-course-fde-v2.png",
         "width": 1000,
         "height": 1000
+      },
+      "isAccessibleForFree": true,
+      "mainEntity": {
+        "@id": "https://lancloudtech.com/en/ai-course/fde/#course"
       }
     },
     {
@@ -129,19 +135,20 @@
     },
     {
       "@type": "Course",
-      "name": "FDE public schedule",
-      "description": "LAN Cloud AI FDE public schedule: 84 hours, 21 lessons, three stages to delivery.",
+      "@id": "https://lancloudtech.com/en/ai-course/fde/#course",
+      "name": "Enterprise FDE training",
+      "description": "View the FDE schedule for free: 84 hours, 21 lessons, and three stages. Enterprise training is a separate paid service with scope and fees agreed individually.",
       "provider": {
         "@id": "https://lancloudtech.com/#organization"
       },
       "inLanguage": "en",
-      "isAccessibleForFree": true,
+      "isAccessibleForFree": false,
       "timeRequired": "PT84H"
     }
   ]
 }
   </script>
-  <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-lan-analytics="umami"></script>
+  <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-domains="lancloudtech.com,www.lancloudtech.com,global.lancloudtech.com" data-lan-analytics="umami"></script>
 </head>
 <body data-course-page="fde" data-share-route="ai-course-fde">
   <a class="skip-link" href="#schedule" data-i18n="skip.schedule">Skip to public schedule</a>
@@ -158,14 +165,20 @@
         <span></span><span></span><span></span>
       </span>
     </button>
-    <nav class="product-nav" id="product-nav" data-i18n-aria="nav.fdeLabel" aria-label="FDE schedule navigation">
-      <a href="/en/ai-course/" data-i18n="nav.hub">Overview</a>
-      <a href="#stages" data-i18n="nav.stages">Stages</a>
-      <a href="#schedule" data-i18n="nav.schedule">Schedule</a>
-      <a href="/en/ai-course/mvp-3day/" data-i18n="nav.mvp">3-day custom</a>
-      <a class="nav-cta" href="/en/#contact" data-i18n="nav.cta">Talk to us</a>
+    <nav class="product-nav" id="product-nav" data-i18n-aria="company.navLabel" aria-label="LAN Cloud AI site navigation">
+      <a href="/en/#products" data-i18n="company.products">Products & solutions</a>
+      <a href="/en/#academy" data-i18n="company.academy">AI training</a>
+      <a href="/en/#practice" data-i18n="company.practice">Projects & practice</a>
+      <a href="/en/#method" data-i18n="company.method">About LAN</a>
+      <a class="nav-cta" href="/en/?inquiry=training#contact" data-i18n="company.contact">Contact</a>
     </nav>
   </header>
+
+  <nav class="course-local-nav page-shell" data-i18n-aria="company.courseNav" aria-label="Course navigation">
+    <a href="/en/ai-course/" data-i18n="nav.hub">Overview</a>
+    <a href="/en/ai-course/fde/" aria-current="page" data-i18n="nav.fde">FDE schedule</a>
+    <a href="/en/ai-course/mvp-3day/" data-i18n="nav.mvp">3-day custom</a>
+  </nav>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
@@ -201,16 +214,14 @@
       <div class="page-shell">
         <div class="hero-copy">
           <p class="eyebrow reveal" data-i18n="fde.eyebrow">FDE Program · Public schedule</p>
-          <h1 id="hero-title" class="reveal delay-1" data-i18n-html="fde.heroTitle"><span class="copy-unit">From AI application to</span><br /><span class="copy-unit">frontline <em>FDE</em></span></span><br />
-            <span class="copy-unit">一线 <em>FDE</em></span>
-          </h1>
+          <h1 id="hero-title" class="reveal delay-1" data-i18n-html="fde.heroTitle"><span class="copy-unit">From AI application to</span><br /><span class="copy-unit">frontline <em>FDE</em></span></span><br /><span class="copy-unit">一线 <em>FDE</em></span></h1>
           <p class="hero-lede reveal delay-2">
             <span class="copy-unit" data-i18n="fde.lede1">General FDE capability is the spine,</span>
             <span class="copy-unit" data-i18n="fde.lede2">helping learners connect AI, discovery, modular build, and production delivery into a practical path.</span>
           </p>
           <div class="hero-actions reveal delay-3">
             <a class="btn primary" href="#schedule" data-i18n="fde.ctaPrimary">Browse the schedule</a>
-            <a class="btn ghost" href="/en/#contact"><span data-i18n="fde.ctaSecondary">Talk to us</span> <span aria-hidden="true">›</span></a>
+            <a class="btn ghost" href="/en/?inquiry=training#contact"><span data-i18n="fde.ctaSecondary">Talk to us</span> <span aria-hidden="true">›</span></a>
           </div>
           <dl class="stat-row reveal delay-3" data-i18n-aria="fde.statsLabel" aria-label="Program overview">
             <div><dt data-i18n="fde.statHours">Total hours</dt><dd><strong>84</strong><span data-i18n="fde.statHoursUnit">hours</span></dd></div>
@@ -295,7 +306,7 @@
           <p class="copy-unit" data-i18n="fde.contactLede">The public schedule is for quick browsing. Company timing, custom pacing, and delivery coaching can be confirmed in a conversation.</p>
           <div class="contact-actions">
             <a class="text-link" href="/en/contact/wecom/"><span data-i18n="fde.contactWecom">Add Work WeChat</span> <span aria-hidden="true">›</span></a>
-            <a class="text-link" href="/en/#contact"><span data-i18n="fde.contactTalk">Talk to us</span> <span aria-hidden="true">›</span></a>
+            <a class="text-link" href="/en/?inquiry=training#contact"><span data-i18n="fde.contactTalk">Talk to us</span> <span aria-hidden="true">›</span></a>
           </div>
         </div>
       </div>
@@ -312,11 +323,11 @@
             </button>
           </h3>
           <div class="footer-col-panel" id="footer-panel-explore" role="region" aria-labelledby="footer-toggle-explore">
-            <a href="/en/#products" data-i18n="nav.products">Products</a>
-            <a href="/en/#method" data-i18n="nav.method">Method</a>
-            <a href="/en/#beliefs" data-i18n="nav.beliefs">Beliefs</a>
-            <a href="/en/ai-course/" data-i18n="nav.academy">Academy</a>
-            <a href="/en/#open" data-i18n="nav.open">Open Source</a>
+      <a href="/en/#products" data-i18n="company.products">Products & solutions</a>
+      <a href="/en/#academy" data-i18n="company.academy">AI training</a>
+      <a href="/en/#practice" data-i18n="company.practice">Projects & practice</a>
+      <a href="/en/#method" data-i18n="company.method">About LAN</a>
+      <a href="/en/?inquiry=training#contact" data-i18n="company.contact">Contact</a>
           </div>
         </div>
         <div class="footer-col">
@@ -327,10 +338,10 @@
           </h3>
           <div class="footer-col-panel" id="footer-panel-products" role="region" aria-labelledby="footer-toggle-products">
             <a href="https://leadshunter.lancloudtech.com/" target="_blank" rel="noopener">LeadsHunter</a>
-            <a href="/en/internal-expense/">云朵记账</a>
-            <a href="/en/ai-course/">AI 课程</a>
-            <a href="/en/#vect">VECT</a>
-            <a href="/en/#tact">TACT</a>
+            <a href="/en/internal-expense/" data-i18n="company.ledger">Cloud Ledger</a>
+            <a href="/en/ai-course/" data-i18n="company.academy">AI training</a>
+            <a href="/en/solutions/#vect">VECT</a>
+            <a href="/en/solutions/#tact">TACT</a>
           </div>
         </div>
         <div class="footer-col">

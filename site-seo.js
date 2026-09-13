@@ -47,7 +47,7 @@ export const ORGANIZATION = {
   sameAs: ["https://github.com/LAN-Cloud-AI", LEADSHUNTER_SITE],
 };
 
-/** @typedef {"home"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} SeoRouteId */
+/** @typedef {"home"|"solutions"|"practice"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} SeoRouteId */
 
 /**
  * Public indexable routes. Paths must stay in sync with SHARE_BY_ROUTE (+ sitemap HTML).
@@ -70,10 +70,26 @@ export const PUBLIC_ROUTES = [
     inShareMeta: true,
   },
   {
+    id: "solutions",
+    path: "/solutions/",
+    html: "solutions/index.html",
+    priority: "0.9",
+    changefreq: "monthly",
+    inShareMeta: true,
+  },
+  {
+    id: "practice",
+    path: "/practice/",
+    html: "practice/index.html",
+    priority: "0.8",
+    changefreq: "monthly",
+    inShareMeta: true,
+  },
+  {
     id: "internal-expense",
     path: "/internal-expense/",
     html: "internal-expense/index.html",
-    priority: "0.9",
+    priority: "0.6",
     changefreq: "weekly",
     inShareMeta: true,
   },
@@ -128,18 +144,24 @@ const productMentions = (locale) => {
       vect: "VECT",
       tact: "TACT",
       ledger: "云朵记账",
+      vectDescription: "售后客户关系管理方案，飞书方案已有门店验证，自有 SaaS 筹备中。",
+      tactDescription: "售后车间流程与调度方案，飞书方案已验证，自有 SaaS 处于前期建设，尚未开放开通。",
     },
     "zh-Hant": {
       lh: "線索獵手",
       vect: "VECT",
       tact: "TACT",
       ledger: "雲朵記賬",
+      vectDescription: "售後客戶關係管理方案，飛書方案已有門店驗證，自有 SaaS 籌備中。",
+      tactDescription: "售後車間流程與調度方案，飛書方案已驗證，自有 SaaS 處於前期建設，尚未開放開通。",
     },
     en: {
       lh: "LeadsHunter",
       vect: "VECT",
       tact: "TACT",
       ledger: "Cloud Ledger",
+      vectDescription: "Aftersales customer relationship service with Feishu-based store validation; standalone SaaS is in preparation.",
+      tactDescription: "Aftersales workshop workflow and coordination service validated on Feishu; standalone SaaS is in early preparation and is not available for sign-up.",
     },
   }[locale];
   return [
@@ -151,16 +173,18 @@ const productMentions = (locale) => {
       author: { "@id": ORGANIZATION["@id"] },
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "Service",
       name: names.vect,
-      url: `${SITE_ORIGIN}/#vect`,
-      author: { "@id": ORGANIZATION["@id"] },
+      description: names.vectDescription,
+      url: `${absoluteLocaleUrl("/solutions/", locale)}#vect`,
+      provider: { "@id": ORGANIZATION["@id"] },
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "Service",
       name: names.tact,
-      url: `${SITE_ORIGIN}/#tact`,
-      author: { "@id": ORGANIZATION["@id"] },
+      description: names.tactDescription,
+      url: `${absoluteLocaleUrl("/solutions/", locale)}#tact`,
+      provider: { "@id": ORGANIZATION["@id"] },
     },
     {
       "@type": "SoftwareApplication",
@@ -175,15 +199,10 @@ const productMentions = (locale) => {
 const courseExtra = (routeId, locale) => {
   const copy = getPageCopy(routeId, locale);
   const names = {
-    "ai-course": {
-      "zh-Hans": "企业 AI 转型人才培养",
-      "zh-Hant": "企業 AI 轉型人才培養",
-      en: "Enterprise AI talent paths",
-    },
     "ai-course-fde": {
-      "zh-Hans": "FDE 公开课表",
-      "zh-Hant": "FDE 公開課表",
-      en: "FDE public schedule",
+      "zh-Hans": "企业 FDE 实战培训",
+      "zh-Hant": "企業 FDE 實戰培訓",
+      en: "Enterprise FDE training",
     },
     "ai-course-mvp-3day": {
       "zh-Hans": "企业定制三天课",
@@ -194,16 +213,15 @@ const courseExtra = (routeId, locale) => {
   if (!names[routeId]) return null;
   const course = {
     "@type": "Course",
+    "@id": `${absoluteLocaleUrl(PUBLIC_ROUTES.find((route) => route.id === routeId).path, locale)}#course`,
     name: names[routeId][locale],
     description: copy.description,
     provider: { "@id": ORGANIZATION["@id"] },
     inLanguage: JSON_LD_LANG[locale],
-    isAccessibleForFree: true,
+    // The public schedule page is free to read; the training service is paid.
+    isAccessibleForFree: false,
   };
   if (routeId === "ai-course-fde") {
-    course.timeRequired = "PT84H";
-  }
-  if (routeId === "ai-course") {
     course.timeRequired = "PT84H";
   }
   if (routeId === "ai-course-mvp-3day") {
@@ -253,7 +271,7 @@ export const buildWebPageJsonLd = (routeId, page = {}, locale = DEFAULT_LOCALE) 
   const inLanguage = JSON_LD_LANG[locale];
 
   const graph = [
-    ORGANIZATION,
+    { ...ORGANIZATION, description: identity.tagline },
     {
       "@type": "WebSite",
       "@id": `${SITE_ORIGIN}/#website`,
@@ -284,7 +302,11 @@ export const buildWebPageJsonLd = (routeId, page = {}, locale = DEFAULT_LOCALE) 
           }
         : {}),
       ...(page.type ? { additionalType: page.type } : {}),
-      ...(routeId === "home" ? { mentions: productMentions(locale) } : {}),
+      ...(["home", "solutions"].includes(routeId) ? { mentions: productMentions(locale) } : {}),
+      ...(routeId.startsWith("ai-course") ? { isAccessibleForFree: true } : {}),
+      ...(["ai-course-fde", "ai-course-mvp-3day"].includes(routeId)
+        ? { mainEntity: { "@id": `${url}#course` } }
+        : {}),
     },
   ];
 

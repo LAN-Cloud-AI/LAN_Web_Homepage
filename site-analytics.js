@@ -1,5 +1,8 @@
 export const UMAMI_ORIGIN = "https://stats.lancloudtech.com";
 export const UMAMI_SCRIPT_PATH = "/u.js";
+export const UMAMI_CORPORATE_DOMAINS = Object.freeze([
+  "lancloudtech.com", "www.lancloudtech.com", "global.lancloudtech.com",
+]);
 
 /** Public website IDs. Filled by `npm run umami:apply` after Umami is up. */
 export const UMAMI_WEBSITE_IDS = {
@@ -12,5 +15,12 @@ export const UMAMI_WEBSITE_IDS = {
 export const analyticsScriptTag = (websiteKey) => {
   const id = UMAMI_WEBSITE_IDS[websiteKey];
   if (!id) return "";
-  return `<script defer src="${UMAMI_ORIGIN}${UMAMI_SCRIPT_PATH}" data-website-id="${id}" data-do-not-track="true" data-lan-analytics="umami"></script>`;
+  const domains = websiteKey === "lan" ? ` data-domains="${UMAMI_CORPORATE_DOMAINS.join(",")}"` : "";
+  return `<script defer src="${UMAMI_ORIGIN}${UMAMI_SCRIPT_PATH}" data-website-id="${id}" data-do-not-track="true"${domains} data-lan-analytics="umami"></script>`;
+};
+
+/** Inject once alongside the existing tracker; use the same module for both versions. */
+export const siteEventsScriptTag = (src = "/site-events.js") => {
+  const escaped = String(src).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  return `<script type="module" src="${escaped}" data-lan-events="umami"></script>`;
 };

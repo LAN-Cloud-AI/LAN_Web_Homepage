@@ -1,0 +1,142 @@
+/* Shared training pages: clear hierarchy, visible outcomes, restrained surfaces. */
+:root {
+  --bg: #fff;
+  --bg-soft: #f5f7f7;
+  --bg-deep: #edf2f1;
+  --ink: #152121;
+  --muted: #546463;
+  --line: #dbe3e1;
+  --link: #0f766e;
+  --link-hover: #085d56;
+  --max: 1280px;
+  --radius: 8px;
+}
+.site-nav { min-height: 76px; border-bottom: 1px solid var(--line); gap: 24px; }
+.brand-lockup { border-radius: 4px; }
+.brand-company { font-size: 16px; }
+.brand-product { font-size: 11px; letter-spacing: .025em; }
+.product-nav { gap: 4px 15px; }
+.product-nav a { padding: 10px 4px; border-radius: 3px; font-size: 13px; }
+.product-nav .nav-cta { padding: 11px 20px; }
+.btn { border-radius: 4px; min-height: 48px; font-size: 14px; }
+.hero { min-height: 640px; padding-block: 90px 56px; align-content: center; background: var(--bg-soft); }
+.hero-copy { max-width: 45rem; width: min(100%,45rem); }
+.hero-copy > * { max-width: 45rem; }
+.hero h1 { font-size: clamp(2.7rem, 5.3vw, 4.65rem); line-height: 1.13; letter-spacing: -.055em; font-weight: 650; }
+.hero h1 .copy-unit { white-space: normal; }
+.hero-lede { max-width: 36rem; font-size: 18px; line-height: 1.8; }
+.hero-background { inset: 0 0 0 34%; }
+.hero-background img { object-position: 68% center; }
+.hero::before { background: linear-gradient(90deg,var(--bg-soft) 0%,var(--bg-soft) 33%,rgba(245,247,247,.87) 53%,rgba(245,247,247,.08) 90%),linear-gradient(0deg,var(--bg-soft),transparent 35%); }
+.hero-resource-link { display: inline-block; width: fit-content; margin-top: 19px; color: var(--teal); font-size: 13px; text-decoration: underline; text-underline-offset: 5px; }
+.eyebrow { font-size: 11px; letter-spacing: .13em; margin-bottom: 23px; }
+.hero .stat-row { max-width: 39rem; margin-top: 39px; }
+.stat-row div { width: 100%; border-top-color: #c8d5d1; }
+.stat-row dt { font-size: 11px; }
+.stat-row dd { font-size: 26px; font-weight: 500; }
+.stat-row dd span { font-size: 11px; }
+.section { padding-block: clamp(68px,8vw,108px); scroll-margin-top: 80px; }
+.section-head { max-width: 48rem; }
+.section-head h2, .section h2 { font-size: clamp(29px,3.5vw,46px); line-height: 1.3; font-weight: 600; }
+.section-head h2 .copy-unit { display: block; }
+.section-head > p:last-child { line-height: 1.8; font-size: 16px; max-width: 42rem; }
+.section-kicker { font-size: 11px; letter-spacing: .14em; }
+.learning-paths { border-top: 1px solid var(--line); }
+.learning-path { display: grid; grid-template-columns: 54px minmax(240px,.95fr) minmax(0,1.2fr); gap: 28px; padding-block: 42px; border-bottom: 1px solid var(--line); }
+.path-number { font-size: 13px; color: var(--teal); font-variant-numeric: tabular-nums; padding-top: 4px; }
+.path-heading { min-width: 0; }
+.path-heading .path-kicker { margin: 0 0 12px; color: var(--muted); font-size: 12px; letter-spacing: .025em; }
+.path-heading h3 { font-size: clamp(23px,2.35vw,30px); line-height: 1.4; font-weight: 550; margin: 0; letter-spacing: -.03em; }
+.path-heading .path-meta { margin-top: 20px; display: block; color: var(--muted); font-size: 12px; line-height: 2; }
+.path-meta li::before { width: 3px; height: 3px; }
+.path-detail > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
+.path-outcomes { list-style: none; padding: 0; margin: 18px 0; font-size: 14px; line-height: 1.9; }
+.path-outcomes li { padding-left: 16px; position: relative; }
+.path-outcomes li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+.path-detail > .path-status { font-size: 12px; margin: 0 0 18px; }
+.text-link { gap: 10px; font-size: 14px; min-height: 40px; }
+.principle-grid { gap: 32px; }
+.principle-grid article, .principle-grid > p { background: transparent; border: 0; border-top: 1px solid var(--line); padding: 25px 0 0; border-radius: 0; }
+.principle-grid span { margin-bottom: 26px; font-size: 12px; }
+.principle-grid strong { font-size: 20px; font-weight: 550; }
+.principle-grid small { margin-top: 10px; line-height: 1.8; }
+.path-card { border-radius: 4px; padding: 28px; box-shadow: none; }
+.path-card:hover { transform: none; background: var(--bg-soft); }
+.path-card h3 { font-weight: 550; }
+#resources .path-grid { gap: 24px; }
+#resources .path-card { background: var(--bg-soft); border: 0; border-top: 2px solid var(--teal); }
+#resources .path-meta { font-size: 12px; }
+.contact-plane { text-align: left; padding: 42px 0 10px; background: none; border-radius: 0; border-top: 1px solid var(--line); }
+.contact-plane p { max-width: 42rem; margin: 18px 0 0; line-height: 1.9; }
+.contact-actions { justify-content: flex-start; }
+.course-local-nav { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-block: 16px; }
+.course-local-nav a { color: var(--muted); font-size: 12px; min-height: 24px; padding-top: 3px; }
+.course-local-nav a[aria-current] { color: var(--teal); text-decoration: underline; text-underline-offset: 7px; }
+.lesson-list { gap: 0; }
+.lesson-card { border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 24px 0; }
+.day-card { border-radius: 4px; }
+.footer-inner { max-width: var(--max); padding-top: 38px; padding-bottom: 32px; }
+.footer-dir { padding-bottom: 26px; }
+.footer-col a { min-height: 30px; font-size: 12px; }
+.footer-legal { padding-top: 24px; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #101817; --bg-soft: #172120; --bg-deep: #1c2a27; --ink: #eff5f3; --muted: #b1c2bd; --line: #33433e; --link: #73cdbb; --link-hover: #a0eddd; --card: #172120; }
+  .hero::before { background: linear-gradient(90deg,var(--bg-soft) 0%,var(--bg-soft) 33%,rgba(23,33,32,.9) 53%,rgba(23,33,32,.12) 90%),linear-gradient(0deg,var(--bg-soft),transparent 35%); }
+  .stat-row div { border-top-color: var(--line); }
+  .path-card:hover, .day-card:hover, .lesson-card:hover { background: var(--bg-deep); }
+}
+@media (max-width: 1100px) and (min-width: 721px) {
+  .brand-separator, .brand-product { display: none; }
+  .product-nav { gap: 4px 8px; }
+  .product-nav a { font-size: 12px; }
+  .hero h1 { font-size: clamp(42px,5.5vw,58px); }
+  .learning-path { grid-template-columns: 30px minmax(220px,.9fr) minmax(0,1.2fr); gap: 20px; }
+}
+@media (max-width: 920px) {
+  .principle-grid { gap: 24px; }
+  .hero .stat-row { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .footer-dir { padding-bottom: 0; }
+}
+@media (max-width: 720px) {
+  .site-nav { min-height: 65px; gap: 10px; }
+  .brand-product { font-size: 10px; }
+  .brand-product span { display: none; }
+  .product-nav a { font-size: 23px; min-height: 58px; }
+  .product-nav .nav-cta { font-size: 17px; }
+  .hero { min-height: 0; padding: 57px var(--page-pad-inline-end) 32px var(--page-pad-inline-start); }
+  .hero h1 { font-size: clamp(31px,6.7vw,46px); letter-spacing: -.05em; line-height: 1.25; }
+  .hero-background { inset: 0; opacity: .25; }
+  .hero::before { background: linear-gradient(90deg,var(--bg-soft),color-mix(in srgb,var(--bg-soft) 70%,transparent)); }
+  .hero-lede { font-size: 15px; margin-top: 20px; }
+  .hero-actions { gap: 10px; margin-top: 24px; }
+  .btn { font-size: 12px; padding-inline: 14px; }
+  .eyebrow { font-size: 10px; margin-bottom: 23px; }
+  .hero .stat-row { margin-top: 32px; gap: 14px 18px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .stat-row dd { font-size: 25px; }
+  .learning-path { grid-template-columns: 24px minmax(0,1fr); gap: 12px; padding-block: 30px; }
+  .path-number { padding-top: 1px; font-size: 11px; }
+  .path-heading h3 { font-size: 24px; }
+  .path-heading .path-meta { margin-top: 12px; display: flex; gap: 1px 12px; }
+  .path-detail { grid-column: 2; }
+  .path-detail > p { font-size: 14px; line-height: 1.85; }
+  .path-outcomes { font-size: 13px; }
+  .path-detail > .path-status { font-size: 11px; }
+  .section { padding-block: 58px; }
+  .section-head h2, .section h2 { font-size: 29px; line-height: 1.4; }
+  .section-head > p:last-child { font-size: 14px; }
+  .principle-grid span { margin-bottom: 16px; }
+  .path-card { padding: 23px; }
+  .contact-plane { padding-top: 28px; }
+  .course-local-nav { gap: 12px 20px; }
+  .footer-inner { padding-top: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .learning-path, .hero-resource-link { animation: none; transition: none; }
+}
+@media print {
+  .site-nav, .course-local-nav, .hero-resource-link { display: none; }
+  .hero { min-height: 0; padding-block: 24px; }
+  .hero-background { display: none; }
+  .hero::before { background: none; }
+  .learning-path { break-inside: avoid; }
+}

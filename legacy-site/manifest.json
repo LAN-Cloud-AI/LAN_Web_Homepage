@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/LAN-Cloud-AI/LAN_Web_Homepage",
+  "sourceCommit": "956573d025de564b3bd1294414ba4b312e160eab",
+  "scope": "Public static site files only. Images remain on the existing OSS CDN. Repository, operations and generator files are excluded.",
+  "files": [
+    {
+      "path": "404.html",
+      "bytes": 1392,
+      "sha256": "1e0dad1d5bf61fea03795afbf43e52d80d9b78e217292a6e37b9cc71d054b423"
+    },
+    {
+      "path": "_headers",
+      "bytes": 174,
+      "sha256": "bcebd4d6cbf48be5c7e853adbce0c9b6ca00634ed51bbaf6ee0101968830f5d7"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 183,
+      "sha256": "10ec6586d84ec168e7bf8ba097943f765e47c2d7880122ae989f073611aa193e"
+    },
+    {
+      "path": "ai-course/ai-course-i18n.js",
+      "bytes": 41765,
+      "sha256": "5e424b88f16a040650c44afe22db15b33657644fba0578923e5440f10c578320"
+    },
+    {
+      "path": "ai-course/ai-course.css",
+      "bytes": 27767,
+      "sha256": "e6751abc542fcec4c866022e9b7fef3ee2ebca1fca546bdcb0d5d9603bcd1e7e"
+    },
+    {
+      "path": "ai-course/ai-course.js",
+      "bytes": 6358,
+      "sha256": "bb26509ea5c6ac5670a6f373b752f9d9edb033f6d78818711ff9c2ff0af06dae"
+    },
+    {
+      "path": "ai-course/course-downloads.js",
+      "bytes": 4046,
+      "sha256": "76714bd1964449054d14b47a16d391ebf7c4a5b7fd5c3e6f01c5e00d63c07836"
+    },
+    {
+      "path": "ai-course/fde/course-summary.js",
+      "bytes": 33975,
+      "sha256": "58af516615d445693439ade85c2d13930050050b4f86356bacf7505bbbb1b194"
+    },
+    {
+      "path": "ai-course/fde/index.html",
+      "bytes": 19608,
+      "sha256": "842083fed75e25d9dda05b43ac7784e36b579b2ab9728a088c79945f52df0d07"
+    },
+    {
+      "path": "ai-course/index.html",
+      "bytes": 23163,
+      "sha256": "ea50fc8d8219e15b6fcb3d199e12e4667f96cb4b3d77b0c462997c4ab9a60212"
+    },
+    {
+      "path": "ai-course/mvp-3day/index.html",
+      "bytes": 26539,
+      "sha256": "033d5b06504bd6e9c0c8a3c22a7a2edbc06e413df8bc58598ee213ab35fddd94"
+    },
+    {
+      "path": "baidu_verify_codeva-AkZ0e24V6q.html",
+      "bytes": 32,
+      "sha256": "58c1cf3e1355a8dc59290a29274c016e1de6ac6df6f5e5406e09ef79dddb4312"
+    },
+    {
+      "path": "contact/wecom/index.html",
+      "bytes": 8743,
+      "sha256": "3e1d53fe6b08e613393ac0b0c356fdcd2908533f6cdefda6ca16fa5e8f9ddb2c"
+    },
+    {
+      "path": "contact/wecom/wecom-card.css",
+      "bytes": 6091,
+      "sha256": "c21b6ea1d12f771da32d6346280bd3c14fb99e7899b8c8fc0eb55f25f0053490"
+    },
+    {
+      "path": "contact/wecom/wecom-card.js",
+      "bytes": 353,
+      "sha256": "318fcad7049fb44c3e18ec00f2feb88277dee0779149966a2edecf5dfbfb3a81"
+    },
+    {
+      "path": "en/404.html",
+      "bytes": 1381,
+      "sha256": "3201ad822f71ffae2b8fe8c42df3ee020a80747811f9cd9f9bd579cba26515d1"
+    },
+    {
+      "path": "en/ai-course/fde/index.html",
+      "bytes": 19790,
+      "sha256": "a5962828a7f0c44d9d0193ed80592518eaec37a800570372147fe1e0c48c763b"
+    },
+    {
+      "path": "en/ai-course/index.html",
+      "bytes": 23476,
+      "sha256": "dac83a30b4cb12b4725f272d71ee764d68d502898c284378b3299445e114cc0f"
+    },
+    {
+      "path": "en/ai-course/mvp-3day/index.html",
+      "bytes": 26654,
+      "sha256": "6cec918d9aa9f1b1fbe787b198402c024051d49ad09e1d1cf2fa5ce51338e3a3"
+    },
+    {
+      "path": "en/contact/wecom/index.html",
+      "bytes": 8689,
+      "sha256": "a699aba241b6da4bd93871b0987f1213de24ef17ada80c9d2d3d9b5fe32cbd94"
+    },
+    {
+      "path": "en/index.html",
+      "bytes": 35039,
+      "sha256": "6e88dc562c24dc656cf9066eeb8b4227f257ae65b9f47b158c16c4845ebf06db"
+    },
+    {
+      "path": "en/internal-expense/index.html",
+      "bytes": 27357,
+      "sha256": "7d2580f8e051592ba0b4e9885c79480ab3c858a14ced2c98e2b500f90147f763"
+    },
+    {
+      "path": "en/llms.txt",
+      "bytes": 1739,
+      "sha256": "9e863dcf773a9ec7b0ec95e363ce663bc4e08a7242133d97b12f36e42e9066b3"
+    },
+    {
+      "path": "en/sitemap/index.html",
+      "bytes": 8688,
+      "sha256": "82a4fc20c582d27b158dac7986f12672935dab63779db6139c94b74267204863"
+    },
+    {
+      "path": "footer-accordion.js",
+      "bytes": 1043,
+      "sha256": "4577c96d007bbdc043d2d3c4fe9164daffdf50a4ce013cf4aa6ef8460f4da13e"
+    },
+    {
+      "path": "geo-host.js",
+      "bytes": 3533,
+      "sha256": "5e78fb443089b52d0d2cacb13f16ab137816d459cbf11df6f0d9106458eb816e"
+    },
+    {
+      "path": "i18n.js",
+      "bytes": 43882,
+      "sha256": "4cf0186aa7952ffe23396edc596fa94cb2c454b61660df4a5a874f0110ddcb79"
+    },
+    {
+      "path": "index.html",
+      "bytes": 34266,
+      "sha256": "a204f1e6f50e8ff7c34c38fb3c8590521e477178c31b34f631098de87b57176a"
+    },
+    {
+      "path": "internal-expense/index.html",
+      "bytes": 27263,
+      "sha256": "e578c2cc65a9fa558fde17723bf48ee4fbdd4acf0c35b4b30d296580456a2c61"
+    },
+    {
+      "path": "internal-expense/internal-expense.css",
+      "bytes": 18292,
+      "sha256": "5e6b16c54ef38ac93374e7a7cd7318cdb58d0be2f0b073a5ce00a1396e24d226"
+    },
+    {
+      "path": "internal-expense/internal-expense.js",
+      "bytes": 2225,
+      "sha256": "dfd43206884ca98753cc738c6d751cbbfd13ced76f52db09fdf1197d66a2494e"
+    },
+    {
+      "path": "leadshunter/index.html",
+      "bytes": 1264,
+      "sha256": "fb32ba544960d58a6c9183032512869020986d4b103de2532c1083fa04e817cf"
+    },
+    {
+      "path": "leadshunter/leadshunter.css",
+      "bytes": 19529,
+      "sha256": "42522b0caf8fb9541d5a47afd2ab6065c2868e17d34407734d86857e5f58cd46"
+    },
+    {
+      "path": "leadshunter/leadshunter.js",
+      "bytes": 1971,
+      "sha256": "c8b6fb492edc5faca6dc5d6d84b717523d327cc3682a7c7059d6c6e90a4d60ae"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 1698,
+      "sha256": "cf7684dff5a7986adb47d0abef47d1cd8ed44155c943272e73efd1aa38be5a48"
+    },
+    {
+      "path": "locale-boot.js",
+      "bytes": 506,
+      "sha256": "a95d2b8e3fd36dfca5295efb2c98219be67ec03c3a275cb65e5421afa11c7e22"
+    },
+    {
+      "path": "main.js",
+      "bytes": 7950,
+      "sha256": "0f642362ac930cb719695582fec1b8ce1ec3c041652a7732fd34536f5bd1c057"
+    },
+    {
+      "path": "ping.txt",
+      "bytes": 2,
+      "sha256": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 838,
+      "sha256": "b2876f8fb5bf9469b3a1249881e449feaee6bc8005532c8c7a047c89d7c3970e"
+    },
+    {
+      "path": "share-meta.js",
+      "bytes": 3994,
+      "sha256": "b1961304e390876eb97ceb0ecde18f2cb6a79ad3ee4ee3bdca4ef6b22e670bc1"
+    },
+    {
+      "path": "site-analytics.js",
+      "bytes": 699,
+      "sha256": "069815f91ce9c7338749dbdeb9e55197239441c6ac1a9ef26bcfe575873befbe"
+    },
+    {
+      "path": "site-identity.js",
+      "bytes": 10849,
+      "sha256": "4c3b82f048f52d2d0c46502103747fad2811778cfd105ed02df5837e80d8d179"
+    },
+    {
+      "path": "site-seo.js",
+      "bytes": 7860,
+      "sha256": "25310ca8a6d3458ad60516bd6ca05dd48710088b0b00f320c60f1b800993c084"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 12205,
+      "sha256": "e3814258b553aa6d4eaf2684eaa931d81da2d58eebc05900c4809aa487c180ed"
+    },
+    {
+      "path": "sitemap/index.html",
+      "bytes": 8764,
+      "sha256": "62c6f7d00553466fc378a49db14002568412dff9ad3016557d8413e2428e90d7"
+    },
+    {
+      "path": "sitemap/sitemap.css",
+      "bytes": 2672,
+      "sha256": "6c281f48167929257860ee899a4b1d2c98c49003b28ba7ac03f6fe42080620d5"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 39090,
+      "sha256": "7d9d53265fc971531d27024105baafad4c2d8ca77fe3ed0a1084334ed62c39f2"
+    },
+    {
+      "path": "wechat-share.js",
+      "bytes": 4071,
+      "sha256": "f99a3f4fdbf94c1b73903d14ae12adeec40f11d8678c1c77268bdeb56d8be826"
+    },
+    {
+      "path": "zh-Hant/404.html",
+      "bytes": 1402,
+      "sha256": "dee32f4c809b3238cb4d010887269d7c36b304e638a4f857cf08f735a132b285"
+    },
+    {
+      "path": "zh-Hant/ai-course/fde/index.html",
+      "bytes": 19831,
+      "sha256": "5aca4ab1f55094f576f5ab451072f3d9124a7fe820d8284d99431c67dba2f9ba"
+    },
+    {
+      "path": "zh-Hant/ai-course/index.html",
+      "bytes": 23465,
+      "sha256": "4d04e01177e86db2bbcaf61125c02b65b76f44a714b717fa36158f7a2a92012e"
+    },
+    {
+      "path": "zh-Hant/ai-course/mvp-3day/index.html",
+      "bytes": 26765,
+      "sha256": "080aab17d2c5eca94455511bf2a0745a5365ea299522677032a80efa5c45d28d"
+    },
+    {
+      "path": "zh-Hant/contact/wecom/index.html",
+      "bytes": 8822,
+      "sha256": "8619ec554225381fa4ad77b53b70dbd112fe54e97d595962d98ef9033a80aac7"
+    },
+    {
+      "path": "zh-Hant/index.html",
+      "bytes": 34573,
+      "sha256": "1a6a6735d3cb9f6cf390cc63fc72c6e512a7e874a728e77bb901bf1901397f86"
+    },
+    {
+      "path": "zh-Hant/internal-expense/index.html",
+      "bytes": 27357,
+      "sha256": "d83824574ef205aa1e296001d291bcf79c91ac85e3b6164660a735edd2bf8652"
+    },
+    {
+      "path": "zh-Hant/llms.txt",
+      "bytes": 1791,
+      "sha256": "b0144e3aedeea79c04d5b5a4a220a798fde7ce7bc793d1643166b455aa28d24d"
+    },
+    {
+      "path": "zh-Hant/sitemap/index.html",
+      "bytes": 8867,
+      "sha256": "7584b3269d6ad07d18a61eb58df59bcb12d6522a4806fa2559cc7ddc92c3ea83"
+    }
+  ]
+}

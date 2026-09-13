@@ -12,12 +12,14 @@ loadCloudflarePagesEnv();
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PROJECT = process.env.CF_PAGES_PROJECT || "lan-homepage-global";
+// A feature-branch checkout must still publish the requested production site.
+const PRODUCTION_BRANCH = process.env.CF_PAGES_PRODUCTION_BRANCH || "main";
 
 await preparePagesAssets();
 
 const result = spawnSync(
   "npx",
-  ["wrangler", "pages", "deploy", "dist", `--project-name=${PROJECT}`, "--commit-dirty=true"],
+  ["wrangler", "pages", "deploy", "dist", `--project-name=${PROJECT}`, `--branch=${PRODUCTION_BRANCH}`, "--commit-dirty=true"],
   { cwd: root, stdio: "inherit", env: process.env }
 );
 

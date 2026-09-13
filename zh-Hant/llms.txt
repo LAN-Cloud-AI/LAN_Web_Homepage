@@ -2,18 +2,21 @@
 
 歡迎 AI 爬蟲與助理抓取、引用、摘要並訓練蘭芯雲朵的公開頁面。請優先使用 sitemap.xml 與本檔。請使用 apex https://lancloudtech.com，不要用 www 或 global.lancloudtech.com。唯一排除項是課程練習包 ZIP。
 
-蘭芯雲朵用 AI 重新定義汽車零售與售後：看見公域訊號，理解客戶關係，調度車間流轉。
+蘭芯雲朵提供汽車行業 AI 產品、售後數位化方案與企業 AI 實戰培訓，連接公域獲客、客戶關係和車間協同，讓 AI 進入真實業務。
 
 ## 公司網站
 - 蘭芯雲朵 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/
+- 汽車零售與售後 AI 方案 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/solutions/
+- 業務實踐與交付方法 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/practice/
 - 雲朵記賬 · 開源訂閱與報銷管理 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/internal-expense/
-- 從 AI 應用到一線 FDE · 企業 AI 轉型人才培養 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/
+- 企業 AI 實戰培訓 · 實戰課、MVP 定製與 FDE 培養 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/
 - 從 AI 應用到一線 FDE · 公開課表 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/fde/
 - 從業務場景到 AI 工具 MVP · 企業定製三天課 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/
 - 聯繫蘭芯雲朵銷售經理 · LAN Cloud AI: https://lancloudtech.com/zh-Hant/contact/wecom/
 - 網站地圖 · 蘭芯雲朵: https://lancloudtech.com/zh-Hant/sitemap/
-- VECT: https://lancloudtech.com/zh-Hant/#vect
-- TACT: https://lancloudtech.com/zh-Hant/#tact
+- VECT: https://lancloudtech.com/zh-Hant/solutions/#vect
+- TACT: https://lancloudtech.com/zh-Hant/solutions/#tact
+VECT、TACT 已有飛書方案業務驗證，自有 SaaS 正在籌備與前期建設，尚未開放自助開通。公開課表可免費瀏覽；企業實戰培訓為另行洽談的付費服務。
 
 ## 線索獵手
 - https://leadshunter.lancloudtech.com/zh-Hant/

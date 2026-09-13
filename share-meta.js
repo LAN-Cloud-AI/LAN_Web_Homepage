@@ -5,7 +5,7 @@ export { SITE_ORIGIN };
 export const OSS_SHARE_BASE =
   "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
 
-/** @typedef {"home"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
+/** @typedef {"home"|"solutions"|"practice"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
 
 /**
  * Canonical share cards for each HTML route.
@@ -22,16 +22,39 @@ export const SHARE_BY_ROUTE = {
     locales: {
       "zh-Hans": {
         title: "兰芯云朵",
-        desc: "汽车经营智能系统",
+        desc: "汽车行业 AI 产品与企业实战培训",
       },
       "zh-Hant": {
         title: "蘭芯雲朵",
-        desc: "汽車經營智能系統",
+        desc: "汽車行業 AI 產品與企業實戰培訓",
       },
       en: {
         title: "LAN Cloud AI",
-        desc: "Automotive ops intelligence",
+        desc: "Automotive AI & team training",
       },
+    },
+  },
+  solutions: {
+    path: "/solutions/",
+    // Reuse the existing brand cover until a dedicated version is published.
+    image: `${OSS_SHARE_BASE}/og-home-v2.png`,
+    imageWidth: 1000,
+    imageHeight: 1000,
+    locales: {
+      "zh-Hans": { title: "汽车业务 AI 方案", desc: "从公域获客到客户关系与车间协同" },
+      "zh-Hant": { title: "汽車業務 AI 方案", desc: "從公域獲客到客戶關係與車間協同" },
+      en: { title: "Automotive AI Solutions", desc: "Leads, care & workshop flow" },
+    },
+  },
+  practice: {
+    path: "/practice/",
+    image: `${OSS_SHARE_BASE}/og-home-v2.png`,
+    imageWidth: 1000,
+    imageHeight: 1000,
+    locales: {
+      "zh-Hans": { title: "兰芯业务实践", desc: "业务规则、数据与 AI 的交付实践" },
+      "zh-Hant": { title: "蘭芯業務實踐", desc: "業務規則、資料與 AI 的交付實踐" },
+      en: { title: "Business Practice", desc: "Rules, data & AI at work" },
     },
   },
   "internal-expense": {
@@ -61,16 +84,16 @@ export const SHARE_BY_ROUTE = {
     imageHeight: 1000,
     locales: {
       "zh-Hans": {
-        title: "AI 课程",
-        desc: "企业 AI 人才培养",
+        title: "企业 AI 实战培训",
+        desc: "实战课｜3天MVP｜84课时FDE",
       },
       "zh-Hant": {
-        title: "AI 課程",
-        desc: "企業 AI 人才培養",
+        title: "企業 AI 實戰培訓",
+        desc: "實戰課｜3天MVP｜84課時FDE",
       },
       en: {
-        title: "AI Course",
-        desc: "Enterprise AI talent paths",
+        title: "Enterprise AI Training",
+        desc: "Practice · 3-day MVP · 84h FDE",
       },
     },
   },

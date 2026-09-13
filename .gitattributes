@@ -1,0 +1,2 @@
+# Keep the reviewed upstream snapshot byte-for-byte, including its existing EOF blank line.
+legacy-site/ai-course/ai-course.css whitespace=-blank-at-eof

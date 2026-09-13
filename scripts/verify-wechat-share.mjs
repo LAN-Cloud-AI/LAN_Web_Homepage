@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SHARE_BY_ROUTE } from "../share-meta.js";
+import { isPublicAsset } from "./website-versions.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
@@ -27,16 +28,34 @@ const routes = [
     html: "index.html",
     url: "https://lancloudtech.com/",
     image: `${OSS_SHARE}/og-home-v2.png`,
-    wiredIn: "main.js",
-    wireNeedle: 'initWechatShare("home"',
+    wiredIn: "company.js",
+    wireNeedle: "initWechatShare",
+  },
+  {
+    id: "solutions",
+    html: "solutions/index.html",
+    url: "https://lancloudtech.com/solutions/",
+    image: `${OSS_SHARE}/og-home-v2.png`,
+    reuseImageFrom: "home",
+    wiredIn: "company.js",
+    wireNeedle: "initWechatShare",
+  },
+  {
+    id: "practice",
+    html: "practice/index.html",
+    url: "https://lancloudtech.com/practice/",
+    image: `${OSS_SHARE}/og-home-v2.png`,
+    reuseImageFrom: "home",
+    wiredIn: "company.js",
+    wireNeedle: "initWechatShare",
   },
   {
     id: "internal-expense",
     html: "internal-expense/index.html",
     url: "https://lancloudtech.com/internal-expense/",
     image: `${OSS_SHARE}/og-internal-expense-v2.png`,
-    wiredIn: "internal-expense/index.html",
-    wireNeedle: 'initWechatShare("internal-expense")',
+    wiredIn: "locale-boot.js",
+    wireNeedle: "initWechatShare(shareRoute",
   },
   {
     id: "ai-course",
@@ -67,8 +86,8 @@ const routes = [
     html: "contact/wecom/index.html",
     url: "https://lancloudtech.com/contact/wecom/",
     image: `${OSS_SHARE}/og-wecom-v2.png`,
-    wiredIn: "contact/wecom/index.html",
-    wireNeedle: 'initWechatShare("wecom")',
+    wiredIn: "locale-boot.js",
+    wireNeedle: "initWechatShare(shareRoute",
   },
 ];
 
@@ -89,7 +108,7 @@ required(wechatShare.includes("updateAppMessageShareData"), "wechat-share.js mus
 required(wechatShare.includes("updateTimelineShareData"), "wechat-share.js must configure timeline share.");
 required(worker.includes("WECHAT_OA_APP_ID"), "Worker must read OA AppID secret.");
 required(worker.includes("jsapi_ticket"), "Worker must fetch jsapi_ticket.");
-required(prepare.includes('"workers"'), "prepare-worker-assets must exclude workers/.");
+required(prepare.includes("publicAssetFiles") && !isPublicAsset("workers/wechat-jssdk/src/index.js") && !isPublicAsset("workers/wechat-jssdk/.dev.vars"), "Production allowlist must exclude WeChat Worker code and secrets.");
 
 const images = new Set();
 const urls = new Set();
@@ -141,6 +160,17 @@ for (const route of routes) {
   );
   required(html.includes(`data-share-route="${route.id}"`), `${route.id} needs data-share-route`);
   required(read(route.wiredIn).includes(route.wireNeedle), `${route.id} must wire WeChat share via ${route.wiredIn}`);
+  if (route.wiredIn === "company.js") {
+    required(html.includes("company.js"), `${route.id} must load the shared company page controller.`);
+    required(read("company.js").includes("dataset.shareRoute"), "Company pages must select their own share route.");
+  }
+  if (route.wiredIn === "locale-boot.js") {
+    required(html.includes("locale-boot.js"), `${route.id} must load locale and share initialization.`);
+    required(read("locale-boot.js").includes("dataset?.shareRoute"), "Shared locale initialization must select the page's own share route.");
+  }
+  if (route.reuseImageFrom) {
+    required(route.image === SHARE_BY_ROUTE[route.reuseImageFrom].image, `${route.id} must reuse only its declared brand cover.`);
+  }
   const imageName = path.basename(route.image);
   required(shareMeta.includes(imageName), `share-meta.js must reference ${imageName}`);
   required(shareMeta.includes("OSS_SHARE_BASE"), "share-meta.js must define OSS_SHARE_BASE.");
@@ -151,20 +181,18 @@ for (const route of routes) {
 const i18n = read("i18n.js");
 required(i18n.includes("meta.shareTitle"), "Homepage i18n must define meta.shareTitle.");
 required(i18n.includes("meta.shareDescription"), "Homepage i18n must define meta.shareDescription.");
-required(
-  i18n.includes('meta[property="og:title"]') && i18n.includes("shareTitle"),
-  "Homepage i18n must apply short shareTitle to og:title."
-);
+required(!i18n.includes('document.title = title'), "Shared UI translation must not overwrite route-specific static SEO titles.");
 
-required(images.size === routes.length, "Each route must have a unique og:image.");
+required(images.size === routes.length - routes.filter((route) => route.reuseImageFrom).length, "Only solutions and practice may reuse the declared homepage brand cover.");
 required(urls.size === routes.length, "Each route must have a unique og:url.");
 
-const main = read("main.js");
+const main = read("company.js");
 required(main.includes("initWechatShare"), "Homepage main.js must init WeChat share.");
-required(main.includes("refreshWechatShare"), "Homepage must refresh share on locale change.");
+required(main.includes("setLocale(button.dataset.locale)"), "Company language buttons must navigate to the selected locale.");
+required(i18n.includes("location.assign(localeAwareUrl("), "Locale changes must reload localized metadata and initialize sharing for the selected page.");
 
 const courseJs = read("ai-course/ai-course.js");
 required(courseJs.includes("initWechatShare"), "Course pages must init WeChat share.");
 required(courseJs.includes("refreshWechatShare"), "Course pages must refresh share on locale change.");
 
-console.log("PASS: WeChat share cards, per-route OG images, and JS-SDK wiring are present.");
+console.log("PASS: WeChat share cards, configured OG covers (including declared brand reuse), and JS-SDK wiring are present.");

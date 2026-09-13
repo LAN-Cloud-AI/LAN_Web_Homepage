@@ -718,14 +718,14 @@ button:focus-visible {
 
   .site-nav { flex-wrap: wrap; min-height: 4.15rem; }
 
-  .brand-lockup { gap: 0.42rem; font-size: 0.78rem; }
+  .brand-lockup { gap: 0.42rem; font-size: 0.78rem; max-width: calc(100% - 4.4rem); }
 
   .brand-company,
   .brand-separator { display: none; }
 
   .brand-product { max-width: 12.5rem; overflow: hidden; text-overflow: ellipsis; }
 
-  .js .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .js .menu-toggle { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 
   .product-nav {
     display: grid;

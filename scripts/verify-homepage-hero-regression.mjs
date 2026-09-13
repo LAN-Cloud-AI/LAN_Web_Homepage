@@ -1,171 +1,34 @@
+import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { verifyHero } from "./verify-homepage-hero.mjs";
-import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
-const page = read("index.html");
-const css = read("styles.css");
-
-const expectedFailure = (name, nextPage, nextCss, message) => {
-  try {
-    verifyHero(nextPage, nextCss);
-  } catch (error) {
-    if (String(error.message).includes(message)) return;
-    throw new Error(`${name} failed for the wrong reason: ${error.message}`);
-  }
-  throw new Error(`${name} did not fail.`);
-};
-
+const page = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const css = fs.readFileSync(path.join(root, "company.css"), "utf8");
 verifyHero(page, css);
 
-expectedFailure(
-  "hero image alternative text",
-  page.replace(`src="${OSS_IMAGES_BASE}/generated/brand/brand-hero-precision-atelier.png"\n            alt=""`, `src="${OSS_IMAGES_BASE}/generated/brand/brand-hero-precision-atelier.png"\n            alt="兰芯云朵"`),
-  css,
-  "Decorative hero artwork must have empty alternative text."
-);
+function reject(name, nextPage, nextCss, message) {
+  assert.ok(nextPage !== page || nextCss !== css, `${name}: regression mutation did not apply`);
+  assert.throws(() => verifyHero(nextPage, nextCss), message, name);
+}
 
-expectedFailure(
-  "hero background pointer events",
-  page,
-  css.replace("  pointer-events: none;\n}\n.hero-background picture,", "}\n.hero-background picture,"),
-  "Hero background needs its own inert CSS layer."
-);
+// Target the high-priority image by semantic attributes, without asset names or formatting.
+const mutateHeroImage = (change) => page.replace(/<img\b[^>]*\bfetchpriority=["']high["'][^>]*>/i, change);
+reject("missing hero alt", mutateHeroImage((tag) => tag.replace(/\s+alt=["'][^"']*["']/, "")), css, /empty alternative text/);
+reject("missing intrinsic width", mutateHeroImage((tag) => tag.replace(/\s+width=["'][^"']*["']/, "")), css, /intrinsic width and height/);
+reject("lazy high-priority image", mutateHeroImage((tag) => tag.replace(/\s+loading=["'][^"']*["']/, "").replace(/\s*\/?\s*>$/, ' loading="lazy">')), css, /without lazy loading/);
 
-expectedFailure(
-  "dark hero scrim",
-  page,
-  css.replace("  .hero::before {\n    background: linear-gradient(180deg, rgba(8, 12, 18, 0.90)", "  .not-hero::before {\n    background: linear-gradient(180deg, rgba(8, 12, 18, 0.90)"),
-  "Hero needs the specified dark-mode scrim."
-);
+for (const selector of [".hero-background", "section.hero .hero-background", ".hero-background:hover", "main>.hero-background, .unrelated"]) {
+  reject(`interactive decoration: ${selector}`, page, `${css}\n${selector} { pointer-events: auto; }`, /positioned and inert/);
+}
+reject("media override loses isolation", page, `${css}\n@media (max-width: 44rem) { .hero { isolation: auto; } }`, /isolated positioning context/);
+reject("background covers content", page, `${css}\n.hero-background { z-index: 999; }`, /below the copy layer/);
+reject("hidden mobile heading", page, `${css}\n@media (max-width: 40rem) { .hero h1 { display: none; } }`, /text must not be hidden/);
+reject("nested dark-mode pointer override", page, `${css}\n@media (prefers-color-scheme: dark) { @media (max-width: 40rem) { .hero-background { pointer-events: auto; } } }`, /positioned and inert/);
+reject("motion restarted for reduced-motion users", page, `${css}\n@media (prefers-reduced-motion: reduce) { .hero-background { animation: drift 5s infinite !important; } }`, /must not restart motion/);
 
-expectedFailure(
-  "stale standalone hero selector",
-  page,
-  `${css}\n.hero-visual { display: block; }\n`,
-  "Standalone hero image selectors must be removed."
-);
-
-expectedFailure(
-  "later hero position override",
-  page,
-  `${css}\n.hero { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "later hero background pointer-events override",
-  page,
-  `${css}\n.hero-background { pointer-events: auto; }\n`,
-  "Hero background needs its own inert CSS layer.",
-);
-
-expectedFailure(
-  "later hero copy z-index override",
-  page,
-  `${css}\n.hero-copy { z-index: 0; }\n`,
-  "Hero copy must remain above the artwork.",
-);
-
-expectedFailure(
-  "later mobile focal-point override",
-  page,
-  `${css}\n@media (max-width: 640px) { .hero-background img { object-position: center 10%; } }\n`,
-  "Mobile hero needs the lower image focal point.",
-);
-
-expectedFailure(
-  "semicolonless hero position override",
-  page,
-  `${css}\n.hero { position: static }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "compound hero selector override",
-  page,
-  `${css}\nsection.hero { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "descendant hero background override",
-  page,
-  `${css}\n.hero .hero-background { pointer-events: auto; }\n`,
-  "Hero background needs its own inert CSS layer.",
-);
-
-expectedFailure(
-  "hero comma-list override",
-  page,
-  `${css}\n.hero, .utility { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "screen mobile focal-point override",
-  page,
-  `${css}\n@media screen and (max-width: 640px) { .hero-background img { object-position: center 10%; } }\n`,
-  "Mobile hero needs the lower image focal point.",
-);
-
-expectedFailure(
-  "qualified dark scrim override",
-  page,
-  `${css}\n@media (prefers-color-scheme: dark) and (min-width: 0px) { .hero::before { background: red; } }\n`,
-  "Hero needs the specified dark-mode scrim.",
-);
-
-expectedFailure(
-  "terminal hero selector override",
-  page,
-  `${css}\nmain .hero { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "dark comma-list scrim override",
-  page,
-  `${css}\n@media (prefers-color-scheme: dark) { .hero::before, .utility { background: red; } }\n`,
-  "Hero needs the specified dark-mode scrim.",
-);
-
-expectedFailure(
-  "fold dual-pane layout regresses in",
-  page,
-  `${css}\n@media (horizontal-viewport-segments: 2) { .hero { grid-template-columns: 1fr 1fr; } }\n`,
-  "Homepage CSS must not use fold dual-pane layout; rely on width breakpoints.",
-);
-
-expectedFailure(
-  "no-space combinator hero override",
-  page,
-  `${css}\nmain>.hero { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "hero class-compound override",
-  page,
-  `${css}\n.hero.is-condensed { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "hero pseudo-class override",
-  page,
-  `${css}\n.hero:hover { position: static; }\n`,
-  "Hero must establish its clipped stacking context.",
-);
-
-expectedFailure(
-  "compact mobile media override",
-  page,
-  `${css}\n@media screen and (max-width:640px) { .hero-background img { object-position: center 10%; } }\n`,
-  "Mobile hero needs the lower image focal point.",
-);
-
-console.log("Homepage hero verifier regression checks passed.");
+// Unrelated visual choices are intentionally outside this static contract.
+assert.doesNotThrow(() => verifyHero(page, `${css}\n.hero { border-radius: 0; min-height: 42rem; } .hero-background img { object-position: 30% 40%; } .hero-visual { display: block; }`));
+console.log("Homepage hero regression checks passed against company.css without binding visual design values.");

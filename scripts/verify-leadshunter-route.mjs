@@ -22,7 +22,7 @@ const sitemapHub = read("sitemap/index.html");
 const siteSeo = read("site-seo.js");
 const shareMeta = read("share-meta.js");
 
-const homeLeadshunterStart = home.indexOf('<article class="product reveal" id="leadshunter">');
+const homeLeadshunterStart = home.search(/<article\b[^>]*\bid="leadshunter"[^>]*>/);
 const homeLeadshunterEnd = home.indexOf("</article>", homeLeadshunterStart);
 const homeLeadshunter = home.slice(homeLeadshunterStart, homeLeadshunterEnd);
 required(homeLeadshunterStart >= 0, "Homepage must keep the LeadsHunter product card anchor #leadshunter.");
@@ -31,10 +31,13 @@ required(!homeLeadshunter.includes('href="./leadshunter/"'), "Homepage LeadsHunt
 required(!homeLeadshunter.includes("github.com/LAN-Cloud-AI/leadsHunter"), "Homepage LeadsHunter card must not expose the private repository.");
 required(!homeLeadshunter.includes("github.com/LAN-Cloud-AI/"), "Homepage LeadsHunter card must only link to the LH official site.");
 required(!homeLeadshunter.includes("LH_Training_Ground"), "Homepage LeadsHunter card must not present the training-ground repository.");
-required(
-  home.includes(`href="${official}" target="_blank" rel="noopener">LeadsHunter</a>`),
-  "Homepage footer must link LeadsHunter to the dedicated official site."
-);
+const footer = home.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0] || "";
+const footerProductLink = [...footer.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)]
+  .map((match) => match[0]).find((anchor) => anchor.includes(`href="${official}"`));
+required(footerProductLink?.includes("LeadsHunter"), "Homepage footer must name LeadsHunter and link to its dedicated official site.");
+if (footerProductLink?.includes('target="_blank"')) {
+  required(footerProductLink.includes("noopener"), "New-tab product links must retain noopener.");
+}
 
 required(sitemapHub.includes(`href="${official}"`), "Human sitemap must index the dedicated LeadsHunter official site.");
 required(!sitemapHub.includes('href="../leadshunter/"'), "Human sitemap must not list the retired in-site product page as the destination.");
@@ -55,7 +58,7 @@ required(siteSeo.includes("LEADSHUNTER_SITE"), "site-seo.js must export the offi
 required(siteSeo.includes(official), "Company Organization sameAs / mentions must include the official LeadsHunter site.");
 required(!shareMeta.includes('id: "leadshunter"') && !shareMeta.includes("path: \"/leadshunter/\""), "Retired product page must leave SHARE_BY_ROUTE.");
 
-const openSectionStart = home.indexOf('<section class="section open" id="open">');
+const openSectionStart = home.search(/<section\b[^>]*\bid="open"[^>]*>/);
 const openSectionEnd = home.indexOf("</section>", openSectionStart);
 const openSection = home.slice(openSectionStart, openSectionEnd);
 required(openSection.includes('href="https://github.com/LAN-Cloud-AI/LH_Training_Ground"'), "Open-source section must link to the public training ground.");

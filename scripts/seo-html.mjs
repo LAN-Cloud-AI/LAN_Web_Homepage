@@ -108,6 +108,7 @@ export const applySeoHead = (html, route, locale = DEFAULT_LOCALE) => {
     content: "index,follow,max-image-preview:large",
   });
   next = upsertOg(next, "og:site_name", identity.siteName);
+  next = upsertOg(next, "og:type", "website");
   next = upsertOg(next, "og:locale", OG_LOCALE[locale]);
   next = upsertOg(next, "og:url", url);
   next = upsertOg(next, "og:title", shareTitle);
@@ -117,6 +118,14 @@ export const applySeoHead = (html, route, locale = DEFAULT_LOCALE) => {
   next = upsertMeta(next, { attr: "itemprop", key: "description", content: shareDesc });
   next = upsertTwitter(next, "twitter:title", shareTitle);
   next = upsertTwitter(next, "twitter:description", shareDesc);
+  next = upsertTwitter(next, "twitter:card", "summary_large_image");
+  if (share) {
+    next = upsertOg(next, "og:image", share.image);
+    next = upsertOg(next, "og:image:width", share.imageWidth);
+    next = upsertOg(next, "og:image:height", share.imageHeight);
+    next = upsertMeta(next, { attr: "itemprop", key: "image", content: share.image });
+    next = upsertTwitter(next, "twitter:image", share.image);
+  }
   if (imageAlt) next = upsertTwitter(next, "twitter:image:alt", imageAlt);
   next = upsertLdJson(next, buildWebPageJsonLd(route.id, copy, locale));
   next = upsertAnalytics(next, "lan");

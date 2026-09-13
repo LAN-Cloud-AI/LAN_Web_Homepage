@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
+import { getI18nTable } from "../i18n.js";
 
 const root = process.cwd();
 const payload = "https://work.weixin.qq.com/ct/wcde518f3ee4ac1b506616d06dedf1fb6f60";
@@ -26,30 +27,29 @@ for (const asset of requiredAssets) {
 }
 
 const home = read("index.html");
-const styles = read("styles.css");
-const main = read("main.js");
-const i18n = read("i18n.js");
+const styles = read("company.css");
+const main = read("company.js");
 const card = read("contact/wecom/index.html");
 const cardCss = read("contact/wecom/wecom-card.css");
 const cardJs = read("contact/wecom/wecom-card.js");
 const qrGenerator = read("scripts/generate-wecom-qr.swift");
 
-const contactStart = home.indexOf('<section class="section contact" id="contact">');
+const contactStart = home.search(/<section\b[^>]*\bid="contact"[^>]*>/);
 const contactEnd = home.indexOf("</section>", contactStart);
 const contact = home.slice(contactStart, contactEnd);
 required(contactStart >= 0, "Homepage must retain its contact section.");
-required(contact.includes('class="text-link" href="./contact/wecom/"'), "Homepage contact section must present WeCom as a peer text link.");
-required(home.includes('class="wechat-float"'), "Homepage needs a desktop WeCom floating entry.");
-required(home.includes('href="./contact/wecom/"'), "Homepage WeCom entry must use the local card route.");
-required(!styles.includes(".contact-wecom"), "Homepage contact must not promote WeCom as a separate filled button.");
-required(styles.includes(".wechat-float"), "Homepage floating entry needs dedicated styling.");
-required(styles.includes("@media (min-width: 1025px) and (hover: hover) and (pointer: fine)"), "Floating entry must stay desktop-only and use a fine pointer media query.");
-required(main.includes("is-wechat-float-visible"), "Scroll behavior must control the floating entry state.");
-required(main.includes("window.scrollY > 240"), "Floating entry must wait until the visitor has scrolled the page.");
-required(main.includes('window.addEventListener("load", onScroll, { once: true });'), "Floating entry must sync after initial deep-link layout.");
-required(i18n.includes('"contact.wecom": "添加企业微信"'), "Simplified Chinese needs the WeChat CTA label.");
-required(i18n.includes('"contact.wecom": "新增企業微信"'), "Traditional Chinese needs the WeChat CTA label.");
-required(i18n.includes('"contact.wecom": "Add Work WeChat"'), "English needs the WeChat CTA label.");
+required(/<a\b[^>]*href="\.\/contact\/wecom\/"[^>]*>[\s\S]*?data-i18n="new.wecom"[\s\S]*?<\/a>/.test(contact), "Homepage contact section must expose a labeled link to the local WeCom card.");
+required(!home.includes('class="wechat-float"'), "The redesigned homepage must provide WeCom through its contact section without a floating control.");
+required(contact.includes('href="mailto:lance@lancloudtech.com'), "Homepage must retain an email channel alongside WeCom.");
+required(contact.includes('aria-live="polite"'), "Inquiry choices must announce updated context accessibly.");
+for (const topic of ["product", "training", "global", "project"]) {
+  required(new RegExp(`<button\\b(?=[^>]*type="button")(?=[^>]*data-inquiry="${topic}")(?=[^>]*aria-pressed="(?:true|false)")[^>]*>`).test(contact), `Inquiry choice ${topic} must be a keyboard-operable button with selection state.`);
+}
+required(styles.includes(".contact-options"), "Homepage contact channels need responsive layout styling.");
+required(main.includes("selectInquiry") && main.includes("email.href"), "Inquiry selection must carry context into the email draft.");
+for (const locale of ["zh-Hans", "zh-Hant", "en"]) {
+  required(getI18nTable(locale)["new.wecom"], `${locale} needs a translated WeCom contact label.`);
+}
 
 required(card.includes('<html lang="zh-CN">'), "WeCom card must declare Chinese page language.");
 required(card.includes('href="#main-content"'), "WeCom card must provide a skip link.");
@@ -59,9 +59,10 @@ required(!card.includes("work.weixin.qq.com"), "WeCom card must not offer a dire
 required(!card.includes("打开企业微信"), "WeCom card must not present an external-enterprise-WeChat button.");
 required(card.includes('<div class="qr-tile">'), "WeCom QR must be a scan-only image tile, not a link.");
 required(qrGenerator.includes(payload), "The local QR generator must retain the exact enterprise-WeChat payload.");
-for (const unit of defaultCopyUnits) required(card.includes(`<span class="copy-unit">${unit}</span>`), `Default scan copy must keep the phrase “${unit}” intact.`);
-for (const unit of wechatCopyUnits) required(card.includes(`<span class="copy-unit">${unit}</span>`), `WeChat scan copy must keep the phrase “${unit}” intact.`);
-required(card.includes('<span class="copy-line">联系兰芯云朵</span><span class="copy-line">销售经理</span>'), "Card title must wrap only between semantic Chinese phrases.");
+const copyUnits = [...card.matchAll(/<span\b[^>]*class="copy-unit"[^>]*>([^<]*)<\/span>/g)].map((match) => match[1]);
+for (const unit of defaultCopyUnits) required(copyUnits.includes(unit), `Default scan copy must keep the phrase “${unit}” intact.`);
+for (const unit of wechatCopyUnits) required(copyUnits.includes(unit), `WeChat scan copy must keep the phrase “${unit}” intact.`);
+required(/<span\b[^>]*class="copy-line"[^>]*>联系兰芯云朵<\/span>\s*<span\b[^>]*class="copy-line"[^>]*>销售经理<\/span>/.test(card), "Card title must wrap only between semantic Chinese phrases.");
 required(card.includes('href="../../#contact"'), "WeCom card must retain a no-JavaScript return path to the contact section.");
 required((card.match(/class="button\b/g) || []).length === 1, "WeCom card must retain only one button.");
 required(card.includes('name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)"'), "WeCom card needs a light browser theme color.");

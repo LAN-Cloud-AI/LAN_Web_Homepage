@@ -167,7 +167,7 @@ const lhUrl = (origin, locale) => {
   return `${origin.replace(/\/$/, "")}${prefix}/`;
 };
 
-const llmsBody = (locale) => {
+export const llmsBody = (locale) => {
   const identity = getIdentity(locale);
   const welcome =
     locale === "en"
@@ -189,8 +189,13 @@ const llmsBody = (locale) => {
         copyId === "home" ? identity.siteName : getPageCopy(copyId, locale).title;
       return `- ${title}: ${absoluteLocaleUrl(route.path, locale)}`;
     }),
-    `- VECT: ${absoluteLocaleUrl("/", locale)}#vect`,
-    `- TACT: ${absoluteLocaleUrl("/", locale)}#tact`,
+    `- VECT: ${absoluteLocaleUrl("/solutions/", locale)}#vect`,
+    `- TACT: ${absoluteLocaleUrl("/solutions/", locale)}#tact`,
+    locale === "en"
+      ? "VECT and TACT have Feishu-based business validation. Their standalone SaaS versions are in preparation and are not available for self-service sign-up. Public course schedules are free to read; enterprise training is a separate paid service."
+      : locale === "zh-Hant"
+        ? "VECT、TACT 已有飛書方案業務驗證，自有 SaaS 正在籌備與前期建設，尚未開放自助開通。公開課表可免費瀏覽；企業實戰培訓為另行洽談的付費服務。"
+        : "VECT、TACT 已有飞书方案业务验证，自有 SaaS 正在筹备与前期建设，尚未开放自助开通。公开课表可免费浏览；企业实战培训为另行洽谈的付费服务。",
     "",
     locale === "en" ? "## LeadsHunter" : locale === "zh-Hant" ? "## 線索獵手" : "## 线索猎手",
     `- ${lhUrl("https://leadshunter.lancloudtech.com", locale)}`,

@@ -52,7 +52,7 @@ required(productPage.includes("Internal Expense"), "云朵记账需要保留 Int
 required(productPage.includes("https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense"), "产品页必须提供公开 GitHub 源码入口。");
 required(productPage.includes("Apache-2.0"), "产品页必须说明 Apache-2.0 开源许可。");
 required(!productPage.includes("ie-oa.lancloudtech.com"), "公开产品页不得泄露受登录保护的产品实例地址。");
-required(productPage.includes('<a class="skip-link" href="#main">'), "页面需要键盘跳过链接。");
+required(/<a\b(?=[^>]*class="skip-link")(?=[^>]*href="#main")[^>]*>/.test(productPage), "页面需要键盘跳过链接。");
 required(productPage.includes('<main id="main" tabindex="-1">'), "跳过链接目标必须可获得键盘焦点。");
 required(productPage.includes('href="../"'), "产品页必须提供返回兰芯云朵官网的链接。");
 required(productPage.includes('<script>document.documentElement.classList.add("js");</script>'), "移动菜单必须渐进增强。");
@@ -113,7 +113,7 @@ const wideScreenRule = productCss.match(/@media \(min-width: 1280px\)\s*\{([\s\S
 required(wideScreenRule.includes("--shell: min(1420px, calc(100% - 6rem))"), "超宽屏需要扩大内容容器，而不是让首屏孤立在窄栏中。");
 required(wideScreenRule.includes("font-size: clamp(3rem, 4.1vw, 4.5rem)"), "超宽屏 Hero 标题需要在可读范围内恢复应有的视觉力度。");
 const narrowCjkCopyUnitLimit = 16;
-const overlongCopyUnits = [...productPage.matchAll(/<span class="copy-unit">([^<]+)<\/span>/g)]
+const overlongCopyUnits = [...productPage.matchAll(/<span\b[^>]*class="copy-unit"[^>]*>([^<]+)<\/span>/g)]
   .map((match) => match[1].replace(/\s/g, ""))
   .filter((text) => [...text].filter((character) => /\p{Script=Han}/u.test(character)).length > narrowCjkCopyUnitLimit);
 required(overlongCopyUnits.length === 0, `320px 窄屏中的中文短语不能超过 ${narrowCjkCopyUnitLimit} 个汉字：${overlongCopyUnits.join("、")}`);
@@ -146,19 +146,21 @@ required(productJs.includes('event.key === "Escape" && nav?.classList.contains("
 required(productJs.includes("IntersectionObserver"), "页面需要一次性的视口进场动效。");
 required(productJs.includes("motion-ready"), "进场动效必须在 JavaScript 就绪后才启用。");
 
-const openSectionStart = home.indexOf('<section class="section open" id="open">');
+const openSectionStart = home.search(/<section\b[^>]*\bid="open"[^>]*>/);
 const openSectionEnd = home.indexOf("</section>", openSectionStart);
 const openSection = home.slice(openSectionStart, openSectionEnd);
 required(openSection.includes('href="./internal-expense/"'), "首页开源区必须链接云朵记账产品页。");
-required(openSection.includes("<strong>云朵记账</strong>"), "首页开源区必须展示云朵记账名称。");
+required(/<strong\b[^>]*>云朵记账<\/strong>/.test(openSection), "首页开源区必须展示云朵记账名称。");
 required(!openSection.includes("github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense"), "首页开源卡片应进入产品页，源码链接保留在产品页内。");
-required(home.includes('<a href="./internal-expense/">云朵记账</a>'), "首页页脚必须链接云朵记账产品页。");
+const footer = home.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0] || "";
+required(/<a\b[^>]*href="\.\/internal-expense\/"[^>]*>[\s\S]*?云朵记账[\s\S]*?<\/a>/.test(footer), "首页页脚必须以云朵记账名称链接产品页。");
 for (const phrase of ["开源订阅与报销管理", "開源訂閱與報銷管理", "Open-source subscription and reimbursement management"]) {
   required(i18n.includes(phrase), `多语言文件缺少云朵记账描述：${phrase}`);
 }
 
 required(promptIndex.includes("云朵记账"), "Prompt 索引必须记录云朵记账资产组。");
-required(catalog.count === 87, "Prompt catalog 计数必须更新为 87。");
+required(catalog.count === catalog.items.length, "Prompt catalog 计数必须与条目数量一致。");
+required(new Set(catalog.items.map((item) => item.id)).size === catalog.items.length, "Prompt catalog 中的资产 ID 必须唯一。");
 for (const scene of scenes) {
   const item = catalog.items.find((candidate) => candidate.id === scene);
   required(item, `Prompt catalog 缺少 ${scene}。`);

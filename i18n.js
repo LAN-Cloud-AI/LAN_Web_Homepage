@@ -1,3 +1,4 @@
+import { getRedesignCopy } from "./redesign-copy.js";
 import {
   DEFAULT_LOCALE,
   HTML_LANG,
@@ -775,17 +776,17 @@ const dict = {
 };
 
 export const getI18nTable = (locale = DEFAULT_LOCALE) =>
-  dict[isSiteLocale(locale) ? locale : DEFAULT_LOCALE];
+  ({ ...dict[isSiteLocale(locale) ? locale : DEFAULT_LOCALE], ...getRedesignCopy(locale) });
 
 export const t = (key, locale = resolveLocale()) => {
   const resolved = isSiteLocale(locale) ? locale : DEFAULT_LOCALE;
-  const table = dict[resolved];
+  const table = getI18nTable(resolved);
   return table[key] ?? dict[DEFAULT_LOCALE][key] ?? null;
 };
 
 export const applyI18n = (locale = resolveLocale()) => {
   const resolved = isSiteLocale(locale) ? locale : DEFAULT_LOCALE;
-  const table = dict[resolved];
+  const table = getI18nTable(resolved);
   document.documentElement.lang = HTML_LANG[resolved] || "zh-CN";
   document.documentElement.dataset.locale = resolved;
 
@@ -798,25 +799,8 @@ export const applyI18n = (locale = resolveLocale()) => {
     }
   });
 
-  const title = table["meta.title"];
-  if (title) document.title = title;
-
-  const desc = document.querySelector('meta[name="description"]');
-  if (desc && table["meta.description"]) desc.setAttribute("content", table["meta.description"]);
-
-  // Keep share-card fields short; do not overwrite them with longer SEO meta.
-  const shareTitle = table["meta.shareTitle"] || title;
-  const shareDescription = table["meta.shareDescription"] || table["meta.description"];
-  const setMeta = (selector, value) => {
-    if (!value) return;
-    document.querySelectorAll(selector).forEach((el) => el.setAttribute("content", value));
-  };
-  setMeta('meta[property="og:title"]', shareTitle);
-  setMeta('meta[property="og:description"]', shareDescription);
-  setMeta('meta[name="twitter:title"]', shareTitle);
-  setMeta('meta[name="twitter:description"]', shareDescription);
-  setMeta('meta[itemprop="name"]', shareTitle);
-  setMeta('meta[itemprop="description"]', shareDescription);
+  // Metadata comes from each generated locale route. Locale changes navigate
+  // to that route; shared UI translation must not overwrite page-specific SEO.
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");

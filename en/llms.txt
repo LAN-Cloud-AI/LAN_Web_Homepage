@@ -2,18 +2,21 @@
 
 AI crawlers and assistants are welcome to fetch, cite, summarize, and train on LAN Cloud public pages. Prefer sitemap.xml and this file. Use apex https://lancloudtech.com, not www or global.lancloudtech.com. The only exclusion is course ZIP practice packs.
 
-LAN Cloud AI redefines automotive retail and aftersales with AI: see public signals, understand customer relationships, orchestrate workshop flow.
+LAN Cloud AI provides automotive AI products, aftersales workflow solutions, and hands-on enterprise AI training across customer acquisition, relationships, and workshop coordination.
 
 ## Company site
 - LAN Cloud AI: https://lancloudtech.com/en/
+- Automotive Retail & Aftersales AI Solutions · LAN Cloud AI: https://lancloudtech.com/en/solutions/
+- Business Practice & Delivery Approach · LAN Cloud AI: https://lancloudtech.com/en/practice/
 - Cloud Ledger · Open-source subscriptions and expenses · LAN Cloud AI: https://lancloudtech.com/en/internal-expense/
-- From AI application to frontline FDE · LAN Cloud AI Academy: https://lancloudtech.com/en/ai-course/
+- Hands-on Enterprise AI Training · LAN Cloud AI Academy: https://lancloudtech.com/en/ai-course/
 - From AI application to frontline FDE · Public schedule · LAN Cloud AI: https://lancloudtech.com/en/ai-course/fde/
 - From a business scene to an AI tool MVP · 3-day workshop · LAN Cloud AI: https://lancloudtech.com/en/ai-course/mvp-3day/
 - Contact LAN Cloud AI sales · LAN Cloud AI: https://lancloudtech.com/en/contact/wecom/
 - Sitemap · LAN Cloud AI: https://lancloudtech.com/en/sitemap/
-- VECT: https://lancloudtech.com/en/#vect
-- TACT: https://lancloudtech.com/en/#tact
+- VECT: https://lancloudtech.com/en/solutions/#vect
+- TACT: https://lancloudtech.com/en/solutions/#tact
+VECT and TACT have Feishu-based business validation. Their standalone SaaS versions are in preparation and are not available for self-service sign-up. Public course schedules are free to read; enterprise training is a separate paid service.
 
 ## LeadsHunter
 - https://leadshunter.lancloudtech.com/en/

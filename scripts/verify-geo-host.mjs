@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE_ORIGIN } from "../site-seo.js";
+import { PUBLIC_ROUTES, SITE_ORIGIN } from "../site-seo.js";
+import { SITE_LOCALES } from "../site-identity.js";
+import { localeHtmlPath } from "./seo-html.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
@@ -14,17 +16,8 @@ const required = (condition, message) => {
   }
 };
 
-const htmlRoutes = [
-  "index.html",
-  "internal-expense/index.html",
-  "ai-course/index.html",
-  "ai-course/fde/index.html",
-  "ai-course/mvp-3day/index.html",
-  "contact/wecom/index.html",
-  "sitemap/index.html",
-  "en/index.html",
-  "zh-Hant/index.html",
-];
+const htmlRoutes = PUBLIC_ROUTES.flatMap((route) =>
+  SITE_LOCALES.map((locale) => localeHtmlPath(route.html, locale)));
 
 required(exists("geo-host.js"), "geo-host.js must exist.");
 required(exists("workers/geo/src/index.js"), "lan-geo Worker source must exist.");
@@ -68,7 +61,7 @@ required(!dnsFiles.includes("upsertA(\"lancloudtech.com\")"), "files DNS script 
 
 for (const file of htmlRoutes) {
   const html = read(file);
-  required(html.includes('src="/geo-host.js"'), `${file} must load /geo-host.js.`);
+  required(/src="(?:\/|(?:\.\.?\/)*)geo-host\.js"/.test(html), `${file} must load the site geo-host.js controller.`);
   required(
     html.includes(`rel="canonical" href="${SITE_ORIGIN}`) || html.includes('rel="canonical" href="https://lancloudtech.com'),
     `${file} canonical must stay on apex lancloudtech.com.`

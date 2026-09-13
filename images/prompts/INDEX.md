@@ -1,10 +1,10 @@
 # Prompt 索引
 
-> 共 **87** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **88** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
-| [品牌与通用](./brand/) (`brand`) | 6 |
+| [品牌与通用](./brand/) (`brand`) | 7 |
 | [云朵记账](./internal-expense/) (`internal-expense`) | 6 |
 | [AI 课程](./ai-course/) (`ai-course`) | 6 |
 | [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 20 |
@@ -16,6 +16,8 @@
 | [官网营销版式](./marketing/) (`marketing`) | 8 |
 
 ## 品牌与通用
+
+新增：[`brand-action-hero-v3`](./brand/brand-action-hero-v3.md) · 16:9 · 新版首页装饰主视觉（2026-09-13）。
 
 | ID | 标题 | 画幅 | 用途 |
 | --- | --- | --- | --- |

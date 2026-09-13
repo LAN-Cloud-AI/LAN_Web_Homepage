@@ -3,6 +3,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 import { COURSE_DOWNLOADS, COURSE_DOWNLOAD_GITHUB_REF } from "../ai-course/course-downloads.js";
+import { getI18nTable } from "../i18n.js";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -51,7 +52,6 @@ const js = read("ai-course/ai-course.js");
 const courseI18n = read("ai-course/ai-course-i18n.js");
 const summary = read("ai-course/fde/course-summary.js");
 const home = read("index.html");
-const i18n = read("i18n.js");
 const catalog = JSON.parse(read("images/prompts/catalog.json"));
 const promptIndex = read("images/prompts/INDEX.md");
 
@@ -87,7 +87,13 @@ for (const page of [hub, fde, mvp]) {
 
 required(hub.includes('href="./fde/"'), "课程总览必须链到 FDE 子页。");
 required(hub.includes('href="./mvp-3day/"'), "课程总览必须链到三天定制课子页。");
-required(hub.includes('href="../#contact"') || hub.includes('href="../contact/wecom/"'), "课程总览 CTA 必须指向站内联系。");
+for (const [page, prefix] of [[hub, "../"], [fde, "../../"], [mvp, "../../"]]) {
+  required(page.includes(`href="${prefix}?inquiry=training#contact"`), "课程咨询必须指向站内联系并携带培训意向。");
+  required(!page.includes(`href="${prefix}#contact"`), "课程联系入口不得丢失培训意向。");
+  for (const product of ["VECT", "TACT"]) {
+    required(page.includes(`<a href="${prefix}solutions/#${product.toLowerCase()}">${product}</a>`), `${product} 页脚入口必须指向方案页对应锚点。`);
+  }
+}
 required(fde.includes('data-fde-schedule'), "FDE 页必须有课表渲染容器。");
 required(summary.includes("FDE_PUBLIC_COURSES_BY_LOCALE"), "公开课表必须按 locale 导出。");
 required(summary.includes("getFdePublicCourses"), "公开课表必须提供 getFdePublicCourses。");
@@ -165,32 +171,29 @@ required(js.includes("renderFdeSchedule"), "共享脚本必须渲染 FDE 课表�
 required(js.includes("applyCourseI18n"), "共享脚本必须应用课程 i18n。");
 required(js.includes("getFdePublicCourses"), "共享脚本必须按 locale 读取课表。");
 
-const academyStart = home.indexOf('<section class="section academy" id="academy">');
-required(academyStart >= 0, "首页必须新增 #academy 培养区块。");
-const academyEnd = home.indexOf("</section>", academyStart);
-const academy = home.slice(academyStart, academyEnd);
-required(academy.includes('href="./ai-course/"'), "首页培养区块必须链到 /ai-course/。");
-required(home.includes('href="#academy"'), "顶栏/页脚必须包含培养锚点。");
-required(home.includes('data-i18n="nav.academy"'), "顶栏培养入口必须走 i18n。");
-required(home.includes('<a href="./ai-course/">AI 课程</a>'), "首页页脚必须链接 AI 课程总览。");
+// Validate the public route contract without depending on a particular homepage
+// class list, link wrapper, or former "AI 课程 / 培养" display label.
+const academySection = home.match(/<section\b[^>]*\bid=["']academy["'][^>]*>[\s\S]*?<\/section>/i)?.[0];
+required(academySection, "首页必须有 #academy 培训区块。");
+const courseHubHref = /href=["'](?:\.\/|\/)?ai-course\/(?:#[^"']*)?["']/i;
+const academyHref = /href=["'](?:\.\/|\/)?#academy["']/i;
+required(courseHubHref.test(academySection), "首页培训区块必须链到 /ai-course/。");
+for (const [name, element] of [["顶栏", "header"], ["页脚", "footer"]]) {
+  const section = home.match(new RegExp(`<${element}\\b[^>]*>[\\s\\S]*?<\\/${element}>`, "i"))?.[0] || "";
+  required(courseHubHref.test(section) || academyHref.test(section), `${name}必须提供课程总览或培训区块入口。`);
+  required(/data-i18n=["']nav\.academy["']/.test(section), `${name}培训入口必须走 i18n。`);
+}
 required(!home.includes("github.com/LAN-Cloud-AI/LAN_AI_Course_System"), "首页不得把课程仓 GitHub 当作公开主入口。");
-
-for (const phrase of [
-  "培养",
-  "培養",
-  "Academy",
-  "从 AI 应用到一线 FDE",
-  "從 AI 應用到一線 FDE",
-  "From AI application to frontline FDE",
-  "了解课程体系",
-  "了解課程體系",
-  "Explore the curriculum",
-]) {
-  required(i18n.includes(phrase), `多语言文件缺少培养相关文案：${phrase}`);
+for (const match of home.matchAll(/href=["'](?:\.\/|\/)?ai-course\/#([^"']+)["']/g)) {
+  required(hub.includes(`id="${match[1]}"`), `首页课程链接指向不存在的锚点：#${match[1]}。`);
+}
+for (const locale of ["zh-Hans", "zh-Hant", "en"]) {
+  const table = getI18nTable(locale);
+  required(typeof table["nav.academy"] === "string" && table["nav.academy"].trim(), `${locale} 缺少培训导航文案。`);
 }
 
 required(promptIndex.includes("AI 课程"), "Prompt 索引必须记录 AI 课程资产组。");
-required(catalog.count === 87, "Prompt catalog 计数必须更新为 87。");
+required(catalog.count === catalog.items.length, "Prompt catalog 计数必须与实际条目一致。");
 for (const scene of scenes) {
   const item = catalog.items.find((candidate) => candidate.id === scene);
   required(item, `Prompt catalog 缺少 ${scene}。`);
