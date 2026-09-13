@@ -101,7 +101,7 @@ git diff --check
 
 旧新版共同使用原 LAN Umami ID；`site-events.js` 统一点击名称、版本、语言与咨询方向，不手动重复发送 PV / 点击。详见 `docs/website-events.md`。只对正式公司域收集数据；部署后用真实浏览器和统计入库验证切换事件。
 
-生产双轨：大陆主域 `lancloudtech.com` / `www` → 阿里云源站 Nginx（`lanxin-official` → `8.148.22.108`，Cloudflare **灰云**）；海外（含港澳台）→ `global.lancloudtech.com` Cloudflare Pages。图片存阿里云 OSS 桶 `lan-cloud-webpage`，公开访问走 CDN `https://img.lancloudtech.com`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`；地理分流走 `https://lan-geo.mingxuan400.workers.dev/`。
+生产双轨：大陆主域 `lancloudtech.com` / `www` → 阿里云源站 Nginx（`lanxin-official-direct` → `8.148.22.108`，Cloudflare **灰云**）；海外（含港澳台）→ `global.lancloudtech.com` Cloudflare Pages。图片存阿里云 OSS 桶 `lan-cloud-webpage`，公开访问走 CDN `https://img.lancloudtech.com`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`；地理分流走 `https://lan-geo.mingxuan400.workers.dev/`。
 
 发布前：
 

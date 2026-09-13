@@ -1,10 +1,12 @@
 # 发布运行手册
 
+当前为双版本预上线：根路径保留旧版，新版在 `/preview/`；详情见 [2026-09-13 发布记录](prelaunch-release-2026-09-13.md)。根目录源码是新版，必须通过构建组装后发布 `dist/`。
+
 ## 目标
 
 将已验证的官网静态资源发布到：
 
-1. **大陆主域**：阿里云源站 `8.148.22.108`（SSH 别名 `lanxin-official`），Nginx + Let’s Encrypt；Cloudflare **灰云 DNS**，访客直连源站。
+1. **大陆主域**：阿里云源站 `8.148.22.108`（SSH 别名 `lanxin-official-direct`），Nginx + Let’s Encrypt；Cloudflare **灰云 DNS**，访客直连源站。
 2. **海外子域**：`global.lancloudtech.com` → Cloudflare Pages 项目 `lan-homepage-global`（橙云）；仅 `CN` 留主域，**港澳台与其它地区算海外**。
 
 ## 架构
@@ -40,7 +42,7 @@
 4. 同步到源站，并部署海外 Pages（及首次/变更时的 geo Worker + global DNS）：
 
    ```bash
-   rsync -avz --delete dist/ lanxin-official:/var/www/lancloudtech.com/
+   rsync -avz --delete --delay-updates dist/ lanxin-official-direct:/var/www/lancloudtech.com/
    npm run deploy:geo-worker          # 首次或 Worker 有变更
    npm run deploy:pages               # 自动读 ~/.config/lanxin/env/cloudflare/pages.env
    npm run dns:global                 # 首次或 DNS 漂移时（同上 pages.env）
@@ -123,12 +125,13 @@ Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。图片主要在
 
 ## 失败处理
 
-- `rsync` 失败：检查 SSH 别名 `lanxin-official` 与密钥，确认目标目录权限为 `www-data` 可读。
+- `rsync` 失败：检查 SSH 别名 `lanxin-official-direct` 与密钥，确认目标目录权限为 `www-data` 可读。
 - HTTPS 异常：`nginx -t` 后 `systemctl reload nginx`；确认安全组放行公网 80/443；灰云下 `curl -IIhttps://lancloudtech.com` 应见 `Server: nginx`。
 - 证书续期失败：Let’s Encrypt HTTP-01 需能直连源站 80。查 `/var/log/letsencrypt/letsencrypt.log`。续期保持 `key_type = rsa`，避免再签易触发旧橙云 525 的 ECDSA/YE 链。
 - 本机 dig 若出现 `198.18.x` Fake-IP，改用未劫持的公共 DNS、源站上 dig，或 `curl --resolve lancloudtech.com:443:8.148.22.108`。
 
 ## 回滚
 
-1. 恢复橙云：`CF_PROXIED=true node scripts/cf-dns-point-origin.mjs`（需同时恢复 Worker zone 路由，并把 `wechat-share.js` 改回同源 `/api/wechat/jssdk`）。
-2. 源站 Nginx / OSS 可保留。
+发布前备份国内站点与 Nginx 配置，记录国际站上一条成功生产部署。内容回滚恢复备份并验证 Nginx，再将 Pages 回滚到记录的生产部署；两地正式域复核后完成。具体本次备份位置见 [预上线发布记录](prelaunch-release-2026-09-13.md)。
+
+内容回滚不应改变 DNS、橙灰云或 Worker 绑定，也不应重置 Umami。基础设施迁移是单独的运维任务。
