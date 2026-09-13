@@ -1,33 +1,19 @@
 import { applyI18n, getI18nTable, persistLocale, resolveLocale, setLocale } from "./i18n.js";
 import { initWechatShare } from "./wechat-share.js";
+import { initHeroMotion } from "./company-hero-motion.js";
+import { initParticleFields } from "./company-particle-fields.js";
+import { initPageMotion } from "./company-motion-preference.js";
 
 const locale = resolveLocale();
 const copy = getI18nTable(locale);
 persistLocale(locale);
 applyI18n(locale);
+initPageMotion();
+initHeroMotion();
+initParticleFields();
 const route = document.body.dataset.shareRoute || "home";
 initWechatShare(route, { getLocale: resolveLocale });
 document.querySelectorAll(".lang-opt").forEach(button => button.addEventListener("click", () => setLocale(button.dataset.locale)));
-
-const nav = document.querySelector(".nav");
-const toggle = document.querySelector(".nav-toggle");
-const links = document.querySelector("#primary-nav");
-const menu = (open, restore = false) => {
-  nav.classList.toggle("is-menu-open", open);
-  toggle.setAttribute("aria-expanded", String(open));
-  toggle.setAttribute("aria-label", copy[open ? "nav.closeMenu" : "nav.menu"]);
-  if (open) links.querySelector("a")?.focus();
-  if (restore) toggle.focus();
-};
-toggle?.addEventListener("click", () => menu(toggle.getAttribute("aria-expanded") !== "true"));
-links?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => menu(false)));
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") menu(false, true);
-});
-document.addEventListener("click", event => {
-  if (!nav.contains(event.target) && toggle.getAttribute("aria-expanded") === "true") menu(false);
-});
-window.matchMedia("(min-width: 961px)").addEventListener("change", event => { if (event.matches) menu(false); });
 
 // The selection carries context into the actual email draft; no fake form submission.
 const topics = {

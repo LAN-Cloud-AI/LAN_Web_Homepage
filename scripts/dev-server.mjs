@@ -86,6 +86,11 @@ export async function resolvePreviewRequest(target) {
   if (/[\u0000-\u001f\u007f\\%]/.test(decoded) || decoded.includes("//")) {
     throw new PreviewError(400, "Invalid path");
   }
+  if (decoded === "/preview" || decoded.startsWith("/preview/")) {
+    return { redirect: (decoded.replace(/^\/preview(?=\/|$)/, "") || "/") + query, status: 301 };
+  }
+  if (decoded.endsWith("/index.html")) return { redirect: decoded.slice(0, -10) + query, status: 301 };
+  if (/^\/(?:en\/|zh-Hant\/)?leadshunter(?:\/|$)/.test(decoded)) return { redirect: "https://leadshunter.lancloudtech.com/", status: 301 };
   const relative = decoded.slice(1);
   checkRelativePath(relative);
   const isImage = relative.startsWith("images/");
@@ -118,7 +123,7 @@ async function handleRequest(request, response) {
     const resolved = await resolvePreviewRequest(request.url);
     if (resolved.redirect) {
       response.setHeader("Location", resolved.redirect);
-      send(308, "Redirecting\n");
+      send(resolved.status || 308, "Redirecting\n");
       return;
     }
     let body = await fs.readFile(resolved.file);
@@ -131,6 +136,14 @@ async function handleRequest(request, response) {
   } catch (error) {
     const status = error instanceof PreviewError ? error.status
       : ["ENOENT", "ENOTDIR", "EACCES", "ELOOP"].includes(error.code) ? 404 : 500;
+    if (status === 404) {
+      const locale = /^\/(en|zh-Hant)(?:\/|$)/.exec(request.url)?.[1];
+      try {
+        const errorHtml = await fs.readFile(path.join(assetsRoot, locale || "", "404.html"), "utf8");
+        send(404, errorHtml.replaceAll(imagePrefix, "/images/").replace(/\s*<script\b(?=[^>]*data-lan-analytics=["']umami["'])[^>]*>\s*<\/script>/gi, ""), "text/html; charset=utf-8");
+        return;
+      } catch { /* A missing build must still produce a real 404. */ }
+    }
     send(status, `${status === 500 ? "Preview error" : status === 404 ? "Not found" : error.message}\n`);
   }
 }
@@ -154,7 +167,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
       process.exitCode = 1;
     });
     server.listen(port, "127.0.0.1", () => {
-      console.log(`Local prelaunch package: http://127.0.0.1:${port}/ (legacy) and /preview/ (new)`);
+      console.log(`Local production website: http://127.0.0.1:${port}/`);
     });
   } catch (error) {
     console.error(error.message);

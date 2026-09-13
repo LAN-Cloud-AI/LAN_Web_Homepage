@@ -1,12 +1,10 @@
 import {
   LOCALE_STORAGE_KEY,
   LOCALES,
-  persistLocale,
   resolveLocale,
   setLocale,
   t as homeT,
 } from "../i18n.js";
-import { SHARE_BY_ROUTE } from "../share-meta.js";
 import { HTML_LANG, isSiteLocale, DEFAULT_LOCALE } from "../site-identity.js";
 
 const stageMetaByLocale = {
@@ -74,12 +72,6 @@ const stageMetaByLocale = {
 
 const dict = {
   "zh-Hans": {
-    "meta.hub.title": "AI 实战培训 · 从一份成果到业务应用 · 兰芯云朵",
-    "meta.hub.description": "兰芯 AI 实战课、企业 AI 应用 MVP 三天定制课与 21 课 84 课时 FDE 培养体系。从经营简报、小工具到真实业务应用，选择适合你的学习路径。",
-    "meta.fde.title": "从 AI 应用到一线 FDE · 公开课表 · 兰芯云朵",
-    "meta.fde.description": "兰芯云朵 FDE 公开课表：84 课时、21 课、三阶段通用 FDE 培养路径。",
-    "meta.mvp.title": "从业务场景到 AI 工具 MVP · 企业定制三天课 · 兰芯云朵",
-    "meta.mvp.description": "面向企业真实业务的三天 AI 应用实战课程：场景识别、工作流设计到 AI 工具 MVP 实现与验证。",
     "lang.label": "选择语言",
     "nav.brandHome": "返回兰芯云朵官网",
     "nav.brand": "兰芯云朵",
@@ -300,12 +292,6 @@ const dict = {
     "hub.pathFdeOutcome2": "进阶方向：可靠性、安全、评测与客户交付"
   },
   "zh-Hant": {
-    "meta.hub.title": "AI 實戰培訓 · 從一份成果到業務應用 · 蘭芯雲朵",
-    "meta.hub.description": "蘭芯 AI 實戰課、企業 AI 應用 MVP 三天客製課與 21 課 84 課時 FDE 培養體系。從經營簡報、小工具到真實業務應用，選擇適合你的學習路徑。",
-    "meta.fde.title": "從 AI 應用到一線 FDE · 公開課表 · 蘭芯雲朵",
-    "meta.fde.description": "蘭芯雲朵 FDE 公開課表：84 課時、21 課、三階段通用 FDE 培養路徑。",
-    "meta.mvp.title": "從業務場景到 AI 工具 MVP · 企業定制三天課 · 蘭芯雲朵",
-    "meta.mvp.description": "面向企業真實業務的三天 AI 應用實戰課程：場景識別、工作流設計到 AI 工具 MVP 實現與驗證。",
     "lang.label": "選擇語言",
     "nav.brandHome": "返回蘭芯雲朵官網",
     "nav.brand": "蘭芯雲朵",
@@ -526,12 +512,6 @@ const dict = {
     "hub.pathFdeOutcome2": "進階方向：可靠性、安全、評測與客戶交付"
   },
   "en": {
-    "meta.hub.title": "Practical AI Training · From a Task to a Business Application · LAN Cloud AI",
-    "meta.hub.description": "Explore practical AI lessons, a three-day enterprise AI MVP course, and a 21-lesson, 84-hour FDE program. Build a business brief, a personal tool, or an application for your team.",
-    "meta.fde.title": "From AI application to frontline FDE · Public schedule · LAN Cloud AI",
-    "meta.fde.description": "LAN Cloud AI public FDE schedule: 84 hours, 21 lessons, and a three-stage general FDE path.",
-    "meta.mvp.title": "From business scene to AI tool MVP · 3-day custom course · LAN Cloud AI",
-    "meta.mvp.description": "A three-day enterprise AI workshop from scene discovery and workflow design to a verifiable AI tool MVP.",
     "lang.label": "Language",
     "nav.brandHome": "Back to LAN Cloud AI homepage",
     "nav.brand": "LAN Cloud AI",
@@ -781,33 +761,8 @@ export const applyCourseI18n = (locale = resolveLocale()) => {
     }
   });
 
-  const page = document.body?.dataset?.coursePage;
-  if (page) {
-    const title = table[`meta.${page}.title`];
-    if (title) document.title = title;
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc && table[`meta.${page}.description`]) {
-      desc.setAttribute("content", table[`meta.${page}.description`]);
-    }
-  }
-
-  const shareRoute =
-    document.body?.dataset?.shareRoute ||
-    ({ hub: "ai-course", fde: "ai-course-fde", mvp: "ai-course-mvp-3day" }[page] || null);
-  const share = shareRoute ? SHARE_BY_ROUTE[shareRoute] : null;
-  const shareCopy = share?.locales?.[resolved];
-  if (shareCopy) {
-    const setMeta = (selector, value) => {
-      document.querySelectorAll(selector).forEach((el) => el.setAttribute("content", value));
-    };
-    setMeta('meta[property="og:title"]', shareCopy.title);
-    setMeta('meta[property="og:description"]', shareCopy.desc);
-    setMeta('meta[name="twitter:title"]', shareCopy.title);
-    setMeta('meta[name="twitter:description"]', shareCopy.desc);
-    setMeta('meta[itemprop="name"]', shareCopy.title);
-    setMeta('meta[itemprop="description"]', shareCopy.desc);
-  }
-
+  // Each generated locale route owns its SEO and sharing head. Language changes
+  // navigate to that route; this runtime updates visible copy and controls only.
   const lookup = (key) => table[key] ?? homeT(key, resolved);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {

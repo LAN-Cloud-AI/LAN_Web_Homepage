@@ -171,7 +171,7 @@ export function verifyHero(page, css) {
     || splitTopLevel(rule.selector, ",").some((selector) => classPattern("hero").test(selector) && terminal(selector) === "h1"));
   required(!values(contentRules, "display").includes("none") && !values(contentRules, "visibility").some((value) => ["hidden", "collapse"].includes(value))
     && !values(contentRules, "opacity").some((value) => Number(value) === 0), "Hero text must not be hidden by CSS.");
-  const darkRules = rules.filter((rule) => containsMedia(rule, "(prefers-color-scheme:dark)"));
+  const darkRules = rules.filter((rule) => (containsMedia(rule, "(prefers-color-scheme:dark)") || /html\[data-theme=["\']dark["\']\]/.test(rule.selector)));
   const heroVisualRules = darkRules.filter((rule) => classPattern("hero").test(rule.selector) || classPattern("hero-background").test(rule.selector));
   const darkTextRules = darkRules.filter((rule) => /(?:^|[,\s])(?::root|html|body)(?:$|[,\s])/.test(rule.selector)
     || /\.hero(?:$|[\s.#:]|-(?:copy|line|intro|foot))/.test(rule.selector));

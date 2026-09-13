@@ -5,9 +5,9 @@ import { describeSiteEvent, getSiteEventContext, initSiteEvents } from "../site-
 
 const production = "https://lancloudtech.com/";
 const preview = "https://global.lancloudtech.com/preview/en/";
-assert.deepEqual(getSiteEventContext(preview), { site_version: "preview", language: "en", route: "/" });
-assert.deepEqual(getSiteEventContext("https://lancloudtech.com/zh-Hant/ai-course/"), { site_version: "legacy", language: "zh-Hant", route: "/ai-course/" });
-assert.equal(getSiteEventContext("https://lancloudtech.com/previewish/").site_version, "legacy");
+assert.deepEqual(getSiteEventContext(preview), { site_version: "current", language: "en", route: "/" });
+assert.deepEqual(getSiteEventContext("https://lancloudtech.com/zh-Hant/ai-course/"), { site_version: "current", language: "zh-Hant", route: "/ai-course/" });
+assert.equal(getSiteEventContext("https://lancloudtech.com/previewish/").site_version, "current");
 
 for (const [href, name] of [
   ["mailto:lance@lancloudtech.com?subject=Private%20draft&body=Do%20not%20collect", "inquiry_email"],
@@ -23,18 +23,15 @@ for (const [href, name] of [
 ]) assert.equal(describeSiteEvent({ href }, production).name, name, href);
 
 const alias = describeSiteEvent({ href: "/preview/en/ai-course/", eventName: "hero_academy" }, preview);
-assert.deepEqual(alias, { name: "academy_overview", data: { site_version: "preview", language: "en", course_path: "overview" } });
+assert.deepEqual(alias, { name: "academy_overview", data: { site_version: "current", language: "en", course_path: "overview" } });
 assert.equal(describeSiteEvent({ href: "/preview/en/ai-course/mvp-3day/" }, preview).data.course_path, "mvp-3day");
 assert.equal(describeSiteEvent({ href: "/preview/en/ai-course/fde/" }, preview).data.course_path, "fde");
 
-const forward = describeSiteEvent({ href: "/preview/", versionSwitch: true }, production);
-assert.deepEqual(forward, { name: "website_version_switch", data: { site_version: "legacy", language: "zh-Hans", from_version: "legacy", to_version: "preview" } });
-const reverse = describeSiteEvent({ href: "https://lancloudtech.com/en/" }, preview);
-assert.equal(reverse.name, "website_version_switch");
-assert.equal(reverse.data.from_version, "preview");
-assert.equal(reverse.data.to_version, "legacy");
+// Retired preview entry/return links no longer represent a product event.
+assert.equal(describeSiteEvent({ href: "/preview/", eventName: "website_version_switch" }, production), null);
+assert.equal(describeSiteEvent({ href: "https://lancloudtech.com/en/" }, preview), null);
 assert.equal(describeSiteEvent({ href: "/preview/en/", eventName: "website_version_switch" }, preview), null);
-assert.equal(describeSiteEvent({ href: "https://unrelated.example/", versionSwitch: true }, preview), null);
+assert.equal(describeSiteEvent({ href: "https://unrelated.example/", eventName: "website_version_switch" }, preview), null);
 assert.equal(describeSiteEvent({ href: "/contact/wecom/" }, preview).name, "inquiry_wecom");
 assert.equal(describeSiteEvent({ href: "#method" }, production), null);
 assert.equal(describeSiteEvent({ href: "#paths" }, `${production}ai-course/`), null, "in-page course jumps must not inflate course entry counts");
@@ -61,11 +58,12 @@ class Element {
 const email = new Element({ href: "mailto:lance@lancloudtech.com?body=private", "data-umami-event": "contact_email", "data-umami-event-email": "do-not-send" });
 const nested = new Element({ "data-umami-event": "contact_email" }, "SPAN");
 email.children.push(nested);
+const retired = new Element({ href: "/preview/", "data-umami-event": "website_version_switch", "data-site-version-switch": "", "data-umami-event-from_version": "legacy", "data-umami-event-to_version": "preview" });
 const listeners = [];
 const win = {
   location: { href: preview },
   addEventListener(type, callback, capture) { listeners.push({ type, callback, capture }); },
-  document: { readyState: "complete", querySelectorAll() { return [email, nested]; } },
+  document: { readyState: "complete", querySelectorAll() { return [email, nested, retired]; } },
 };
 const first = initSiteEvents(win);
 assert.equal(initSiteEvents(win), first);
@@ -75,6 +73,11 @@ assert.equal(listeners[0].capture, true, "window capture precedes deployed Umami
 assert.equal(email.getAttribute("data-umami-event"), "inquiry_email");
 assert.equal(email.getAttribute("data-umami-event-email"), null, "only approved fields survive normalization");
 assert.equal(nested.getAttribute("data-umami-event"), null, "nested labels cannot bypass anchor navigation handling");
+assert.equal(retired.getAttribute("data-umami-event"), null, "cached version switches must not reach the tracker");
+assert.equal(retired.getAttribute("data-site-version-switch"), null);
+assert.equal(retired.getAttribute("data-umami-event-from_version"), null);
+assert.equal(retired.getAttribute("data-umami-event-to_version"), null);
+assert.equal(email.getAttribute("data-umami-event-site_version"), "current");
 assert.equal(email.getAttribute("href"), "mailto:lance@lancloudtech.com?body=private", "normalization preserves the working link");
 
 // Simulate one click reaching our WINDOW capture listener before Umami's DOCUMENT
@@ -115,4 +118,4 @@ assert.ok(siteEventsScriptTag().includes('src="/site-events.js"'));
 assert.ok(siteEventsScriptTag('../site-events.js').includes('src="../site-events.js"'));
 const eventsSource = fs.readFileSync(new URL("../site-events.js", import.meta.url), "utf8");
 assert.ok(!/\bumami\.track\s*\(|\bfetch\s*\(|\bsendBeacon\s*\(/.test(eventsSource), "shared events module must not become a second sender");
-console.log("PASS: shared event taxonomy, version/language context, single initialization, live topic updates, anchor preservation, corporate-only tracker domains, and unchanged website IDs.");
+console.log("PASS: shared event taxonomy, current-version/language context, retired switch cleanup, single initialization, live topic updates, anchor preservation, corporate-only tracker domains, and unchanged website IDs.");

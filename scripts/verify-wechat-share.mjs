@@ -227,9 +227,9 @@ for (const route of PUBLIC_ROUTES) {
   for (const locale of SITE_LOCALES) {
     const share = getSharePayload(route.id, locale);
     const relative = localeHtmlPath(route.html, locale);
-    for (const base of includeDist ? ["", "dist/preview/"] : [""]) {
+    for (const base of includeDist ? ["", "dist/"] : [""]) {
       const html = read(`${base}${relative}`);
-      const url = base ? share.link.replace("https://lancloudtech.com/", "https://lancloudtech.com/preview/") : share.link;
+      const url = share.link;
       for (const [attr, key, value] of [
         ["property", "og:title", share.title], ["property", "og:description", share.desc],
         ["property", "og:url", url], ["property", "og:image", share.imgUrl],
@@ -249,4 +249,4 @@ for (const route of PUBLIC_ROUTES) {
     }
   }
 }
-console.log(`PASS: 9 unique square JPEG cards, 27 localized metadata sets${includeDist ? " plus 27 preview routes" : ""}, and JS-SDK wiring.`);
+console.log(`PASS: 9 unique square JPEG cards, 27 localized metadata sets${includeDist ? " plus 27 production routes" : ""}, and JS-SDK wiring.`);

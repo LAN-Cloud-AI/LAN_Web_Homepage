@@ -5,7 +5,7 @@ import { prepareWorkerAssets } from "./prepare-worker-assets.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-/** Preview-only headers must never suppress the additional host-wide Pages noindex. */
+/** The geographic mirror uses the apex canonical and does not duplicate indexing. */
 export const withGlobalNoindex = (raw) => {
   const lines = raw.split("\n");
   const globalRule = lines.findIndex((line) => line.trim() === "/*");
@@ -27,5 +27,5 @@ export const preparePagesAssets = async () => {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   await preparePagesAssets();
-  console.log("Prelaunch Pages assets prepared: both versions use host-wide noindex, follow.");
+  console.log("Production Pages assets prepared: geographic mirror uses host-wide noindex, follow.");
 }

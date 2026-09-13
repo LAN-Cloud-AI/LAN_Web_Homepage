@@ -1,3 +1,8 @@
+/preview    /    301
+/preview/   /    301
+/preview/*  /:splat    301
+/index.html  /    301
+/*/index.html  /:splat/    301
 /leadshunter    https://leadshunter.lancloudtech.com/    301
 /leadshunter/   https://leadshunter.lancloudtech.com/    301
 /leadshunter/*  https://leadshunter.lancloudtech.com/    301

@@ -20,8 +20,8 @@
   font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+
+  html[data-theme="dark"] {
     --page: #0d1118;
     --surface: rgba(22, 28, 39, 0.9);
     --surface-quiet: #ffffff;
@@ -35,7 +35,7 @@
     --button-secondary: rgba(255, 255, 255, 0.08);
     --button-secondary-hover: rgba(255, 255, 255, 0.14);
   }
-}
+
 
 * { box-sizing: border-box; }
 

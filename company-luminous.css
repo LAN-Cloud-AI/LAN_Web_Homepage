@@ -1,0 +1,73 @@
+/* Luminous intelligence: common visual language for all three company pages. */
+:root{--paper:#f7f9f6;--canvas:#f0f5f1;--ink:#112c26;--muted:#566e62;--line:#cfdfd6;--green:#137f68;--green-pale:#e0f2e7;--panel:#e4eee7;--radius:24px}
+body{background:var(--paper)}
+.nav{border-bottom-color:var(--line);background:var(--paper)}
+.nav-brand{letter-spacing:-.04em}
+.section-label{letter-spacing:.11em}
+.section-number{border-color:#81af9890;color:#358569}
+.section-heading h2,.academy-copy h2,.method-statement h2{letter-spacing:-.055em}
+.product,.solution-card,.practice-card,.solution-detail-visual,.work-image{border-radius:24px}
+.product{background:linear-gradient(140deg,#f8fbf7,#eaf3ed)}
+/* Interface artwork stays complete, including the first and last rows. */
+.product-visual{background:var(--canvas);padding:28px 24px 36px;min-width:0}
+.product-visual picture{width:100%;max-width:100%}
+.product-visual img,.practice-visual img,.work-image picture img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;mix-blend-mode:normal}
+.practice-grid{grid-template-columns:1fr 1fr}
+.practice-visual,.commerce-visual{height:auto;aspect-ratio:3/2;border-radius:23px 23px 0 0}
+.practice-visual picture{height:auto}
+.practice-card:hover .practice-visual img{transform:none}
+.practice-card-copy{padding:24px 28px 28px}
+.global-symbol{font-size:36px;justify-self:center}
+.artist-visual{background:radial-gradient(ellipse at 50% 30%,#e0eee3,var(--canvas));gap:20px}
+.artist-visual div{background:radial-gradient(ellipse at 50% 90%,#628e77 0 30%,#b7d0bd 31% 60%,#e0ebe1 61%);border-color:#f8faf5;box-shadow:0 10px 30px #163c2410}
+.artist-visual div:nth-child(2){background:linear-gradient(130deg,#d4d7bd 35%,#8c9c78 36% 55%,#e7e9d8 56%)}
+.artist-visual div:nth-child(3){background:radial-gradient(circle at 40% 42%,#9cbea9 0 30%,#dce9dc 31% 50%,#4b8069 51%)}
+.solution-card,.practice-card{border:1px solid var(--line);transition:transform .65s cubic-bezier(.2,.65,.2,1),border-color .3s,background .3s}
+.solution-card:hover,.practice-card:hover{transform:translateY(-3px);border-color:#69aa8d}
+.solution-visual{height:270px}
+.vect{background:radial-gradient(ellipse at 65% 20%,#e0f6e8,#e1ece4)}
+.tact{background:radial-gradient(ellipse at 65% 20%,#e0f4ef,#deeae8)}
+.global-block{background:linear-gradient(110deg,transparent,#dceee04d,transparent)}
+.academy-visual{border-radius:28px;overflow:hidden;isolation:isolate}
+.academy-feature{gap:70px}
+.course-path{border-top:1px solid var(--line);transition:background .3s,transform .45s}
+.course-path:hover{background:#e4f3e9;transform:translateY(-2px)}
+.method{isolation:isolate;padding-top:70px;padding-bottom:70px}
+.method-steps article{position:relative;z-index:1}
+.contact{isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 75% 120%,#216953,transparent 70%),#123e30;border:1px solid #39806380;border-radius:28px;min-height:350px}
+.contact-heading,.contact-options{position:relative;z-index:2}
+.contact-heading{max-width:460px}
+.page-hero{position:relative;isolation:isolate;overflow:hidden;padding-top:100px;padding-bottom:84px}
+.page-hero h1,.page-hero>p,.page-jumps{position:relative;z-index:1}
+.page-hero>p:last-of-type{max-width:610px}
+.page-jumps a{background:#f7f9f6c9;backdrop-filter:blur(8px)}
+.button,.nav-cta{transition:transform .3s,background .3s,color .3s;border-radius:9px}
+.button:hover,.nav-cta:hover{transform:translateY(-2px)}
+.button .arrow,.text-link .arrow{transition:transform .3s}
+.button:hover .arrow,.text-link:hover .arrow{transform:translate(3px,-3px)}
+
+
+
+
+
+
+@media(max-width:700px){.solution-visual{height:245px}.academy-feature{gap:32px}.method{padding-top:45px;padding-bottom:45px}.page-hero{padding-top:58px;padding-bottom:45px}.page-hero>p:last-of-type{max-width:90%}.page-jumps a{backdrop-filter:none}}
+@media(max-width:700px){.product-visual{padding:18px 16px 30px;min-height:0}.practice-grid{grid-template-columns:1fr}.practice-card-copy{padding:20px 20px 24px}.global-symbol{font-size:28px}.artist-visual{gap:12px}}
+
+ html[data-theme="dark"]{--paper:#091813;--canvas:#11271f;--ink:#e7f2e9;--muted:#9fb9aa;--line:#294638;--green:#9eddbb;--green-pale:#194a35;--panel:#18392a}
+ html[data-theme="dark"] .product{background:linear-gradient(130deg,#123528,#10291f)}
+ html[data-theme="dark"] .artist-visual{background:radial-gradient(ellipse at 50% 30%,#1b3d2e,var(--canvas))}
+ html[data-theme="dark"] .artist-visual div{background:radial-gradient(ellipse at 50% 90%,#91b89d 0 30%,#4d7660 31% 60%,#244a37 61%);border-color:#315443;box-shadow:0 10px 30px #020e092b}
+ html[data-theme="dark"] .artist-visual div:nth-child(2){background:linear-gradient(130deg,#788263 35%,#aaa987 36% 55%,#3d503b 56%)}
+ html[data-theme="dark"] .artist-visual div:nth-child(3){background:radial-gradient(circle at 40% 42%,#91b99f 0 30%,#3e6b52 31% 50%,#204831 51%)}
+ html[data-theme="dark"] .vect{background:radial-gradient(ellipse at 70% 25%,#194b36,#132f23)}
+ html[data-theme="dark"] .tact{background:radial-gradient(ellipse at 65% 20%,#17453e,#102c29)}
+ html[data-theme="dark"] .global-block{background:linear-gradient(110deg,transparent,#28533b40,transparent)}
+ html[data-theme="dark"] .course-path:hover{background:#153b2a}
+ html[data-theme="dark"] .contact{background:radial-gradient(ellipse at 75% 120%,#286c4e,transparent 70%),#103b2b}
+ html[data-theme="dark"] .page-jumps a{background:#0c241bcc}
+
+
+@media(prefers-reduced-motion:reduce){.solution-card:hover,.practice-card:hover,.course-path:hover,.button:hover,.nav-cta:hover{transform:none}}
+@media(max-width:700px){html:not([lang="en"]) .contact h2{font-size:clamp(24px,7.2vw,32px)}}
+@media(max-width:370px){html:not([lang="en"]) .contact h2{font-size:22px}}

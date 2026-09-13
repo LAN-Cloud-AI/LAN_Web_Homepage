@@ -79,12 +79,12 @@
 .footer-dir { padding-bottom: 26px; }
 .footer-col a { min-height: 30px; font-size: 12px; }
 .footer-legal { padding-top: 24px; }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #101817; --bg-soft: #172120; --bg-deep: #1c2a27; --ink: #eff5f3; --muted: #b1c2bd; --line: #33433e; --link: #73cdbb; --link-hover: #a0eddd; --card: #172120; }
-  .hero::before { background: linear-gradient(90deg,var(--bg-soft) 0%,var(--bg-soft) 33%,rgba(23,33,32,.9) 53%,rgba(23,33,32,.12) 90%),linear-gradient(0deg,var(--bg-soft),transparent 35%); }
-  .stat-row div { border-top-color: var(--line); }
-  .path-card:hover, .day-card:hover, .lesson-card:hover { background: var(--bg-deep); }
-}
+
+  html[data-theme="dark"] { --bg: #101817; --bg-soft: #172120; --bg-deep: #1c2a27; --ink: #eff5f3; --muted: #b1c2bd; --line: #33433e; --link: #73cdbb; --link-hover: #a0eddd; --card: #172120; }
+  html[data-theme="dark"] .hero::before { background: linear-gradient(90deg,var(--bg-soft) 0%,var(--bg-soft) 33%,rgba(23,33,32,.9) 53%,rgba(23,33,32,.12) 90%),linear-gradient(0deg,var(--bg-soft),transparent 35%); }
+  html[data-theme="dark"] .stat-row div { border-top-color: var(--line); }
+  html[data-theme="dark"] .path-card:hover, html[data-theme="dark"] .day-card:hover, html[data-theme="dark"] .lesson-card:hover { background: var(--bg-deep); }
+
 @media (max-width: 1100px) and (min-width: 721px) {
   .brand-separator, .brand-product { display: none; }
   .product-nav { gap: 4px 8px; }

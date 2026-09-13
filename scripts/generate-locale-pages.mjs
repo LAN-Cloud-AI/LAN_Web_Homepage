@@ -19,7 +19,8 @@ import {
 import { PUBLIC_ROUTES } from "../site-seo.js";
 import { COURSE_DOWNLOADS } from "../ai-course/course-downloads.js";
 import { writeWelcomeRobots, writeZipOnlyRobots } from "./ai-crawler-policy.mjs";
-import { applySeoHead, localeHtmlPath, upsertAnalytics } from "./seo-html.mjs";
+import { applySeoHead, localeHtmlPath } from "./seo-html.mjs";
+import { generateNotFoundPages } from "./generate-notfound.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GENERATED_LOCALES = SITE_LOCALES.filter((locale) => locale !== DEFAULT_LOCALE);
@@ -138,24 +139,6 @@ const generateRoute = (route, locale) => {
   return out;
 };
 
-const generateNotFound = (locale) => {
-  const source = fs.readFileSync(path.join(root, "404.html"), "utf8");
-  const lookup = lookupFor(source, locale);
-  const copy = getPageCopy("not-found", locale);
-  const identity = getIdentity(locale);
-  let html = applyI18nHtml(source, lookup);
-  html = rewriteRefs(html, "", locale);
-  html = html
-    .replace(/<html[^>]*>/i, `<html lang="${locale === "en" ? "en" : locale === "zh-Hant" ? "zh-Hant" : "zh-CN"}">`)
-    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${copy.title}</title>`)
-    .replace(/content="[^"]*"(\s+name="description")/, `content="${copy.description}"$1`)
-    .replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${copy.description}" />`);
-  html = html.replace(/<a class="btn[^"]*" href="[^"]*"/, `<a class="btn primary" href="${withLocalePrefix("/", locale)}"`);
-  html = upsertAnalytics(html, "lan");
-  writeFile(localeHtmlPath("404.html", locale), html);
-  void identity;
-};
-
 const LH_PREFIX = {
   "zh-Hans": "",
   "zh-Hant": "/zh-Hant",
@@ -227,16 +210,13 @@ export const generateLocalePages = () => {
     for (const route of PUBLIC_ROUTES) {
       written.push(generateRoute(route, locale));
     }
-    generateNotFound(locale);
-    written.push(localeHtmlPath("404.html", locale));
     const llmsPath = localeHtmlPath("llms.txt", locale);
     writeFile(llmsPath, llmsBody(locale));
     written.push(llmsPath);
   }
   writeFile("llms.txt", llmsBody(DEFAULT_LOCALE));
   written.push("llms.txt");
-  writeFile("404.html", upsertAnalytics(fs.readFileSync(path.join(root, "404.html"), "utf8"), "lan"));
-  written.push("404.html");
+  written.push(...generateNotFoundPages());
   writeAiRobots();
   written.push("robots.txt", "ops/files/robots.txt");
   return written;

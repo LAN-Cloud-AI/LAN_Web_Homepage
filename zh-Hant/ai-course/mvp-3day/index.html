@@ -150,39 +150,20 @@
   ]
 }
   </script>
+  <script src="/site-theme.js"></script>
+<link rel="stylesheet" href="/site-shell.css" />
+<script type="module" src="/site-shell.js"></script>
   <script defer src="https://stats.lancloudtech.com/u.js" data-website-id="d93294b3-1e1c-4127-9289-1fb8bdc42293" data-do-not-track="true" data-domains="lancloudtech.com,www.lancloudtech.com,global.lancloudtech.com" data-lan-analytics="umami"></script>
 </head>
 <body data-course-page="mvp" data-share-route="ai-course-mvp-3day">
-  <a class="skip-link" href="#agenda" data-i18n="skip.agenda">跳到三天大綱</a>
-
-  <header class="site-nav" id="site-nav">
-    <a class="brand-lockup" href="/zh-Hant/" data-i18n-aria="nav.brandHome" aria-label="返回蘭芯雲朵官網">
-      <img src="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg" width="30" height="29" alt="" />
-      <span class="brand-company" data-i18n="nav.brand">蘭芯雲朵</span>
-      <span class="brand-separator" aria-hidden="true">/</span>
-      <span class="brand-product">MVP <span data-i18n="nav.product.mvp">三天定制課</span></span>
-    </a>
-    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="product-nav" data-i18n-aria="nav.menu" aria-label="選單">
-      <span class="menu-toggle-box" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
-    </button>
-    <nav class="product-nav" id="product-nav" data-i18n-aria="company.navLabel" aria-label="蘭芯雲朵網站導覽">
-      <a href="/zh-Hant/#products" data-i18n="company.products">產品與方案</a>
-      <a href="/zh-Hant/#academy" data-i18n="company.academy">AI 實戰培訓</a>
-      <a href="/zh-Hant/#practice" data-i18n="company.practice">案例與實踐</a>
-      <a href="/zh-Hant/#method" data-i18n="company.method">關於蘭芯</a>
-      <a class="nav-cta" href="/zh-Hant/?inquiry=training#contact" data-i18n="company.contact">聯繫</a>
-    </nav>
-  </header>
-
+  <a class="lan-skip" href="#top"><span data-i18n="new.skip">跳到主要內容</span></a><header class="lan-header" data-site-header><div class="lan-header-inner"><a class="lan-brand" href="/zh-Hant/" aria-label="蘭芯雲朵" data-i18n-aria="nav.brand"><img src="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg" width="36" height="35" alt="" /><span data-i18n="nav.brand">蘭芯雲朵</span></a><nav class="lan-primary" id="lan-primary" aria-label="網站主導覽" data-i18n-aria="shell.navigation"><a href="/zh-Hant/solutions/" data-shell-route="solutions"><span data-i18n="shell.products">產品與方案</span></a><a href="/zh-Hant/ai-course/" data-shell-route="academy" aria-current="page"><span data-i18n="shell.academy">AI 實戰培訓</span></a><a href="/zh-Hant/practice/" data-shell-route="practice"><span data-i18n="shell.practice">案例與實踐</span></a><a href="/zh-Hant/#method" data-shell-route="about"><span data-i18n="shell.about">關於蘭芯</span></a><div class="lan-mobile-settings"><div class="lan-theme" role="group" aria-label="外觀模式" data-i18n-aria="shell.theme"><button type="button" data-theme-option="system" aria-pressed="true"><span aria-hidden="true">◐</span><span data-i18n="shell.system">跟隨系統</span></button><button type="button" data-theme-option="light" aria-pressed="false"><span aria-hidden="true">☀</span><span data-i18n="shell.light">白天</span></button><button type="button" data-theme-option="dark" aria-pressed="false"><span aria-hidden="true">☾</span><span data-i18n="shell.dark">黑夜</span></button></div><div class="lan-languages" role="group" aria-label="選擇語言" data-i18n-aria="lang.label"><button type="button" class="lan-language" data-shell-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button><button type="button" class="lan-language" data-shell-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button><button type="button" class="lan-language" data-shell-locale="en" aria-label="English" aria-pressed="false">EN</button></div></div></nav><div class="lan-header-actions"><a class="lan-contact" href="/zh-Hant/?inquiry=training#contact"><span data-i18n="shell.contact">聊聊你的業務</span><span aria-hidden="true">↗</span></a><button class="lan-menu-toggle" type="button" aria-controls="lan-primary" aria-expanded="false" aria-label="選單" data-i18n-aria="nav.menu"><span></span><span></span></button></div></div></header>
   <nav class="course-local-nav page-shell" data-i18n-aria="company.courseNav" aria-label="課程路徑導覽">
     <a href="/zh-Hant/ai-course/" data-i18n="nav.hub">課程總覽</a>
     <a href="/zh-Hant/ai-course/fde/" data-i18n="nav.fde">FDE 課表</a>
     <a href="/zh-Hant/ai-course/mvp-3day/" aria-current="page" data-i18n="nav.mvp">三天定制課</a>
   </nav>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-background" aria-hidden="true">
         <picture>
@@ -411,76 +392,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <nav class="footer-dir" data-i18n-aria="footer.navLabel" aria-label="頁腳導航">
-        <div class="footer-col">
-          <h3 class="footer-col-title">
-            <button type="button" class="footer-col-toggle" aria-expanded="false" aria-controls="footer-panel-explore" id="footer-toggle-explore">
-              <span data-i18n="footer.explore">探索</span>
-            </button>
-          </h3>
-          <div class="footer-col-panel" id="footer-panel-explore" role="region" aria-labelledby="footer-toggle-explore">
-      <a href="/zh-Hant/#products" data-i18n="company.products">產品與方案</a>
-      <a href="/zh-Hant/#academy" data-i18n="company.academy">AI 實戰培訓</a>
-      <a href="/zh-Hant/#practice" data-i18n="company.practice">案例與實踐</a>
-      <a href="/zh-Hant/#method" data-i18n="company.method">關於蘭芯</a>
-      <a href="/zh-Hant/?inquiry=training#contact" data-i18n="company.contact">聯繫</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h3 class="footer-col-title">
-            <button type="button" class="footer-col-toggle" aria-expanded="false" aria-controls="footer-panel-products" id="footer-toggle-products">
-              <span data-i18n="footer.products">產品</span>
-            </button>
-          </h3>
-          <div class="footer-col-panel" id="footer-panel-products" role="region" aria-labelledby="footer-toggle-products">
-            <a href="https://leadshunter.lancloudtech.com/" target="_blank" rel="noopener">LeadsHunter</a>
-            <a href="/zh-Hant/internal-expense/" data-i18n="company.ledger">雲朵記帳</a>
-            <a href="/zh-Hant/ai-course/" data-i18n="company.academy">AI 實戰培訓</a>
-            <a href="/zh-Hant/solutions/#vect">VECT</a>
-            <a href="/zh-Hant/solutions/#tact">TACT</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h3 class="footer-col-title">
-            <button type="button" class="footer-col-toggle" aria-expanded="false" aria-controls="footer-panel-contact" id="footer-toggle-contact">
-              <span data-i18n="footer.contact">聯繫</span>
-            </button>
-          </h3>
-          <div class="footer-col-panel" id="footer-panel-contact" role="region" aria-labelledby="footer-toggle-contact">
-            <a href="mailto:lance@lancloudtech.com">lance@lancloudtech.com</a>
-            <a href="tel:+86-17380566771">+86-17380566771</a>
-            <a href="https://github.com/LAN-Cloud-AI" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://lancloudtech.com">lancloudtech.com</a>
-            <a href="/zh-Hant/sitemap/" data-i18n="footer.sitemap">網站地圖</a>
-          </div>
-        </div>
-      </nav>
-      <div class="footer-legal">
-        <div class="footer-lang">
-          <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="選擇語言">
-            <button type="button" class="lang-opt" data-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button>
-            <button type="button" class="lang-opt" data-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button>
-            <button type="button" class="lang-opt" data-locale="en" aria-label="English" aria-pressed="false">EN</button>
-          </div>
-        </div>
-        <p data-i18n="footer.company">四川蘭芯雲朵智能科技有限公司</p>
-        <p data-i18n="footer.tax">統一社會信用代碼：91510100MAEP9GMR9R</p>
-        <p data-i18n="footer.address">中國（四川）自由貿易試驗區成都高新區新程南一路19號3棟15層1501-1504號</p>
-        <p>
-          <a
-            class="footer-beian"
-            href="https://beian.miit.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="footer.beian"
-          >蜀ICP备2026002396号</a>
-        </p>
-        <p data-i18n="footer.copy">Copyright © 2026 蘭芯雲朵. 保留所有權利.</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="lan-footer" data-site-footer><div class="lan-footer-main"><div class="lan-footer-brand"><a class="lan-brand" href="/zh-Hant/" aria-label="蘭芯雲朵" data-i18n-aria="nav.brand"><img src="https://img.lancloudtech.com/lanxin/webpage/images/logo/WEB-logo.svg" width="36" height="35" alt="" /><span data-i18n="nav.brand">蘭芯雲朵</span></a><p><span data-i18n="new.footerLine">把 AI 的可能，變成業務的日常。</span></p></div><nav class="lan-footer-links" aria-label="頁尾導覽" data-i18n-aria="shell.footerNavigation"><a href="/zh-Hant/solutions/"><span data-i18n="shell.products">產品與方案</span></a><a href="/zh-Hant/ai-course/"><span data-i18n="shell.academy">AI 實戰培訓</span></a><a href="/zh-Hant/practice/"><span data-i18n="shell.practice">案例與實踐</span></a><a href="https://leadshunter.lancloudtech.com/">LeadsHunter <span aria-hidden="true">↗</span></a><a href="/zh-Hant/solutions/#vect">VECT</a><a href="/zh-Hant/solutions/#tact">TACT</a><a href="/zh-Hant/internal-expense/"><span data-i18n="new.ledgerTitle">雲朵記賬</span></a><a href="https://appstore.lancloudtech.com/" data-umami-event="app_download"><span data-i18n="new.download">客戶端下載</span></a></nav><div class="lan-footer-contact"><a href="mailto:lance@lancloudtech.com">lance@lancloudtech.com</a><a href="tel:+86-17380566771">+86 173 8056 6771</a><div class="lan-footer-settings"><div class="lan-theme" role="group" aria-label="外觀模式" data-i18n-aria="shell.theme"><button type="button" data-theme-option="system" aria-pressed="true"><span aria-hidden="true">◐</span><span data-i18n="shell.system">跟隨系統</span></button><button type="button" data-theme-option="light" aria-pressed="false"><span aria-hidden="true">☀</span><span data-i18n="shell.light">白天</span></button><button type="button" data-theme-option="dark" aria-pressed="false"><span aria-hidden="true">☾</span><span data-i18n="shell.dark">黑夜</span></button></div><div class="lan-languages" role="group" aria-label="選擇語言" data-i18n-aria="lang.label"><button type="button" class="lan-language" data-shell-locale="zh-Hans" aria-label="简体中文" aria-pressed="true">简</button><button type="button" class="lan-language" data-shell-locale="zh-Hant" aria-label="繁體中文" aria-pressed="false">繁</button><button type="button" class="lan-language" data-shell-locale="en" aria-label="English" aria-pressed="false">EN</button></div></div></div></div><div class="lan-footer-legal"><div><p><span data-i18n="footer.company">四川蘭芯雲朵智能科技有限公司</span></p><p><span data-i18n="footer.tax">統一社會信用代碼：91510100MAEP9GMR9R</span></p><p><span data-i18n="footer.address">中國（四川）自由貿易試驗區成都高新區新程南一路19號3棟15層1501-1504號</span></p></div><div class="lan-footer-registration"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2026002396号</a><a href="/zh-Hant/sitemap/"><span data-i18n="footer.sitemap">網站地圖</span></a><a href="https://github.com/LAN-Cloud-AI" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a><p>© 2026 LAN Cloud AI</p></div></div></footer>
 
   <script type="module" src="/ai-course/ai-course.js"></script>
 </body>

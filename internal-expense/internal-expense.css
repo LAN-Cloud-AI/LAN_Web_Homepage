@@ -623,8 +623,8 @@ button:focus-visible {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+
+  html[data-theme="dark"] {
     --page: #0a1020;
     --surface: #121a2c;
     --surface-tint: #0e1628;
@@ -660,26 +660,26 @@ button:focus-visible {
     --focus: #b4c2ff;
   }
 
-  .eyebrow {
+  html[data-theme="dark"] .eyebrow {
     border-color: #344b79;
     background: #18284a;
     color: #b8c6ff;
   }
 
-  .eyebrow span { color: #dce6fb; }
+  html[data-theme="dark"] .eyebrow span { color: #dce6fb; }
 
-  .button-primary { background: #bfccff; color: #0a1020; }
+  html[data-theme="dark"] .button-primary { background: #bfccff; color: #0a1020; }
 
-  .button-primary:hover { background: #d5deff; }
+  html[data-theme="dark"] .button-primary:hover { background: #d5deff; }
 
-  .button-secondary:hover { border-color: #aebdff; color: #dbe3ff; }
+  html[data-theme="dark"] .button-secondary:hover { border-color: #aebdff; color: #dbe3ff; }
 
-  .boundary-grid article {
+  html[data-theme="dark"] .boundary-grid article {
     border-color: #324462;
     background: rgba(18, 27, 47, 0.76);
   }
 
-}
+
 
 @media (min-width: 1280px) {
   :root { --shell: min(1420px, calc(100% - 6rem)); }

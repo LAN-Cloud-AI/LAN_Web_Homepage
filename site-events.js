@@ -1,9 +1,8 @@
 /**
- * Shared legacy / preview click taxonomy. Umami alone owns delivery and pageviews.
+ * Shared current-site click taxonomy. Umami alone owns delivery and pageviews.
  * This module decorates elements; it never sends analytics requests itself.
  */
 export const SITE_EVENT_NAMES = Object.freeze({
-  versionSwitch: "website_version_switch",
   email: "inquiry_email",
   wecom: "inquiry_wecom",
   phone: "inquiry_phone",
@@ -32,19 +31,18 @@ const ALIASES = Object.freeze({
   inquiry_phone: SITE_EVENT_NAMES.phone,
   app_download: SITE_EVENT_NAMES.appDownload,
   course_download: SITE_EVENT_NAMES.courseDownload,
-  website_version_switch: SITE_EVENT_NAMES.versionSwitch,
 });
 const TOPICS = new Set(["product", "training", "global", "project"]);
 const TRACKED_ATTRIBUTE = "data-umami-event";
 const FIELD_PREFIX = `${TRACKED_ATTRIBUTE}-`;
-const SELECTOR = `a[href], [${TRACKED_ATTRIBUTE}], [data-site-version-switch]`;
+const SELECTOR = `a[href], [${TRACKED_ATTRIBUTE}]`;
 const installations = new WeakMap();
 
 const parseUrl = (value, base = "https://lancloudtech.com/") => {
   try { return new URL(value, base); } catch { return null; }
 };
 
-/** Paths, rather than deployment host or mutable body labels, define the version. */
+/** The current release owns all company routes; old preview paths are redirect aliases. */
 export const getSiteEventContext = (href) => {
   const url = parseUrl(href);
   const pathname = url?.pathname || "/";
@@ -53,14 +51,14 @@ export const getSiteEventContext = (href) => {
   const language = /^\/en(?:\/|$)/.test(unversioned)
     ? "en" : /^\/zh-Hant(?:\/|$)/.test(unversioned) ? "zh-Hant" : "zh-Hans";
   const route = unversioned.replace(/^\/(?:en|zh-Hant)(?=\/|$)/, "") || "/";
-  return { site_version: preview ? "preview" : "legacy", language, route };
+  return { site_version: "current", language, route };
 };
 
 const sameCompany = (source, target) =>
   target.origin === source.origin || (COMPANY_HOSTS.has(source.hostname) && COMPANY_HOSTS.has(target.hostname));
 
 /** Pure mapping: never collect mail bodies, arbitrary query values, or link text. */
-export const describeSiteEvent = ({ href = "", eventName = "", versionSwitch = false, download = "", topic = "" } = {}, currentHref) => {
+export const describeSiteEvent = ({ href = "", eventName = "", download = "", topic = "" } = {}, currentHref) => {
   const source = parseUrl(currentHref);
   if (!source) return null;
   const context = getSiteEventContext(source.href);
@@ -71,12 +69,7 @@ export const describeSiteEvent = ({ href = "", eventName = "", versionSwitch = f
   const localAnchor = href.trim().startsWith("#");
   let name;
 
-  if (internal && context.site_version !== destination.site_version &&
-      (versionSwitch || eventName === SITE_EVENT_NAMES.versionSwitch || context.route === destination.route)) {
-    name = SITE_EVENT_NAMES.versionSwitch;
-    data.from_version = context.site_version;
-    data.to_version = destination.site_version;
-  } else if (target?.protocol === "mailto:") {
+  if (target?.protocol === "mailto:") {
     name = SITE_EVENT_NAMES.email;
   } else if (target?.protocol === "tel:") {
     name = SITE_EVENT_NAMES.phone;
@@ -100,8 +93,6 @@ export const describeSiteEvent = ({ href = "", eventName = "", versionSwitch = f
     name = SITE_EVENT_NAMES.solutions;
   } else {
     name = ALIASES[eventName];
-    // A malformed switch marker must not manufacture a version change.
-    if (name === SITE_EVENT_NAMES.versionSwitch) return null;
   }
   if (!name) return null;
   if (TOPICS.has(topic) && [SITE_EVENT_NAMES.email, SITE_EVENT_NAMES.wecom].includes(name)) data.topic = topic;
@@ -109,10 +100,17 @@ export const describeSiteEvent = ({ href = "", eventName = "", versionSwitch = f
 };
 
 const decorate = (element, currentHref) => {
+  // A cached prelaunch page must not send the retired switch event to Umami.
+  if (element.getAttribute(TRACKED_ATTRIBUTE) === "website_version_switch") {
+    element.removeAttribute(TRACKED_ATTRIBUTE);
+    for (const attribute of element.getAttributeNames()) {
+      if (attribute.startsWith(FIELD_PREFIX)) element.removeAttribute(attribute);
+    }
+  }
+  element.removeAttribute("data-site-version-switch");
   const event = describeSiteEvent({
     href: element.getAttribute("href") || "",
     eventName: element.getAttribute(TRACKED_ATTRIBUTE) || "",
-    versionSwitch: element.hasAttribute("data-site-version-switch"),
     download: element.getAttribute("data-course-download") || "",
     topic: element.getAttribute(`${FIELD_PREFIX}topic`) || "",
   }, currentHref);

@@ -5,7 +5,7 @@ import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 import { PUBLIC_ROUTES } from "../site-seo.js";
 import { SITE_LOCALES } from "../site-identity.js";
 import { localeHtmlPath } from "./seo-html.mjs";
-import { readLegacySnapshot, isPublicAsset } from "./website-versions.mjs";
+import { isPublicAsset } from "./website-versions.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const assetsRoot = path.join(root, "dist");
@@ -25,10 +25,6 @@ const walk = (directory, files = []) => {
 };
 
 required(fs.existsSync(assetsRoot), "Asset directory is missing. Run node scripts/prepare-worker-assets.mjs first.");
-const legacy = await readLegacySnapshot(root);
-for (const file of legacy.paths) {
-  required(fs.existsSync(path.join(assetsRoot, file)), `Frozen legacy asset is missing: ${file}`);
-}
 
 for (const file of [
   "index.html",
@@ -63,17 +59,17 @@ for (const file of [
   "contact/wecom/wecom-card.css",
   "contact/wecom/wecom-card.js",
 ]) {
-  required(fs.existsSync(path.join(assetsRoot, "preview", file)), `Required preview asset is missing: ${file}`);
+  required(fs.existsSync(path.join(assetsRoot, file)), `Required production asset is missing: ${file}`);
 }
 
 for (const route of PUBLIC_ROUTES) {
   for (const locale of SITE_LOCALES) {
     const file = localeHtmlPath(route.html, locale);
-    required(fs.existsSync(path.join(assetsRoot, "preview", file)), `Public preview route missing from production assets: ${file}`);
+    required(fs.existsSync(path.join(assetsRoot, file)), `Public production route missing from production assets: ${file}`);
   }
 }
 
-for (const versionRoot of [assetsRoot, path.join(assetsRoot, "preview")]) {
+for (const versionRoot of [assetsRoot]) {
 for (const forbidden of [".git", ".github", ".cursor", ".superpowers", ".venv", ".venv-share", ".wrangler", "node_modules", "docs", "mocks", "scripts", "workers", "ops", "legacy-site", "images", ".config-templates"]) {
   required(!fs.existsSync(path.join(versionRoot, forbidden)), `Local-only path leaked into production assets: ${forbidden}`);
 }
@@ -84,8 +80,8 @@ for (const forbidden of [".gitignore", ".assetsignore", "wrangler.jsonc", "AGENT
 }
 
 const htmlSources = PUBLIC_ROUTES.filter((route) => route.inShareMeta)
-  .flatMap((route) => SITE_LOCALES.map((locale) => `preview/${localeHtmlPath(route.html, locale)}`));
-htmlSources.push(...[...legacy.paths].filter((file) => file.endsWith(".html") && /data-share-route=/.test(fs.readFileSync(path.join(assetsRoot, file), "utf8"))));
+  .flatMap((route) => SITE_LOCALES.map((locale) => localeHtmlPath(route.html, locale)));
+
 let ossReferences = 0;
 for (const source of htmlSources) {
   const content = fs.readFileSync(path.join(assetsRoot, source), "utf8");
@@ -101,7 +97,7 @@ required(baiduVerify.length > 0, "Baidu site-verification HTML must be copied in
 const files = walk(assetsRoot);
 for (const file of files) {
   const relative = path.relative(assetsRoot, file).split(path.sep).join("/");
-  required(isPublicAsset(relative.replace(/^preview\//, "")), `Non-public file leaked into production assets: ${relative}`);
+  required(isPublicAsset(relative), `Non-public file leaked into production assets: ${relative}`);
   required(!fs.lstatSync(file).isSymbolicLink(), `Symlink leaked into production assets: ${relative}`);
 }
 const oversized = files.filter((file) => fs.statSync(file).size > maxWorkerAssetBytes);

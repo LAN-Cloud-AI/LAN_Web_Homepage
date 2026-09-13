@@ -4,6 +4,8 @@ import { pathToFileURL } from "node:url";
 import { OSS_IMAGES_BASE } from "./oss/public-base.mjs";
 import { COURSE_DOWNLOADS, COURSE_DOWNLOAD_GITHUB_REF } from "../ai-course/course-downloads.js";
 import { getI18nTable } from "../i18n.js";
+import { applyCourseI18n, getCourseTable } from "../ai-course/ai-course-i18n.js";
+import { getPageCopy } from "../site-identity.js";
 
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -55,6 +57,35 @@ const home = read("index.html");
 const catalog = JSON.parse(read("images/prompts/catalog.json"));
 const promptIndex = read("images/prompts/INDEX.md");
 
+// Runtime translation must not replace the crawler's generated SEO head.
+// Exercise all course routes/locales while confirming visible copy still updates.
+const previousDocument = Object.getOwnPropertyDescriptor(globalThis, "document");
+try {
+  for (const locale of ["zh-Hans", "zh-Hant", "en"]) {
+    for (const [page, route] of [["hub", "ai-course"], ["fde", "ai-course-fde"], ["mvp", "ai-course-mvp-3day"]]) {
+      const metadata = getPageCopy(route, locale);
+      const writes = [];
+      const meta = { setAttribute: (...args) => writes.push(args) };
+      const label = { childElementCount: 0, textContent: "Untranslated", getAttribute: () => "nav.hub" };
+      const document = {
+        title: metadata.title,
+        documentElement: { lang: "", dataset: {} },
+        body: { dataset: { coursePage: page, shareRoute: route } },
+        querySelector: selector => selector.startsWith("meta") ? meta : null,
+        querySelectorAll: selector => selector === "[data-i18n]" ? [label] : selector.startsWith("meta") ? [meta] : [],
+      };
+      Object.defineProperty(globalThis, "document", { value: document, configurable: true });
+      applyCourseI18n(locale);
+      required(document.title === metadata.title, `${route}/${locale} 运行时不得覆盖静态 SEO 标题。`);
+      required(writes.length === 0, `${route}/${locale} 运行时不得覆盖 description、OG 或 Twitter 元信息。`);
+      required(label.textContent === getCourseTable(locale)["nav.hub"], `${route}/${locale} 正文翻译必须继续生效。`);
+    }
+  }
+} finally {
+  if (previousDocument) Object.defineProperty(globalThis, "document", previousDocument);
+  else delete globalThis.document;
+}
+
 for (const id of ["top", "paths", "principles", "resources", "contact"]) {
   required(hub.includes(`id="${id}"`), `课程总览缺少 #${id}。`);
 }
@@ -73,12 +104,12 @@ required(fde.includes('type="module" src="../ai-course.js"'), "FDE 页必须以 
 required(mvp.includes('type="module" src="../ai-course.js"'), "三天课页必须以 module 加载课程脚本。");
 
 for (const page of [hub, fde, mvp]) {
-  required(page.includes('class="footer"'), "课程页必须使用与首页一致的 footer。");
-  required(page.includes('class="footer-lang"'), "语言切换必须放在 footer。");
-  required(page.includes('data-locale="zh-Hans"'), "课程页必须提供简体切换。");
-  required(page.includes('data-locale="zh-Hant"'), "课程页必须提供繁体切换。");
-  required(page.includes('data-locale="en"'), "课程页必须提供英文切换。");
-  required(page.includes('class="lang-switch"'), "课程页必须有语言切换控件。");
+  required(page.includes('data-site-footer'), "课程页必须使用与首页一致的 footer。");
+  required(page.includes('class="lan-footer-settings"'), "语言切换必须放在 footer。");
+  required(page.includes('data-shell-locale="zh-Hans"'), "课程页必须提供简体切换。");
+  required(page.includes('data-shell-locale="zh-Hant"'), "课程页必须提供繁体切换。");
+  required(page.includes('data-shell-locale="en"'), "课程页必须提供英文切换。");
+  required(page.includes('class="lan-languages"'), "课程页必须有语言切换控件。");
   required(!page.includes('id="product-nav"') || !page.slice(page.indexOf('id="product-nav"'), page.indexOf("</nav>", page.indexOf('id="product-nav"'))).includes("lang-switch"), "顶栏导航不得再放语言切换。");
   required(page.includes('data-i18n="footer.company"'), "页脚必须包含公司信息 i18n。");
   required(page.includes("蜀ICP备2026002396号") || page.includes('data-i18n="footer.beian"'), "页脚必须包含备案号。");
@@ -127,10 +158,10 @@ required(js.includes("course-downloads.js"), "共享脚本必须加载下载地�
 required(courseI18n.includes('from "../i18n.js"'), "课程 i18n 必须复用首页 locale 存储。");
 required(courseI18n.includes("LOCALE_STORAGE_KEY"), "课程 i18n 必须共享 locale storage key。");
 required(courseI18n.includes('"zh-Hans"') && courseI18n.includes('"zh-Hant"') && courseI18n.includes("en:"), "课程 i18n 必须包含三语字典。");
+for (const [locale, phrase] of [["zh-Hans", "从 AI 应用到一线 FDE"], ["zh-Hant", "從 AI 應用到一線 FDE"], ["en", "From AI application to frontline FDE"]]) {
+  required(getPageCopy("ai-course-fde", locale).title.includes(phrase), `${locale} FDE 静态 SEO 标题缺少定位文案。`);
+}
 for (const phrase of [
-  "从 AI 应用到一线 FDE",
-  "從 AI 應用到一線 FDE",
-  "From AI application to frontline FDE",
   "21 课公开课表",
   "21 課公開課表",
   "21-lesson public schedule",
@@ -151,7 +182,7 @@ for (const phrase of [
 }
 
 required(css.includes("color-scheme: light dark"), "课程页必须支持浅/深色。");
-required(css.includes("@media (prefers-color-scheme: dark)"), "课程页需要深色主题。");
+required(css.includes('html[data-theme="dark"]'), "课程页需要深色主题。");
 required(css.includes("@media (prefers-reduced-motion: reduce)"), "课程页需要减少动效覆盖。");
 required(css.includes("word-break: normal"), "中文需要 normal word-break。");
 required(css.includes("line-break: strict"), "中文需要严格标点断行。");
@@ -181,7 +212,7 @@ required(courseHubHref.test(academySection), "首页培训区块必须链到 /ai
 for (const [name, element] of [["顶栏", "header"], ["页脚", "footer"]]) {
   const section = home.match(new RegExp(`<${element}\\b[^>]*>[\\s\\S]*?<\\/${element}>`, "i"))?.[0] || "";
   required(courseHubHref.test(section) || academyHref.test(section), `${name}必须提供课程总览或培训区块入口。`);
-  required(/data-i18n=["']nav\.academy["']/.test(section), `${name}培训入口必须走 i18n。`);
+  required(/data-i18n=["'](?:nav|shell)\.academy["']/.test(section), `${name}培训入口必须走 i18n。`);
 }
 required(!home.includes("github.com/LAN-Cloud-AI/LAN_AI_Course_System"), "首页不得把课程仓 GitHub 当作公开主入口。");
 for (const match of home.matchAll(/href=["'](?:\.\/|\/)?ai-course\/#([^"']+)["']/g)) {

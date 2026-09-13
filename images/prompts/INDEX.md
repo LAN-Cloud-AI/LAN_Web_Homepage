@@ -1,23 +1,25 @@
 # Prompt 索引
 
-> 共 **97** 条图片生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **111** 条图片生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
-| [品牌与通用](./brand/) (`brand`) | 7 |
-| [云朵记账](./internal-expense/) (`internal-expense`) | 6 |
-| [AI 课程](./ai-course/) (`ai-course`) | 6 |
-| [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 20 |
+| [品牌与通用](./brand/) (`brand`) | 9 |
+| [云朵记账](./internal-expense/) (`internal-expense`) | 10 |
+| [AI 课程](./ai-course/) (`ai-course`) | 8 |
+| [LeadsHunter 看见](./leadshunter/) (`leadshunter`) | 24 |
 | [VECT 理解](./vect/) (`vect`) | 11 |
 | [TACT 调度](./tact/) (`tact`) | 11 |
 | [移动端](./mobile/) (`mobile`) | 9 |
 | [AI Analyst 判断](./analyst/) (`analyst`) | 3 |
 | [微信 / OG 分享卡](./share/) (`share`) | 16 |
-| [官网营销版式](./marketing/) (`marketing`) | 8 |
+| [官网营销版式](./marketing/) (`marketing`) | 10 |
 
 ## 品牌与通用
 
 新增：[`brand-action-hero-v3`](./brand/brand-action-hero-v3.md) · 16:9 · 新版首页装饰主视觉（2026-09-13）。
+
+粒子视觉升级：[`brand-luminous-field-v1`](./brand/brand-luminous-field-v1.md) · [`brand-luminous-field-dark-v1`](./brand/brand-luminous-field-dark-v1.md) · 16:9 · “流动的智能”浅 / 深色 Hero 与静态兜底（2026-09-13），原图及 768 / 1280 / 原宽 WebP 均已生成。
 
 | ID | 标题 | 画幅 | 用途 |
 | --- | --- | --- | --- |
@@ -174,3 +176,24 @@
 | [`mkt-security-gates`](./marketing/mkt-security-gates.md) | 安全门禁说明 UI | 16:9 | 信任/安全页 |
 | [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 历史备用概念；旧版使用 `share/og-*-v2`，新版使用 `share/og-*-v3` |
 | [`mkt-footer-ecosystem`](./marketing/mkt-footer-ecosystem.md) | 产品生态墙 | 21:9 | 页脚/生态条 |
+
+## 公司三页配图统一（2026-09-13）
+
+六张新图由内置图片生成工具编辑，均为 1536×1024，附原宽及768宽WebP；去除蓝紫背景与密集静态光圈，统一暖白 / 墨绿 / 玉绿。
+
+| 配图 | 浅色提示词 | 深色提示词 | 用途 |
+| --- | --- | --- | --- |
+| LeadsHunter | [浅色](./leadshunter/lh-discovery-luminous-v1.md) | [深色](./leadshunter/lh-discovery-luminous-dark-v1.md) | 首页、方案、实践 |
+| AI 实战培训 | [浅色](./ai-course/ai-course-path-luminous-v1.md) | [深色](./ai-course/ai-course-path-luminous-dark-v1.md) | 首页培训区 |
+| 云朵记账 | [浅色](./internal-expense/cloud-ledger-dashboard-luminous-v1.md) | [深色](./internal-expense/cloud-ledger-dashboard-luminous-dark-v1.md) | 首页、实践 |
+
+## 2026-09-13 完整界面与商城配色
+
+取消设备外框，完整保留产品界面；商城闭环统一暖白 / 墨绿与玉色材质。均使用内置 image_gen 编辑，1536×1024 PNG，附原宽与 768px WebP。
+
+- [lh-interface-luminous-v1](./leadshunter/lh-interface-luminous-v1.md)：官网统一视觉 · 完整线索界面（浅色）。
+- [lh-interface-luminous-dark-v1](./leadshunter/lh-interface-luminous-dark-v1.md)：官网统一视觉 · 完整线索界面（深色）。
+- [cloud-ledger-interface-luminous-v1](./internal-expense/cloud-ledger-interface-luminous-v1.md)：云朵记账 · 浅色完整界面。
+- [cloud-ledger-interface-luminous-dark-v1](./internal-expense/cloud-ledger-interface-luminous-dark-v1.md)：云朵记账 · 深色完整界面。
+- [commerce-workflow-luminous-v1](./marketing/commerce-workflow-luminous-v1.md)：商城与会员增长 · 玉绿业务闭环（浅色）。
+- [commerce-workflow-luminous-dark-v1](./marketing/commerce-workflow-luminous-dark-v1.md)：商城与会员增长 · 玉绿业务闭环（深色）。

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 97,
+  "count": 111,
   "items": [
     {
       "id": "lh-appstore-discovery-dashboard-dark-v2",
@@ -1095,6 +1095,314 @@
           "width": 600,
           "height": 600,
           "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "brand-luminous-field-v1",
+      "category": "brand",
+      "title": "流动的智能 · 浅色 Hero",
+      "aspect": "16:9",
+      "prompt": "Use case: stylized-concept\nAsset type: art-directed 16:9 landscape hero background for a premium AI company website; no typography.\nPrimary request: \"Flowing intelligence\" — one exceptionally beautiful continuous jade ribbon orbit suspended in a luminous particle field. This must be elegant high-end digital sculpture, with fluid proportions and a distinctive silhouette, more sophisticated than a generic glowing torus.\nScene/backdrop: seamless warm off-white #f5f7f3, airy and nearly uniform, without a floor horizon or pedestal. Left 48% is pristine almost empty negative space for live HTML headlines. All of the substantial form lives between 52% and 95% of image width, vertically centered.\nSubject: a single thin, broad, translucent jade-green silk-like glass ribbon gently twists as it describes an open three-dimensional elliptical loop. Viewed from a graceful oblique angle, the upper curve sweeps backward, the lower curve sweeps forward, with a small tapering gesture extending to the upper right. Show one legible continuous organic gesture, not stacked rings. Thousands of extremely fine jade and seafoam particles stream along the ribbon's curves, drift into a sparse shimmering halo, and dissolve elegantly toward the edges. A very small fraction of champagne-gold particles gives subtle warmth.\nStyle/medium: exquisite generative fine art rendered with physically nuanced translucent material and delicate particulate light; silky fluid curves, crisp fine detail, intentional negative space, premium editorial polish. The ribbon has fine flowing luminous filaments inside it, jade depth at its folds, and nearly transparent fine edges.\nLighting/mood: luminous soft gallery light, subtle glass caustics without a visible tabletop. Brighter edge highlights, beautiful soft contrast. Airy, ambitious, emotionally calm. Particle bloom very carefully controlled, no blown-out neon.\nColor palette: warm white #f5f7f3, deep jade #0f766e, seafoam #80d1bd, tiny restrained champagne-gold #cbb98a flecks.\nComposition/framing: wide 16:9, sufficiently distant camera to show the complete sculpture with breathing room, subject approximately 45% of canvas width and 70% of canvas height. Left side genuinely clean; no stray substantial form crossing the headline region.\nConstraints: no text, letters, numbers, logo, watermark, UI, screens, devices, figures, cars, cubes, blocks, steps, architecture, pedestal, props, dark background, rainbow, purple, harsh neon, cyberpunk, lens flare, starburst, or stock illustration. No backdrop grid. Render as a finished beautiful website hero artwork, not a wireframe or schematic.",
+      "negative": "text, logo, private data, UI, cubes, steps, pedestal, props, purple, rainbow, cyberpunk, harsh neon, watermark",
+      "output": "images/generated/brand/brand-luminous-field-v1.png",
+      "source": "images/prompts/brand/brand-luminous-field-v1.md"
+    },
+    {
+      "id": "brand-luminous-field-dark-v1",
+      "category": "brand",
+      "title": "流动的智能 · 深色 Hero",
+      "aspect": "16:9",
+      "prompt": "Use case: lighting-weather\nAsset type: dark-theme edition of an AI-company website's 16:9 landscape hero artwork.\nInput image 1 is the exact edit target, the approved light-theme hero.\nChange only the background, lighting, and material appearance for a beautiful dark mode. Preserve the exact image dimensions and composition, the ribbon's original flowing curved shape, the particle placement and flow, the generous empty left portion, and the complete silhouette.\nReplace the near-white background with seamless deep ink-jade #081b18, with a very subtle soft green atmospheric bloom behind the sculpture on the RIGHT, leaving the LEFT almost uniform dark green and empty for live HTML text. Relight the translucent ribbon as luminous jade and seafoam glass silk: deep saturated emerald interior folds, clear transparent shadows, precise mint edge highlights, internal fine filaments of light, exceptionally rich but controlled depth. The thousands of jade and seafoam particles become delicate glowing pinpoints; the few champagne-gold flecks have a soft warm radiance. Preserve the flowing continuous organic gesture and subtle physical transparency, without turning it into a solid neon tube or metal ring. Keep fine details crisp and sophisticated, with subtle selective bloom and no blown-out areas.\nThe result should feel like exquisite contemporary generative light sculpture at night, beautiful, spacious, and premium, with clearly readable teal form against dark green.\nNo new objects. No text, letters, numbers, logo, watermark, UI, figures, cubes, blocks, steps, pedestal, props, grid, bright left-side haze, purple, rainbow, cyberpunk, lens flare, stars, or starburst. Do not crop or relocate the sculpture. Keep all visual interest on the right half.",
+      "negative": "text, logo, private data, UI, cubes, steps, pedestal, props, purple, rainbow, cyberpunk, harsh neon, watermark",
+      "output": "images/generated/brand/brand-luminous-field-dark-v1.png",
+      "source": "images/prompts/brand/brand-luminous-field-dark-v1.md"
+    },
+    {
+      "id": "lh-discovery-luminous-v1",
+      "category": "leadshunter",
+      "title": "官网统一视觉 · 意向发现仪表盘（浅色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: light-theme product mockup for the LAN Cloud AI homepage.\nInput image: the supplied image is the edit target, a centered laptop with a language-neutral lead discovery dashboard.\nPrimary request: carefully recolor and refine this exact image to belong to a premium warm-white, sage and jade website. Change the palette and surrounding backdrop, preserve the device and screen layout.\nComposition invariants: maintain the same straight-on single laptop, its precise size, position, proportions, perspective and full silhouette, and the same screen modules: left navigation icon rail, four top KPI cards, four intent bands, wide multi-series trend graph, five lower table rows. Preserve the chart path structures and the existing abstract placeholder strokes, dots and symbols; no new text.\nScene/backdrop: replace the entire icy blue backdrop and floor with a seamless calm warm-white/sage studio background near #f0f5f1. Remove ALL surrounding orbital lines, particles, outer light rings, grid decoration and floating square outlines. Use a very gentle pale sage tonal gradient and a softly integrated realistic contact shadow below the laptop, no detached halo.\nColor palette: warm-white screen base #f8faf7, subtle pale sage panels #e8f0e9, deep teal and muted green-grey placeholder strokes. Main accent jade #358f75 with soft sage #91b8a0. Distinguish the four data series with dark jade, medium jade, pale sage and very restrained muted champagne #b8a574. Absolutely no cobalt blue, electric blue, violet, purple, icy blue, bright coral or red. Clear readable tonal hierarchy.\nHardware: refined warm silver-grey metal with a subtle sage cast, dark neutral bezel, restrained realistic highlights, no colored neon rim.\nStyle: polished, calm premium product photography plus crisp anonymous SaaS mockup. Natural matte surfaces, precise edges and softly diffused light. It must look integrated into a warm-white jade editorial website.\nConstraints: change only color, materials/lighting and removal of decorative surrounding elements; keep all dashboard structure and laptop geometry. No readable words, letters, Chinese characters, numerals, logos, fake typography, actual customer data, watermarks, extra devices or people. Keep the original 3:2 landscape framing.",
+      "negative": "cobalt blue, navy blue, electric blue, purple, violet, outer orbit rings, surrounding particles, neon halo, real customer data, readable text, fake typography, logos, watermark, extra devices, people",
+      "output": "images/generated/leadshunter-page/lh-discovery-luminous-v1.png",
+      "source": "images/prompts/leadshunter/lh-discovery-luminous-v1.md"
+    },
+    {
+      "id": "lh-discovery-luminous-dark-v1",
+      "category": "leadshunter",
+      "title": "官网统一视觉 · 意向发现仪表盘（深色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: dark-theme product mockup for the LAN Cloud AI homepage.\nInput image: the supplied image is the edit target, a centered laptop with a language-neutral lead discovery dashboard.\nPrimary request: carefully recolor and refine this exact image to belong to a premium ink-green and jade website. Change the palette and surrounding backdrop, preserve the device and screen layout.\nComposition invariants: maintain the same straight-on single laptop, its precise size, position, proportions, perspective and full silhouette, and the same screen modules: left navigation icon rail, four top KPI cards, four intent bands, wide multi-series trend graph, five lower table rows. Preserve the chart path structures and the existing abstract placeholder strokes, dots and symbols; no new text.\nScene/backdrop: replace the entire navy blue backdrop and floor with a seamless calm deep ink-green studio background near #103127. Remove ALL surrounding orbital lines, particles, outer light rings, grid decoration and blue/purple glow. Use a very gentle green tonal gradient, softly integrated realistic contact shadow below the laptop, no detached halo.\nColor palette: screen base ink-green-black #10251f, subtle raised panels #183b30, muted green-grey border and placeholder strokes; main accents jade #5cb69c and soft mint #a4d7bd. Distinguish the four data series with dark jade, medium jade, pale sage and very restrained muted champagne #c7b78d. Absolutely no cobalt blue, navy, electric blue, violet, purple, bright coral or red. Keep accessible clear tonal hierarchy.\nHardware: refined graphite-green bezel and warm silver-grey metal body with a slight sage cast, restrained realistic highlights, no colored neon rim.\nStyle: polished, calm premium product photography plus crisp anonymous SaaS mockup. Natural matte surfaces, low glare, precise edges. It must look integrated into a deep green editorial website, not a cyberpunk technology advertisement.\nConstraints: change only color, materials/lighting and removal of decorative surrounding elements; keep all dashboard structure and laptop geometry. No readable words, letters, Chinese characters, numerals, logos, fake typography, actual customer data, watermarks, extra devices or people. Keep the original 3:2 landscape framing.",
+      "negative": "cobalt blue, navy blue, electric blue, purple, violet, outer orbit rings, surrounding particles, neon halo, real customer data, readable text, fake typography, logos, watermark, extra devices, people",
+      "output": "images/generated/leadshunter-page/lh-discovery-luminous-dark-v1.png",
+      "source": "images/prompts/leadshunter/lh-discovery-luminous-dark-v1.md"
+    },
+    {
+      "id": "ai-course-path-luminous-v1",
+      "category": "ai-course",
+      "title": "首页 AI 实战培训 · 玉绿能力进阶（浅色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: quiet supporting AI training illustration for LAN Cloud AI company website, light theme.\nInput image 1 is the EDIT TARGET, not merely an inspiration. Change only the palette, material finish, lighting, and remove peripheral visual clutter. Preserve its camera angle, perspective, landscape 3:2 framing, subject positions and relative sizes, exactly three ascending platform stages, low-left upright circular lens, central modular cubic lattice, high-right rectangular gateway with circular opening, and the continuous connecting path running through all three.\nPrimary request: harmonize this artwork with an elegant warm-white and jade website. This is a calm supporting image below the Hero.\nScene/backdrop: replace the dark room with a seamless soft warm-white background #f0f5f1 and a matching clean porcelain floor. Delicate pale-sage tonal variation, no cold-blue cast.\nMaterials/textures: replace cold black steel and silver aluminum with warm white porcelain, softly frosted pale-jade glass and light warm-gray mineral details. Keep all objects clearly sculptural and well defined. Platform tops are warm porcelain with thin pale-jade translucent edges; bases are muted soft sage. Lens and gateway rims are satin light jade, never chrome. The central lattice uses softly frosted jade rods and milky white/jade modules, less intricate and much less metallic.\nLighting/mood: warm diffuse gallery lighting, soft short realistic shadows and subtle jade reflections. The continuous connecting path is a slender muted teal #137f68 curve with restrained brightness, not a laser or neon light. Remove harsh specular glints.\nConstraints: preserve exactly three major stage subjects and original perspective. Remove incidental background pyramid, sphere and hard technical grid lines; do not add new objects. No particles, dots, sparks, stars, orbiting trails, floating motes or baked-in animation; the webpage will add slow particles. No readable text, letters, numerals, symbols, checkmarks, logos, watermarks, people, UI or browser frames. No cobalt, electric cyan, purple, navy blue, black-metal science fiction, busy HUD, neon or dramatic hard beams.\nOutput: one finished landscape illustration, complete frame, matching the input's 3:2 aspect ratio.",
+      "negative": "cold black steel, chrome, navy, cobalt, electric cyan, purple, grid, particles, stars, readable text, numbers, logos, watermark, fake UI, extra objects",
+      "output": "images/generated/ai-course-page/ai-course-path-luminous-v1.png",
+      "source": "images/prompts/ai-course/ai-course-path-luminous-v1.md",
+      "generation": {
+        "mode": "built-in image_gen edit",
+        "date": "2026-09-13",
+        "editTarget": "images/generated/ai-course-page/ai-course-hero-path-dark-v1.png",
+        "originalOutput": "/Users/i/.codex/generated_images/01a09b14-93ea-7ee0-9839-a6f3064b97e5/exec-e3bc950e-4415-42d9-be07-112b0a69b6b1.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "derivatives": [
+        {
+          "path": "images/generated/ai-course-page/ai-course-path-luminous-v1.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "images/generated/ai-course-page/ai-course-path-luminous-v1-768.webp",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "ai-course-path-luminous-dark-v1",
+      "category": "ai-course",
+      "title": "首页 AI 实战培训 · 玉绿能力进阶（深色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: quiet supporting AI training illustration for LAN Cloud AI company website, dark theme.\nInput image 1 is the EDIT TARGET, not merely an inspiration. Change only the palette, material finish, lighting, and remove peripheral visual clutter. Preserve its camera angle, perspective, landscape 3:2 framing, subject positions and relative sizes, exactly three ascending platform stages, low-left upright circular lens, central modular cubic lattice, high-right rectangular gateway with circular opening, and the continuous connecting path running through all three.\nPrimary request: harmonize this artwork with an elegant ink-green and warm jade website. This is a calm supporting image below the Hero.\nScene/backdrop: replace cold black/blue-gray room with a seamless smooth deep forest/ink green background in the range #0e251d to #123528, softly continuous with the same green floor. Calm non-distracting negative space.\nMaterials/textures: replace all cold black steel and silver aluminum with warm semi-translucent jade, softly frosted green acrylic, muted sage porcelain, and soft warm gray mineral details. Keep objects clearly sculptural and well defined, with generous tonal separation from the background. The platform tops are quietly milky jade; bases are satin deep green. Lens and gateway rims are pale warm jade, never chrome. The central lattice uses softly frosted jade rods and milky jade modules, less intricate and much less metallic.\nLighting/mood: gentle diffuse gallery lighting, soft short shadows, subtle jade reflections. The continuous connecting path is a slender muted mint/teal curve with very restrained brightness, not a laser or neon light. Remove harsh specular glints.\nConstraints: preserve exactly three major stage subjects and original perspective. Remove incidental background pyramid, sphere and hard technical grid lines; do not add new objects. No particles, dots, sparks, stars, orbiting trails, floating motes or baked-in animation; the webpage will add slow particles. No readable text, letters, numerals, symbols, checkmarks, logos, watermarks, people, UI or browser frames. No cobalt, electric cyan, purple, navy blue, black-metal science fiction, busy HUD, neon or dramatic hard beams.\nOutput: one finished landscape illustration, complete frame, matching the input's 3:2 aspect ratio.",
+      "negative": "cold black steel, chrome, navy, cobalt, electric cyan, purple, grid, particles, stars, readable text, numbers, logos, watermark, fake UI, extra objects",
+      "output": "images/generated/ai-course-page/ai-course-path-luminous-dark-v1.png",
+      "source": "images/prompts/ai-course/ai-course-path-luminous-dark-v1.md",
+      "generation": {
+        "mode": "built-in image_gen edit",
+        "date": "2026-09-13",
+        "editTarget": "images/generated/ai-course-page/ai-course-hero-path-dark-v1.png",
+        "originalOutput": "/Users/i/.codex/generated_images/01a09b14-93ea-7ee0-9839-a6f3064b97e5/exec-7660536c-6c91-4772-9916-2218caca3b69.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "derivatives": [
+        {
+          "path": "images/generated/ai-course-page/ai-course-path-luminous-dark-v1.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "images/generated/ai-course-page/ai-course-path-luminous-dark-v1-768.webp",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "cloud-ledger-dashboard-luminous-v1",
+      "category": "internal-expense",
+      "title": "云朵记账 · 浅色玉绿仪表盘",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: horizontal website product demonstration artwork, light-mode companion for LAN Cloud AI's jade and warm-white visual system.\nInput image 1: edit target, an existing front-on laptop with anonymous subscription and expense dashboard. Preserve the laptop, its straight-on camera, front-facing screen, module arrangement, chart positions, geometric placeholder lines, proportions, generous framing and 3:2 aspect ratio.\nPrimary request: recolor and refine only the complete image's palette and material lighting so the subject and backdrop belong together in a calm warm-white and jade website. Background must be seamless warm pale green-white #F0F5F1, nearly solid with an extremely soft tonal transition. Remove the blue cast, cold grid, orbital lines, all cool-blue and purple decoration. Laptop hardware stays refined neutral silver with subtle warm-green reflections and no heavy outer shadow.\nDashboard: porcelain white and barely tinted sage panels, thin warm gray-green borders, charcoal-deep-teal #163D30 placeholder lines. Main charts, bars, icons and selected states are jade #278D70, sage, soft mint; use a tiny amount of muted champagne for emphasis. The alert states may have low-saturation soft clay color. Replace all electric blue, cobalt, violet and cyan-cold UI accents. Keep sufficient contrast and very crisp interface geometry.\nConstraints: preserve composition and dashboard layout rather than inventing a new scene. Product illustration only; no real metrics, no readable text, numerals, letters, names, logos, watermark, browser chrome, real customer data, people, extra devices, orbit lines, particles, sparkles or light rings. Replace the tiny cloud-like mark with a simple unbranded geometric mark. No imitation typography. No bright neon, icy-blue background, lilac panels, purple, glowing HUD or dark mode.",
+      "negative": "readable text, real metrics, names, logos, personal data, purple, blue, neon, orbit lines, particles, sparkles, watermark",
+      "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-v1.png",
+      "source": "images/prompts/internal-expense/cloud-ledger-dashboard-luminous-v1.md",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "generation": "Built-in image_gen, edit / style-transfer; native PNG master retained without cropping or upscaling.",
+      "input_images": [
+        "images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-v1.png"
+      ],
+      "derivatives": [
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-v1.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-v1-768.webp",
+          "format": "WebP",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "cloud-ledger-dashboard-luminous-dark-v1",
+      "category": "internal-expense",
+      "title": "云朵记账 · 深色墨绿仪表盘",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: horizontal website product demonstration artwork, dark-mode companion for LAN Cloud AI's jade and ink-green visual system.\nInput image 1: edit target, an existing front-on laptop with anonymous subscription and expense dashboard. Preserve the laptop, its straight-on camera, front-facing screen, four compact overview cards, middle bar and line chart row, lower table, geometric placeholder lines, proportions, generous framing and 3:2 aspect ratio.\nPrimary request: recolor and refine only the complete image's palette and material lighting so the subject and backdrop belong together in a calm ink-green and jade website. Background is seamless soft ink green #102D22 to #123528, nearly solid with a delicate natural green tonal transition and no blue-black edge or vignette. Remove the cold grid, all orbit lines, and cool-blue or purple decoration. Laptop hardware stays refined neutral graphite with soft warm-gray-green silver rim and no pronounced outer shadow.\nDashboard: dark green-black #10251F canvas, slightly lighter forest-green panels, thin warm gray-green borders, muted gray-sage placeholder lines. Main charts, bars, icons and selected states are jade #55B895, soft mint #A1D7BC, subdued sage; a very small amount of muted champagne #C9BA8C may highlight one chart. Alert state only low-saturation soft clay. Replace all electric blue, cobalt, violet, cold cyan, navy and indigo UI accents. Screen belongs in the same green palette as backdrop with clear restrained contrast and very crisp interface geometry.\nConstraints: preserve composition and dashboard layout rather than inventing a new scene. Product illustration only; no real metrics, readable text, numerals, letters, names, logos, watermark, browser chrome, real customer data, people or extra devices. Replace the tiny cloud-like mark with a simple unbranded geometric mark. No imitation typography. No orbit lines, particles, sparkles, luminous rings or light trails; these come from website animation. Avoid bright neon, icy blue, purple, navy background, glowing HUD, white or light-mode UI.",
+      "negative": "readable text, real metrics, names, logos, personal data, purple, blue, neon, orbit lines, particles, sparkles, watermark",
+      "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-dark-v1.png",
+      "source": "images/prompts/internal-expense/cloud-ledger-dashboard-luminous-dark-v1.md",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "generation": "Built-in image_gen, edit / style-transfer; native PNG master retained without cropping or upscaling.",
+      "input_images": [
+        "images/generated/cloud-ledger-page/cloud-ledger-subscription-dashboard-dark-v1.png"
+      ],
+      "derivatives": [
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-dark-v1.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-dark-v1-768.webp",
+          "format": "WebP",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "lh-interface-luminous-v1",
+      "category": "leadshunter",
+      "title": "官网统一视觉 · 完整线索界面（浅色）",
+      "aspect": "3:2",
+      "prompt": "Use case: precise-object-edit\nAsset type: flat, frameless software interface artwork for a website product card.\nInput image: the supplied image is the edit target. It currently depicts a warm-white and jade lead-discovery dashboard inside a laptop.\nPrimary request: remove the entire laptop hardware and its studio surroundings, and present ONLY the COMPLETE dashboard interface itself, enlarged in a perfectly straight-on flat 2D view. The final image is the software interface, not a photograph of any display or device.\nComposition: preserve every interface component from the source: full left navigation icon rail from top circle to bottom dots; complete row of four KPI cards; entire four-column intent distribution panel; wide four-series trend chart and all endpoints; the complete five-row bottom status table. Preserve their relative order, arrangement and abstract chart paths. Fit ALL of these into a 1536×1024 landscape canvas with only a small equal warm-white breathing margin around the complete interface. The UI should occupy roughly 94% of the image width and height. Do not crop or omit the navigation, top row, chart, or bottom rows. Keep all modules flat with crisp orthographic edges.\nColor palette: retain warm-white #f8faf7 and pale sage #e8f0e9 UI surfaces, deep teal and muted green-grey placeholder strokes, jade #358f75 and soft sage #91b8a0 accents, very restrained muted champagne #b8a574 for one series. Small outer margin uses matching warm-white/sage #f0f5f1. No blue or purple.\nStyle: polished high-fidelity anonymous SaaS interface mockup, calm premium editorial quality, clean fine dividers and restrained internal card hierarchy. Flat borderless overall composition without external shadow.\nConstraints: no laptop, no MacBook, no keyboard, trackpad, hinge, metal body, base, bezel, screen frame, monitor, phone, device hardware, browser frame, browser chrome, perspective, surrounding studio floor, external shadow, particle trail, glowing orbit or decorative ring. No readable text, letters, Chinese characters, numbers, logos, watermark, real data, people, or fake gibberish type. Preserve the source's abstract placeholder strokes and symbols instead of text. Output 1536×1024, 3:2.",
+      "negative": "laptop, MacBook, keyboard, trackpad, hinge, device body, base, bezel, screen frame, monitor, phone, browser chrome, perspective, surrounding studio floor, external shadow, particles, glowing orbits, cropped UI, readable text, real data, logos, watermark, people",
+      "output": "images/generated/leadshunter-page/lh-interface-luminous-v1.png",
+      "source": "images/prompts/leadshunter/lh-interface-luminous-v1.md"
+    },
+    {
+      "id": "lh-interface-luminous-dark-v1",
+      "category": "leadshunter",
+      "title": "官网统一视觉 · 完整线索界面（深色）",
+      "aspect": "3:2",
+      "prompt": "Use case: precise-object-edit\nAsset type: flat, frameless software interface artwork for a website product card.\nInput image: the supplied image is the edit target. It currently depicts an ink-green and jade lead-discovery dashboard inside a laptop.\nPrimary request: remove the entire laptop hardware and its studio surroundings, and present ONLY the COMPLETE dashboard interface itself, enlarged in a perfectly straight-on flat 2D view. The final image is the software interface, not a photograph of any display or device.\nComposition: preserve every interface component from the source: full left navigation icon rail from top circle to bottom dots; complete row of four KPI cards; entire four-column intent distribution panel; wide four-series trend chart and all endpoints; the complete five-row bottom status table. Preserve their relative order, arrangement and abstract chart paths. Fit ALL of these into a 1536×1024 landscape canvas with only a small equal ink-green breathing margin around the complete interface. The UI should occupy roughly 94% of the image width and height. Do not crop or omit the navigation, top row, chart, or bottom rows. Keep all modules flat with crisp orthographic edges.\nColor palette: retain ink-green-black #10251f base, subtle raised panels #183b30, muted green-grey borders and placeholder strokes; jade #5cb69c and soft mint #a4d7bd accents, very restrained muted champagne #c7b78d for one series. Small outer margin uses matching deep green #103127. Absolutely no blue, navy, electric blue or purple.\nStyle: polished high-fidelity anonymous SaaS interface mockup, calm premium editorial quality, clean fine dividers and restrained internal card hierarchy. Flat borderless overall composition without external shadow.\nConstraints: no laptop, no MacBook, no keyboard, trackpad, hinge, metal body, base, bezel, screen frame, monitor, phone, device hardware, browser frame, browser chrome, perspective, surrounding studio floor, external shadow, particle trail, glowing orbit or decorative ring. No readable text, letters, Chinese characters, numbers, logos, watermark, real data, people, or fake gibberish type. Preserve the source's abstract placeholder strokes and symbols instead of text. Output 1536×1024, 3:2.",
+      "negative": "laptop, MacBook, keyboard, trackpad, hinge, device body, base, bezel, screen frame, monitor, phone, browser chrome, perspective, surrounding studio floor, external shadow, particles, glowing orbits, cropped UI, readable text, real data, logos, watermark, people",
+      "output": "images/generated/leadshunter-page/lh-interface-luminous-dark-v1.png",
+      "source": "images/prompts/leadshunter/lh-interface-luminous-dark-v1.md"
+    },
+    {
+      "id": "cloud-ledger-interface-luminous-v1",
+      "category": "internal-expense",
+      "title": "云朵记账 · 浅色完整界面",
+      "aspect": "3:2",
+      "prompt": "Use case: precise-object-edit\nAsset type: full flat light-mode software-interface illustration for a website card, landscape 3:2, 1536 x 1024.\nInput image 1 is the edit target: the approved jade and warm-white subscription dashboard currently inside a laptop.\nPrimary request: remove ALL laptop hardware and the entire physical studio scene, leaving ONLY the complete software interface itself. Reframe the full interface to nearly fill the 3:2 canvas with a very small same-color margin of about 3% on every side. Keep the entire software layout visible: full left icon navigation from top to bottom; all four top summary cards; the whole middle bar chart and donut chart panels; the complete bottom subscription table and lower-right chart. Preserve their relationships, visual hierarchy, geometric placeholder lines, icon symbols and jade palette. Retain all rows and panel edges. Reflow proportions gently to fit 3:2 without clipping any content.\nStyle: precise front-on orthographic flat UI artwork. Porcelain-white and pale warm sage surfaces #F0F5F1, thin warm gray-green borders, deep-teal lines, jade-green and mint charts, tiny muted clay alert accents. The UI base itself continues to the image edges so there is no floating picture or physical frame. Modules may have softly rounded corners and subtle panel borders.\nConstraints: absolutely no laptop, no MacBook, no black screen bezel, no monitor edge, no hardware, no notch, no keyboard, no trackpad, no base, no silver metal rim, no pedestal, no camera, no perspective, no device mockup, no browser window or browser toolbar, no exterior drop shadow, no glass reflection, no floating frame. No readable text, letters, numerals, real customer data, logos, watermarks or real metrics. No static particles, orbit lines or light trails. No blue or purple palette. No cropping of sidebar, top cards, charts or table. Show the COMPLETE flat software interface, not a zoomed crop.",
+      "negative": "laptop, MacBook, monitor, bezel, notch, keyboard, base, device frame, browser chrome, crop, perspective, readable text, real metrics, names, logos, personal data, purple, blue, neon, orbit lines, particles, watermark",
+      "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-v1.png",
+      "source": "images/prompts/internal-expense/cloud-ledger-interface-luminous-v1.md",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "generation": "Built-in image_gen, edit / precise-object-edit; native PNG master retained without cropping or upscaling.",
+      "input_images": [
+        "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-v1.png"
+      ],
+      "derivatives": [
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-v1.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-v1-768.webp",
+          "format": "WebP",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "cloud-ledger-interface-luminous-dark-v1",
+      "category": "internal-expense",
+      "title": "云朵记账 · 深色完整界面",
+      "aspect": "3:2",
+      "prompt": "Use case: precise-object-edit\nAsset type: full flat dark-mode software-interface illustration for a website card, landscape 3:2, 1536 x 1024.\nInput image 1 is the edit target: the approved jade and ink-green subscription dashboard currently inside a laptop.\nPrimary request: remove ALL laptop hardware and the entire physical studio scene, leaving ONLY the complete software interface itself. Reframe the full interface to nearly fill the 3:2 canvas with a very small same-color margin of about 3% on every side. Keep the entire software layout visible: full left icon navigation from top to bottom; the complete top internal navigation strip; all four top overview cards; the full middle bar chart and line chart panels; the complete six-row bottom subscription table and every row's small sparkline. Preserve their relationships, visual hierarchy, geometric placeholder lines, icon symbols and jade palette. Retain all rows and panel edges. Reflow proportions gently to fit 3:2 without clipping any content.\nStyle: precise front-on orthographic flat UI artwork. Deep ink-green #10251F canvas, slightly lighter forest-green panels, thin warm gray-green borders, muted sage placeholder lines, jade #55B895 and soft mint #A1D7BC charts and icons, very small champagne #C9BA8C and muted clay status accents. The UI base itself continues to image edges so there is no floating picture or physical frame. Modules may have softly rounded corners and subtle panel borders.\nConstraints: absolutely no laptop, no MacBook, no black screen bezel, no monitor edge, no hardware, no notch, no keyboard, no trackpad, no base, no silver metal rim, no pedestal, no camera, no perspective, no device mockup, no browser window or browser toolbar, no exterior drop shadow, no glass reflection, no floating frame. No readable text, letters, numerals, real customer data, logos, watermarks or real metrics. No static particles, orbit lines or light trails. No electric blue, purple, indigo or navy palette. No cropping of sidebar, top cards, charts or table. Show the COMPLETE flat software interface, not a zoomed crop.",
+      "negative": "laptop, MacBook, monitor, bezel, notch, keyboard, base, device frame, browser chrome, crop, perspective, readable text, real metrics, names, logos, personal data, purple, blue, neon, orbit lines, particles, watermark",
+      "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-dark-v1.png",
+      "source": "images/prompts/internal-expense/cloud-ledger-interface-luminous-dark-v1.md",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "generation": "Built-in image_gen, edit / precise-object-edit; native PNG master retained without cropping or upscaling.",
+      "input_images": [
+        "images/generated/cloud-ledger-page/cloud-ledger-dashboard-luminous-dark-v1.png"
+      ],
+      "derivatives": [
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-dark-v1.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "output": "images/generated/cloud-ledger-page/cloud-ledger-interface-luminous-dark-v1-768.webp",
+          "format": "WebP",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "commerce-workflow-luminous-v1",
+      "category": "marketing",
+      "title": "商城与会员增长 · 玉绿业务闭环（浅色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: supporting commerce workflow illustration for LAN Cloud AI company website, light theme.\nInput image 1 is the EDIT TARGET. Change only palette, material finish, light treatment and visual clutter. Preserve the exact landscape 3:2 framing, almost front-on camera angle, full closed rounded rectangular loop, left circular input with faceted raw material, middle branching workflow and network capsule, right circular outcome with finished sphere on stepped base, and bottom circular confirmation node with its simple check shape. Keep every main subject and its relative location, scale and connection.\nPrimary request: harmonize the existing diagram with an elegant warm-white and jade company website, gentle and quiet enough to support page content.\nScene/backdrop: seamless smooth warm-white #f0f5f1 with very gentle pale-sage variation, no cold blue cast, clean porcelain studio surface.\nMaterials/textures: transform silver chrome and blue-black metal into warm white porcelain, frosted pale-jade glass and soft sage mineral details. The large closed loop and process channels have slender pale jade borders and quiet milky interiors. Input rock is muted sage stone, the output sphere is softly polished jade; central network is sparse muted teal rods and pale jade beads, with warm-gray structural supports. Only tiny champagne details on a few connectors, less than 2 percent of the image.\nLighting/mood: diffuse gallery light with soft short realistic shadows. Clear delicate contours with quiet tonal separation. Connecting paths are plain soft teal #137f68 ribbons, without glowing streaming filaments.\nConstraints: retain the input-to-process-to-result-and-confirmation narrative and original composition. Remove all baked-in particles, spark trails, star points, glitter, electric streaks and HUD grid clutter. No additional objects or decorative shapes, no people, letters, numerals, logos, watermark, fake UI, charts or browser chrome. Keep only the existing simple confirmation check as a geometric marker. Avoid cobalt, electric cyan, purple, navy blue, silver steel, cyberpunk, neon, heavy glow and sharp futuristic reflections.\nOutput: one finished 3:2 landscape image with the full diagram visible.",
+      "negative": "cold black steel, chrome, navy, cobalt, electric cyan, purple, grid, particles, stars, readable text, numbers, logos, watermark, fake UI, extra objects",
+      "output": "images/generated/commerce-page/commerce-workflow-luminous-v1.png",
+      "source": "images/prompts/marketing/commerce-workflow-luminous-v1.md",
+      "generation": {
+        "mode": "built-in image_gen edit",
+        "date": "2026-09-13",
+        "editTarget": "images/generated/ai-course-page/ai-course-mvp-3day-dark-v1.png",
+        "originalOutput": "/Users/i/.codex/generated_images/01a09b14-93ea-7ee0-9839-a6f3064b97e5/exec-8c93e9f0-c24f-4a06-8625-40437dcbe409.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "derivatives": [
+        {
+          "path": "images/generated/commerce-page/commerce-workflow-luminous-v1.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "images/generated/commerce-page/commerce-workflow-luminous-v1-768.webp",
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "id": "commerce-workflow-luminous-dark-v1",
+      "category": "marketing",
+      "title": "商城与会员增长 · 玉绿业务闭环（深色）",
+      "aspect": "3:2",
+      "prompt": "Use case: style-transfer\nAsset type: supporting commerce workflow illustration for LAN Cloud AI company website, dark theme.\nInput image 1 is the EDIT TARGET. Change only palette, material finish, light treatment and visual clutter. Preserve the exact landscape 3:2 framing, almost front-on camera angle, full closed rounded rectangular loop, left circular input with faceted raw material, middle branching workflow and network capsule, right circular outcome with finished sphere on stepped base, and bottom circular confirmation node with its simple check shape. Keep every main subject and its relative location, scale and connection.\nPrimary request: harmonize the existing diagram with an elegant ink-green and jade company website, gentle and quiet enough to support page content.\nScene/backdrop: seamless smooth matte deep forest/ink green #0e251d to #123528, no cold blue or black gradient. Gentle clean studio setting.\nMaterials/textures: transform silver chrome, blue-black metal and hard rims into warm frosted jade glass, semi-translucent pale jade, sage porcelain and satin deep green. The large closed loop and process channels have slender warm jade borders and muted green interiors. Input rock is muted green mineral, the output sphere is softly polished jade; central network is sparse pale jade rods and beads, with soft warm gray structural supports. Only tiny champagne details on a few connectors, less than 2 percent of the image.\nLighting/mood: diffuse gallery light with soft short shadows. Quiet tonal separation, no harsh rim lights. Connecting paths are plain softly translucent green ribbons, without luminous streaming filaments.\nConstraints: retain the input-to-process-to-result-and-confirmation narrative and original composition. Remove all baked-in particles, spark trails, star points, glitter, electric streaks and HUD grid clutter. No additional objects or decorative shapes, no people, letters, numerals, logos, watermark, fake UI, charts or browser chrome. Keep only the existing simple confirmation check as a geometric marker. Avoid cobalt, electric cyan, purple, navy blue, silver steel, cyberpunk, neon, heavy glow and sharp futuristic reflections.\nOutput: one finished 3:2 landscape image with the full diagram visible.",
+      "negative": "cold black steel, chrome, navy, cobalt, electric cyan, purple, grid, particles, stars, readable text, numbers, logos, watermark, fake UI, extra objects",
+      "output": "images/generated/commerce-page/commerce-workflow-luminous-dark-v1.png",
+      "source": "images/prompts/marketing/commerce-workflow-luminous-dark-v1.md",
+      "generation": {
+        "mode": "built-in image_gen edit",
+        "date": "2026-09-13",
+        "editTarget": "images/generated/ai-course-page/ai-course-mvp-3day-dark-v1.png",
+        "originalOutput": "/Users/i/.codex/generated_images/01a09b14-93ea-7ee0-9839-a6f3064b97e5/exec-4e1c2d06-3af3-4dad-82d1-85f49ea3517b.png",
+        "width": 1536,
+        "height": 1024
+      },
+      "derivatives": [
+        {
+          "path": "images/generated/commerce-page/commerce-workflow-luminous-dark-v1.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "images/generated/commerce-page/commerce-workflow-luminous-dark-v1-768.webp",
+          "width": 768,
+          "height": 512
         }
       ]
     }

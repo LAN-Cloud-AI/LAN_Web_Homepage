@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
-    "build:company": "node scripts/generate-company-pages.mjs && npm run seo:sync",
+    "build:company": "npm run build:motion && node scripts/generate-company-pages.mjs && node scripts/apply-site-shell.mjs && npm run seo:sync",
+    "build:motion": "node scripts/build-company-motion.mjs",
+    "verify:motion": "node --test scripts/verify-company-motion.test.mjs scripts/verify-particle-fields.test.mjs",
     "oss": "node scripts/oss/cli.mjs",
     "oss:ping": "node scripts/oss/cli.mjs ping",
     "oss:sync": "node scripts/oss/cli.mjs sync-website-images",
@@ -49,5 +51,9 @@
   "dependencies": {
     "ali-oss": "^6.23.0",
     "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "three": "0.186.0"
   }
 }

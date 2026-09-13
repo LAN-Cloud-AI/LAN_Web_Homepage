@@ -219,7 +219,7 @@ required(
 const baiduVerify = fs.readdirSync(root).filter((name) => /^baidu_verify_[A-Za-z0-9-]+\.html$/.test(name));
 required(baiduVerify.length > 0, "A Baidu site-verification HTML file must live at the site root.");
 required(nginx.includes("try_files $uri $uri/ $uri.html =404"), "Nginx must hard-404 unknown paths.");
-required(nginx.includes("location ^~ /leadshunter"), "Nginx must 301 /leadshunter to the product site.");
+required(nginx.includes("location ~ ^/(?:en/|zh-Hant/)?leadshunter(?:/|$)"), "Nginx must 301 /leadshunter to the product site.");
 required(nginx.includes("$lan_index_canonical"), "Nginx must canonicalize client /index.html without looping directory indexes.");
 
 console.log(

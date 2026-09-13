@@ -15,4 +15,10 @@ for (const prefix of ["", "/preview"]) {
 }
 assert.equal(localeFromPathname("/previewish/en/"), "zh-Hans");
 assert.equal(withLocalePrefix("/preview/zh-Hant", "en"), "/preview/en/");
-console.log("Preview routing verified: both versions, three locales, query/hash and canonical paths.");
+console.log("Compatibility routing verified: three locales and preserved query/hash.");
+
+const { resolvePreviewRequest } = await import('./dev-server.mjs');
+assert.deepEqual(await resolvePreviewRequest('/preview/en/practice/?host=cn'), {redirect:'/en/practice/?host=cn',status:301});
+assert.deepEqual(await resolvePreviewRequest('/preview?host=cn'), {redirect:'/?host=cn',status:301});
+assert.deepEqual(await resolvePreviewRequest('/en/ai-course/index.html?x=1'), {redirect:'/en/ai-course/?x=1',status:301});
+assert.deepEqual(await resolvePreviewRequest('/leadshunter/'), {redirect:'https://leadshunter.lancloudtech.com/',status:301});

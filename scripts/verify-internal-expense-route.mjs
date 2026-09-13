@@ -52,7 +52,7 @@ required(productPage.includes("Internal Expense"), "云朵记账需要保留 Int
 required(productPage.includes("https://github.com/LAN-Cloud-AI/LAN_Cloud_Internal_Expense"), "产品页必须提供公开 GitHub 源码入口。");
 required(productPage.includes("Apache-2.0"), "产品页必须说明 Apache-2.0 开源许可。");
 required(!productPage.includes("ie-oa.lancloudtech.com"), "公开产品页不得泄露受登录保护的产品实例地址。");
-required(/<a\b(?=[^>]*class="skip-link")(?=[^>]*href="#main")[^>]*>/.test(productPage), "页面需要键盘跳过链接。");
+required(/<a\b(?=[^>]*class="lan-skip")(?=[^>]*href="#main")[^>]*>/.test(productPage), "页面需要键盘跳过链接。");
 required(productPage.includes('<main id="main" tabindex="-1">'), "跳过链接目标必须可获得键盘焦点。");
 required(productPage.includes('href="../"'), "产品页必须提供返回兰芯云朵官网的链接。");
 required(productPage.includes('<script>document.documentElement.classList.add("js");</script>'), "移动菜单必须渐进增强。");
@@ -89,7 +89,7 @@ required(subscriptionSizes.length === 4 && subscriptionSizes.every((value) => va
 required(productPage.includes(`imagesizes="${portraitVisualSize}"`), "Hero 预加载必须使用竖版图尺寸上限。");
 
 required(productCss.includes("color-scheme: light dark"), "页面必须公开浅色和深色系统配色能力。");
-required(productCss.includes("@media (prefers-color-scheme: dark)"), "页面需要深色主题覆盖层。");
+required(productCss.includes('html[data-theme="dark"]'), "页面需要深色主题覆盖层。");
 required(productCss.includes("@media (max-width: 920px)"), "页面需要平板/折叠屏的单栏断点。");
 required(productCss.includes("@media (max-width: 760px)"), "页面需要移动端断点。");
 required(
