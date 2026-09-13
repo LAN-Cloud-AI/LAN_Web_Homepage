@@ -1,6 +1,6 @@
 # Prompt 索引
 
-> 共 **88** 条 UI 生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
+> 共 **97** 条图片生成 Prompt。使用前先读 [00-VISUAL-SYSTEM.md](./00-VISUAL-SYSTEM.md)。
 
 | 目录 | 数量 |
 | --- | ---: |
@@ -12,7 +12,7 @@
 | [TACT 调度](./tact/) (`tact`) | 11 |
 | [移动端](./mobile/) (`mobile`) | 9 |
 | [AI Analyst 判断](./analyst/) (`analyst`) | 3 |
-| [微信 / OG 分享卡](./share/) (`share`) | 7 |
+| [微信 / OG 分享卡](./share/) (`share`) | 16 |
 | [官网营销版式](./marketing/) (`marketing`) | 8 |
 
 ## 品牌与通用
@@ -132,6 +132,26 @@
 
 ## 微信 / OG 分享卡
 
+新版 v3 共 **9** 张独立无字分享图，三语共用；均由内置 image_gen 生成，PNG 原图实际为 **1254 × 1254**，完整保存在 `images/generated/share/og-*-v3.png`。发布使用由原图缩小压缩得到的同名 **600 × 600 JPEG**（`og-*-v3.jpg`）；PNG master 保留，不放大、不覆盖。完整提示词、实际尺寸与 JPEG 派生路径均记录在 `catalog.json`。这些是品牌概念图，不作为产品界面或业务成效证据。
+
+### 新版独立分享卡（v3）
+
+| ID | 标题 | 画幅 | 新版路由 |
+| --- | --- | --- | --- |
+| [`og-home-v3`](./share/og-home-v3.md) | 新版首页 · 业务成为行动 | 1:1 | `/preview/` |
+| [`og-solutions-v3`](./share/og-solutions-v3.md) | 产品与方案 · 三条业务链路 | 1:1 | `/preview/solutions/` |
+| [`og-practice-v3`](./share/og-practice-v3.md) | 案例与实践 · 交付成形 | 1:1 | `/preview/practice/` |
+| [`og-internal-expense-v3`](./share/og-internal-expense-v3.md) | 云朵记账 · 清晰可追溯 | 1:1 | `/preview/internal-expense/` |
+| [`og-ai-course-v3`](./share/og-ai-course-v3.md) | AI 实战培训 · 由学习走向实践 | 1:1 | `/preview/ai-course/` |
+| [`og-ai-course-fde-v3`](./share/og-ai-course-fde-v3.md) | FDE 培养体系 · 三阶段能力进阶 | 1:1 | `/preview/ai-course/fde/` |
+| [`og-ai-course-mvp-3day-v3`](./share/og-ai-course-mvp-3day-v3.md) | 企业 MVP 三天课 · 由模块到成品 | 1:1 | `/preview/ai-course/mvp-3day/` |
+| [`og-wecom-v3`](./share/og-wecom-v3.md) | 联系兰芯 · 开始一次交流 | 1:1 | `/preview/contact/wecom/` |
+| [`og-sitemap-v3`](./share/og-sitemap-v3.md) | 网站导航 · 找到下一步 | 1:1 | `/preview/sitemap/` |
+
+### 旧版分享卡（v2）
+
+旧版随固定旧站快照保留原有分享图，新版 v3 不覆盖 v2。
+
 | ID | 标题 | 画幅 | 用途 |
 | --- | --- | --- | --- |
 | [`og-home-v2`](./share/og-home-v2.md) | 官网首页微信分享卡 | 1:1 | `/` |
@@ -152,5 +172,5 @@
 | [`mkt-compare-before-after`](./marketing/mkt-compare-before-after.md) | Before/After 对比拼贴 | 16:9 | 通用转化模块 |
 | [`mkt-pricing-console`](./marketing/mkt-pricing-console.md) | 开通/套餐控制台风 | 16:9 | SaaS 商业化页 |
 | [`mkt-security-gates`](./marketing/mkt-security-gates.md) | 安全门禁说明 UI | 16:9 | 信任/安全页 |
-| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 历史备用概念；线上已改用 `share/og-*-v2` |
+| [`mkt-og-square`](./marketing/mkt-og-square.md) | 社交分享 OG 方图 | 1:1 | 历史备用概念；旧版使用 `share/og-*-v2`，新版使用 `share/og-*-v3` |
 | [`mkt-footer-ecosystem`](./marketing/mkt-footer-ecosystem.md) | 产品生态墙 | 21:9 | 页脚/生态条 |

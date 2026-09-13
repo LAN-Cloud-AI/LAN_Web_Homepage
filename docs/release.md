@@ -20,7 +20,7 @@
 - 图片 / 国内课程下载包：阿里云 OSS + CDN `img.lancloudtech.com`（Cloudflare **灰云**，不经 CF 代理；见 `docs/oss.md`）
 - 海外课程下载包：Cloudflare R2 `files.lancloudtech.com`（橙云，桶 `lan-ai-course`；`npm run dns:files`）
 - 分流：前端 [`geo-host.js`](../geo-host.js) + Worker `lan-geo`（`https://lan-geo.mingxuan400.workers.dev/`）；微信/爬虫不跳；`?host=cn|global` 可覆盖
-- 微信 JS-SDK：Worker `lan-wechat-jssdk` 的 **workers.dev** URL（不绑 zone 路径）
+- 微信 JS-SDK：Worker `lan-wechat-jssdk` 的专用域 `wechat.lancloudtech.com`（主站仍走 Nginx）
 - SEO：canonical / sitemap 仍指向 apex `https://lancloudtech.com`
 
 ## 常规流程
@@ -63,7 +63,7 @@
    - `https://lancloudtech.com/contact/wecom/`
    - `https://lancloudtech.com/ai-course/`
    - 页脚备案号可见
-   - 各路由 `<head>` 的 `og:image` 指向 OSS `.../images/generated/share/og-*-v2.png`（互不相同）
+   - 各路由 `<head>` 的 `og:image` 指向 OSS `.../images/generated/share/og-*-v3.jpg`（新版各路由独立；旧版保留 v2）
    - 分流：大陆留主域；港澳台/海外进 global；微信 UA 不跳；canonical 仍为 apex
 
 ## SEO / 网站地图
@@ -89,8 +89,8 @@
 
 ## 微信分享卡片
 
-1. **链接预览卡**：靠各页静态 `og:*` + `itemprop`；抓取器不跑 JS。改封面必须换版本化文件名（如 `og-home-v2.png`）并更新 HTML / `share-meta.js`，否则微信会强缓存旧图。
-2. **微信内自定义分享**：前端 `wechat-share.js` → `GET https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk?url=...`（见 `workers/wechat-jssdk/`）。
+1. **链接预览卡**：靠各页静态 `og:*` + `itemprop`；抓取器不跑 JS。改封面必须换版本化文件名（如 `og-home-v3.jpg`）并更新 HTML / `share-meta.js`，否则微信会强缓存旧图。
+2. **微信内自定义分享**：前端 `wechat-share.js` → `GET https://wechat.lancloudtech.com/api/wechat/jssdk?url=...`（见 `workers/wechat-jssdk/`）。
 3. 部署签名 Worker（与静态站分开）：
 
    ```bash
@@ -99,7 +99,7 @@
    npx wrangler deploy --config workers/wechat-jssdk/wrangler.toml
    ```
 
-4. 公众号后台把 `lancloudtech.com` 配进 **JS接口安全域名**；密钥不得进仓库。未配置密钥时接口返回 `503`，前端静默降级为 OG 预览卡。
+4. 公众号后台核实 `lancloudtech.com` 与 `global.lancloudtech.com` 均在 **JS接口安全域名**（使用 www 访问时也需核实对应域）；密钥不得进仓库。未配置密钥时接口返回 `503`，前端静默降级为 OG 预览卡。
 5. 真机验收：微信内打开各路由 → ··· → 发送给朋友 / 分享到朋友圈；另把链接发给文件传输助手检查预览卡。
 
 ## 缓存策略
@@ -112,7 +112,7 @@ Nginx 对 HTML / JS / CSS 使用短缓存或 `must-revalidate`。图片主要在
 - **橙云 Pages（海外）**：`global.lancloudtech.com` → Pages `lan-homepage-global`；`npm run dns:global`。
 - **橙云 R2（海外课件）**：`files.lancloudtech.com` → 桶 `lan-ai-course`；`npm run dns:files`。不要把约 39MB 的课件放进 Pages。
 - **不要**给 Worker `lan-homepage` 重新绑定正式主域。
-- Geo：`lan-geo` workers.dev；微信 JS-SDK：`lan-wechat-jssdk` workers.dev（均不绑 zone 路径）。
+- Geo：`lan-geo` workers.dev；微信 JS-SDK：`lan-wechat-jssdk` 的专用域 `wechat.lancloudtech.com`；部署保留既有 API 路由，不绑定主页通配。
 - DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（主域灰云）、`npm run dns:img`（`img` 灰云直连阿里云 CDN）、`npm run dns:global`（海外子域）或 `npm run dns:files`（海外课件 R2）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
 ## 证书与运维

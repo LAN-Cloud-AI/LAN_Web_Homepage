@@ -50,7 +50,7 @@ export const ORGANIZATION = {
 /** @typedef {"home"|"solutions"|"practice"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} SeoRouteId */
 
 /**
- * Public indexable routes. Paths must stay in sync with SHARE_BY_ROUTE (+ sitemap HTML).
+ * Public indexable routes. Paths must stay in sync with SHARE_BY_ROUTE.
  * @type {Array<{
  *   id: SeoRouteId,
  *   path: string,
@@ -131,7 +131,7 @@ export const PUBLIC_ROUTES = [
     html: "sitemap/index.html",
     priority: "0.3",
     changefreq: "monthly",
-    inShareMeta: false,
+    inShareMeta: true,
   },
 ];
 

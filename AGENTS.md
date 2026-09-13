@@ -26,7 +26,7 @@
 - LeadsHunter 的公开导航与 CTA 一律指向独立官网 `https://leadshunter.lancloudtech.com/`；不得以 GitHub 仓库或已退役的 `/leadshunter/` 产品页作为公开入口。
 - 云朵记账的首页开源卡片与页脚入口一律指向本项目的 `/internal-expense/`；仅产品页可链接公开 GitHub 源码仓库。
 - AI 课程的首页「培养」区块与页脚入口一律指向本项目的 `/ai-course/`；公开页仅用课表摘要，不得挂载完整教案。`/ai-course/` 的学员资源下载除外：国内走 OSS/CDN `img.lancloudtech.com`（Cloudflare **灰云**，直连阿里云），海外走 Cloudflare R2 `files.lancloudtech.com`（橙云）；不得把课程仓 GitHub 当作公开入口。
-- 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v2.png`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，签名走 `lan-wechat-jssdk` 的 workers.dev（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
+- 微信分享：每个 HTML 路由有独立 OG / `itemprop` 封面（`images/generated/share/og-*-v3.jpg`，经 OSS）；清单在 `share-meta.js`，微信内自定义分享在 `wechat-share.js`，新版签名走 `wechat.lancloudtech.com` 上的 `lan-wechat-jssdk`（不要重绑 `lan-homepage`）。公众号密钥放 `~/.config/lanxin/env/wechat/oa.env`（模板见 `.config-templates/wechat-oa.env.example`）。
 
 本地预览（`geo-host.js` 对 localhost 不分流）：
 
@@ -70,6 +70,7 @@ node scripts/verify-wecom-card-route.mjs
 node scripts/verify-internal-expense-route.mjs
 node scripts/verify-ai-course-route.mjs
 node scripts/verify-wechat-share.mjs
+node --test scripts/verify-wechat-runtime.test.mjs scripts/verify-wechat-worker.test.mjs
 node scripts/verify-seo.mjs
 node scripts/verify-geo-host.mjs
 node scripts/verify-preview-routing.mjs
@@ -101,7 +102,7 @@ git diff --check
 
 旧新版共同使用原 LAN Umami ID；`site-events.js` 统一点击名称、版本、语言与咨询方向，不手动重复发送 PV / 点击。详见 `docs/website-events.md`。只对正式公司域收集数据；部署后用真实浏览器和统计入库验证切换事件。
 
-生产双轨：大陆主域 `lancloudtech.com` / `www` → 阿里云源站 Nginx（`lanxin-official-direct` → `8.148.22.108`，Cloudflare **灰云**）；海外（含港澳台）→ `global.lancloudtech.com` Cloudflare Pages。图片存阿里云 OSS 桶 `lan-cloud-webpage`，公开访问走 CDN `https://img.lancloudtech.com`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://lan-wechat-jssdk.mingxuan400.workers.dev/api/wechat/jssdk`；地理分流走 `https://lan-geo.mingxuan400.workers.dev/`。
+生产双轨：大陆主域 `lancloudtech.com` / `www` → 阿里云源站 Nginx（`lanxin-official-direct` → `8.148.22.108`，Cloudflare **灰云**）；海外（含港澳台）→ `global.lancloudtech.com` Cloudflare Pages。图片存阿里云 OSS 桶 `lan-cloud-webpage`，公开访问走 CDN `https://img.lancloudtech.com`（见 `docs/oss.md` 与 `.cursor/rules/aliyun-oss.mdc`）。微信 JS-SDK 签名走 Worker `https://wechat.lancloudtech.com/api/wechat/jssdk`；地理分流走 `https://lan-geo.mingxuan400.workers.dev/`。
 
 发布前：
 

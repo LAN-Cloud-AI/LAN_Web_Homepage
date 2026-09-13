@@ -5,7 +5,7 @@ export { SITE_ORIGIN };
 export const OSS_SHARE_BASE =
   "https://img.lancloudtech.com/lanxin/webpage/images/generated/share";
 
-/** @typedef {"home"|"solutions"|"practice"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"} ShareRouteId */
+/** @typedef {"home"|"solutions"|"practice"|"internal-expense"|"ai-course"|"ai-course-fde"|"ai-course-mvp-3day"|"wecom"|"sitemap"} ShareRouteId */
 
 /**
  * Canonical share cards for each HTML route.
@@ -16,9 +16,9 @@ export const OSS_SHARE_BASE =
 export const SHARE_BY_ROUTE = {
   home: {
     path: "/",
-    image: `${OSS_SHARE_BASE}/og-home-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-home-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "兰芯云朵",
@@ -36,10 +36,9 @@ export const SHARE_BY_ROUTE = {
   },
   solutions: {
     path: "/solutions/",
-    // Reuse the existing brand cover until a dedicated version is published.
-    image: `${OSS_SHARE_BASE}/og-home-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-solutions-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": { title: "汽车业务 AI 方案", desc: "从公域获客到客户关系与车间协同" },
       "zh-Hant": { title: "汽車業務 AI 方案", desc: "從公域獲客到客戶關係與車間協同" },
@@ -48,9 +47,9 @@ export const SHARE_BY_ROUTE = {
   },
   practice: {
     path: "/practice/",
-    image: `${OSS_SHARE_BASE}/og-home-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-practice-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": { title: "兰芯业务实践", desc: "业务规则、数据与 AI 的交付实践" },
       "zh-Hant": { title: "蘭芯業務實踐", desc: "業務規則、資料與 AI 的交付實踐" },
@@ -59,17 +58,17 @@ export const SHARE_BY_ROUTE = {
   },
   "internal-expense": {
     path: "/internal-expense/",
-    image: `${OSS_SHARE_BASE}/og-internal-expense-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-internal-expense-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "云朵记账",
-        desc: "开源订阅与报销",
+        desc: "开源订阅资产与报销管理",
       },
       "zh-Hant": {
         title: "雲朵記賬",
-        desc: "開源訂閱與報銷",
+        desc: "開源訂閱資產與報銷管理",
       },
       en: {
         title: "Cloud Ledger",
@@ -79,9 +78,9 @@ export const SHARE_BY_ROUTE = {
   },
   "ai-course": {
     path: "/ai-course/",
-    image: `${OSS_SHARE_BASE}/og-ai-course-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-ai-course-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "企业 AI 实战培训",
@@ -99,17 +98,17 @@ export const SHARE_BY_ROUTE = {
   },
   "ai-course-fde": {
     path: "/ai-course/fde/",
-    image: `${OSS_SHARE_BASE}/og-ai-course-fde-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-ai-course-fde-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "FDE 公开课表",
-        desc: "21 课能力进阶",
+        desc: "21 课 · 84 课时 · 三阶段进阶",
       },
       "zh-Hant": {
         title: "FDE 公開課表",
-        desc: "21 課能力進階",
+        desc: "21 課 · 84 課時 · 三階段進階",
       },
       en: {
         title: "FDE Schedule",
@@ -119,9 +118,9 @@ export const SHARE_BY_ROUTE = {
   },
   "ai-course-mvp-3day": {
     path: "/ai-course/mvp-3day/",
-    image: `${OSS_SHARE_BASE}/og-ai-course-mvp-3day-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-ai-course-mvp-3day-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "企业定制三天课",
@@ -139,22 +138,33 @@ export const SHARE_BY_ROUTE = {
   },
   wecom: {
     path: "/contact/wecom/",
-    image: `${OSS_SHARE_BASE}/og-wecom-v2.png`,
-    imageWidth: 1000,
-    imageHeight: 1000,
+    image: `${OSS_SHARE_BASE}/og-wecom-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
     locales: {
       "zh-Hans": {
         title: "联系兰芯云朵",
-        desc: "添加销售经理企微",
+        desc: "产品演示与企业培训咨询",
       },
       "zh-Hant": {
         title: "聯繫蘭芯雲朵",
-        desc: "新增銷售經理企微",
+        desc: "產品展示與企業培訓諮詢",
       },
       en: {
         title: "Contact Us",
-        desc: "Add sales on WeCom",
+        desc: "Products & training on WeCom",
       },
+    },
+  },
+  sitemap: {
+    path: "/sitemap/",
+    image: `${OSS_SHARE_BASE}/og-sitemap-v3.jpg`,
+    imageWidth: 600,
+    imageHeight: 600,
+    locales: {
+      "zh-Hans": { title: "兰芯官网导航", desc: "产品、实践、课程与联系入口" },
+      "zh-Hant": { title: "蘭芯官網導覽", desc: "產品、實踐、課程與聯繫入口" },
+      en: { title: "Explore LAN Cloud AI", desc: "Products, practice & learning" },
     },
   },
 };

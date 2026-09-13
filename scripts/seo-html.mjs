@@ -30,6 +30,25 @@ export const upsertOg = (html, property, content) =>
 export const upsertTwitter = (html, name, content) =>
   upsertMeta(html, { attr: "name", key: name, content });
 
+// OGP structured image properties belong to the preceding og:image. Keep the
+// complete group together; independent upserts reverse newly inserted tags.
+export const upsertOgImage = (html, share, alt) => {
+  const values = [
+    ["og:image", share.image],
+    ["og:image:secure_url", share.image],
+    ["og:image:type", /\.jpe?g$/i.test(share.image) ? "image/jpeg" : "image/png"],
+    ["og:image:width", share.imageWidth],
+    ["og:image:height", share.imageHeight],
+    ["og:image:alt", alt],
+  ].filter(([, value]) => value != null && value !== "");
+  const group = values.map(([key, value]) => `<meta property="${key}" content="${escapeAttr(value)}" />`).join("\n  ");
+  const stripped = html.replace(/\s*<meta\b[^>]*property=["']og:image(?::[\w]+)?["'][^>]*>/gi, "");
+  if (/<meta\b[^>]*property=["']og:description["'][^>]*>/i.test(stripped)) {
+    return stripped.replace(/(<meta\b[^>]*property=["']og:description["'][^>]*>)/i, `$1\n  ${group}`);
+  }
+  return stripped.replace(/<\/head>/i, `  ${group}\n</head>`);
+};
+
 const escapeAttr = (value) =>
   String(value)
     .replace(/&/g, "&amp;")
@@ -120,9 +139,7 @@ export const applySeoHead = (html, route, locale = DEFAULT_LOCALE) => {
   next = upsertTwitter(next, "twitter:description", shareDesc);
   next = upsertTwitter(next, "twitter:card", "summary_large_image");
   if (share) {
-    next = upsertOg(next, "og:image", share.image);
-    next = upsertOg(next, "og:image:width", share.imageWidth);
-    next = upsertOg(next, "og:image:height", share.imageHeight);
+    next = upsertOgImage(next, share, imageAlt);
     next = upsertMeta(next, { attr: "itemprop", key: "image", content: share.image });
     next = upsertTwitter(next, "twitter:image", share.image);
   }

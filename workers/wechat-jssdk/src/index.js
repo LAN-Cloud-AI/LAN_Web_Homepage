@@ -1,4 +1,8 @@
-const ALLOWED_ORIGINS = new Set(["https://lancloudtech.com", "https://www.lancloudtech.com"]);
+const ALLOWED_ORIGINS = new Set([
+  "https://lancloudtech.com",
+  "https://www.lancloudtech.com",
+  "https://global.lancloudtech.com",
+]);
 const TOKEN_CACHE_KEY = "wechat:access_token";
 const TICKET_CACHE_KEY = "wechat:jsapi_ticket";
 

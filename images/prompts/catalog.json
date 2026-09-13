@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 88,
+  "count": 97,
   "items": [
     {
       "id": "lh-appstore-discovery-dashboard-dark-v2",
@@ -881,6 +881,222 @@
       "negative": "text, logo, private data, product UI, robot, neon",
       "output": "images/generated/brand/brand-action-hero-v3.png",
       "source": "images/prompts/brand/brand-action-hero-v3.md"
+    },
+    {
+      "id": "og-home-v3",
+      "category": "share",
+      "title": "新版首页 · 业务成为行动",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: square WeChat sharing thumbnail for a premium enterprise AI company's website; language-neutral editorial brand image, not evidence of a real product.\nOutput: one independent image, exactly 1:1 square, preferably native 1536 x 1536 pixels.\nStyle/medium: exquisite photorealistic 3D product still life, meticulous industrial craftsmanship, premium studio product photography.\nScene/backdrop: seamless porcelain off-white #F6F7F5 background and matching ground plane.\nComposition/framing: one bold central composition, total subject occupies about 72% of canvas width and 66% of height, keep a clear 14% safe margin on all sides, simple silhouette remains identifiable in a tiny WeChat square thumbnail; slightly elevated three-quarter camera, no close crop.\nLighting/mood: soft gallery daylight from upper left, gentle realistic contact shadows, clean restrained highlights, calm, precise and substantial.\nColor palette: white porcelain, forge teal #0F766E, silver brushed aluminium. Teal is the only chromatic accent.\nMaterials/textures: satin white porcelain with fine bevels, subtly translucent teal acrylic, finely brushed silver aluminium, realistic controlled reflections.\nConstraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.\nSubject: a single smooth translucent forge-teal ribbon, with a substantial precise rectangular cross section, bridges two low finely brushed aluminium platforms capped in satin white porcelain. The two platforms sit at slightly different heights, and the teal ribbon rises fluidly between them before docking into the second porcelain surface. Its uninterrupted physical connection expresses business becoming coordinated action. Make the teal ribbon the dominant memorable shape; the platforms are quiet supporting anchors. Keep the image elegant, grounded and physically plausible. Exactly two platforms and one connecting ribbon, no other objects.",
+      "negative": "Constraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.",
+      "output": "images/generated/share/og-home-v3.png",
+      "source": "images/prompts/share/og-home-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-home-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-solutions-v3",
+      "category": "share",
+      "title": "产品与方案 · 三条业务链路",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: square WeChat sharing thumbnail for a premium enterprise AI company's website; language-neutral editorial brand image, not evidence of a real product.\nOutput: one independent image, exactly 1:1 square, preferably native 1536 x 1536 pixels.\nStyle/medium: exquisite photorealistic 3D product still life, meticulous industrial craftsmanship, premium studio product photography.\nScene/backdrop: seamless porcelain off-white #F6F7F5 background and matching ground plane.\nComposition/framing: one bold central composition, total subject occupies about 72% of canvas width and 66% of height, keep a clear 14% safe margin on all sides, simple silhouette remains identifiable in a tiny WeChat square thumbnail; slightly elevated three-quarter camera, no close crop.\nLighting/mood: soft gallery daylight from upper left, gentle realistic contact shadows, clean restrained highlights, calm, precise and substantial.\nColor palette: white porcelain, forge teal #0F766E, silver brushed aluminium. Teal is the only chromatic accent.\nMaterials/textures: satin white porcelain with fine bevels, subtly translucent teal acrylic, finely brushed silver aluminium, realistic controlled reflections.\nConstraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.\nSubject: exactly three substantial precision white porcelain modules arranged as a compact triangular composition, each with a thin finely brushed aluminium base and a subtly different simple recess. One continuous thick forge-teal translucent path flows from the first module into the second and the third, integrating all three into one visible system. The three connected modules abstractly suggest acquisition, customer relationships and operational collaboration without any literal icons, text or UI. All three modules must be prominent and recognizable at thumbnail size, with generous clear space between them; one clean teal connecting path, no branching network or small secondary pieces.",
+      "negative": "Constraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.",
+      "output": "images/generated/share/og-solutions-v3.png",
+      "source": "images/prompts/share/og-solutions-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-solutions-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-practice-v3",
+      "category": "share",
+      "title": "案例与实践 · 交付成形",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: square WeChat sharing thumbnail for a premium enterprise AI company's website; language-neutral editorial brand image, not evidence of a real product.\nOutput: one independent image, exactly 1:1 square, preferably native 1536 x 1536 pixels.\nStyle/medium: exquisite photorealistic 3D product still life, meticulous industrial craftsmanship, premium studio product photography.\nScene/backdrop: seamless porcelain off-white #F6F7F5 background and matching ground plane.\nComposition/framing: one bold central composition, total subject occupies about 72% of canvas width and 66% of height, keep a clear 14% safe margin on all sides, simple silhouette remains identifiable in a tiny WeChat square thumbnail; slightly elevated three-quarter camera, no close crop.\nLighting/mood: soft gallery daylight from upper left, gentle realistic contact shadows, clean restrained highlights, calm, precise and substantial.\nColor palette: white porcelain, forge teal #0F766E, silver brushed aluminium. Teal is the only chromatic accent.\nMaterials/textures: satin white porcelain with fine bevels, subtly translucent teal acrylic, finely brushed silver aluminium, realistic controlled reflections.\nConstraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.\nSubject: exactly three chunky satin white porcelain components precisely interlock to become one complete, stable, usable compact sculptural assembly. Show clear machined joining seams and a restrained thin brushed-aluminium support detail. A single continuous forge-teal inset travels across the successfully joined interfaces, visually confirming that the individual components now work together. The assembly should feel finished, solid and purposeful, like an expertly delivered physical system. Not an exploded view, not a construction kit, no loose pieces, no tools, no symbols; emphasize the bold unified silhouette of the three joined components.",
+      "negative": "Constraints: absolutely no text, letters, numbers, logos, watermark, QR codes, faces, people, fake UI, screens, browser chrome, dashboard, charts, diagrams, tiny data marks or decorative extra props. No purple, neon, cyberpunk, glowing holograms, cartoon, cream terracotta, clutter or heavy shadows. No more than three main sculptural objects. Do not make a collage or a sheet of multiple images.",
+      "output": "images/generated/share/og-practice-v3.png",
+      "source": "images/prompts/share/og-practice-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-practice-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-internal-expense-v3",
+      "category": "share",
+      "title": "云朵记账 · 清晰可追溯",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: one square WeChat website link thumbnail for LAN Cloud AI, 1:1 aspect ratio, 1536x1536 if available.\nStyle: premium editorial photorealistic 3D still life, porcelain white #F6F7F5 studio background, forge teal #0F766E, restrained brushed silver, soft daylight, precise tactile materials and gentle contact shadows, consistent with a refined automotive AI company.\nComposition: one bold, immediately recognizable sculptural subject, centered occupying 70% of the square, 15% safe breathing room, clearly readable even as a 64px thumbnail. Do not make a collage or separate panels.\nConstraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.\nSubject: a single thick pristine porcelain ledger book, partly open and held by a broad translucent deep teal loop that passes neatly around its pages, resting on a low brushed-silver base. A small round teal seal with a simple recessed tick-shaped form rests beside it. The dominant metaphor is organizing recurring expenses and an auditable closed loop. Pages have absolutely no marks.",
+      "negative": "Constraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.",
+      "output": "images/generated/share/og-internal-expense-v3.png",
+      "source": "images/prompts/share/og-internal-expense-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-internal-expense-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-ai-course-v3",
+      "category": "share",
+      "title": "AI 实战培训 · 由学习走向实践",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: premium language-neutral WeChat social-sharing card for an AI practical-training website.\nOutput: exactly one standalone square image, aspect ratio 1:1, aim for 1536 × 1536 pixels. Not a contact sheet, not a collage.\nStyle/medium: photorealistic high-end 3D product still life, sculptural gallery object photographed with a clean commercial studio camera. Realistic proportions, precise edges, subtle porcelain glaze and brushed-aluminium detailing. Calm and sophisticated.\nScene/backdrop: seamless very pale cool porcelain-white #F6F7F5 floor and background, unobtrusive horizon, soft daylight from upper left, delicate natural contact shadows, soft highlight falloff.\nPalette: overwhelmingly porcelain white #F6F7F5 with one confident forge-teal #0F766E accent ribbon and a restrained brushed silver metal detail. No other saturated colors.\nComposition/framing: one dominant central sculptural arrangement, occupies roughly 72% of the square, generous 12–15% clear margins, all important geometry fully in frame. Slight elevated three-quarter product-camera view, no extreme perspective. An instantly recognizable simple silhouette that remains clear at a tiny 96-pixel thumbnail. At most three major physical objects; use material and form rather than numerous decorative props.\nText: none whatsoever.\nAvoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.\nPrimary request: a large abstract OPEN BOOK sculpted from smooth white porcelain, with two gently curving blank pages and a clear central fold. It is unmistakably an open book, not a laptop. A single broad satin forge-teal ribbon emerges naturally from the fold and flows in one confident soft curve across the pages and onto the surface in front, suggesting learning becoming practical work. The front end of the ribbon has one small brushed-aluminium finishing edge, integrated into the ribbon rather than a separate object. Keep the blank pages broad and quiet, with no paper lines or markings. The book is the sole main object, angled modestly toward the viewer, visually centered and substantial.",
+      "negative": "Avoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.",
+      "output": "images/generated/share/og-ai-course-v3.png",
+      "source": "images/prompts/share/og-ai-course-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-ai-course-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-ai-course-fde-v3",
+      "category": "share",
+      "title": "FDE 培养体系 · 三阶段能力进阶",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: premium language-neutral WeChat social-sharing card for an AI practical-training website.\nOutput: exactly one standalone square image, aspect ratio 1:1, aim for 1536 × 1536 pixels. Not a contact sheet, not a collage.\nStyle/medium: photorealistic high-end 3D product still life, sculptural gallery object photographed with a clean commercial studio camera. Realistic proportions, precise edges, subtle porcelain glaze and brushed-aluminium detailing. Calm and sophisticated.\nScene/backdrop: seamless very pale cool porcelain-white #F6F7F5 floor and background, unobtrusive horizon, soft daylight from upper left, delicate natural contact shadows, soft highlight falloff.\nPalette: overwhelmingly porcelain white #F6F7F5 with one confident forge-teal #0F766E accent ribbon and a restrained brushed silver metal detail. No other saturated colors.\nComposition/framing: one dominant central sculptural arrangement, occupies roughly 72% of the square, generous 12–15% clear margins, all important geometry fully in frame. Slight elevated three-quarter product-camera view, no extreme perspective. An instantly recognizable simple silhouette that remains clear at a tiny 96-pixel thumbnail. At most three major physical objects; use material and form rather than numerous decorative props.\nText: none whatsoever.\nAvoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.\nPrimary request: exactly THREE substantial white porcelain steps forming one compact sculptural stair ascending diagonally upward from the front-left to the back-right, suggesting three stages of systematic capability development. One continuous broad forge-teal ribbon gently follows the treads upward, wraps over each edge with physically plausible bends, and ends neatly on the highest level. A fine brushed-aluminium edge on the uppermost step is the only metallic detail. The three-level silhouette must be exceptionally clear at thumbnail size. Make the staircase generous and solid, no tiny steps, no miniature architectural building, no extra tokens or floating elements. The stair-and-ribbon arrangement is centered and fills the frame confidently.",
+      "negative": "Avoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.",
+      "output": "images/generated/share/og-ai-course-fde-v3.png",
+      "source": "images/prompts/share/og-ai-course-fde-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-ai-course-fde-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-ai-course-mvp-3day-v3",
+      "category": "share",
+      "title": "企业 MVP 三天课 · 由模块到成品",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: premium language-neutral WeChat social-sharing card for an AI practical-training website.\nOutput: exactly one standalone square image, aspect ratio 1:1, aim for 1536 × 1536 pixels. Not a contact sheet, not a collage.\nStyle/medium: photorealistic high-end 3D product still life, sculptural gallery object photographed with a clean commercial studio camera. Realistic proportions, precise edges, subtle porcelain glaze and brushed-aluminium detailing. Calm and sophisticated.\nScene/backdrop: seamless very pale cool porcelain-white #F6F7F5 floor and background, unobtrusive horizon, soft daylight from upper left, delicate natural contact shadows, soft highlight falloff.\nPalette: overwhelmingly porcelain white #F6F7F5 with one confident forge-teal #0F766E accent ribbon and a restrained brushed silver metal detail. No other saturated colors.\nComposition/framing: one dominant central sculptural arrangement, occupies roughly 72% of the square, generous 12–15% clear margins, all important geometry fully in frame. Slight elevated three-quarter product-camera view, no extreme perspective. An instantly recognizable simple silhouette that remains clear at a tiny 96-pixel thumbnail. At most three major physical objects; use material and form rather than numerous decorative props.\nText: none whatsoever.\nAvoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.\nPrimary request: exactly THREE substantial precision-crafted physical modules, arranged tightly at the center as a single assembly-in-progress that clearly leads from a starting component to one finished functional object. Two smooth porcelain white modules align with a final larger porcelain block that has matching sculpted recesses, like three beautifully engineered parts about to interlock into a compact completed tool. Keep the gaps small and the simple mating geometry believable; do not multiply the parts. A single broad forge-teal inset strip runs through the three aligned modules and becomes continuous across the emerging finished assembly. The completed end has one restrained brushed-aluminium face, integrated into that module. Read as concrete build-and-deliver progress, not a bar chart, not a toy puzzle scattered on the floor. Strong single centered silhouette, easy to distinguish from a staircase or a book.",
+      "negative": "Avoid: any text, letters, numerals, Chinese characters, logos, wordmarks, URLs, watermarks, QR codes, faces, hands, people, phone/device frames, fake software UI, screen mockups, dashboards, dense charts, glyphs, arrows, checkmark symbols, floating particles, busy technical guides, purple, neon, sci-fi HUD, colored gradient backgrounds, low contrast, cartoon styling, heavy shadows.",
+      "output": "images/generated/share/og-ai-course-mvp-3day-v3.png",
+      "source": "images/prompts/share/og-ai-course-mvp-3day-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-ai-course-mvp-3day-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-wecom-v3",
+      "category": "share",
+      "title": "联系兰芯 · 开始一次交流",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: one square WeChat website link thumbnail for LAN Cloud AI, 1:1 aspect ratio, 1536x1536 if available.\nStyle: premium editorial photorealistic 3D still life, porcelain white #F6F7F5 studio background, forge teal #0F766E, restrained brushed silver, soft daylight, precise tactile materials and gentle contact shadows, consistent with a refined automotive AI company.\nComposition: one bold, immediately recognizable sculptural subject, centered occupying 70% of the square, 15% safe breathing room, clearly readable even as a 64px thumbnail. Do not make a collage or separate panels.\nConstraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.\nSubject: two large elegant sculptural speech bubbles meeting face to face, one glossy deep teal acrylic and one matte white porcelain, together forming a balanced friendly dialogue. One low subtle silver base. Make both clear speech-bubble silhouettes with short tails, no characters or dots inside. The composition feels approachable, calm and useful.",
+      "negative": "Constraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.",
+      "output": "images/generated/share/og-wecom-v3.png",
+      "source": "images/prompts/share/og-wecom-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-wecom-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
+    },
+    {
+      "id": "og-sitemap-v3",
+      "category": "share",
+      "title": "网站导航 · 找到下一步",
+      "aspect": "1:1",
+      "prompt": "Use case: stylized-concept\nAsset type: one square WeChat website link thumbnail for LAN Cloud AI, 1:1 aspect ratio, 1536x1536 if available.\nStyle: premium editorial photorealistic 3D still life, porcelain white #F6F7F5 studio background, forge teal #0F766E, restrained brushed silver, soft daylight, precise tactile materials and gentle contact shadows, consistent with a refined automotive AI company.\nComposition: one bold, immediately recognizable sculptural subject, centered occupying 70% of the square, 15% safe breathing room, clearly readable even as a 64px thumbnail. Do not make a collage or separate panels.\nConstraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.\nSubject: one substantial upright porcelain architectural gateway, with a smooth deep teal path entering it and branching into three broad paths on a low square silver platform in the foreground. Strong simple silhouette, precise paths, wayfinding as a physical sculpture. No maps, no labels, no writing, no extra objects.",
+      "negative": "Constraints: no text, no letters, no numbers, no logos, no watermark, no QR code, no people, no currency marks, no screenshots, no browser or phone, no fake UI, no neon, no purple gradient, no intricate tiny details. Image conveys a metaphor rather than actual system evidence.",
+      "output": "images/generated/share/og-sitemap-v3.png",
+      "source": "images/prompts/share/og-sitemap-v3.md",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generation": "Built-in image_gen; native PNG master retained without cropping or upscaling.",
+      "derivatives": [
+        {
+          "output": "images/generated/share/og-sitemap-v3.jpg",
+          "format": "JPEG",
+          "width": 600,
+          "height": 600,
+          "purpose": "WeChat sharing thumbnail, resized and compressed from the retained PNG master."
+        }
+      ]
     }
   ]
 }

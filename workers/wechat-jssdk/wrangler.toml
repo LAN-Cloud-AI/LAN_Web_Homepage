@@ -3,15 +3,27 @@ main = "src/index.js"
 compatibility_date = "2026-07-28"
 workers_dev = true
 
-# Site traffic is grey-cloud (DNS only) to origin Nginx.
-# JS-SDK clients call this Worker on workers.dev; do not bind zone path routes.
+# Site traffic stays grey-cloud (DNS only) to origin Nginx. Only this dedicated
+# hostname is a new Worker custom domain; do not move apex/www DNS to Workers.
+[[routes]]
+pattern = "wechat.lancloudtech.com"
+custom_domain = true
 
-# Optional KV for access_token / jsapi_ticket caching.
-# Create once: wrangler kv namespace create WECHAT_CACHE
-# Then paste the id below and uncomment.
-# [[kv_namespaces]]
-# binding = "WECHAT_CACHE"
-# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+# Preserve the two existing remote API-only routes when Wrangler synchronizes
+# routing. They are dormant while apex/www DNS stays grey-cloud; these patterns
+# do not bind either homepage or change its direct-origin DNS.
+[[routes]]
+pattern = "lancloudtech.com/api/wechat/*"
+zone_name = "lancloudtech.com"
+
+[[routes]]
+pattern = "www.lancloudtech.com/api/wechat/*"
+zone_name = "lancloudtech.com"
+
+# Dedicated global token/ticket cache; credentials remain Worker Secrets.
+[[kv_namespaces]]
+binding = "WECHAT_CACHE"
+id = "ac31f1dddc104ad59d3233546bc387af"
 
 [vars]
 # Non-secret flags only. App credentials go into Worker Secrets / .dev.vars.

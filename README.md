@@ -21,7 +21,7 @@
 - 云朵记账的首页开源卡片与页脚入口均指向站内产品页；公开 GitHub 源码链接仅保留在产品页内。
 - AI 课程的首页「培养」区块与页脚入口均指向站内 `/ai-course/`；公开页仅呈现课表摘要。
 - 首页与 AI 课程页均提供简体、繁體与英文，共享同一语言偏好；语言切换均位于页脚（首页移动端另在导航菜单保留一份）。
-- 公开路由有各自的 SEO 与微信分享信息；方案、实践页复用品牌封面。微信内分享签名经 Worker `lan-wechat-jssdk`（workers.dev）。
+- 九类公开页面有各自的方形分享图与三语标题、摘要，包含网站地图。新版微信内分享签名经 `wechat.lancloudtech.com` 上的 Worker `lan-wechat-jssdk`；公众号凭据与真机验收状态见 `docs/wechat-share-v3.md`。
 - 首页采用新的 `brand-action-hero-v3` 品牌图片与响应式 WebP，产品插画标注为演示画面。原始生成说明保存在 `images/prompts/brand/brand-action-hero-v3.md`。
 
 ## 本地预览
