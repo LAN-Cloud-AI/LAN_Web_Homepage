@@ -44,3 +44,12 @@
 在凭据未配置时，签名服务应明确返回 `503 {"error":"not_provisioned"}`。这不影响网页与配图访问，也不能称为微信内自定义分享已成功。
 
 用户补齐既有公众号配置后，通过 stdin 安全同步 Worker Secrets，检查国内和国际 URL 的签名响应；若微信返回 IP 白名单或权限错误，按明确错误处理，不能换用小程序凭据。核实 JS 接口安全域名后，再用微信真机检查朋友卡片与朋友圈图片、标题、链接。不要擅自发送测试消息。
+
+## 本次发布记录
+
+- 网站源码提交：`164a4796e93b7f30fb3a402b19e8d264664a4446`，已推送 `codex/website-business-redesign`，Git main 未合并。
+- 国内包已同步到 `/var/www/lancloudtech.com`；发布前备份为 `/var/backups/lancloudtech.com/before-share-v3-20260913.tar.gz`。正式域 27 个新版三语页面已逐项验证图片、标题、摘要、preview 分享地址、noindex 与单次统计加载；默认旧版保留 v2 封面。
+- 国际 Pages 已部署：[bfe0fc51.lan-homepage-global.pages.dev](https://bfe0fc51.lan-homepage-global.pages.dev)。需要回滚本轮国际内容时，前一个成功生产部署为 `2ee00943-a772-4693-874d-9ecf2adc70e8`。
+- 签名 Worker 版本：`2c53ef03-70ef-45ee-80ef-185d8e9ead97`，新增专用域与 KV，保留原有两条 API 路由。此前 Worker 版本为 `97b7ee7a-bd51-4c5d-b524-07866adbe1d4`。
+- 本机与国内源站（MicroMessenger User-Agent）均确认专用域通过 HTTPS 到达 Worker，返回 JSON `503 not_provisioned`。普通 Python 默认 User-Agent 被现有 Cloudflare 浏览器完整性检查以 1010 拒绝；未关闭该安全功能，实际浏览器标识探测可达。
+- 最后重新生成了国内普通 `dist/`，本地 18987 服务继续提供旧版根路径和 `/preview/` 新版；卡片总览位于本地 18988，离线版本保存在本目录。未发送任何微信消息，未进行微信真机分享验收。
