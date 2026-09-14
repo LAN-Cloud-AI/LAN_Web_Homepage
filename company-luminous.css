@@ -36,10 +36,15 @@ body{background:var(--paper)}
 .method-steps article{position:relative;z-index:1}
 .contact{isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 75% 120%,#216953,transparent 70%),#123e30;border:1px solid #39806380;border-radius:28px;min-height:350px}
 .contact-heading,.contact-options{position:relative;z-index:2}
-.contact-heading{max-width:460px}
+.contact-heading{max-width:500px}
 .contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px 24px}
 .contact .contact-actions .text-link{margin:0}
 .contact-actions .button-light{flex-shrink:0}
+body[data-company-page] main :is(h1,h2,h3){text-wrap:balance}
+body[data-company-page] main p:not(.section-label){text-wrap:pretty}
+body[data-company-page] main :is(.hero-intro,.section-summary p,.academy-copy>p:not(.section-label),.global-block p:not(.section-label),.practice-card-copy>p:last-child,.method-statement>p:last-child,.method-steps p,.open p,.contact-heading>p:last-child,.inquiry-hint){text-wrap:balance}
+html:lang(zh) body[data-company-page] main{line-break:strict}
+@supports (word-break:auto-phrase){html:lang(zh) body[data-company-page] main :is(h1,h2,h3,p,li){word-break:auto-phrase}}
 .page-hero{position:relative;isolation:isolate;overflow:hidden;padding-top:100px;padding-bottom:84px}
 .page-hero h1,.page-hero>p,.page-jumps{position:relative;z-index:1}
 .page-hero>p:last-of-type{max-width:610px}
@@ -56,6 +61,8 @@ body{background:var(--paper)}
 
 @media(max-width:700px){.solution-visual{height:245px}.academy-feature{gap:32px}.method{padding-top:45px;padding-bottom:45px}.page-hero{padding-top:58px;padding-bottom:45px}.page-hero>p:last-of-type{max-width:90%}.page-jumps a{backdrop-filter:none}}
 @media(max-width:700px){.product-visual{padding:18px 16px 30px;min-height:0}.practice-grid{grid-template-columns:1fr}.practice-card-copy{padding:20px 20px 24px}.global-symbol{font-size:28px}.artist-visual{gap:12px}}
+@media(max-width:820px) and (min-width:701px){.open{grid-template-columns:1fr;gap:22px}.open p{max-width:430px}}
+@media(max-width:700px){.section-summary{max-width:430px}}
 
  html[data-theme="dark"]{--paper:#091813;--canvas:#11271f;--ink:#e7f2e9;--muted:#9fb9aa;--line:#294638;--green:#9eddbb;--green-pale:#194a35;--panel:#18392a}
  html[data-theme="dark"] .product{background:linear-gradient(130deg,#123528,#10291f)}
@@ -74,4 +81,4 @@ body{background:var(--paper)}
 
 @media(prefers-reduced-motion:reduce){.solution-card:hover,.practice-card:hover,.course-path:hover,.button:hover,.nav-cta:hover{transform:none}}
 @media(max-width:700px){html:not([lang="en"]) .contact h2{font-size:clamp(24px,7.2vw,32px)}}
-@media(max-width:370px){html:not([lang="en"]) .contact h2{font-size:22px}}
+@media(max-width:370px){.hero-intro{font-size:11px}html:not([lang="en"]) .product h2,html:not([lang="en"]) .product h3{font-size:23px}html:not([lang="en"]) .contact h2{font-size:22px}}
