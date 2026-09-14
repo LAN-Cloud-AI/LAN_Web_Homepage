@@ -73,7 +73,7 @@
 .course-local-nav a { color: var(--muted); font-size: 12px; min-height: 24px; padding-top: 3px; }
 .course-local-nav a[aria-current] { color: var(--teal); text-decoration: underline; text-underline-offset: 7px; }
 .lesson-list { gap: 0; }
-.lesson-card { border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 24px 0; }
+.lesson-card { border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 24px clamp(16px, 2.4vw, 28px); }
 .day-card { border-radius: 4px; }
 .footer-inner { max-width: var(--max); padding-top: 38px; padding-bottom: 32px; }
 .footer-dir { padding-bottom: 26px; }
