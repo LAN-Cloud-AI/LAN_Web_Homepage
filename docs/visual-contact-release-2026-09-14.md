@@ -27,3 +27,11 @@
 - 真实线上点击企业微信主按钮，`inquiry_wecom` 与目标页 PV 接口均返回 200。只读查询 Umami 确认同一访问记录一次点击和一次 `/contact/wecom/?inquiry=training` 浏览，字段为原网站 ID、`site_version=current`、`language=zh-Hans`、`topic=training`。未运行合成 PV 脚本。
 
 本记录是部署后的文档补充，不改变线上运行代码或资源指纹。
+
+## 后续修正：FDE 课表序号留白（2026-09-14）
+
+- 修正 `ai-course/redesign.css` 将课程行左右内边距覆盖为 0 的问题；共享课程卡片改为 `24px clamp(16px, 2.4vw, 28px)`。21 课 × 3 语言均沿用此样式。
+- 运行提交 `c65cc90a2028c19f6d7b416e951aa1f6a31c6d90`；发布指纹 `c99d8faa9efa`。国内已同步静态包；国际生产部署 `a24781f3-0e96-4eb8-98cb-da38fcc30db4`，API 确認 success。
+- 实际浏览器检查：1025px 下所有 21 个序号左侧留白 24.6px；320px 英文深色页面为 16px，第一课与最后一课一致，没有横向溢出。课程、SEO、导航、资源、统计配置及单站发布检查通过。
+- 两地三个语言 FDE 页面共六个地址返回新资源引用，线上 CSS 内容验证正确。本次只更改样式，沿用已有统计配置。
+- 发布前国内备份：`lanxin-official-direct:/var/backups/lancloudtech/20260914-014359/`；国际上一生产部署 `4dfcf65a-46e8-42ee-a14a-bc796f26abec`。
