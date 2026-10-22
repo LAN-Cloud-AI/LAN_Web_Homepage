@@ -40,7 +40,7 @@ git diff --check
 - 旧 `/preview/` 301 到对应正式根路由，保留路径与查询。404 必须真实返回 404；404 和产品跳转不进入 sitemap。
 - 国内 apex `https://lancloudtech.com` 是索引源，canonical/hreflang/sitemap 始终指向 apex。海外地理副本使用主机级 `X-Robots-Tag: noindex, follow`。正式构建清除 Demo 浮标、演示域名和普通页面的 noindex。
 - 原 Umami 站点 ID `d93294b3-1e1c-4127-9289-1fb8bdc42293` 保留，只允许公司正式三个域名统计；`site-events.js` 事件标记 `site_version: current`。不要重复 PV 或点击上报。
-- `geo-host.js` 保留 CN 主域、其他地区 global 的分流，localhost 不跳转。`?host=cn` / `?host=global` 用于显式覆盖。
+- 构建时将 `geo-host.js` 的历史端点规范化为专用域 `https://geo.lancloudtech.com/`，请求限时 3 秒，超时留在当前站点；不修改批准的 `site/` 原始导入字节。保留 CN 主域、其他地区 global 的分流，localhost 不跳转。`?host=cn` / `?host=global` 用于显式覆盖。
 - 微信 JS-SDK 签名继续使用 `https://wechat.lancloudtech.com/api/wechat/jssdk`，签当前浏览器 URL；分享链接以 apex 为准，图片必须绝对生产 URL。
 - 主题偏好 `lancloud.theme` 与共享 cookie `lancloud_theme` 沿用，跨公司主域、国际站、LeadsHunter 保持一致。
 - 课程下载维持国内 `img.lancloudtech.com`、海外 `files.lancloudtech.com`，不把私有课程源仓作为公开下载入口。

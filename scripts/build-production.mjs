@@ -39,10 +39,25 @@ export function productionHtml(html, file) {
   return result;
 }
 
+/** Production endpoint resilience; approved site/ remains an exact design import. */
+export function productionGeoHost(text) {
+  const oldEndpoint = 'const GEO_ENDPOINT = "https://lan-geo.mingxuan400.workers.dev/";';
+  const fetchStart = '  try {\n    const res = await fetch(GEO_ENDPOINT, {\n      credentials: "omit",';
+  const fetchEnd = '  } catch {\n    /* stay on current host */\n  }';
+  for (const expected of [oldEndpoint, fetchStart, fetchEnd]) {
+    if (text.split(expected).length !== 2) throw new Error('Geo source changed; review production normalization before building.');
+  }
+  return text
+    .replace(oldEndpoint, 'const GEO_ENDPOINT = "https://geo.lancloudtech.com/";')
+    .replace(fetchStart, '  const controller = new AbortController();\n  const timeout = setTimeout(() => controller.abort(), 3000);\n  try {\n    const res = await fetch(GEO_ENDPOINT, {\n      signal: controller.signal,\n      credentials: "omit",')
+    .replace(fetchEnd, '  } catch {\n    /* stay on current host */\n  } finally {\n    clearTimeout(timeout);\n  }');
+}
+
 function normalizeSource(data, file) {
   if (!textFile(file)) return data;
   let text = data.toString('utf8').replaceAll(DEMO, APEX);
   if (file.endsWith('.html')) text = productionHtml(text, file);
+  if (/^geo-host(?:\.[a-f0-9]+)?\.js$/.test(file)) text = productionGeoHost(text);
   if (/^share-meta(?:\.[a-f0-9]+)?\.js$/.test(file)) {
     text = text.replace('"/images/generated/tdesign/share"', `"${APEX}/images/generated/tdesign/share"`);
   }

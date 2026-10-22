@@ -4,7 +4,11 @@ compatibility_date = "2026-07-28"
 workers_dev = true
 
 # Geo lookup for host steering (apex ↔ global.lancloudtech.com).
-# Clients call this Worker on workers.dev; do not bind zone path routes.
+# Use a dedicated custom domain so mainland clients do not depend on workers.dev.
+# Do not bind apex/www or homepage wildcard routes.
+[[routes]]
+pattern = "geo.lancloudtech.com"
+custom_domain = true
 
 [vars]
 SERVICE_NAME = "lan-geo"

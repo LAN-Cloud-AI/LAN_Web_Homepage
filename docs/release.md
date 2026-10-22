@@ -21,7 +21,7 @@
 - 内容：`scripts/build-production.mjs` 从 `site/` 同时生成国内 `dist/`、海外 `dist-global/` 与静态 CDN 包 `dist-cdn/`。海外 `_headers` 设置 `X-Robots-Tag: noindex, follow`，不发布 legacy 或 preview 副本。
 - 国内 CSS / JS / 字体 / 图片，以及既有课程下载包：阿里云 OSS + CDN `img.lancloudtech.com`（Cloudflare **灰云**，不经 CF 代理；见 `docs/oss.md`）
 - 海外课程下载包：Cloudflare R2 `files.lancloudtech.com`（橙云，桶 `lan-ai-course`；`npm run dns:files`）
-- 分流：前端 [`geo-host.js`](../geo-host.js) + Worker `lan-geo`（`https://lan-geo.mingxuan400.workers.dev/`）；微信/爬虫不跳；`?host=cn|global` 可覆盖
+- 分流：前端 [`geo-host.js`](../geo-host.js) + Worker `lan-geo`（`https://geo.lancloudtech.com/`）；微信/爬虫不跳；`?host=cn|global` 可覆盖；地理请求最多 3 秒，失败或超时留在当前站点
 - 微信 JS-SDK：Worker `lan-wechat-jssdk` 的专用域 `wechat.lancloudtech.com`（主站仍走 Nginx）
 - SEO：主域正常公开页允许索引，国际地理副本 noindex；canonical / hreflang / sitemap 统一指向 apex `https://lancloudtech.com`。404 保持真实状态码和 noindex。
 - 共享页面结构：批准的三语 HTML 与 `site/site-shell*` 负责同一导航、页脚、交互和布局，不再运行旧生成器。页脚与汉堡菜单都提供语言、系统 / 白天 / 黑夜选择。
@@ -127,7 +127,7 @@
 - **橙云 Pages（海外）**：`global.lancloudtech.com` → Pages `lan-homepage-global`；`npm run dns:global`。
 - **橙云 R2（海外课件）**：`files.lancloudtech.com` → 桶 `lan-ai-course`；`npm run dns:files`。不要把约 39MB 的课件放进 Pages。
 - **不要**给 Worker `lan-homepage` 重新绑定正式主域。
-- Geo：`lan-geo` workers.dev；微信 JS-SDK：`lan-wechat-jssdk` 的专用域 `wechat.lancloudtech.com`；部署保留既有 API 路由，不绑定主页通配。
+- Geo：`lan-geo` 的专用域 `geo.lancloudtech.com`；微信 JS-SDK：`lan-wechat-jssdk` 的专用域 `wechat.lancloudtech.com`；部署保留既有 API 路由，不绑定主页通配。
 - DNS 脚本：`source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage` 后执行 `CF_PROXIED=false node scripts/cf-dns-point-origin.mjs`（主域灰云）、`npm run dns:img`（`img` 灰云直连阿里云 CDN）、`npm run dns:global`（海外子域）或 `npm run dns:files`（海外课件 R2）。新建 Token 用 `CLOUDFLARE_BOOTSTRAP_API_TOKEN`。
 
 ## 证书与运维

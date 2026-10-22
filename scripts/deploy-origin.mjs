@@ -62,7 +62,17 @@ rollback() {
 }
 if ! nginx -t; then rollback; exit 1; fi
 if ! systemctl reload nginx; then rollback; exit 1; fi
-if ! curl --fail --silent --show-error --resolve lancloudtech.com:443:127.0.0.1 https://lancloudtech.com/ | grep -q '${release}'; then
+# Nginx reload is graceful: the first connection can reach the old worker.
+# Verify a full response with bounded retries instead of rolling back that race.
+healthy=false
+for attempt in 1 2 3 4 5 6; do
+  if curl --fail --silent --show-error --connect-timeout 3 --max-time 5 --resolve lancloudtech.com:443:127.0.0.1 https://lancloudtech.com/ -o '${backup}/health.html' && grep -q '${release}' '${backup}/health.html'; then
+    healthy=true
+    break
+  fi
+  sleep 1
+done
+if [ "$healthy" != true ]; then
   rollback
   exit 1
 fi

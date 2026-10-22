@@ -12,11 +12,13 @@ Lightweight Cloudflare Worker that exposes the visitor country for host steering
 
 ## Endpoint
 
-Production (workers.dev):
+Production (dedicated custom domain):
 
 ```
-https://lan-geo.mingxuan400.workers.dev/
+https://geo.lancloudtech.com/
 ```
+
+The website release builder replaces the legacy workers.dev URL in the approved source and bounds lookup to 3 seconds with AbortController. On timeout or failure the visitor remains on the current host. Manual `?host=` and cached choices are handled before any network request.
 
 Also accepts `GET /api/geo`. Response:
 
@@ -31,4 +33,4 @@ source ~/.config/lanxin/bin/load-env.sh project:lan-web-homepage
 npx wrangler deploy --config workers/geo/wrangler.toml
 ```
 
-Do **not** bind this Worker to the production zone path routes.
+The custom-domain binding is recorded in `wrangler.toml`; do **not** bind this Worker to apex/www homepage or zone path routes.

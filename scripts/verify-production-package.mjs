@@ -51,6 +51,13 @@ for (const target of ['dist', 'dist-global']) {
       if (target === 'dist-global' && text.includes(manifest.cdnBase)) failures.push(`${target}/${file}: domestic release dependency`);
     }
   }
+  for (const file of names.filter(file => /^geo-host(?:\.[a-f0-9]+)?\.js$/.test(file))) {
+    const controller = await fs.readFile(path.join(directory, file), 'utf8');
+    assert.ok(controller.includes('https://geo.lancloudtech.com/'));
+    assert.ok(!controller.includes('lan-geo.mingxuan400.workers.dev'));
+    assert.ok(controller.includes('signal: controller.signal'));
+    assert.ok(controller.includes('clearTimeout(timeout)'));
+  }
   const headers = await fs.readFile(path.join(directory, '_headers'), 'utf8');
   assert.equal(headers.includes('X-Robots-Tag: noindex, follow'), target === 'dist-global');
   // Pages combines duplicate matching headers; its catch-all must not repeat asset Cache-Control.

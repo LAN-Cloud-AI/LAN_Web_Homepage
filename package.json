@@ -25,7 +25,7 @@
     "umami:apply": "node scripts/apply-umami.mjs",
     "dns:stats": "node scripts/cf-dns-stats.mjs",
     "cf:access-stats": "node scripts/cf-access-stats.mjs",
-    "geo:verify": "node scripts/verify-geo-host.mjs",
+    "geo:verify": "node --test scripts/production-geo.test.mjs",
     "prepare:dist": "node scripts/prepare-worker-assets.mjs",
     "prepare:pages": "node scripts/prepare-pages-assets.mjs",
     "deploy:pages": "node scripts/deploy-pages.mjs",
@@ -36,7 +36,7 @@
     "seo:live": "node scripts/verify-live-seo.mjs",
     "seo:baidu": "node scripts/baidu-submit.mjs",
     "build": "node scripts/build-production.mjs",
-    "verify:production": "node --test scripts/build-production.test.mjs && node scripts/verify-production-package.mjs"
+    "verify:production": "node --test scripts/build-production.test.mjs scripts/production-geo.test.mjs && node scripts/verify-production-package.mjs"
   },
   "repository": {
     "type": "git",
