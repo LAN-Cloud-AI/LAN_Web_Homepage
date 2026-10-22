@@ -1,0 +1,9 @@
+{
+  "release": "compact-be0e1c4c7667c74f",
+  "host": "lanxin-official-direct",
+  "destination": "/var/www/lancloudtech-releases/compact-be0e1c4c7667c74f",
+  "backup": "/var/backups/lancloudtech/20261022-174831",
+  "fileCount": 332,
+  "deployedAt": "2026-10-22T17:48:48.455Z",
+  "verifiedFiles": 332
+}

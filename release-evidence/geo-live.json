@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-22T17:48:25.158Z",
+  "endpoint": "https://geo.lancloudtech.com/",
+  "local": {
+    "status": 200,
+    "milliseconds": 607,
+    "cors": "*",
+    "body": {
+      "country": "CN",
+      "region": "mainland",
+      "hostHint": "cn"
+    }
+  },
+  "mainland": {
+    "body": {
+      "country": "CN",
+      "region": "mainland",
+      "hostHint": "cn"
+    },
+    "seconds": 0.821253
+  }
+}

@@ -1,0 +1,1541 @@
+{
+  "release": "compact-be0e1c4c7667c74f",
+  "cdnBase": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f",
+  "startedAt": "2026-10-22T17:49:43.116Z",
+  "completedAt": "2026-10-22T17:49:48.966Z",
+  "passed": true,
+  "sitemapRoutes": 27,
+  "checkedPages": 54,
+  "checks": 82,
+  "passedChecks": 82,
+  "failedChecks": 0,
+  "failures": [],
+  "results": [
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/",
+      "canonical": "https://lancloudtech.com/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 49,
+      "releaseReferences": []
+    },
+    {
+      "kind": "not-found",
+      "url": "https://global.lancloudtech.com/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-store",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/",
+      "canonical": "https://lancloudtech.com/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "search-verification",
+      "url": "https://global.lancloudtech.com/baidu_verify_codeva-AkZ0e24V6q.html",
+      "status": 308,
+      "headers": {
+        "x-robots-tag": "noindex, follow",
+        "location": "/baidu_verify_codeva-AkZ0e24V6q",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "finalStatus": 200,
+      "verificationBytes": 32
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/contact/wecom/",
+      "canonical": "https://lancloudtech.com/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 28,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/",
+      "canonical": "https://lancloudtech.com/en/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 49,
+      "releaseReferences": []
+    },
+    {
+      "kind": "not-found",
+      "url": "https://global.lancloudtech.com/en/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-store",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/",
+      "canonical": "https://lancloudtech.com/en/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/en/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/en/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/contact/wecom/",
+      "canonical": "https://lancloudtech.com/en/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 28,
+      "releaseReferences": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/en/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/en/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/internal-expense/",
+      "canonical": "https://lancloudtech.com/en/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 54,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/practice/",
+      "canonical": "https://lancloudtech.com/en/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 45,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/sitemap/",
+      "canonical": "https://lancloudtech.com/en/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/en/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/solutions/",
+      "canonical": "https://lancloudtech.com/en/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 31,
+      "releaseReferences": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/internal-expense/",
+      "canonical": "https://lancloudtech.com/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 54,
+      "releaseReferences": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/leadshunter/",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "https://leadshunter.lancloudtech.com/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/practice/",
+      "canonical": "https://lancloudtech.com/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 45,
+      "releaseReferences": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/preview",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/preview/",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/preview/solutions/?audit=1",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/solutions/?audit=1",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "robots",
+      "url": "https://global.lancloudtech.com/robots.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "public, max-age=14400, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare",
+        "etag": "W/\"314716ea5132f5732cad6eaecd31e100\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "sitemap",
+      "url": "https://global.lancloudtech.com/sitemap.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "application/xml",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare",
+        "etag": "W/\"d05d227f4b2bc1b5b946882db6ee5e7b\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "sitemapRouteCount": 27
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/sitemap/",
+      "canonical": "https://lancloudtech.com/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/solutions/",
+      "canonical": "https://lancloudtech.com/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 31,
+      "releaseReferences": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://global.lancloudtech.com/solutions/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "x-robots-tag": "noindex, follow",
+        "location": "/solutions/",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/",
+      "canonical": "https://lancloudtech.com/zh-Hant/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 49,
+      "releaseReferences": []
+    },
+    {
+      "kind": "not-found",
+      "url": "https://global.lancloudtech.com/zh-Hant/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-store",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 25,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/contact/wecom/",
+      "canonical": "https://lancloudtech.com/zh-Hant/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 28,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/internal-expense/",
+      "canonical": "https://lancloudtech.com/zh-Hant/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 54,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/practice/",
+      "canonical": "https://lancloudtech.com/zh-Hant/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 45,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/sitemap/",
+      "canonical": "https://lancloudtech.com/zh-Hant/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://global.lancloudtech.com/zh-Hant/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "x-robots-tag": "noindex, follow",
+        "server": "cloudflare"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/solutions/",
+      "canonical": "https://lancloudtech.com/zh-Hant/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 31,
+      "releaseReferences": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-9b2e\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/",
+      "canonical": "https://lancloudtech.com/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 48,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "not-found",
+      "url": "https://lancloudtech.com/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": "noindex, follow",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-3611\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7b0b\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/",
+      "canonical": "https://lancloudtech.com/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-617f\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7c2f\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "search-verification",
+      "url": "https://lancloudtech.com/baidu_verify_codeva-AkZ0e24V6q.html",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "\"6ada4bb9-20\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "finalStatus": 200,
+      "verificationBytes": 32
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-525f\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/contact/wecom/",
+      "canonical": "https://lancloudtech.com/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 27,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-9bc9\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/",
+      "canonical": "https://lancloudtech.com/en/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 48,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "not-found",
+      "url": "https://lancloudtech.com/en/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": "noindex, follow",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-35ff\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7c17\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/",
+      "canonical": "https://lancloudtech.com/en/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-613f\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/en/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7c18\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/en/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-51d8\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/contact/wecom/",
+      "canonical": "https://lancloudtech.com/en/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 27,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/en/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/en/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-9172\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/internal-expense/",
+      "canonical": "https://lancloudtech.com/en/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 53,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7043\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/practice/",
+      "canonical": "https://lancloudtech.com/en/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 44,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-4f3d\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/sitemap/",
+      "canonical": "https://lancloudtech.com/en/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 23,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/en/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7621\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/en/solutions/",
+      "canonical": "https://lancloudtech.com/en/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 30,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-9153\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/internal-expense/",
+      "canonical": "https://lancloudtech.com/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 53,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/leadshunter/",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://leadshunter.lancloudtech.com/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-6fbe\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/practice/",
+      "canonical": "https://lancloudtech.com/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 44,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/preview",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/preview/",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/preview/solutions/?audit=1",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/solutions/?audit=1",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "robots",
+      "url": "https://lancloudtech.com/robots.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-346\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "sitemap",
+      "url": "https://lancloudtech.com/sitemap.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "text/xml",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "\"6ada4bb9-3ce0\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "sitemapRouteCount": 27
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-4fbf\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/sitemap/",
+      "canonical": "https://lancloudtech.com/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 23,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7575\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/solutions/",
+      "canonical": "https://lancloudtech.com/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 30,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "redirect",
+      "url": "https://lancloudtech.com/solutions/index.html",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/solutions/",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-9c2e\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/",
+      "canonical": "https://lancloudtech.com/zh-Hant/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 48,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "not-found",
+      "url": "https://lancloudtech.com/zh-Hant/__release-not-found-compact-be0e1c4c7667c74f/",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html",
+        "x-robots-tag": "noindex, follow",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-368b\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7bc7\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/fde/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-6225\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/fde/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/fde/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7cd5\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/ai-course/mvp-3day/",
+      "canonical": "https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 24,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/contact/wecom/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-52c0\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/contact/wecom/",
+      "canonical": "https://lancloudtech.com/zh-Hant/contact/wecom/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 27,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/internal-expense/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-91db\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/internal-expense/",
+      "canonical": "https://lancloudtech.com/zh-Hant/internal-expense/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 53,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/practice/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-704c\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/practice/",
+      "canonical": "https://lancloudtech.com/zh-Hant/practice/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 44,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/sitemap/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-5069\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/sitemap/",
+      "canonical": "https://lancloudtech.com/zh-Hant/sitemap/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 23,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "page",
+      "url": "https://lancloudtech.com/zh-Hant/solutions/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "no-cache, public, max-age=0, must-revalidate",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-7615\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "route": "/zh-Hant/solutions/",
+      "canonical": "https://lancloudtech.com/zh-Hant/solutions/",
+      "analytics": 1,
+      "events": 1,
+      "resourceCount": 30,
+      "releaseReferences": [
+        "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f"
+      ]
+    },
+    {
+      "kind": "search-verification",
+      "url": "https://www.lancloudtech.com/baidu_verify_codeva-AkZ0e24V6q.html",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html",
+        "server": "nginx/1.24.0 (Ubuntu)",
+        "etag": "W/\"6ada4bb9-20\""
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": [],
+      "finalStatus": 200,
+      "verificationBytes": 32
+    },
+    {
+      "kind": "www-redirect",
+      "url": "https://www.lancloudtech.com/solutions/?audit=1",
+      "status": 301,
+      "headers": {
+        "content-type": "text/html",
+        "location": "https://lancloudtech.com/solutions/?audit=1",
+        "server": "nginx/1.24.0 (Ubuntu)"
+      },
+      "attempts": 1,
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

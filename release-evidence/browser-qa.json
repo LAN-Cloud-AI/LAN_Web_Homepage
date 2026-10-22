@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-22T17:52:28.862Z",
+  "domestic": {
+    "brokenImages": 0,
+    "font": true,
+    "fontStatus": "loaded",
+    "hero": "webgl",
+    "motion": "complete",
+    "overflow": false,
+    "stylesheet": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/company.css",
+    "theme": "dark",
+    "url": "https://lancloudtech.com/"
+  },
+  "global": {
+    "brokenImages": 0,
+    "canvases": 2,
+    "font": true,
+    "fontStatus": "loaded",
+    "hero": "webgl",
+    "lang": "en",
+    "overflow": false,
+    "styles": [
+      "https://global.lancloudtech.com/company.css",
+      "https://global.lancloudtech.com/company-particle-fields.53304647ce7b.css"
+    ],
+    "url": "https://global.lancloudtech.com/en/?host=global"
+  },
+  "lightTheme": {
+    "fontLoaded": true,
+    "brokenImages": 0,
+    "overflow": false
+  },
+  "inquiry": {
+    "trainingSelection": true,
+    "wecomQuery": "inquiry=training"
+  },
+  "screenshot": "/Users/i/.codex/visualizations/2026/10/22/01a16393-b9ae-7693-ab9e-29d19842b417/lan-production-20261023.png"
+}

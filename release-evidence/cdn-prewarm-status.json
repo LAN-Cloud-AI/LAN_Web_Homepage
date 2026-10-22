@@ -1,0 +1,442 @@
+{
+  "PageNumber": 1,
+  "PageSize": 100,
+  "RequestId": "01A164BD-9143-57FB-8FB6-DBC6B0117096",
+  "Tasks": {
+    "CDNTask": [
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/vendor/three/three.module.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/vendor/three/three.core.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/vendor/three/LICENSE",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/geo-host.53304647ce7b.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/company.fbadd6004dd2.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/fonts/harmonyos-sans-sc/LICENSE.txt",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-light.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-light.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-light-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-dark.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-dark.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/commerce-interface-dark-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-light.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-light.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-light-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-dark.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-dark.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/ledger-interface-dark-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/academy-flat-v11/academy-workflow-light-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/academy-flat-v11/academy-workflow-light.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/academy-flat-v11/academy-workflow-dark.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/academy-flat-v11/academy-workflow-dark-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-light.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-light.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-light-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-dark.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-dark.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/workflow-v10/leadshunter-interface-dark-768.webp",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/logo/lan-mark-black.svg",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-events.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-fonts.a4464e6b0fb4.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/fonts/harmonyos-sans-sc/HarmonyOS_Sans_SC.8978e05044e7.ttf",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/visual-hero.b725c762c4d2.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/compact-subpages.28ee27ddb13e.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/compact-visual.a78159cb9d0d.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/visual-hero.0af70ec2d6fa.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-responsive.f5549719ed69.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/generated/tdesign/share/og-home-v4.jpg",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-shell.c363c692b954.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/tdesign-subpages.4f92abf49c3b.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/tdesign.c9d0408dc0d0.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-shell.69b0bb743b50.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/site-theme.53304647ce7b.js",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/company-hero-motion.53304647ce7b.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/company-particle-fields.53304647ce7b.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/company.css",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/logo/WEB-logo-180.png",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      },
+      {
+        "CreationTime": "2026-10-22T17:47:38Z",
+        "Description": "",
+        "ObjectPath": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/images/logo/lan-mark-bright.svg",
+        "ObjectType": "preload",
+        "Process": "100%",
+        "Status": "Complete",
+        "TaskId": "33650153903"
+      }
+    ]
+  },
+  "TotalCount": 48
+}

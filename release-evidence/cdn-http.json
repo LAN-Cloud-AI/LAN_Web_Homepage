@@ -1,6 +1,6 @@
 {
-  "release": "compact-7b25d9772a65604c",
-  "verifiedAt": "2026-10-22T17:32:21.770Z",
+  "release": "compact-be0e1c4c7667c74f",
+  "verifiedAt": "2026-10-22T17:47:39.079Z",
   "assets": [
     {
       "path": "ai-course/ai-course-i18n.3d942099dcb7.js",
@@ -501,7 +501,7 @@
     {
       "path": "geo-host.53304647ce7b.js",
       "status": 200,
-      "bytes": 3533,
+      "bytes": 3702,
       "mime": "application/javascript; charset=utf-8",
       "cache": "public, max-age=31536000, immutable",
       "cors": "*"
@@ -509,7 +509,7 @@
     {
       "path": "geo-host.js",
       "status": 200,
-      "bytes": 3533,
+      "bytes": 3702,
       "mime": "application/javascript; charset=utf-8",
       "cache": "public, max-age=31536000, immutable",
       "cors": "*"

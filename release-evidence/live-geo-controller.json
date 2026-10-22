@@ -1,0 +1,50 @@
+{
+  "release": "compact-be0e1c4c7667c74f",
+  "checkedAt": "2026-10-22T17:50:00.286Z",
+  "expectedSha256": "0e232d7da6ee138fd90788550169ce67c176244b98c62a96997ef3fe327c566a",
+  "passed": true,
+  "results": [
+    {
+      "url": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f/geo-host.53304647ce7b.js",
+      "status": 200,
+      "bytes": 3702,
+      "sha256": "0e232d7da6ee138fd90788550169ce67c176244b98c62a96997ef3fe327c566a",
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "cache-control": "public, max-age=31536000, immutable",
+        "access-control-allow-origin": "*"
+      },
+      "flags": {
+        "status200": true,
+        "customDomain": true,
+        "timeout3000": true,
+        "abortSignal": true,
+        "clearsTimeout": true,
+        "noWorkersDev": true,
+        "matchesLocal": true
+      },
+      "passed": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/geo-host.53304647ce7b.js",
+      "status": 200,
+      "bytes": 3702,
+      "sha256": "0e232d7da6ee138fd90788550169ce67c176244b98c62a96997ef3fe327c566a",
+      "headers": {
+        "content-type": "application/javascript",
+        "cache-control": "public, max-age=14400, must-revalidate",
+        "access-control-allow-origin": "*"
+      },
+      "flags": {
+        "status200": true,
+        "customDomain": true,
+        "timeout3000": true,
+        "abortSignal": true,
+        "clearsTimeout": true,
+        "noWorkersDev": true,
+        "matchesLocal": true
+      },
+      "passed": true
+    }
+  ]
+}

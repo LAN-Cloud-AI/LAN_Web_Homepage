@@ -6,6 +6,8 @@
 - [海外官网](https://global.lancloudtech.com/)：Cloudflare Pages，同一套内容。
 - [LeadsHunter](https://leadshunter.lancloudtech.com/) / [LeadsHunter Global](https://global-leadshunter.lancloudtech.com/)。
 
+本次改版已于 2026-10-23 正式上线，版本、线上验收证据和回滚目标见 [正式发布记录](docs/compact-production-release-2026-10-23.md)。
+
 ## 开发与验证
 
 ```bash

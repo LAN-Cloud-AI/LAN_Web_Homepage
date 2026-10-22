@@ -1,7 +1,7 @@
 {
-  "release": "compact-7b25d9772a65604c",
-  "cdnBase": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-7b25d9772a65604c",
-  "uploadedAt": "2026-10-22T17:29:56.133Z",
+  "release": "compact-be0e1c4c7667c74f",
+  "cdnBase": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f",
+  "uploadedAt": "2026-10-22T17:46:29.279Z",
   "files": [
     {
       "path": "ai-course/ai-course-i18n.3d942099dcb7.js",
@@ -377,14 +377,14 @@
     },
     {
       "path": "geo-host.53304647ce7b.js",
-      "sha256": "5e78fb443089b52d0d2cacb13f16ab137816d459cbf11df6f0d9106458eb816e",
-      "bytes": 3533,
+      "sha256": "0e232d7da6ee138fd90788550169ce67c176244b98c62a96997ef3fe327c566a",
+      "bytes": 3702,
       "alreadyPresent": false
     },
     {
       "path": "geo-host.js",
-      "sha256": "5e78fb443089b52d0d2cacb13f16ab137816d459cbf11df6f0d9106458eb816e",
-      "bytes": 3533,
+      "sha256": "0e232d7da6ee138fd90788550169ce67c176244b98c62a96997ef3fe327c566a",
+      "bytes": 3702,
       "alreadyPresent": false
     },
     {
@@ -1421,25 +1421,25 @@
     },
     {
       "path": "share-meta.53304647ce7b.js",
-      "sha256": "b792e67fd7e2e8645d2ae5aa8edfdb8b7caaa0e7fbc260e25935bd6c1966a0ec",
+      "sha256": "b8a013b9e7fc055d22d27eb2e4171a63cdd68aaac2c52745c5681bee7af35ca3",
       "bytes": 5613,
       "alreadyPresent": false
     },
     {
       "path": "share-meta.js",
-      "sha256": "56285c9436b8cf8341313d86907ad30c68de72113d9d2782c03a2903eb1e86fb",
+      "sha256": "e8ce2699634bbbc238d9cebd06f6f10c9061d6afa6fb7b6aef57569e54ad01cd",
       "bytes": 5600,
       "alreadyPresent": false
     },
     {
       "path": "site-analytics.53304647ce7b.js",
-      "sha256": "3c7c1d7fe82a89257637e14d02e441e6d6d1b48e8303f03534c01b0e201bd4ac",
+      "sha256": "60f827f795c8dbae6074f2e19679d8a609fe1afe588715c3aa020de6d516dab9",
       "bytes": 1378,
       "alreadyPresent": false
     },
     {
       "path": "site-analytics.js",
-      "sha256": "686a63a53b30ae50441e5ac7d2c75b07f4e65be40a301c24bb82b7aed02b5233",
+      "sha256": "37e1da8c9c361ee414f7246d2a70a324dabf2fd9d4b3e662a90a7203d4d86862",
       "bytes": 1365,
       "alreadyPresent": false
     },
@@ -1457,19 +1457,19 @@
     },
     {
       "path": "site-fonts.9daab28d556e.css",
-      "sha256": "3f61bfb6bb11061b60b3f036ad6f18f0b13abacd211364e488a0332d5f5741fe",
+      "sha256": "c4323ac61d3be17ed967ec09421144752f08466e6336c234b21fba6d43462c1c",
       "bytes": 1585,
       "alreadyPresent": false
     },
     {
       "path": "site-fonts.a4464e6b0fb4.css",
-      "sha256": "e9b61b8fe8690b5419fb220e97269c45331739ff8e799c252b619ac7d2ae7042",
+      "sha256": "8563fbc9aee7732304b4f58a082929a1681790ac81aa9f9668eb88fdf7096f9c",
       "bytes": 2123,
       "alreadyPresent": false
     },
     {
       "path": "site-fonts.css",
-      "sha256": "e9b61b8fe8690b5419fb220e97269c45331739ff8e799c252b619ac7d2ae7042",
+      "sha256": "8563fbc9aee7732304b4f58a082929a1681790ac81aa9f9668eb88fdf7096f9c",
       "bytes": 2123,
       "alreadyPresent": false
     },
@@ -1505,13 +1505,13 @@
     },
     {
       "path": "site-seo.53304647ce7b.js",
-      "sha256": "f32435e72e1eba6dfe7daa72061b3c0b7c5ef3b3490719f8f813dec4cff197a3",
+      "sha256": "b0ba4cef51e4b5f802888e1cd596e396cf620e46964063b97c7a3965348a2617",
       "bytes": 9476,
       "alreadyPresent": false
     },
     {
       "path": "site-seo.js",
-      "sha256": "c3f6242b88efbf7b9573e39fa4bd37269e13441f8a0e17ce3ac885b61c9625cc",
+      "sha256": "9983661e0c05b81fd7dc52b73e90a38454c268434d8c8a1a352a52bd51509996",
       "bytes": 9411,
       "alreadyPresent": false
     },
@@ -1709,13 +1709,13 @@
     },
     {
       "path": "visual-hero.0af70ec2d6fa.css",
-      "sha256": "6497c5825f63512a2e64bb678e8f0f569827792a23ebaba8f04b0a5f34b2d923",
+      "sha256": "6eb1f2ec1c6ebb3ed3822ec609ec26756c270e06ea07b515fb61a435a488307b",
       "bytes": 14572,
       "alreadyPresent": false
     },
     {
       "path": "visual-hero.33db9079e6de.css",
-      "sha256": "bcb01f69a09560fe1efc88c609446143af52ba68143b4386b08eb18cac3ff54e",
+      "sha256": "9145e9f32d0fe93a916beeebcd18880a3b8723a396dee41da6d8d79e51ade427",
       "bytes": 4862,
       "alreadyPresent": false
     },
@@ -1727,7 +1727,7 @@
     },
     {
       "path": "visual-hero.css",
-      "sha256": "6497c5825f63512a2e64bb678e8f0f569827792a23ebaba8f04b0a5f34b2d923",
+      "sha256": "6eb1f2ec1c6ebb3ed3822ec609ec26756c270e06ea07b515fb61a435a488307b",
       "bytes": 14572,
       "alreadyPresent": false
     },
