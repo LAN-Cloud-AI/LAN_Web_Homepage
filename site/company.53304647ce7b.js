@@ -1,0 +1,31 @@
+import { applyI18n, getI18nTable, persistLocale, resolveLocale, setLocale } from "./i18n.53304647ce7b.js";
+import { initWechatShare } from "./wechat-share.53304647ce7b.js";
+import { initHeroMotion } from "./company-hero-motion.53304647ce7b.js";
+import { initParticleFields } from "./company-particle-fields.53304647ce7b.js";
+import { initPageMotion } from "./company-motion-preference.53304647ce7b.js";
+import { initInquiry } from "./company-inquiry.53304647ce7b.js";
+
+const locale = resolveLocale();
+const copy = getI18nTable(locale);
+persistLocale(locale);
+applyI18n(locale);
+initPageMotion();
+initHeroMotion();
+initParticleFields();
+const route = document.body.dataset.shareRoute || "home";
+initWechatShare(route, { getLocale: resolveLocale });
+document.querySelectorAll(".lang-opt").forEach(button => button.addEventListener("click", () => setLocale(button.dataset.locale)));
+
+initInquiry({ copy, locale });
+
+// Motion never gates readable content, and is disabled when the user requests it.
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add("has-entered");
+      observer.unobserve(entry.target);
+    }
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".section-heading, .product, .academy-feature, .method-statement").forEach(element => observer.observe(element));
+}

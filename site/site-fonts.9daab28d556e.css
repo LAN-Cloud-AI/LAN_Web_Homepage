@@ -1,0 +1,41 @@
+/* Official, unmodified HarmonyOS Sans SC variable font, served by this site. */
+@font-face {
+  font-family: "HarmonyOS Sans SC";
+  src: url("/fonts/harmonyos-sans-sc/HarmonyOS_Sans_SC.8978e05044e7.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 40 900;
+  font-display: swap;
+}
+:root, :root body {
+  --lan-font-family: "HarmonyOS Sans SC", sans-serif;
+  --td-font-family: var(--lan-font-family);
+  --td-font-family-medium: var(--lan-font-family);
+  --font-sans: var(--lan-font-family);
+  --font-display: var(--lan-font-family);
+  --sans: var(--lan-font-family);
+}
+/* Include controls, shorthand/inline font declarations, numbering and future content. */
+:root, :root body, :root body *, :root body *::before, :root body *::after {
+  font-family: "HarmonyOS Sans SC", sans-serif !important;
+}
+/* The Chinese name sets the column width; the English letters share that width. */
+:root body .lan-brand-copy {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  gap: 4px;
+  line-height: 1;
+}
+:root body .lan-brand-copy > span { letter-spacing: 0; }
+:root body .lan-brand-copy > small {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 0;
+  min-width: 100%;
+  max-width: 100%;
+  letter-spacing: 0 !important;
+  white-space: pre;
+}
+:root body .lan-brand-copy > small > span { display: inline-block; letter-spacing: 0; }
+:root[lang="en"] body .lan-brand-copy > small { display: none; }
+:root body .lan-font-credit { font-size: 12px; font-weight: 400; }

@@ -1,0 +1,50 @@
+/* Official, unmodified HarmonyOS Sans SC variable font, served by this site. */
+@font-face {
+  font-family: "HarmonyOS Sans SC";
+  src: url("/fonts/harmonyos-sans-sc/HarmonyOS_Sans_SC.8978e05044e7.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 40 900;
+  font-display: swap;
+}
+:root, :root body {
+  --lan-font-family: "HarmonyOS Sans SC", sans-serif;
+  --td-font-family: var(--lan-font-family);
+  --td-font-family-medium: var(--lan-font-family);
+  --font-sans: var(--lan-font-family);
+  --font-display: var(--lan-font-family);
+  --sans: var(--lan-font-family);
+}
+/* Include controls, shorthand/inline font declarations, numbering and future content. */
+:root, :root body, :root body *, :root body *::before, :root body *::after {
+  font-family: "HarmonyOS Sans SC", sans-serif !important;
+}
+/* Match the supplied mark's visible height, not the font's em box. At desktop
+   sizes the 20px name + 8px tagline form a 28px stack (18 + 7 = 25 on mobile).
+   HarmonyOS glyphs sit above the line-box centre; compensate optically. */
+:root body .lan-header .lan-brand { min-height: 32px; }
+:root body .lan-brand-copy {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  gap: 0;
+  line-height: 1;
+  transform: translateY(.054em);
+}
+:root body .lan-brand-copy > span { letter-spacing: 0; font-weight: 700; }
+:root body .lan-brand-copy > small {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 0;
+  min-width: 100%;
+  max-width: 100%;
+  letter-spacing: 0 !important;
+  white-space: pre;
+  font-weight: 700;
+  color: inherit;
+}
+:root body .lan-brand-copy > small > span { display: inline-block; letter-spacing: 0; }
+:root[lang="zh-Hant"] body .lan-brand-copy > span { transform: translateY(-.0204em); }
+:root[lang="en"] body .lan-brand-copy > small { display: none; }
+:root[lang="en"] body .lan-brand-copy { transform: translateY(.0394em); }
+:root[lang="en"] body[data-visual-v2] .lan-brand { --brand-mark-height: .7872em; }
+:root body .lan-font-credit { font-size: 12px; font-weight: 400; }

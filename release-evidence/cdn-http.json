@@ -1,0 +1,2375 @@
+{
+  "release": "compact-7b25d9772a65604c",
+  "verifiedAt": "2026-10-22T17:32:21.770Z",
+  "assets": [
+    {
+      "path": "ai-course/ai-course-i18n.3d942099dcb7.js",
+      "status": 200,
+      "bytes": 44505,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course-i18n.53304647ce7b.js",
+      "status": 200,
+      "bytes": 44505,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course-i18n.js",
+      "status": 200,
+      "bytes": 44479,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course.53304647ce7b.css",
+      "status": 200,
+      "bytes": 28055,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course.53304647ce7b.js",
+      "status": 200,
+      "bytes": 6436,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course.cc151e5a9b9d.js",
+      "status": 200,
+      "bytes": 6436,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course.css",
+      "status": 200,
+      "bytes": 28055,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/ai-course.js",
+      "status": 200,
+      "bytes": 6358,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/course-downloads.53304647ce7b.js",
+      "status": 200,
+      "bytes": 4046,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/course-downloads.js",
+      "status": 200,
+      "bytes": 4046,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/fde/course-summary.53304647ce7b.js",
+      "status": 200,
+      "bytes": 33975,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/fde/course-summary.js",
+      "status": 200,
+      "bytes": 33975,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/redesign.53304647ce7b.css",
+      "status": 200,
+      "bytes": 8546,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "ai-course/redesign.css",
+      "status": 200,
+      "bytes": 8546,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-subpages.28ee27ddb13e.css",
+      "status": 200,
+      "bytes": 21802,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-subpages.css",
+      "status": 200,
+      "bytes": 21802,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-visual.0c9bbe9d8f37.css",
+      "status": 200,
+      "bytes": 30431,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-visual.a78159cb9d0d.css",
+      "status": 200,
+      "bytes": 33551,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-visual.a9b5175ea96f.css",
+      "status": 200,
+      "bytes": 33058,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-visual.css",
+      "status": 200,
+      "bytes": 33551,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "compact-visual.f0c3e3fd0c8f.css",
+      "status": 200,
+      "bytes": 29052,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-motion.53304647ce7b.css",
+      "status": 200,
+      "bytes": 6820,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-motion.53304647ce7b.js",
+      "status": 200,
+      "bytes": 8156,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-motion.css",
+      "status": 200,
+      "bytes": 6820,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-motion.js",
+      "status": 200,
+      "bytes": 8130,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-scene.53304647ce7b.js",
+      "status": 200,
+      "bytes": 542261,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-hero-scene.js",
+      "status": 200,
+      "bytes": 542261,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-inquiry.53304647ce7b.js",
+      "status": 200,
+      "bytes": 6199,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-inquiry.98e775512674.js",
+      "status": 200,
+      "bytes": 4144,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-inquiry.js",
+      "status": 200,
+      "bytes": 4144,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-luminous.53304647ce7b.css",
+      "status": 200,
+      "bytes": 6813,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-luminous.css",
+      "status": 200,
+      "bytes": 6813,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-motion-preference.53304647ce7b.js",
+      "status": 200,
+      "bytes": 589,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-motion-preference.js",
+      "status": 200,
+      "bytes": 589,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-motion-timeline.53304647ce7b.js",
+      "status": 200,
+      "bytes": 768,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-motion-timeline.js",
+      "status": 200,
+      "bytes": 768,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-particle-fields.53304647ce7b.css",
+      "status": 200,
+      "bytes": 2852,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-particle-fields.53304647ce7b.js",
+      "status": 200,
+      "bytes": 15674,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-particle-fields.css",
+      "status": 200,
+      "bytes": 2852,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company-particle-fields.js",
+      "status": 200,
+      "bytes": 15674,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.53304647ce7b.css",
+      "status": 200,
+      "bytes": 34276,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.53304647ce7b.js",
+      "status": 200,
+      "bytes": 1503,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.959b4cb61f22.js",
+      "status": 200,
+      "bytes": 1311,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.css",
+      "status": 200,
+      "bytes": 34276,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.fbadd6004dd2.js",
+      "status": 200,
+      "bytes": 1412,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.ff2502e062ab.js",
+      "status": 200,
+      "bytes": 1412,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "company.js",
+      "status": 200,
+      "bytes": 1347,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact-particles.133be64c6d0c.js",
+      "status": 200,
+      "bytes": 10799,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact-particles.js",
+      "status": 200,
+      "bytes": 10799,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact/wecom/wecom-card.53304647ce7b.css",
+      "status": 200,
+      "bytes": 6071,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact/wecom/wecom-card.53304647ce7b.js",
+      "status": 200,
+      "bytes": 353,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact/wecom/wecom-card.css",
+      "status": 200,
+      "bytes": 6071,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "contact/wecom/wecom-card.js",
+      "status": 200,
+      "bytes": 353,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "error-page.53304647ce7b.css",
+      "status": 200,
+      "bytes": 5022,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "error-page.53304647ce7b.js",
+      "status": 200,
+      "bytes": 9640,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "error-page.ca3c3501fa95.js",
+      "status": 200,
+      "bytes": 9640,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "error-page.css",
+      "status": 200,
+      "bytes": 5022,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "error-page.js",
+      "status": 200,
+      "bytes": 9614,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "fonts/harmonyos-sans-sc/HarmonyOS_Sans_SC.8978e05044e7.ttf",
+      "status": 200,
+      "bytes": 20617156,
+      "mime": "font/ttf",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "fonts/harmonyos-sans-sc/LICENSE.txt",
+      "status": 200,
+      "bytes": 3352,
+      "mime": "text/plain; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "footer-accordion.53304647ce7b.js",
+      "status": 200,
+      "bytes": 1043,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "footer-accordion.js",
+      "status": 200,
+      "bytes": 1043,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "geo-host.53304647ce7b.js",
+      "status": 200,
+      "bytes": 3533,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "geo-host.js",
+      "status": 200,
+      "bytes": 3533,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "i18n.53304647ce7b.js",
+      "status": 200,
+      "bytes": 43204,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "i18n.b3059a280c1f.js",
+      "status": 200,
+      "bytes": 43204,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "i18n.js",
+      "status": 200,
+      "bytes": 43178,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/contact/wecom-sales-manager-qr.png",
+      "status": 200,
+      "bytes": 16012,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-dark-768.webp",
+      "status": 200,
+      "bytes": 10820,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-dark.png",
+      "status": 200,
+      "bytes": 1229930,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-dark.webp",
+      "status": 200,
+      "bytes": 27624,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-light-768.webp",
+      "status": 200,
+      "bytes": 11126,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-light.png",
+      "status": 200,
+      "bytes": 1056505,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-light.webp",
+      "status": 200,
+      "bytes": 27642,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 66290,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-dark-v2.png",
+      "status": 200,
+      "bytes": 2188320,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-dark-v2.webp",
+      "status": 200,
+      "bytes": 227854,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-v2-768.webp",
+      "status": 200,
+      "bytes": 51722,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-v2.png",
+      "status": 200,
+      "bytes": 1960353,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-fde-stages-v2.webp",
+      "status": 200,
+      "bytes": 160286,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 51714,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-dark-v2.png",
+      "status": 200,
+      "bytes": 2009915,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-dark-v2.webp",
+      "status": 200,
+      "bytes": 152500,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-v2-768.webp",
+      "status": 200,
+      "bytes": 34436,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-v2.png",
+      "status": 200,
+      "bytes": 1714734,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-hero-path-v2.webp",
+      "status": 200,
+      "bytes": 93840,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 30138,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-dark-v2.png",
+      "status": 200,
+      "bytes": 1749096,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-dark-v2.webp",
+      "status": 200,
+      "bytes": 88296,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-v2-768.webp",
+      "status": 200,
+      "bytes": 23304,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-v2.png",
+      "status": 200,
+      "bytes": 1685004,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-mvp-3day-v2.webp",
+      "status": 200,
+      "bytes": 66910,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 38736,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-dark-v2.png",
+      "status": 200,
+      "bytes": 1880791,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-dark-v2.webp",
+      "status": 200,
+      "bytes": 116180,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-v2-768.webp",
+      "status": 200,
+      "bytes": 28040,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-v2.png",
+      "status": 200,
+      "bytes": 1680945,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-course-path-v2.webp",
+      "status": 200,
+      "bytes": 81488,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-blue-dark-v5-768.webp",
+      "status": 200,
+      "bytes": 45764,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-blue-dark-v5.webp",
+      "status": 200,
+      "bytes": 164560,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-blue-light-v5-768.webp",
+      "status": 200,
+      "bytes": 39766,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-blue-light-v5.webp",
+      "status": 200,
+      "bytes": 140342,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-v4-768.webp",
+      "status": 200,
+      "bytes": 39128,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ai-training-workflow-v4.webp",
+      "status": 200,
+      "bytes": 146486,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-dark-v2-1280.webp",
+      "status": 200,
+      "bytes": 130168,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 56132,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-dark-v2.png",
+      "status": 200,
+      "bytes": 2036898,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-dark-v2.webp",
+      "status": 200,
+      "bytes": 210418,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-v2-1280.webp",
+      "status": 200,
+      "bytes": 107188,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-v2-768.webp",
+      "status": 200,
+      "bytes": 45564,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-v2.png",
+      "status": 200,
+      "bytes": 1870367,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/brand-field-v2.webp",
+      "status": 200,
+      "bytes": 177472,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 26952,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-dark-v2.png",
+      "status": 200,
+      "bytes": 1291525,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-dark-v2.webp",
+      "status": 200,
+      "bytes": 64508,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-v2-768.webp",
+      "status": 200,
+      "bytes": 26876,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-v2.png",
+      "status": 200,
+      "bytes": 1146960,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/commerce-interface-v2.webp",
+      "status": 200,
+      "bytes": 64628,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 28868,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-dark-v2.png",
+      "status": 200,
+      "bytes": 1319052,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-dark-v2.webp",
+      "status": 200,
+      "bytes": 74600,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-v2-768.webp",
+      "status": 200,
+      "bytes": 24816,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-v2.png",
+      "status": 200,
+      "bytes": 1148766,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/leadshunter-interface-v2.webp",
+      "status": 200,
+      "bytes": 63940,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 32212,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-dark-v2.png",
+      "status": 200,
+      "bytes": 1367152,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-dark-v2.webp",
+      "status": 200,
+      "bytes": 83544,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-v2-768.webp",
+      "status": 200,
+      "bytes": 29268,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-v2.png",
+      "status": 200,
+      "bytes": 1469703,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-interface-v2.webp",
+      "status": 200,
+      "bytes": 75108,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-dark-v2-768.png",
+      "status": 200,
+      "bytes": 739453,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 51148,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-dark-v2.png",
+      "status": 200,
+      "bytes": 1336380,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-dark-v2.webp",
+      "status": 200,
+      "bytes": 77484,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-v2-768.png",
+      "status": 200,
+      "bytes": 678189,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-v2-768.webp",
+      "status": 200,
+      "bytes": 49104,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-v2.png",
+      "status": 200,
+      "bytes": 1239172,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-overview-v2.webp",
+      "status": 200,
+      "bytes": 73508,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-dark-v2-768.png",
+      "status": 200,
+      "bytes": 744819,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 49306,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-dark-v2.png",
+      "status": 200,
+      "bytes": 1355039,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-dark-v2.webp",
+      "status": 200,
+      "bytes": 76296,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-v2-768.png",
+      "status": 200,
+      "bytes": 788213,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-v2-768.webp",
+      "status": 200,
+      "bytes": 49042,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-v2.png",
+      "status": 200,
+      "bytes": 1484103,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-reimbursement-v2.webp",
+      "status": 200,
+      "bytes": 76302,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-dark-v2-768.png",
+      "status": 200,
+      "bytes": 353725,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-dark-v2-768.webp",
+      "status": 200,
+      "bytes": 30130,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-dark-v2.png",
+      "status": 200,
+      "bytes": 1360271,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-dark-v2.webp",
+      "status": 200,
+      "bytes": 80010,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-v2-768.png",
+      "status": 200,
+      "bytes": 348237,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-v2-768.webp",
+      "status": 200,
+      "bytes": 29686,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-v2.png",
+      "status": 200,
+      "bytes": 1480461,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/ledger-subscriptions-v2.webp",
+      "status": 200,
+      "bytes": 76702,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-ai-course-fde-v4.jpg",
+      "status": 200,
+      "bytes": 45871,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-ai-course-mvp-3day-v4.jpg",
+      "status": 200,
+      "bytes": 45653,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-ai-course-v4.jpg",
+      "status": 200,
+      "bytes": 57115,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-home-v4.jpg",
+      "status": 200,
+      "bytes": 38092,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-internal-expense-v4.jpg",
+      "status": 200,
+      "bytes": 64613,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-practice-v4.jpg",
+      "status": 200,
+      "bytes": 47856,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-sitemap-v4.jpg",
+      "status": 200,
+      "bytes": 70594,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-solutions-v4.jpg",
+      "status": 200,
+      "bytes": 59155,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/tdesign/share/og-wecom-v4.jpg",
+      "status": 200,
+      "bytes": 43644,
+      "mime": "image/jpeg",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-dark-768.webp",
+      "status": 200,
+      "bytes": 9380,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-dark.png",
+      "status": 200,
+      "bytes": 1234530,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-dark.webp",
+      "status": 200,
+      "bytes": 24726,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-light-768.webp",
+      "status": 200,
+      "bytes": 10208,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-light.png",
+      "status": 200,
+      "bytes": 1097948,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/commerce-interface-light.webp",
+      "status": 200,
+      "bytes": 25444,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-dark-768.webp",
+      "status": 200,
+      "bytes": 12784,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-dark.png",
+      "status": 200,
+      "bytes": 1264451,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-dark.webp",
+      "status": 200,
+      "bytes": 33054,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-light-768.webp",
+      "status": 200,
+      "bytes": 14408,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-light.png",
+      "status": 200,
+      "bytes": 1186944,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/leadshunter-interface-light.webp",
+      "status": 200,
+      "bytes": 36764,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-dark-768.webp",
+      "status": 200,
+      "bytes": 10238,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-dark.png",
+      "status": 200,
+      "bytes": 1240471,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-dark.webp",
+      "status": 200,
+      "bytes": 24826,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-light-768.webp",
+      "status": 200,
+      "bytes": 9824,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-light.png",
+      "status": 200,
+      "bytes": 1076651,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-interface-light.webp",
+      "status": 200,
+      "bytes": 24774,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-dark-768.png",
+      "status": 200,
+      "bytes": 725849,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-dark-768.webp",
+      "status": 200,
+      "bytes": 14274,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-dark.png",
+      "status": 200,
+      "bytes": 1190568,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-dark.webp",
+      "status": 200,
+      "bytes": 24316,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-light-768.png",
+      "status": 200,
+      "bytes": 680771,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-light-768.webp",
+      "status": 200,
+      "bytes": 15138,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-light.png",
+      "status": 200,
+      "bytes": 1087611,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-overview-light.webp",
+      "status": 200,
+      "bytes": 24770,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-dark-768.png",
+      "status": 200,
+      "bytes": 726385,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-dark-768.webp",
+      "status": 200,
+      "bytes": 13918,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-dark.png",
+      "status": 200,
+      "bytes": 1198414,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-dark.webp",
+      "status": 200,
+      "bytes": 23304,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-light-768.png",
+      "status": 200,
+      "bytes": 659055,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-light-768.webp",
+      "status": 200,
+      "bytes": 15150,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-light.png",
+      "status": 200,
+      "bytes": 1038900,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-reimbursement-light.webp",
+      "status": 200,
+      "bytes": 24164,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-dark-768.png",
+      "status": 200,
+      "bytes": 358557,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-dark-768.webp",
+      "status": 200,
+      "bytes": 11818,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-dark.png",
+      "status": 200,
+      "bytes": 1241335,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-dark.webp",
+      "status": 200,
+      "bytes": 30150,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-light-768.png",
+      "status": 200,
+      "bytes": 337435,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-light-768.webp",
+      "status": 200,
+      "bytes": 11472,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-light.png",
+      "status": 200,
+      "bytes": 1117126,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/generated/workflow-v10/ledger-subscriptions-light.webp",
+      "status": 200,
+      "bytes": 28536,
+      "mime": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/LAN-logo.svg",
+      "status": 200,
+      "bytes": 2979,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-mark-black.svg",
+      "status": 200,
+      "bytes": 3416,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-mark-bright.svg",
+      "status": 200,
+      "bytes": 2938,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-mark-transparent-blue.svg",
+      "status": 200,
+      "bytes": 1259,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-mark-transparent-white.svg",
+      "status": 200,
+      "bytes": 1235,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-wordmark-en-black.svg",
+      "status": 200,
+      "bytes": 6531,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-wordmark-en-blue.svg",
+      "status": 200,
+      "bytes": 6725,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-wordmark-zh-black.svg",
+      "status": 200,
+      "bytes": 5301,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/lan-wordmark-zh-blue.svg",
+      "status": 200,
+      "bytes": 5489,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/logo无背景蓝色-180.png",
+      "status": 200,
+      "bytes": 11419,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/logo无背景蓝色.svg",
+      "status": 200,
+      "bytes": 2140,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/WEB-logo-180.png",
+      "status": 200,
+      "bytes": 9209,
+      "mime": "image/png",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/logo/WEB-logo.svg",
+      "status": 200,
+      "bytes": 1818,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/visual-v2/artist-dark.svg",
+      "status": 200,
+      "bytes": 12091,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "images/visual-v2/artist-light.svg",
+      "status": 200,
+      "bytes": 12091,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "internal-expense/internal-expense.53304647ce7b.css",
+      "status": 200,
+      "bytes": 18464,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "internal-expense/internal-expense.53304647ce7b.js",
+      "status": 200,
+      "bytes": 2225,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "internal-expense/internal-expense.css",
+      "status": 200,
+      "bytes": 18464,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "internal-expense/internal-expense.js",
+      "status": 200,
+      "bytes": 2225,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "leadshunter/leadshunter.53304647ce7b.css",
+      "status": 200,
+      "bytes": 19529,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "leadshunter/leadshunter.53304647ce7b.js",
+      "status": 200,
+      "bytes": 1971,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "leadshunter/leadshunter.css",
+      "status": 200,
+      "bytes": 19529,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "leadshunter/leadshunter.js",
+      "status": 200,
+      "bytes": 1971,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "locale-boot.24a4039de975.js",
+      "status": 200,
+      "bytes": 532,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "locale-boot.53304647ce7b.js",
+      "status": 200,
+      "bytes": 532,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "locale-boot.js",
+      "status": 200,
+      "bytes": 506,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "main.53304647ce7b.js",
+      "status": 200,
+      "bytes": 7989,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "main.js",
+      "status": 200,
+      "bytes": 7950,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "redesign-copy.53304647ce7b.js",
+      "status": 200,
+      "bytes": 22268,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "redesign-copy.f8f557e99e6c.js",
+      "status": 200,
+      "bytes": 22786,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "redesign-copy.js",
+      "status": 200,
+      "bytes": 22786,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "share-meta.53304647ce7b.js",
+      "status": 200,
+      "bytes": 5613,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "share-meta.js",
+      "status": 200,
+      "bytes": 5600,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-analytics.53304647ce7b.js",
+      "status": 200,
+      "bytes": 1378,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-analytics.js",
+      "status": 200,
+      "bytes": 1365,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-events.53304647ce7b.js",
+      "status": 200,
+      "bytes": 7613,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-events.js",
+      "status": 200,
+      "bytes": 7613,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-fonts.9daab28d556e.css",
+      "status": 200,
+      "bytes": 1585,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-fonts.a4464e6b0fb4.css",
+      "status": 200,
+      "bytes": 2123,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-fonts.css",
+      "status": 200,
+      "bytes": 2123,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-identity.53304647ce7b.js",
+      "status": 200,
+      "bytes": 14692,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-identity.js",
+      "status": 200,
+      "bytes": 14692,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-responsive.47983cf0688b.css",
+      "status": 200,
+      "bytes": 11992,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-responsive.css",
+      "status": 200,
+      "bytes": 13171,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-responsive.f5549719ed69.css",
+      "status": 200,
+      "bytes": 13171,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-seo.53304647ce7b.js",
+      "status": 200,
+      "bytes": 9476,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-seo.js",
+      "status": 200,
+      "bytes": 9411,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-shell.53304647ce7b.js",
+      "status": 200,
+      "bytes": 2487,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-shell.69b0bb743b50.css",
+      "status": 200,
+      "bytes": 12379,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-shell.c363c692b954.js",
+      "status": 200,
+      "bytes": 2487,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-shell.css",
+      "status": 200,
+      "bytes": 12379,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-shell.js",
+      "status": 200,
+      "bytes": 2474,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-theme.53304647ce7b.js",
+      "status": 200,
+      "bytes": 3502,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "site-theme.js",
+      "status": 200,
+      "bytes": 3502,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "sitemap/sitemap.53304647ce7b.css",
+      "status": 200,
+      "bytes": 2652,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "sitemap/sitemap.css",
+      "status": 200,
+      "bytes": 2652,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "styles.53304647ce7b.css",
+      "status": 200,
+      "bytes": 39416,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 39416,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "tdesign-subpages.4f92abf49c3b.css",
+      "status": 200,
+      "bytes": 25627,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "tdesign-subpages.css",
+      "status": 200,
+      "bytes": 25627,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "tdesign.c9d0408dc0d0.css",
+      "status": 200,
+      "bytes": 64156,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "tdesign.css",
+      "status": 200,
+      "bytes": 64156,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "tdesign.da5970a0fef6.css",
+      "status": 200,
+      "bytes": 63989,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "vendor/three/LICENSE",
+      "status": 200,
+      "bytes": 1081,
+      "mime": "application/octet-stream",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "vendor/three/three.core.js",
+      "status": 200,
+      "bytes": 1403455,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "vendor/three/three.module.js",
+      "status": 200,
+      "bytes": 603113,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/404.svg",
+      "status": 200,
+      "bytes": 19073,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/academy.svg",
+      "status": 200,
+      "bytes": 14319,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/contact.svg",
+      "status": 200,
+      "bytes": 24231,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/fde.svg",
+      "status": 200,
+      "bytes": 14512,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/home.svg",
+      "status": 200,
+      "bytes": 18512,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/ledger.svg",
+      "status": 200,
+      "bytes": 20142,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/mvp.svg",
+      "status": 200,
+      "bytes": 22564,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/practice.svg",
+      "status": 200,
+      "bytes": 14587,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/sitemap.svg",
+      "status": 200,
+      "bytes": 14033,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-fallback/solutions.svg",
+      "status": 200,
+      "bytes": 30076,
+      "mime": "image/svg+xml",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-shapes.370b55533b79.js",
+      "status": 200,
+      "bytes": 9329,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-shapes.a8e66c7a8f65.js",
+      "status": 200,
+      "bytes": 9417,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero-shapes.js",
+      "status": 200,
+      "bytes": 9417,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.0af70ec2d6fa.css",
+      "status": 200,
+      "bytes": 14572,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.33db9079e6de.css",
+      "status": 200,
+      "bytes": 4862,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.b725c762c4d2.js",
+      "status": 200,
+      "bytes": 22483,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.css",
+      "status": 200,
+      "bytes": 14572,
+      "mime": "text/css; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.fd67d5b0baef.js",
+      "status": 200,
+      "bytes": 17193,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "visual-hero.js",
+      "status": 200,
+      "bytes": 22470,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "wechat-share.53304647ce7b.js",
+      "status": 200,
+      "bytes": 7103,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    },
+    {
+      "path": "wechat-share.js",
+      "status": 200,
+      "bytes": 7077,
+      "mime": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "cors": "*"
+    }
+  ],
+  "bodySamples": [
+    {
+      "path": "ai-course/ai-course.53304647ce7b.css",
+      "status": 200,
+      "sha256": "f69c04e7a2913ef5edf3c0cab5e1ad898359542225b6ed72e011308a6971beef",
+      "encoding": "gzip"
+    },
+    {
+      "path": "ai-course/ai-course-i18n.3d942099dcb7.js",
+      "status": 200,
+      "sha256": "3d942099dcb753ea572ba50df8c6d6492b0496b534b417a5fcc18ea59a79c076",
+      "encoding": "gzip"
+    },
+    {
+      "path": "fonts/harmonyos-sans-sc/HarmonyOS_Sans_SC.8978e05044e7.ttf",
+      "status": 200,
+      "sha256": "8978e05044e7089ad6a9de38c505c8148305607983487435a916d2610700a7ca",
+      "encoding": null
+    },
+    {
+      "path": "images/logo/LAN-logo.svg",
+      "status": 200,
+      "sha256": "0037a7bca574ce1620cd5d0c42f883fbfd0d94dacfa801f8fd5521c7944d46a4",
+      "encoding": "br"
+    },
+    {
+      "path": "images/generated/academy-flat-v11/academy-workflow-dark-768.webp",
+      "status": 200,
+      "sha256": "3aae2e89d8e0965f2c16a100336ff4099d413bb789867336054e4a1a741310c4",
+      "encoding": null
+    }
+  ],
+  "fontRange": "bytes 0-1023/20617156"
+}

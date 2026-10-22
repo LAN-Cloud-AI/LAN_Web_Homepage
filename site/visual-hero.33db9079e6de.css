@@ -1,0 +1,129 @@
+/* The page owns the hero's dimensions. This component only paints inside its host. */
+.lan-hero-art {
+  --lan-art-fallback: url('./visual-hero-fallback/home.svg');
+  --lan-art-blue: #0052d9;
+  --lan-art-muted: rgba(0, 0, 0, .6);
+  --lan-art-glow: rgba(0, 82, 217, .075);
+  position: relative;
+  min-width: 0;
+  min-height: 260px;
+  width: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--lan-art-blue);
+}
+.lan-hero-art[data-lan-hero-scene="solutions"] { --lan-art-fallback: url('./visual-hero-fallback/solutions.svg'); }
+.lan-hero-art[data-lan-hero-scene="practice"] { --lan-art-fallback: url('./visual-hero-fallback/practice.svg'); }
+.lan-hero-art[data-lan-hero-scene="academy"] { --lan-art-fallback: url('./visual-hero-fallback/academy.svg'); }
+.lan-hero-art[data-lan-hero-scene="mvp"] { --lan-art-fallback: url('./visual-hero-fallback/mvp.svg'); }
+.lan-hero-art[data-lan-hero-scene="fde"] { --lan-art-fallback: url('./visual-hero-fallback/fde.svg'); }
+.lan-hero-art[data-lan-hero-scene="ledger"] { --lan-art-fallback: url('./visual-hero-fallback/ledger.svg'); }
+.lan-hero-art[data-lan-hero-scene="contact"] { --lan-art-fallback: url('./visual-hero-fallback/contact.svg'); }
+.lan-hero-art[data-lan-hero-scene="sitemap"] { --lan-art-fallback: url('./visual-hero-fallback/sitemap.svg'); }
+.lan-hero-art[data-lan-hero-scene="404"] { --lan-art-fallback: url('./visual-hero-fallback/404.svg'); }
+.lan-hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 44px;
+  pointer-events: none;
+  background-color: var(--lan-art-blue);
+  -webkit-mask: var(--lan-art-fallback) center / contain no-repeat;
+  mask: var(--lan-art-fallback) center / contain no-repeat;
+}
+.lan-hero-art[data-motion-state]::before { display: none; }
+html[data-theme="dark"] .lan-hero-art {
+  --lan-art-blue: #699ef5;
+  --lan-art-muted: rgba(255, 255, 255, .55);
+  --lan-art-glow: rgba(0, 82, 217, .12);
+}
+.lan-hero-art .lan-hero-art__stage {
+  position: absolute;
+  inset: 0 0 44px;
+  min-width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, var(--lan-art-glow), transparent 68%);
+}
+.lan-hero-art .lan-hero-art__canvas,
+.lan-hero-art .lan-hero-art__fallback {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: none;
+  object-fit: contain;
+}
+.lan-hero-art .lan-hero-art__fallback { color: var(--lan-art-blue); }
+.lan-hero-art .lan-hero-art__controls {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  min-height: 44px;
+}
+.lan-hero-art .lan-hero-art__control,
+.lan-hero-art .lan-hero-art__control:hover,
+.lan-hero-art .lan-hero-art__control:active {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--lan-art-muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transform: none;
+}
+.lan-hero-art .lan-hero-art__control:hover {
+  color: var(--lan-art-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.lan-hero-art .lan-hero-art__control:focus-visible {
+  outline: 2px solid var(--lan-art-blue);
+  outline-offset: 1px;
+}
+.lan-hero-art .lan-hero-art__control:disabled {
+  cursor: default;
+  opacity: .6;
+  text-decoration: none;
+}
+.lan-hero-art .lan-hero-art__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.lan-hero-art [hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .lan-hero-art .lan-hero-art__canvas,
+  .lan-hero-art .lan-hero-art__control { display: none !important; }
+}

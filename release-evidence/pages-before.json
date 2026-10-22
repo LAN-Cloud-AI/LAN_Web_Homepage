@@ -1,0 +1,20 @@
+{
+  "project": "lan-homepage-global",
+  "productionBranch": "main",
+  "domains": [
+    "lan-homepage-global.pages.dev",
+    "global.lancloudtech.com"
+  ],
+  "previousDeployment": {
+    "id": "ffc76cd9-68f4-4a35-a286-27509a55088c",
+    "url": "https://ffc76cd9.lan-homepage-global.pages.dev",
+    "createdAt": "2026-09-14T04:10:53.549324Z",
+    "stage": {
+      "name": "deploy",
+      "started_on": null,
+      "ended_on": "2026-09-14T04:10:54.882317Z",
+      "status": "success"
+    }
+  },
+  "recordedAt": "2026-10-22T17:32:47.530Z"
+}

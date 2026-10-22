@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "node scripts/dev-server.mjs",
-    "build:company": "npm run build:motion && node scripts/generate-company-pages.mjs && node scripts/apply-site-shell.mjs && npm run seo:sync",
+    "dev": "node scripts/build-production.mjs --global && node scripts/dev-server.mjs",
+    "build:company": "npm run build",
     "build:motion": "node scripts/build-company-motion.mjs",
     "verify:motion": "node --test scripts/verify-company-motion.test.mjs scripts/verify-particle-fields.test.mjs",
     "oss": "node scripts/oss/cli.mjs",
@@ -18,8 +18,8 @@
     "dns:img": "node scripts/cf-dns-img-cdn.mjs",
     "dns:files": "node scripts/cf-r2-files-domain.mjs",
     "oss:rewrite": "node scripts/oss/rewrite-html-assets.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs",
-    "seo:sync": "node scripts/patch-seo-heads.mjs && node scripts/generate-locale-pages.mjs && node scripts/generate-sitemap.mjs",
+    "sitemap": "npm run build",
+    "seo:sync": "npm run build",
     "seo:verify": "node scripts/verify-seo.mjs",
     "nginx:apply": "node scripts/apply-nginx.mjs",
     "umami:apply": "node scripts/apply-umami.mjs",
@@ -34,7 +34,9 @@
     "cf:ai-crawlers": "node scripts/cf-allow-ai-crawlers.mjs",
     "files:robots": "node scripts/sync-files-robots.mjs",
     "seo:live": "node scripts/verify-live-seo.mjs",
-    "seo:baidu": "node scripts/baidu-submit.mjs"
+    "seo:baidu": "node scripts/baidu-submit.mjs",
+    "build": "node scripts/build-production.mjs",
+    "verify:production": "node --test scripts/build-production.test.mjs && node scripts/verify-production-package.mjs"
   },
   "repository": {
     "type": "git",

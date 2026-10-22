@@ -1,0 +1,294 @@
+/* LAN visual system V2. Content stays in HTML; the scene supports the story. */
+:root {
+  --cv-bg:#fff; --cv-surface:#fff; --cv-soft:#f3f3f3; --cv-text:rgba(0,0,0,.9);
+  --cv-muted:rgba(0,0,0,.6); --cv-border:#e8e8e8; --cv-blue:#0052d9; --cv-link:#0052d9;
+  --cv-hero:#f3f3f3; --cv-tint:#f2f3ff; --cv-action:#0052d9; --cv-action-hover:#366ef4;
+  --cv-width:1160px; --cv-gutter:32px;
+  --td-content-width:1160px; --td-page-gutter:32px; --shell-height:64px;
+}
+:root[data-theme="dark"] {
+  --cv-bg:#181818; --cv-surface:#242424; --cv-soft:#2c2c2c; --cv-text:rgba(255,255,255,.9);
+  --cv-muted:rgba(255,255,255,.6); --cv-border:#393939; --cv-blue:#699ef5; --cv-link:#8ab4ff;
+  --cv-hero:#181818; --cv-tint:#1b2f51; --cv-action:#2667d4; --cv-action-hover:#4582e6;
+}
+:root body[data-visual-v2] {
+  --paper:var(--cv-bg); --canvas:var(--cv-surface); --ink:var(--cv-text); --muted:var(--cv-muted);
+  --line:var(--cv-border); --green:var(--cv-blue); --green-pale:var(--cv-tint); --panel:var(--cv-soft);
+  --shell-bg:var(--cv-surface); --shell-ink:var(--cv-text); --shell-muted:var(--cv-muted);
+  --shell-line:var(--cv-border); --shell-accent:var(--cv-link); --shell-footer-bg:var(--cv-soft);
+  margin:0; background:var(--cv-bg); color:var(--cv-text); font-size:15px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+:root body[data-visual-v2] *, :root body[data-visual-v2] *::before, :root body[data-visual-v2] *::after {box-sizing:border-box}
+:root body[data-visual-v2] :is(a,button,summary,input,select,textarea,[role="button"]) {-webkit-tap-highlight-color:transparent}
+:root body[data-visual-v2] :is(a,button,summary,[role="button"]) {touch-action:manipulation}
+:root body[data-visual-v2] :is(a,button,summary,input,select):focus-visible {outline:2px solid var(--cv-blue);outline-offset:4px}
+:root body[data-visual-v2] main :is(h1,h2,h3,h4,p,li,a,button) {word-break:normal;overflow-wrap:break-word}
+:root body[data-visual-v2] main :is(h1,h2,h3,h4) {color:var(--cv-text);letter-spacing:-.035em;text-wrap:balance}
+:root body[data-visual-v2] .reveal {opacity:1;transform:none;filter:none}
+:root body[data-visual-v2] :is(.container,.page-shell) {width:min(var(--cv-width),calc(100% - 2 * var(--cv-gutter)));margin-inline:auto}
+:root body[data-visual-v2] :is(.container,.page-shell,.lan-compact-inner) > * {min-width:0}
+:root body[data-visual-v2] .lan-header-inner {min-height:64px;width:min(var(--cv-width),calc(100% - 2 * var(--cv-gutter)));gap:24px}
+:root body[data-visual-v2] .lan-primary > a {font-size:14px;min-height:64px;padding-inline:12px}
+:root body[data-visual-v2] .lan-brand {font-size:20px;gap:10px;--brand-mark-height:28px}
+:root body[data-visual-v2] .lan-brand-copy small {font-size:8px;line-height:1;letter-spacing:.17em}
+:root[lang="en"] body[data-visual-v2] .lan-brand {font-size:20px;--brand-mark-height:.75em;letter-spacing:-.025em}
+:root body[data-visual-v2] .lan-footer-main {padding-block:36px;gap:30px}
+:root body[data-visual-v2] .lan-footer-legal {padding-block:20px}
+:root body[data-visual-v2] .lan-footer {background:var(--cv-soft);border-color:var(--cv-border)}
+:root body[data-visual-v2] .lan-footer :is(a,button) {min-height:32px}
+:root body[data-visual-v2] .lan-languages button,:root body[data-visual-v2] .lan-theme button {min-height:36px}
+
+/* One consistent Hero grid, independent of the previous decorative systems. */
+:root body[data-visual-v2] .lan-compact-hero {
+  position:relative;display:block;isolation:isolate;width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;
+  padding:0!important;margin:0 0 36px!important;border:0;border-radius:0;overflow:visible;
+  background:var(--cv-hero)!important;box-shadow:none;
+}
+:root body[data-visual-v2] .lan-compact-hero::before,:root body[data-visual-v2] .lan-compact-hero::after {display:none}
+:root body[data-visual-v2] .lan-compact-inner {
+  width:min(var(--cv-width),calc(100% - 2 * var(--cv-gutter)));margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:24px;min-height:432px;
+}
+:root body[data-visual-v2] .lan-compact-copy {
+  position:relative;z-index:1;padding:36px 0!important;margin:0!important;width:100%!important;max-width:none!important;
+  opacity:1;transform:none;filter:none;text-align:left;
+}
+:root body[data-visual-v2] .lan-compact-copy :is(.eyebrow,.section-label,.card-kicker,.error-eyebrow) {
+  margin:0 0 14px;font-size:12px;line-height:20px;letter-spacing:.065em;color:var(--cv-link);
+}
+:root body[data-visual-v2] .lan-compact-copy h1 {
+  font-size:40px!important;line-height:1.3!important;font-weight:600;letter-spacing:-.035em!important;margin:0!important;
+  max-width:100%;white-space:normal;text-align:left;
+}
+:root body[data-visual-v2] .lan-compact-copy h1.display-lines,:root body[data-visual-v2] .lan-compact-copy #error-heading {white-space:pre-line}
+:root body[data-visual-v2] .lan-compact-copy h1 :is(em,.hero-line:last-child) {color:var(--cv-blue);font-style:normal}
+:root body[data-visual-v2] .lan-compact-copy .hero-line:last-child {margin-top:3px}
+:root body[data-visual-v2] .lan-compact-copy :is(.hero-intro,.hero-lede,.error-intro,.lede),
+:root body[data-visual-v2] .lan-compact-copy > p:not(.eyebrow,.section-label,.product-support,.card-kicker,.error-eyebrow) {
+  max-width:480px;font-size:15px;line-height:1.75;margin:18px 0 0;color:var(--cv-muted);text-align:left;
+}
+:root body[data-visual-v2] .lan-compact-copy .copy-unit {display:inline;white-space:normal}
+:root body[data-visual-v2] .lan-compact-copy :is(.hero-actions,.error-actions) {display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:24px 0 0}
+:root body[data-visual-v2] .lan-compact-copy .hero-resource-link {display:inline-flex;min-height:36px;align-items:center;margin-top:8px;font-size:13px;color:var(--cv-link)}
+:root body[data-visual-v2] .lan-compact-copy .product-support {margin:0 0 10px;font-size:12px;line-height:20px;color:var(--cv-muted)}
+:root body[data-visual-v2] .lan-compact-copy :is(.button,.btn,.error-home,.error-solutions) {min-height:44px;padding:10px 18px;border-radius:6px;font-size:14px;line-height:22px;white-space:normal}
+:root body[data-visual-v2] .lan-hero-art {height:400px;min-width:0;max-width:100%;align-self:center;position:relative}
+:root body[data-visual-v2="home"] .lan-compact-hero {margin-bottom:0!important}
+:root body[data-visual-v2="home"] .lan-compact-inner {min-height:394px}
+:root body[data-visual-v2="home"] .lan-hero-art {height:380px}
+:root body[data-visual-v2="home"] .hero-foot {
+  position:static;display:flex;justify-content:space-between;align-items:center;width:min(var(--cv-width),calc(100% - 2 * var(--cv-gutter)));
+  min-height:44px;gap:18px;margin:0 auto;padding:8px 0;border-top:1px solid var(--cv-border);font-size:12px;color:var(--cv-muted);
+}
+:root body[data-visual-v2="home"] .hero-foot p {font-size:12px;margin:0;max-width:none}
+:root body[data-visual-v2="home"] .hero-foot a {font-size:12px;min-height:28px;color:var(--cv-muted)}
+:root body[data-visual-v2]:is([data-visual-v2="mvp"],[data-visual-v2="fde"],[data-visual-v2="ledger"]) .lan-compact-inner {min-height:400px}
+:root body[data-visual-v2]:is([data-visual-v2="mvp"],[data-visual-v2="fde"],[data-visual-v2="ledger"]) .lan-hero-art {height:370px}
+:root body[data-visual-v2]:is([data-visual-v2="contact"],[data-visual-v2="sitemap"],[data-visual-v2="404"]) .lan-compact-inner {min-height:280px}
+:root body[data-visual-v2]:is([data-visual-v2="contact"],[data-visual-v2="sitemap"],[data-visual-v2="404"]) .lan-hero-art {height:260px}
+:root body[data-visual-v2]:is([data-visual-v2="contact"],[data-visual-v2="sitemap"],[data-visual-v2="404"]) .lan-compact-copy h1 {font-size:32px!important}
+
+/* Home, solutions and practice share an editorial scale. */
+:root body[data-company-page][data-visual-v2] .section {padding:52px 0}
+:root body[data-company-page][data-visual-v2] :is(h2,.academy-copy h2,.method-statement h2) {font-size:30px;line-height:1.35}
+:root body[data-company-page][data-visual-v2] :is(h3,.solution-copy h3,.product h3) {font-size:24px;line-height:1.4}
+:root body[data-company-page][data-visual-v2] .section-heading {gap:40px;margin-bottom:26px;align-items:flex-end}
+:root body[data-company-page][data-visual-v2] .section-heading h2 {margin-top:12px}
+:root body[data-company-page][data-visual-v2] .section-summary {max-width:400px;font-size:15px;line-height:1.7}
+:root body[data-company-page][data-visual-v2] .section-summary .text-link {margin-top:10px}
+:root body[data-company-page][data-visual-v2] .section-label {font-size:12px;line-height:20px;color:var(--cv-link);letter-spacing:.06em}
+:root body[data-company-page][data-visual-v2] :is(.section-number,.step-number) {display:inline-flex;align-items:center;justify-content:center;align-self:start;flex:none;height:24px;min-height:24px;min-width:28px;padding:0 6px;line-height:24px;border:0;border-radius:3px;background:var(--cv-tint);font-size:11px;color:var(--cv-link)}
+:root body[data-company-page][data-visual-v2] :is(.button,.text-link) {font-size:14px;min-height:44px;line-height:22px}
+:root body[data-company-page][data-visual-v2] .button {padding:10px 18px;gap:20px;border-radius:6px;background:var(--cv-action);color:#fff;box-shadow:none}
+:root body[data-company-page][data-visual-v2] .button:hover {background:var(--cv-action-hover);transform:none}
+:root body[data-company-page][data-visual-v2] .text-link {color:var(--cv-link);gap:12px}
+:root body[data-company-page][data-visual-v2] .capability-strip {width:min(var(--cv-width),calc(100% - 2 * var(--cv-gutter)));padding:20px 0;font-size:13px;color:var(--cv-muted)}
+:root body[data-company-page][data-visual-v2] .capability-strip > div {gap:10px}
+:root body[data-company-page][data-visual-v2] .capability-icon {font-size:22px;color:var(--cv-blue)}
+:root body[data-company-page][data-visual-v2] .product {grid-template-columns:1fr 1.05fr;min-height:0;border:1px solid var(--cv-border);border-radius:8px;background:var(--cv-surface)}
+:root body[data-company-page][data-visual-v2] .product-copy {padding:28px}
+:root body[data-company-page][data-visual-v2] .product :is(h2,h3) {font-size:28px;line-height:1.4;margin-top:14px}
+:root body[data-company-page][data-visual-v2] .product-description {font-size:15px;line-height:1.75;margin-top:16px;max-width:460px}
+:root body[data-company-page][data-visual-v2] .feature-list {font-size:13px;line-height:1.7;gap:8px 16px;margin-top:18px}
+:root body[data-company-page][data-visual-v2] .product-bottom {margin-top:20px;gap:12px}
+:root body[data-company-page][data-visual-v2] .product-visual {padding:20px;background:var(--cv-soft);min-height:280px}
+:root body[data-company-page][data-visual-v2] .product-visual picture {display:block;width:100%;max-width:100%}
+:root body[data-company-page][data-visual-v2] .product-visual img {width:100%;height:auto;object-fit:contain;mix-blend-mode:normal;border-radius:4px}
+:root body[data-company-page][data-visual-v2] .solutions-grid {gap:20px;margin-top:20px}
+:root body[data-company-page][data-visual-v2] .solution-card {background:var(--cv-surface);border:1px solid var(--cv-border);border-radius:8px;box-shadow:none}
+:root body[data-company-page][data-visual-v2] .solution-card-link {display:grid;grid-template-columns:1fr;grid-template-rows:156px 1fr;height:100%}
+:root body[data-company-page][data-visual-v2] .solution-visual {height:156px;min-height:156px;border-bottom:1px solid var(--cv-border);border-right:0;background:var(--cv-soft)}
+:root body[data-company-page][data-visual-v2] .solution-copy {padding:22px 24px}
+:root body[data-company-page][data-visual-v2] .solution-copy h3 {margin-top:10px}
+:root body[data-company-page][data-visual-v2] .solution-copy > p:not(.section-label) {font-size:15px;line-height:1.7;margin-top:12px;max-width:none}
+:root body[data-company-page][data-visual-v2] .solution-bottom {margin-top:18px;gap:12px}
+:root body[data-company-page][data-visual-v2] .solution-bottom small {font-size:12px;line-height:1.6}
+:root body[data-company-page][data-visual-v2] .relationship-visual {height:156px;min-height:156px;max-width:400px}
+:root body[data-company-page][data-visual-v2] .relationship-center {height:64px;width:64px;border-radius:16px;background:var(--cv-tint);border-color:var(--cv-border);box-shadow:none}
+:root body[data-company-page][data-visual-v2] .relationship-center svg {stroke:var(--cv-blue)}
+:root body[data-company-page][data-visual-v2] .relationship-orbit {height:100px;width:230px;border-color:color-mix(in srgb,var(--cv-blue) 22%,transparent)}
+:root body[data-company-page][data-visual-v2] .relationship-orbit.orbit-two {height:140px;width:330px}
+:root body[data-company-page][data-visual-v2] .relationship-chip {right:16%;bottom:8px;background:var(--cv-surface);border-color:var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .relationship-chip i {background:var(--cv-blue);opacity:.6}
+:root body[data-company-page][data-visual-v2] .relationship-chip i:first-child {background:var(--cv-blue);opacity:1}
+:root body[data-company-page][data-visual-v2] .orbit-point {background:var(--cv-blue);border-color:var(--cv-surface);box-shadow:0 0 0 1px var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .solution-card .workshop-visual {position:absolute;left:50%;top:50%;inset:auto;transform:translate(-50%,-50%);width:min(300px,calc(100% - 36px));max-width:300px;min-width:0;height:116px;margin:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+:root body[data-company-page][data-visual-v2] .solution-card .workshop-visual {left:50%;top:50%}
+:root body[data-company-page][data-visual-v2] .workflow-column {padding:7px;min-width:0;background:var(--cv-tint);border-color:var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .workflow-card {background:var(--cv-surface);border-color:color-mix(in srgb,var(--cv-blue) 28%,var(--cv-border))}
+:root body[data-company-page][data-visual-v2] .workflow-card :is(i,b) {background:var(--cv-blue);opacity:.55}
+:root body[data-company-page][data-visual-v2] .global-block {margin-top:20px;padding:24px;gap:24px;background:var(--cv-tint);border-radius:8px}
+:root body[data-company-page][data-visual-v2] .global-block h3 {font-size:22px;margin-top:4px}
+:root body[data-company-page][data-visual-v2] .global-block p:not(.section-label) {font-size:15px;line-height:1.75;margin-top:8px}
+:root body[data-company-page][data-visual-v2] .global-symbol {font-size:34px;color:var(--cv-blue)}
+:root body[data-company-page][data-visual-v2] .academy-feature {grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+:root body[data-company-page][data-visual-v2] .academy-copy h2 {margin-top:14px}
+:root body[data-company-page][data-visual-v2] .academy-copy > p:not(.section-label) {font-size:15px;line-height:1.75;margin-top:18px;max-width:460px}
+:root body[data-company-page][data-visual-v2] .academy-copy .button {margin-top:22px}
+:root body[data-company-page][data-visual-v2] .academy-visual {width:100%;min-height:0;aspect-ratio:1.75;align-self:stretch;border-radius:8px;overflow:hidden;background:var(--cv-soft);padding:0;border:1px solid var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .academy-visual picture {height:100%;width:100%;display:block}
+:root body[data-company-page][data-visual-v2] .academy-visual img {height:100%;width:100%;object-fit:cover;aspect-ratio:auto;filter:none;mix-blend-mode:normal}
+:root body[data-company-page][data-visual-v2] .course-paths {gap:20px;margin-top:24px}
+:root body[data-company-page][data-visual-v2] .course-path {padding:22px;border:1px solid var(--cv-border);border-radius:8px;background:var(--cv-surface);box-shadow:none}
+:root body[data-company-page][data-visual-v2] .course-title h3 {font-size:21px;line-height:1.45;margin-top:10px}
+:root body[data-company-page][data-visual-v2] .course-path > p:last-child {font-size:14px;line-height:1.75;max-width:none;margin-top:14px}
+:root body[data-company-page][data-visual-v2] .practice-grid {gap:20px}
+:root body[data-company-page][data-visual-v2] .practice-card {border:1px solid var(--cv-border);border-radius:8px;background:var(--cv-surface);overflow:hidden;box-shadow:none}
+:root body[data-company-page][data-visual-v2] :is(.practice-visual,.commerce-visual) {height:200px;background:var(--cv-soft)}
+:root body[data-company-page][data-visual-v2] .practice-card-copy {padding:20px 24px}
+:root body[data-company-page][data-visual-v2] .practice-card-copy > p:last-child {font-size:15px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .method {gap:60px;grid-template-columns:1fr 1fr}
+:root body[data-company-page][data-visual-v2] .method-statement > p:last-child {font-size:15px;line-height:1.75;margin-top:18px;max-width:460px}
+:root body[data-company-page][data-visual-v2] .method-steps article {gap:20px;padding:20px 0;align-items:start}
+:root body[data-company-page][data-visual-v2] .method-steps h3 {font-size:20px;line-height:1.5}
+:root body[data-company-page][data-visual-v2] .method-steps p {font-size:14px;line-height:1.75;margin-top:6px}
+:root body[data-company-page][data-visual-v2] .open {padding-top:16px;gap:60px}
+:root body[data-company-page][data-visual-v2] .open h2 {font-size:26px;line-height:1.4}
+:root body[data-company-page][data-visual-v2] .open p {font-size:15px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .open-links a {min-height:52px;padding:12px 0;font-size:14px}
+:root body[data-company-page][data-visual-v2] .contact {padding:32px;margin:16px 0 52px;gap:48px;border-radius:8px;background:var(--cv-tint);color:var(--cv-text);border:1px solid var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .contact::before,:root body[data-company-page][data-visual-v2] .contact::after {display:none}
+:root body[data-company-page][data-visual-v2] .contact :is(h2,p,.section-label,.text-link) {color:var(--cv-text)}
+:root body[data-company-page][data-visual-v2] .contact h2 {font-size:28px;margin-top:14px}
+:root body[data-company-page][data-visual-v2] .contact-heading > p:last-child {font-size:15px;line-height:1.75;color:var(--cv-muted);margin-top:14px}
+:root body[data-company-page][data-visual-v2] .inquiry-option {min-height:44px;font-size:13px;line-height:22px;padding:10px 12px;border-radius:6px;border:1px solid var(--cv-border);background:var(--cv-surface);color:var(--cv-text)}
+:root body[data-company-page][data-visual-v2] .inquiry-option::before {display:none}
+:root body[data-company-page][data-visual-v2] .inquiry-option.is-selected {background:var(--cv-surface);color:var(--cv-link);border-color:var(--cv-blue)}
+:root body[data-company-page][data-visual-v2] .inquiry-hint {font-size:13px;line-height:1.7;min-height:3.4em;color:var(--cv-muted);margin:14px 0}
+:root body[data-company-page][data-visual-v2] .contact .button-light {background:var(--cv-action);color:white}
+:root body[data-company-page][data-visual-v2] .contact .text-link {color:var(--cv-link);margin-left:0}
+:root body[data-company-page][data-visual-v2] .contact-actions {display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+:root body[data-company-page][data-visual-v2] .page-jumps {display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+:root body[data-company-page][data-visual-v2] .page-jumps a {min-height:44px;padding:10px 14px;font-size:13px;border:1px solid var(--cv-border);border-radius:6px;background:var(--cv-surface)}
+:root body[data-company-page][data-visual-v2] .delivery-note {padding:28px 0 44px;gap:32px}
+:root body[data-company-page][data-visual-v2] .delivery-note p {font-size:15px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .solution-detail {padding:44px 0;gap:44px}
+:root body[data-company-page][data-visual-v2] .solution-detail-copy h2 {font-size:28px;margin:12px 0 16px}
+:root body[data-company-page][data-visual-v2] .solution-detail-copy > p:not(.section-label) {font-size:15px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .solution-detail-visual {min-height:300px;border-radius:8px;background:var(--cv-soft);border:1px solid var(--cv-border)}
+:root body[data-company-page][data-visual-v2] .work-detail {gap:44px;margin-bottom:40px;padding:0 0 40px}
+:root body[data-company-page][data-visual-v2] .work-copy h2 {font-size:28px;margin:12px 0 16px}
+:root body[data-company-page][data-visual-v2] .work-copy > p:not(.section-label) {font-size:15px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .work-flow {margin:20px 0}
+:root body[data-company-page][data-visual-v2] .work-flow p {font-size:14px;line-height:1.75}
+:root body[data-company-page][data-visual-v2] .work-image {padding:16px;border-radius:8px;border:1px solid var(--cv-border);background:var(--cv-soft)}
+:root body[data-company-page][data-visual-v2] .work-image img {width:100%;height:auto;aspect-ratio:1.5;object-fit:contain;filter:none;mix-blend-mode:normal}
+
+@media (min-width:1800px) {
+  :root body[data-visual-v2] .lan-compact-copy h1 {font-size:42px!important}
+}
+@media (max-width:1000px) {
+  :root {--cv-gutter:24px;--td-page-gutter:24px}
+  :root body[data-visual-v2] .lan-compact-copy h1 {font-size:34px!important}
+  :root body[data-visual-v2] .lan-compact-inner {gap:20px}
+  :root body[data-company-page][data-visual-v2] .section-heading {gap:28px}
+  :root body[data-company-page][data-visual-v2] .section-summary {max-width:350px}
+  :root body[data-company-page][data-visual-v2] :is(.product-copy,.solution-copy) {padding:24px}
+  :root body[data-company-page][data-visual-v2] :is(.academy-feature,.work-detail,.solution-detail) {gap:28px}
+  :root body[data-company-page][data-visual-v2] .course-paths {gap:12px}
+  :root body[data-company-page][data-visual-v2] .course-path {padding:18px}
+  :root body[data-company-page][data-visual-v2] .contact {gap:28px;padding:28px}
+}
+@media (max-width:760px) {
+  :root {--cv-gutter:20px;--td-page-gutter:20px;--shell-height:60px}
+  :root body[data-visual-v2] .lan-header-inner {min-height:60px}
+  :root body[data-visual-v2] .lan-brand {font-size:18px;--brand-mark-height:25px;gap:9px}
+  :root body[data-visual-v2] .lan-brand-copy small {font-size:7px}
+  :root[lang="en"] body[data-visual-v2] .lan-brand {font-size:18px;--brand-mark-height:.75em}
+  :root body[data-visual-v2] .lan-primary > a {min-height:48px;font-size:15px}
+  :root body[data-visual-v2] .lan-footer :is(a,button),:root body[data-visual-v2] .lan-languages button,:root body[data-visual-v2] .lan-theme button {min-height:44px}
+  :root body[data-visual-v2] .lan-compact-hero {margin-bottom:24px!important}
+  :root body[data-visual-v2] .lan-compact-inner {display:flex;flex-direction:column;min-height:0!important;gap:0}
+  :root body[data-visual-v2] .lan-compact-copy {padding:30px 0 4px!important}
+  :root body[data-visual-v2] .lan-compact-copy h1 {font-size:30px!important;line-height:1.35!important}
+  :root body[data-visual-v2] .lan-compact-copy :is(.hero-intro,.hero-lede,.error-intro,.lede),:root body[data-visual-v2] .lan-compact-copy > p:not(.eyebrow,.section-label,.product-support,.card-kicker,.error-eyebrow) {font-size:15px;line-height:1.75;margin-top:14px}
+  :root body[data-visual-v2] .lan-compact-copy :is(.hero-actions,.error-actions) {margin-top:20px;gap:10px 18px}
+  :root body[data-visual-v2] .lan-compact-copy :is(.eyebrow,.section-label,.card-kicker,.error-eyebrow) {margin-bottom:10px;font-size:11px}
+  :root body[data-visual-v2] .lan-hero-art {width:100%;height:240px!important;min-height:240px!important;align-self:center}
+  :root body[data-visual-v2]:is([data-visual-v2="contact"],[data-visual-v2="sitemap"],[data-visual-v2="404"]) .lan-hero-art {height:190px!important;min-height:190px!important}
+  :root body[data-visual-v2]:is([data-visual-v2="contact"],[data-visual-v2="sitemap"],[data-visual-v2="404"]) .lan-compact-copy h1 {font-size:28px!important}
+  :root body[data-visual-v2="home"] .hero-foot {font-size:11px;padding:8px 0;gap:12px;align-items:center}
+  :root body[data-visual-v2="home"] .hero-foot p {font-size:11px;max-width:calc(100% - 80px);line-height:1.6}
+  :root body[data-visual-v2="home"] .hero-foot a {font-size:11px;gap:10px;min-height:36px}
+  :root body[data-company-page][data-visual-v2] .capability-strip {grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 0;padding:18px 0;font-size:12px}
+  :root body[data-company-page][data-visual-v2] .capability-strip > div:nth-child(2) {border:0}
+  :root body[data-company-page][data-visual-v2] .section {padding:36px 0}
+  :root body[data-company-page][data-visual-v2] .section-heading {display:block;margin-bottom:22px}
+  :root body[data-company-page][data-visual-v2] .section-summary {max-width:none;margin-top:16px;font-size:14px}
+  :root body[data-company-page][data-visual-v2] :is(h2,.academy-copy h2,.method-statement h2) {font-size:27px;line-height:1.4}
+  :root body[data-company-page][data-visual-v2] .product {grid-template-columns:1fr}
+  :root body[data-company-page][data-visual-v2] .product-copy {padding:24px 22px}
+  :root body[data-company-page][data-visual-v2] .product :is(h2,h3) {font-size:25px}
+  :root body[data-company-page][data-visual-v2] .product-visual {min-height:0;padding:16px;max-height:340px}
+  :root body[data-company-page][data-visual-v2] .product-visual img {max-height:300px}
+  :root body[data-company-page][data-visual-v2] .solutions-grid {grid-template-columns:1fr;gap:16px;margin-top:16px}
+  :root body[data-company-page][data-visual-v2] .solution-card-link {grid-template-rows:148px 1fr}
+  :root body[data-company-page][data-visual-v2] .solution-visual {height:148px;min-height:148px}
+  :root body[data-company-page][data-visual-v2] .solution-copy {padding:22px}
+  :root body[data-company-page][data-visual-v2] .solution-copy h3 {font-size:23px}
+  :root body[data-company-page][data-visual-v2] .global-block {padding:22px;gap:16px;grid-template-columns:28px minmax(0,1fr)}
+  :root body[data-company-page][data-visual-v2] .global-block > .text-link {grid-column:2}
+  :root body[data-company-page][data-visual-v2] .global-block h3 {font-size:21px}
+  :root body[data-company-page][data-visual-v2] .global-symbol {font-size:28px}
+  :root body[data-company-page][data-visual-v2] :is(.academy-feature,.method,.open,.solution-detail,.work-detail) {grid-template-columns:1fr;gap:24px}
+  :root body[data-company-page][data-visual-v2] .academy-visual {aspect-ratio:1.65;max-height:300px;align-self:auto}
+  :root body[data-company-page][data-visual-v2] .course-paths {grid-template-columns:1fr;gap:12px;margin-top:22px}
+  :root body[data-company-page][data-visual-v2] .course-path {padding:20px}
+  :root body[data-company-page][data-visual-v2] .practice-grid {grid-template-columns:1fr;gap:16px}
+  :root body[data-company-page][data-visual-v2] .practice-card-copy {padding:20px}
+  :root body[data-company-page][data-visual-v2] .method-steps article {padding:18px 0;gap:16px}
+  :root body[data-company-page][data-visual-v2] .method-steps h3 {font-size:19px}
+  :root body[data-company-page][data-visual-v2] .open {padding-top:12px}
+  :root body[data-company-page][data-visual-v2] .open h2 {font-size:24px}
+  :root body[data-company-page][data-visual-v2] .contact {grid-template-columns:1fr;padding:24px 20px;gap:24px;margin:12px 0 36px}
+  :root body[data-company-page][data-visual-v2] .contact h2 {font-size:26px}
+  :root body[data-company-page][data-visual-v2] .inquiry-options {gap:8px}
+  :root body[data-company-page][data-visual-v2] .contact .text-link {margin:0;width:auto;display:inline-flex}
+  :root body[data-company-page][data-visual-v2] .page-jumps {margin-top:18px}
+  :root body[data-company-page][data-visual-v2] .delivery-note {grid-template-columns:1fr;gap:16px;padding:24px 0 32px}
+  :root body[data-company-page][data-visual-v2] .solution-detail {padding:32px 0}
+  :root body[data-company-page][data-visual-v2] .solution-detail-visual {min-height:240px}
+  :root body[data-company-page][data-visual-v2] .work-detail {margin-bottom:32px;padding-bottom:32px}
+  :root body[data-company-page][data-visual-v2] .work-image {padding:12px}
+}
+@media (max-width:359px) {
+  :root {--cv-gutter:16px;--td-page-gutter:16px}
+  :root body[data-visual-v2] .lan-compact-copy h1 {font-size:28px!important}
+  :root body[data-company-page][data-visual-v2] .hero-actions .text-link {font-size:13px}
+}
+@media (prefers-reduced-motion:reduce) {
+  :root body[data-visual-v2] * {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+/* Facts directly follow their introductory stage. */
+:root body[data-visual-v2][data-course-page] .lan-compact-hero,
+:root body[data-visual-v2="ledger"] .lan-compact-hero {margin-bottom:0!important}
+/* Preserve the word boundary when translated heading units share one line. */
+:root[lang="en"] body[data-course-page][data-visual-v2] .section-head h2 .copy-unit + .copy-unit::before {content:" ";white-space:pre}
+@media (hover:none), (pointer:coarse) {
+  :root body[data-visual-v2] .lan-footer :is(a,button),
+  :root body[data-visual-v2] .lan-languages button,
+  :root body[data-visual-v2] .lan-theme button,
+  :root body[data-visual-v2] .lan-compact-copy .hero-resource-link,
+  :root body[data-visual-v2="home"] .hero-foot a {min-height:44px}
+}

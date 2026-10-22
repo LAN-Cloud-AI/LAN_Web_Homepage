@@ -1,0 +1,227 @@
+/* Final responsive layer: content determines height, controls remain reachable. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Replace Chromium's tap overlay with the site's own pressed states. */
+:where(a, button, input, select, textarea, summary, label, [role="button"], [tabindex]) {
+  -webkit-tap-highlight-color: transparent;
+}
+:where(a, button, summary, [role="button"]) { touch-action: manipulation; }
+
+/* Grid and flex children must be allowed to shrink before text wraps. */
+.lan-header-inner > *,
+.lan-footer-main > *,
+.lan-footer-contact > *,
+body[data-company-page] :is(.section-heading, .product, .solutions-grid, .academy-feature, .course-paths, .practice-grid, .method, .open, .contact, .solution-detail, .work-detail, .delivery-note, .global-block, .inquiry-options) > *,
+body[data-company-page] :is(.course-title, .method-steps article, .solution-bottom, .open-links a) > :first-child,
+body[data-course-page] :is(.learning-path, .path-grid, .principle-grid, .stage-grid, .lesson-card, .day-header, .stat-row) > *,
+body[data-share-route="internal-expense"] :is(.hero-grid, .story-grid, .boundary-grid, .proof-grid, .detail-list > div, .contact-band-inner) > * {
+  min-width: 0;
+}
+
+body[data-company-page] main :is(h1, h2, h3, h4),
+body[data-course-page] main :is(h1, h2, h3, h4),
+.error-copy h1 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-wrap: balance;
+}
+body[data-company-page] :is(.button, .text-link, .page-jumps a),
+body:not([data-company-page]) main :is(.btn, .button),
+.lan-footer-contact > a,
+.lan-footer-registration > a {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+body[data-company-page] :is(.button, .text-link) > span:not(.arrow) { min-width: 0; }
+body[data-company-page] .section-number,
+body[data-company-page] .capability-icon { flex-shrink: 0; }
+body[data-company-page] .hero-story-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body[data-company-page] .hero-story-step > span:last-child { min-width: 0; }
+body[data-company-page] .course-title { align-items: baseline; }
+body[data-company-page] .course-title .arrow { align-self: center; }
+body[data-company-page] .academy-workshop-visual { align-self: center; }
+
+/* Copy spans are editorial units, not unbreakable boxes. */
+body[data-course-page] .copy-unit,
+body[data-share-route="internal-expense"] .copy-unit,
+body[data-share-route="wecom"] .copy-unit {
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html[lang] body[data-course-page] .hero h1 .copy-unit { white-space: normal; }
+html[lang="en"] body[data-share-route="wecom"] .copy-line { white-space: normal; }
+body[data-course-page] .path-meta { flex-wrap: wrap; }
+body[data-course-page] .day-header > p { flex-shrink: 0; }
+body[data-course-page] .course-local-nav a { min-height: 44px; }
+body[data-share-route="sitemap"] .wrap a,
+.lan-footer-contact > a,
+.lan-footer-registration > a { overflow-wrap: anywhere; }
+.lan-footer-registration { flex-shrink: 1; }
+
+@media (min-width: 801px) {
+  body[data-company-page] .product { grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr); }
+  body[data-company-page] .academy-feature { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  body[data-company-page] :is(.method, .open, .contact, .solution-detail) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body[data-company-page] .work-detail { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+}
+
+/* The 621–800px interval used to inherit conflicting desktop/mobile grids. */
+@media (max-width: 800px) {
+  body[data-company-page] :is(.product, .academy-feature, .method, .open, .solution-detail, .work-detail) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  body[data-company-page] .product { gap: 0; }
+  body[data-company-page] .product-visual { padding: 0 24px 24px; }
+  body[data-company-page] .product-visual picture { max-width: 680px; }
+  body[data-company-page] .section-heading { align-items: flex-start; flex-direction: column; gap: 22px; }
+  body[data-company-page] .section-summary { max-width: 620px; flex-shrink: 1; }
+  body[data-company-page] .section-summary .text-link { margin-top: 14px; }
+  body[data-company-page] .academy-copy > p:not(.section-label) { max-width: 620px; }
+  body[data-company-page] .solution-detail-visual { min-height: 280px; }
+  body[data-company-page] .delivery-note { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+
+  /* Place the animation and its fallback in the same flow-based visual row. */
+  html[lang] body[data-company-page] .hero[data-hero-motion] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "visual" "story" "foot";
+    gap: 24px;
+    min-height: 0;
+    padding-block: 48px 24px;
+  }
+  html[lang] body[data-company-page] .hero[data-hero-motion] .hero-copy {
+    grid-area: copy;
+    width: 100%;
+    max-width: 660px;
+    padding: 0;
+  }
+  html[lang] body[data-company-page] .hero[data-hero-motion] :is(.hero-scene, .hero-background) {
+    grid-area: visual;
+    position: relative;
+    inset: auto;
+    height: clamp(240px, 48vw, 380px);
+    width: 100%;
+    min-width: 0;
+  }
+  html[lang] body[data-company-page] .hero[data-hero-motion] .hero-background {
+    width: calc(100% + 2 * var(--td-page-gutter));
+    margin-inline: calc(-1 * var(--td-page-gutter));
+  }
+  html[lang] body[data-company-page] .hero[data-hero-motion] .hero-story {
+    grid-area: story;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+  }
+  html[lang] body[data-company-page] .hero[data-hero-motion] .hero-foot {
+    grid-area: foot;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    align-items: flex-start;
+    gap: 12px 24px;
+    padding-top: 20px;
+  }
+  body[data-company-page] .hero-foot p { flex: 1 1 180px; max-width: none; }
+  body[data-company-page] .hero-foot a { flex: 0 1 auto; min-height: 44px; white-space: normal; }
+  body[data-company-page] .hero-foot a > span:first-child { min-width: 0; }
+  body[data-company-page] .hero-foot a > span:last-child { flex-shrink: 0; }
+}
+
+@media (max-width: 620px) {
+  body[data-company-page] :is(.solutions-grid, .practice-grid) { grid-template-columns: minmax(0, 1fr); }
+  body[data-company-page] .product-visual { padding: 0 16px 24px; }
+  body[data-company-page] .hero-story-steps { gap: 12px; }
+  body[data-company-page] .hero-story-step { align-items: flex-start; }
+  body[data-company-page] .hero-foot { flex-wrap: wrap; }
+  body[data-company-page] .hero-foot p { max-width: none; }
+  body[data-company-page] .capability-strip > div { justify-content: flex-start; padding-inline: 8px; gap: 10px; }
+  body[data-company-page] .capability-strip > div > span:last-child { min-width: 0; }
+  body[data-company-page] .global-block { grid-template-columns: 28px minmax(0, 1fr); }
+  body[data-company-page] .global-block > .text-link { max-width: 100%; }
+  body[data-company-page] .contact .inquiry-option { min-height: 48px; }
+  body[data-company-page] .contact .inquiry-hint { min-height: 0; }
+  body[data-company-page] .page-jumps a { min-height: 44px; }
+  body[data-course-page] .course-local-nav { gap: 4px 20px; padding-block: 8px; }
+  body[data-course-page] .contact-actions { align-items: stretch; }
+  body[data-course-page] .contact-actions > .btn { flex: 1 1 180px; }
+  .lan-footer-legal { gap: 12px; }
+  .lan-footer-registration > a { padding-block: 8px; }
+  .error-note { position: static; grid-column: 1 / -1; margin: 0 24px 24px; }
+  .error-visual { margin-bottom: 20px; }
+}
+
+@media (max-width: 420px) {
+  body[data-company-page] .hero-actions { align-items: flex-start; gap: 12px; }
+  body[data-company-page] .hero-actions > .button { width: 100%; }
+  body[data-company-page] .hero-actions > .text-link { min-height: 44px; }
+  body[data-company-page] .inquiry-options { grid-template-columns: minmax(0, 1fr); }
+  body[data-company-page] .contact-actions { align-items: stretch; gap: 12px; }
+  body[data-company-page] .contact-actions > .button { width: 100%; }
+  body[data-company-page] .contact-actions > .text-link { min-height: 44px; }
+  body[data-company-page] .hero-story-heading { gap: 12px; }
+  body[data-company-page] .hero-story-heading p { letter-spacing: 0; }
+  body[data-company-page] .hero-story-step { gap: 5px; }
+  body[data-company-page] .hero-story-step > span:first-child { flex-shrink: 0; }
+  body[data-company-page] .hero-foot { gap: 8px; }
+  body[data-company-page] .hero-foot p { flex-basis: 100%; }
+  body[data-course-page] :is(.path-card, .stage-card, .day-card, .principle-grid article, .principle-grid > p) { padding-inline: 20px; }
+  body[data-course-page] .day-header { gap: 12px; }
+  body[data-course-page] .day-header h3 { font-size: 20px; }
+  body[data-course-page] .day-outcome { padding-inline: 14px; }
+  body[data-share-route="internal-expense"] .boundary-grid article { display: block; }
+  body[data-share-route="internal-expense"] .boundary-kicker { margin-bottom: 12px; }
+  body[data-share-route="sitemap"] .wrap section { padding-inline: 20px; }
+  .lan-mobile-settings .lan-theme { flex-wrap: wrap; }
+  .error-note { margin-inline: 20px; }
+}
+
+/* Coarse pointers receive clear momentary feedback without hover motion. */
+@media (hover: none), (pointer: coarse) {
+  .lan-primary { overscroll-behavior: contain; }
+  .lan-theme > button, .lan-language { min-height: 44px; min-width: 44px; }
+  .lan-menu-toggle { min-width: 44px; min-height: 44px; }
+  .lan-footer-contact > a { display: inline-flex; align-items: center; min-height: 44px; }
+  body[data-company-page] :is(.text-link, .open-links a),
+  body[data-course-page] :is(.text-link, .hero-resource-link) { min-height: 44px; align-items: center; }
+  body[data-course-page] .hero-resource-link { display: inline-flex; }
+  body[data-company-page] a:hover .arrow,
+  body[data-company-page] .practice-card:hover .practice-visual img,
+  body:not([data-company-page]) main :is(.btn, .button):hover { transform: none; }
+  body[data-company-page] .solution-card:hover .relationship-center { transform: rotate(-6deg); }
+  body[data-company-page] .solution-visual .workshop-visual { transition: none; }
+  body[data-company-page] .solution-card:hover { box-shadow: none; }
+  body[data-company-page] :is(.button, .course-path, .practice-card, .solution-card-link):active,
+  body:not([data-company-page]) main :is(.btn, .button, .text-link):active,
+  .lan-menu-toggle:active,
+  .lan-primary > a:active,
+  .lan-theme > button:active,
+  .lan-language:active { opacity: .8; }
+  body[data-company-page] .contact .inquiry-option:active { border-color: currentColor; }
+  body[data-company-page] :is(.button, .course-path, .practice-card, .solution-card-link),
+  body:not([data-company-page]) main :is(.btn, .button) { transition-duration: .12s; }
+}
+
+@media (hover: none) and (max-width: 1100px), (pointer: coarse) and (max-width: 1100px) {
+  body[data-company-page] .solution-card:hover .solution-visual .workshop-visual { transform: translate(-50%, -50%) scale(.7); }
+}
+@media (hover: none) and (min-width: 1101px), (pointer: coarse) and (min-width: 1101px) {
+  body[data-company-page] .solution-card:hover .solution-visual .workshop-visual { transform: translateX(-60px) scale(.7); }
+}
+
+/* Short landscape screens need scrollable menus and a proportionate visual. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .lan-primary { max-height: calc(100dvh - var(--shell-height)); padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .lan-primary > a { min-height: 48px; padding-block: 10px; }
+  body[data-course-page] .hero,
+  body[data-share-route="internal-expense"] .hero { min-height: 0; padding-block: 36px; }
+  html[lang] body[data-company-page] .hero[data-hero-motion] { padding-top: 36px; }
+}
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 800px) {
+  html[lang] body[data-company-page] .hero[data-hero-motion] :is(.hero-scene, .hero-background) { height: 240px; }
+}

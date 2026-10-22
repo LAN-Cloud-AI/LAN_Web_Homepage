@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { prepareWorkerAssets } from "./prepare-worker-assets.mjs";
+import { buildProduction } from "./build-production.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -19,10 +19,8 @@ export const withGlobalNoindex = (raw) => {
 };
 
 export const preparePagesAssets = async () => {
-  const dist = await prepareWorkerAssets({ root });
-  const headers = await fs.readFile(path.join(dist, "_headers"), "utf8");
-  await fs.writeFile(path.join(dist, "_headers"), withGlobalNoindex(headers));
-  return dist;
+  await buildProduction({ root, target: 'global' });
+  return path.join(root, 'dist-global');
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

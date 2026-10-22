@@ -1,0 +1,23 @@
+<svg width="230" height="88" viewBox="0 0 230 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="230" height="88" fill="#0052D9" style="fill:#0052D9;fill:color(display-p3 0.0000 0.3216 0.8510);fill-opacity:1;"/>
+<g clip-path="url(#clip0_81_118)">
+<rect width="183" height="61" transform="translate(24 14)" fill="#0052D9" style="fill:#0052D9;fill:color(display-p3 0.0000 0.3216 0.8510);fill-opacity:1;"/>
+<ellipse cx="110.5" cy="35.1401" rx="9.5" ry="11" fill="white" style="fill:white;fill-opacity:1;"/>
+<path d="M28.7824 22L28.7825 70.64L59.0001 70.6401" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<path d="M64.0001 71.3901L110 22.3901L156 71.3901" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<path d="M72.0001 48.3901C101.677 65.3101 118.323 66.132 148 48.3901" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<path d="M75.0001 43.1401C102.34 58.9635 117.672 59.7362 145 43.1401" stroke-width="5.1" stroke="#0052D9" style="stroke:#0052D9;stroke:color(display-p3 0.0000 0.3216 0.8510);stroke-opacity:1;"/>
+<path d="M102.5 33.1401C106.491 33.1401 109.905 35.7318 111.312 39.4028C112.663 37.4327 114.931 36.1401 117.5 36.1401C121.028 36.1401 123.984 38.576 124.784 41.8569C125.586 41.401 126.512 41.1401 127.5 41.1401C129.834 41.1401 131.825 42.5943 132.624 44.645C133.256 43.7355 134.309 43.1401 135.5 43.1401C137.433 43.1401 139 44.7071 139 46.6401C139 48.5731 137.433 50.1401 135.5 50.1401C134.308 50.1401 133.256 49.5441 132.624 48.6343C131.825 50.6855 129.834 52.1401 127.5 52.1401C125.362 52.1401 123.51 50.9193 122.6 49.1372C121.261 50.3793 119.47 51.1401 117.5 51.1401C114.763 51.1401 112.369 49.673 111.06 47.4829C109.524 50.8306 106.268 53.1401 102.5 53.1401C100.465 53.1401 98.5812 52.4639 97.0353 51.3169C96.1935 51.8323 95.142 52.1401 94.0001 52.1401C91.9118 52.1401 90.1233 51.1155 89.3751 49.6606C88.6686 49.9663 87.8597 50.1401 87.0001 50.1401C84.2387 50.1401 82.0001 48.3493 82.0001 46.1401C82.0001 43.931 84.2387 42.1401 87.0001 42.1401C89.0879 42.1401 90.8756 43.1645 91.6241 44.6187C92.0652 44.4278 92.5465 44.2892 93.0548 44.2114C93.0192 43.8594 93.0001 43.5021 93.0001 43.1401C93.0001 37.6173 97.2534 33.1401 102.5 33.1401Z" fill="#0052D9" style="fill:#0052D9;fill:color(display-p3 0.0000 0.3216 0.8510);fill-opacity:1;"/>
+<mask id="mask0_81_118" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="160" y="20" width="48" height="58">
+<path d="M166.001 75L165.963 23L202.501 75V23.14" stroke-width="10" stroke-miterlimit="1.30541" stroke="#473BF0" style="stroke:#473BF0;stroke:color(display-p3 0.2784 0.2314 0.9412);stroke-opacity:1;"/>
+</mask>
+<g mask="url(#mask0_81_118)">
+<rect x="160.001" y="23" width="51" height="52" fill="white" style="fill:white;fill-opacity:1;"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_81_118">
+<rect width="183" height="61" fill="white" style="fill:white;fill-opacity:1;" transform="translate(24 14)"/>
+</clipPath>
+</defs>
+</svg>

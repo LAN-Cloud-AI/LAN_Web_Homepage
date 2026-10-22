@@ -1,0 +1,87 @@
+{
+  "DomainConfigs": {
+    "DomainConfig": [
+      {
+        "ConfigId": 525931756797954,
+        "FunctionArgs": {
+          "FunctionArg": [
+            {
+              "ArgName": "enable",
+              "ArgValue": "on"
+            }
+          ]
+        },
+        "FunctionName": "brotli",
+        "ParentId": 0,
+        "Status": "success"
+      },
+      {
+        "ConfigId": 525931756797953,
+        "FunctionArgs": {
+          "FunctionArg": [
+            {
+              "ArgName": "key",
+              "ArgValue": "Access-Control-Allow-Origin"
+            },
+            {
+              "ArgName": "value",
+              "ArgValue": "*"
+            },
+            {
+              "ArgName": "header_operation_type",
+              "ArgValue": "add"
+            },
+            {
+              "ArgName": "duplicate",
+              "ArgValue": "off"
+            }
+          ]
+        },
+        "FunctionName": "set_resp_header",
+        "ParentId": 0,
+        "Status": "success"
+      },
+      {
+        "ConfigId": 525931756797955,
+        "FunctionArgs": {
+          "FunctionArg": [
+            {
+              "ArgName": "enable",
+              "ArgValue": "on"
+            }
+          ]
+        },
+        "FunctionName": "gzip",
+        "ParentId": 0,
+        "Status": "success"
+      },
+      {
+        "ConfigId": 525931756797952,
+        "FunctionArgs": {
+          "FunctionArg": [
+            {
+              "ArgName": "path",
+              "ArgValue": "/lanxin/webpage/releases/"
+            },
+            {
+              "ArgName": "ttl",
+              "ArgValue": "31536000"
+            },
+            {
+              "ArgName": "swift_origin_cache_high",
+              "ArgValue": "on"
+            },
+            {
+              "ArgName": "weight",
+              "ArgValue": "99"
+            }
+          ]
+        },
+        "FunctionName": "path_based_ttl_set",
+        "ParentId": 0,
+        "Status": "success"
+      }
+    ]
+  },
+  "RequestId": "01A164A8-AC10-5801-938D-1E4484F396D8"
+}

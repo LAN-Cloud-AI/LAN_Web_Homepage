@@ -1,0 +1,67 @@
+{
+  "domain": "img.lancloudtech.com",
+  "before": [],
+  "changes": [
+    {
+      "functionName": "path_based_ttl_set",
+      "functionArgs": [
+        {
+          "argName": "path",
+          "argValue": "/lanxin/webpage/releases/"
+        },
+        {
+          "argName": "ttl",
+          "argValue": "31536000"
+        },
+        {
+          "argName": "weight",
+          "argValue": "99"
+        },
+        {
+          "argName": "swift_origin_cache_high",
+          "argValue": "on"
+        }
+      ]
+    },
+    {
+      "functionName": "set_resp_header",
+      "functionArgs": [
+        {
+          "argName": "key",
+          "argValue": "Access-Control-Allow-Origin"
+        },
+        {
+          "argName": "value",
+          "argValue": "*"
+        },
+        {
+          "argName": "header_operation_type",
+          "argValue": "add"
+        },
+        {
+          "argName": "duplicate",
+          "argValue": "off"
+        }
+      ]
+    },
+    {
+      "functionName": "brotli",
+      "functionArgs": [
+        {
+          "argName": "enable",
+          "argValue": "on"
+        }
+      ]
+    },
+    {
+      "functionName": "gzip",
+      "functionArgs": [
+        {
+          "argName": "enable",
+          "argValue": "on"
+        }
+      ]
+    }
+  ],
+  "appliedAt": "2026-10-22T17:21:14.712Z"
+}

@@ -1,0 +1,137 @@
+/* The page owns the hero's dimensions. This component only paints inside its host. */
+.lan-hero-art {
+  --lan-art-intro: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20480%20300%22%3E%3Ccircle%20cx%3D%2269.4%22%20cy%3D%22136.0%22%20r%3D%221.6%22%20opacity%3D%220.48%22%2F%3E%3Ccircle%20cx%3D%22255.0%22%20cy%3D%2263.0%22%20r%3D%221.3%22%20opacity%3D%220.40%22%2F%3E%3Ccircle%20cx%3D%22332.2%22%20cy%3D%22159.3%22%20r%3D%221.4%22%20opacity%3D%220.46%22%2F%3E%3Ccircle%20cx%3D%22157.0%22%20cy%3D%22149.5%22%20r%3D%221.5%22%20opacity%3D%220.78%22%2F%3E%3Ccircle%20cx%3D%22-38.4%22%20cy%3D%22266.7%22%20r%3D%220.8%22%20opacity%3D%220.72%22%2F%3E%3Ccircle%20cx%3D%22278.5%22%20cy%3D%22127.4%22%20r%3D%221.3%22%20opacity%3D%220.60%22%2F%3E%3Ccircle%20cx%3D%22302.7%22%20cy%3D%22139.3%22%20r%3D%221.2%22%20opacity%3D%220.75%22%2F%3E%3Ccircle%20cx%3D%22187.4%22%20cy%3D%22113.1%22%20r%3D%220.8%22%20opacity%3D%220.77%22%2F%3E%3Ccircle%20cx%3D%22-73.9%22%20cy%3D%22180.4%22%20r%3D%220.8%22%20opacity%3D%220.72%22%2F%3E%3Ccircle%20cx%3D%22322.8%22%20cy%3D%2234.0%22%20r%3D%220.7%22%20opacity%3D%220.52%22%2F%3E%3Ccircle%20cx%3D%22390.4%22%20cy%3D%22179.8%22%20r%3D%221.0%22%20opacity%3D%220.78%22%2F%3E%3Ccircle%20cx%3D%22124.2%22%20cy%3D%22218.4%22%20r%3D%221.5%22%20opacity%3D%220.46%22%2F%3E%3Ccircle%20cx%3D%2216.4%22%20cy%3D%22100.8%22%20r%3D%221.2%22%20opacity%3D%220.51%22%2F%3E%3Ccircle%20cx%3D%22222.0%22%20cy%3D%22247.8%22%20r%3D%220.9%22%20opacity%3D%220.62%22%2F%3E%3Ccircle%20cx%3D%22126.6%22%20cy%3D%22125.7%22%20r%3D%220.8%22%20opacity%3D%220.65%22%2F%3E%3Ccircle%20cx%3D%22312.1%22%20cy%3D%22125.4%22%20r%3D%221.0%22%20opacity%3D%220.76%22%2F%3E%3Ccircle%20cx%3D%22173.2%22%20cy%3D%22128.9%22%20r%3D%220.7%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22178.4%22%20cy%3D%22201.3%22%20r%3D%220.9%22%20opacity%3D%220.63%22%2F%3E%3Ccircle%20cx%3D%22229.2%22%20cy%3D%22102.2%22%20r%3D%220.8%22%20opacity%3D%220.79%22%2F%3E%3Ccircle%20cx%3D%22256.4%22%20cy%3D%22143.9%22%20r%3D%221.2%22%20opacity%3D%220.66%22%2F%3E%3Ccircle%20cx%3D%22113.6%22%20cy%3D%22202.0%22%20r%3D%221.6%22%20opacity%3D%220.62%22%2F%3E%3Ccircle%20cx%3D%22191.3%22%20cy%3D%22173.3%22%20r%3D%220.9%22%20opacity%3D%220.42%22%2F%3E%3Ccircle%20cx%3D%22290.5%22%20cy%3D%22174.7%22%20r%3D%221.5%22%20opacity%3D%220.59%22%2F%3E%3Ccircle%20cx%3D%22312.3%22%20cy%3D%2231.5%22%20r%3D%221.4%22%20opacity%3D%220.37%22%2F%3E%3Ccircle%20cx%3D%22277.5%22%20cy%3D%22138.9%22%20r%3D%221.4%22%20opacity%3D%220.73%22%2F%3E%3Ccircle%20cx%3D%22186.9%22%20cy%3D%22102.4%22%20r%3D%220.8%22%20opacity%3D%220.39%22%2F%3E%3Ccircle%20cx%3D%22193.8%22%20cy%3D%22118.5%22%20r%3D%221.2%22%20opacity%3D%220.47%22%2F%3E%3Ccircle%20cx%3D%22281.1%22%20cy%3D%22190.1%22%20r%3D%221.4%22%20opacity%3D%220.57%22%2F%3E%3Ccircle%20cx%3D%22154.3%22%20cy%3D%22190.3%22%20r%3D%221.2%22%20opacity%3D%220.58%22%2F%3E%3Ccircle%20cx%3D%226.1%22%20cy%3D%22199.6%22%20r%3D%221.4%22%20opacity%3D%220.45%22%2F%3E%3Ccircle%20cx%3D%22214.4%22%20cy%3D%22182.9%22%20r%3D%221.0%22%20opacity%3D%220.36%22%2F%3E%3Ccircle%20cx%3D%22235.8%22%20cy%3D%2277.5%22%20r%3D%221.1%22%20opacity%3D%220.75%22%2F%3E%3Ccircle%20cx%3D%22180.7%22%20cy%3D%22214.8%22%20r%3D%221.5%22%20opacity%3D%220.60%22%2F%3E%3Ccircle%20cx%3D%22171.0%22%20cy%3D%22115.0%22%20r%3D%221.6%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22210.7%22%20cy%3D%22199.6%22%20r%3D%221.2%22%20opacity%3D%220.58%22%2F%3E%3Ccircle%20cx%3D%22178.6%22%20cy%3D%22144.7%22%20r%3D%221.2%22%20opacity%3D%220.67%22%2F%3E%3Ccircle%20cx%3D%22249.8%22%20cy%3D%2289.1%22%20r%3D%221.1%22%20opacity%3D%220.58%22%2F%3E%3Ccircle%20cx%3D%22135.0%22%20cy%3D%22135.6%22%20r%3D%220.7%22%20opacity%3D%220.47%22%2F%3E%3Ccircle%20cx%3D%22417.2%22%20cy%3D%22142.0%22%20r%3D%221.1%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22258.1%22%20cy%3D%22192.9%22%20r%3D%221.2%22%20opacity%3D%220.66%22%2F%3E%3Ccircle%20cx%3D%22345.7%22%20cy%3D%22160.9%22%20r%3D%221.5%22%20opacity%3D%220.63%22%2F%3E%3Ccircle%20cx%3D%22283.3%22%20cy%3D%22148.9%22%20r%3D%221.5%22%20opacity%3D%220.73%22%2F%3E%3Ccircle%20cx%3D%22356.2%22%20cy%3D%22161.4%22%20r%3D%221.4%22%20opacity%3D%220.45%22%2F%3E%3Ccircle%20cx%3D%22130.5%22%20cy%3D%2262.0%22%20r%3D%221.4%22%20opacity%3D%220.54%22%2F%3E%3Ccircle%20cx%3D%22350.4%22%20cy%3D%22175.0%22%20r%3D%220.9%22%20opacity%3D%220.59%22%2F%3E%3Ccircle%20cx%3D%22229.3%22%20cy%3D%22201.3%22%20r%3D%221.2%22%20opacity%3D%220.72%22%2F%3E%3Ccircle%20cx%3D%22335.7%22%20cy%3D%22141.2%22%20r%3D%220.7%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22154.9%22%20cy%3D%22229.8%22%20r%3D%221.4%22%20opacity%3D%220.37%22%2F%3E%3Ccircle%20cx%3D%22230.7%22%20cy%3D%22104.5%22%20r%3D%221.0%22%20opacity%3D%220.50%22%2F%3E%3Ccircle%20cx%3D%22171.1%22%20cy%3D%22140.0%22%20r%3D%221.1%22%20opacity%3D%220.48%22%2F%3E%3Ccircle%20cx%3D%22291.1%22%20cy%3D%22180.0%22%20r%3D%221.3%22%20opacity%3D%220.49%22%2F%3E%3Ccircle%20cx%3D%22267.8%22%20cy%3D%22200.8%22%20r%3D%220.9%22%20opacity%3D%220.79%22%2F%3E%3Ccircle%20cx%3D%22252.6%22%20cy%3D%22118.8%22%20r%3D%221.0%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22147.2%22%20cy%3D%22140.3%22%20r%3D%221.2%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22308.9%22%20cy%3D%22209.1%22%20r%3D%220.8%22%20opacity%3D%220.59%22%2F%3E%3Ccircle%20cx%3D%22169.9%22%20cy%3D%22242.1%22%20r%3D%221.5%22%20opacity%3D%220.78%22%2F%3E%3Ccircle%20cx%3D%22130.2%22%20cy%3D%22192.7%22%20r%3D%220.9%22%20opacity%3D%220.67%22%2F%3E%3Ccircle%20cx%3D%22257.6%22%20cy%3D%2291.8%22%20r%3D%221.0%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22240.4%22%20cy%3D%2249.6%22%20r%3D%221.0%22%20opacity%3D%220.46%22%2F%3E%3Ccircle%20cx%3D%22239.7%22%20cy%3D%22186.5%22%20r%3D%220.7%22%20opacity%3D%220.41%22%2F%3E%3Ccircle%20cx%3D%22139.3%22%20cy%3D%22152.7%22%20r%3D%221.5%22%20opacity%3D%220.52%22%2F%3E%3Ccircle%20cx%3D%22345.4%22%20cy%3D%22263.6%22%20r%3D%220.8%22%20opacity%3D%220.50%22%2F%3E%3Ccircle%20cx%3D%22247.1%22%20cy%3D%22100.9%22%20r%3D%221.6%22%20opacity%3D%220.68%22%2F%3E%3Ccircle%20cx%3D%22172.1%22%20cy%3D%22254.3%22%20r%3D%221.5%22%20opacity%3D%220.58%22%2F%3E%3Ccircle%20cx%3D%22267.6%22%20cy%3D%22170.6%22%20r%3D%221.4%22%20opacity%3D%220.75%22%2F%3E%3Ccircle%20cx%3D%22147.0%22%20cy%3D%2270.5%22%20r%3D%221.4%22%20opacity%3D%220.46%22%2F%3E%3Ccircle%20cx%3D%22283.7%22%20cy%3D%22259.6%22%20r%3D%221.5%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22235.1%22%20cy%3D%22172.5%22%20r%3D%221.1%22%20opacity%3D%220.76%22%2F%3E%3Ccircle%20cx%3D%22263.9%22%20cy%3D%22196.7%22%20r%3D%220.7%22%20opacity%3D%220.61%22%2F%3E%3Ccircle%20cx%3D%22372.4%22%20cy%3D%22180.9%22%20r%3D%221.1%22%20opacity%3D%220.54%22%2F%3E%3Ccircle%20cx%3D%22235.3%22%20cy%3D%22197.5%22%20r%3D%221.5%22%20opacity%3D%220.77%22%2F%3E%3Ccircle%20cx%3D%22240.8%22%20cy%3D%22111.2%22%20r%3D%220.9%22%20opacity%3D%220.51%22%2F%3E%3Ccircle%20cx%3D%22401.6%22%20cy%3D%2255.8%22%20r%3D%220.9%22%20opacity%3D%220.64%22%2F%3E%3Ccircle%20cx%3D%22163.8%22%20cy%3D%22192.3%22%20r%3D%220.9%22%20opacity%3D%220.67%22%2F%3E%3Ccircle%20cx%3D%22285.0%22%20cy%3D%2220.1%22%20r%3D%221.1%22%20opacity%3D%220.55%22%2F%3E%3Ccircle%20cx%3D%22209.4%22%20cy%3D%22126.4%22%20r%3D%221.5%22%20opacity%3D%220.70%22%2F%3E%3Ccircle%20cx%3D%22253.4%22%20cy%3D%22206.2%22%20r%3D%221.1%22%20opacity%3D%220.73%22%2F%3E%3Ccircle%20cx%3D%22215.3%22%20cy%3D%22111.2%22%20r%3D%221.6%22%20opacity%3D%220.77%22%2F%3E%3Ccircle%20cx%3D%22309.4%22%20cy%3D%2299.2%22%20r%3D%221.1%22%20opacity%3D%220.53%22%2F%3E%3Ccircle%20cx%3D%22347.8%22%20cy%3D%22141.0%22%20r%3D%221.6%22%20opacity%3D%220.43%22%2F%3E%3Ccircle%20cx%3D%22345.5%22%20cy%3D%22162.0%22%20r%3D%220.9%22%20opacity%3D%220.47%22%2F%3E%3Ccircle%20cx%3D%22287.7%22%20cy%3D%22156.5%22%20r%3D%221.1%22%20opacity%3D%220.39%22%2F%3E%3Ccircle%20cx%3D%22202.4%22%20cy%3D%22223.9%22%20r%3D%220.9%22%20opacity%3D%220.49%22%2F%3E%3Ccircle%20cx%3D%22186.4%22%20cy%3D%22180.3%22%20r%3D%221.2%22%20opacity%3D%220.70%22%2F%3E%3Ccircle%20cx%3D%22355.6%22%20cy%3D%22163.5%22%20r%3D%221.2%22%20opacity%3D%220.76%22%2F%3E%3Ccircle%20cx%3D%22218.3%22%20cy%3D%22107.0%22%20r%3D%221.3%22%20opacity%3D%220.76%22%2F%3E%3Ccircle%20cx%3D%22394.8%22%20cy%3D%22121.3%22%20r%3D%220.8%22%20opacity%3D%220.52%22%2F%3E%3Ccircle%20cx%3D%22155.9%22%20cy%3D%22156.7%22%20r%3D%221.4%22%20opacity%3D%220.57%22%2F%3E%3Ccircle%20cx%3D%22251.8%22%20cy%3D%22149.1%22%20r%3D%221.4%22%20opacity%3D%220.40%22%2F%3E%3Ccircle%20cx%3D%22186.4%22%20cy%3D%22146.3%22%20r%3D%221.0%22%20opacity%3D%220.63%22%2F%3E%3Ccircle%20cx%3D%22266.5%22%20cy%3D%22145.9%22%20r%3D%221.1%22%20opacity%3D%220.40%22%2F%3E%3Ccircle%20cx%3D%22237.7%22%20cy%3D%22118.8%22%20r%3D%220.9%22%20opacity%3D%220.71%22%2F%3E%3Ccircle%20cx%3D%22429.1%22%20cy%3D%22184.0%22%20r%3D%220.9%22%20opacity%3D%220.80%22%2F%3E%3Ccircle%20cx%3D%22273.6%22%20cy%3D%22165.6%22%20r%3D%221.1%22%20opacity%3D%220.49%22%2F%3E%3Ccircle%20cx%3D%22190.2%22%20cy%3D%22112.6%22%20r%3D%221.0%22%20opacity%3D%220.36%22%2F%3E%3Ccircle%20cx%3D%22246.4%22%20cy%3D%22152.3%22%20r%3D%221.1%22%20opacity%3D%220.74%22%2F%3E%3Ccircle%20cx%3D%22158.3%22%20cy%3D%22138.6%22%20r%3D%221.1%22%20opacity%3D%220.69%22%2F%3E%3Ccircle%20cx%3D%22268.9%22%20cy%3D%22132.0%22%20r%3D%221.3%22%20opacity%3D%220.48%22%2F%3E%3Ccircle%20cx%3D%22377.7%22%20cy%3D%22111.2%22%20r%3D%221.2%22%20opacity%3D%220.65%22%2F%3E%3Ccircle%20cx%3D%22242.7%22%20cy%3D%22128.6%22%20r%3D%221.0%22%20opacity%3D%220.37%22%2F%3E%3C%2Fsvg%3E');
+  --lan-art-fallback: url('./visual-hero-fallback/home.svg');
+  --lan-art-blue: #0052d9;
+  --lan-art-muted: rgba(0, 0, 0, .6);
+  --lan-art-glow: rgba(0, 82, 217, .075);
+  position: relative;
+  min-width: 0;
+  min-height: 260px;
+  width: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--lan-art-blue);
+}
+.lan-hero-art[data-lan-hero-scene="solutions"] { --lan-art-fallback: url('./visual-hero-fallback/solutions.svg'); }
+.lan-hero-art[data-lan-hero-scene="practice"] { --lan-art-fallback: url('./visual-hero-fallback/practice.svg'); }
+.lan-hero-art[data-lan-hero-scene="academy"] { --lan-art-fallback: url('./visual-hero-fallback/academy.svg'); }
+.lan-hero-art[data-lan-hero-scene="mvp"] { --lan-art-fallback: url('./visual-hero-fallback/mvp.svg'); }
+.lan-hero-art[data-lan-hero-scene="fde"] { --lan-art-fallback: url('./visual-hero-fallback/fde.svg'); }
+.lan-hero-art[data-lan-hero-scene="ledger"] { --lan-art-fallback: url('./visual-hero-fallback/ledger.svg'); }
+.lan-hero-art[data-lan-hero-scene="contact"] { --lan-art-fallback: url('./visual-hero-fallback/contact.svg'); }
+.lan-hero-art[data-lan-hero-scene="sitemap"] { --lan-art-fallback: url('./visual-hero-fallback/sitemap.svg'); }
+.lan-hero-art[data-lan-hero-scene="404"] { --lan-art-fallback: url('./visual-hero-fallback/404.svg'); }
+.lan-hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 44px;
+  pointer-events: none;
+  background-color: var(--lan-art-blue);
+  -webkit-mask: var(--lan-art-intro) center / contain no-repeat;
+  mask: var(--lan-art-intro) center / contain no-repeat;
+}
+/* Exactly one renderer is visible; this also protects SVG from hidden-property expandos. */
+.lan-hero-art[data-render-mode]::before { display: none; }
+.lan-hero-art:not([data-render-mode="webgl"]) .lan-hero-art__canvas,
+.lan-hero-art[data-render-mode="webgl"] .lan-hero-art__fallback { display: none !important; }
+html[data-theme="dark"] .lan-hero-art {
+  --lan-art-blue: #699ef5;
+  --lan-art-muted: rgba(255, 255, 255, .55);
+  --lan-art-glow: rgba(0, 82, 217, .12);
+}
+.lan-hero-art .lan-hero-art__stage {
+  position: absolute;
+  inset: 0 0 44px;
+  min-width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, var(--lan-art-glow), transparent 68%);
+}
+.lan-hero-art .lan-hero-art__canvas,
+.lan-hero-art .lan-hero-art__fallback {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: none;
+  object-fit: contain;
+}
+.lan-hero-art .lan-hero-art__fallback { color: var(--lan-art-blue); }
+.lan-hero-art .lan-hero-art__controls {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  min-height: 44px;
+}
+.lan-hero-art .lan-hero-art__control,
+.lan-hero-art .lan-hero-art__control:hover,
+.lan-hero-art .lan-hero-art__control:active {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--lan-art-muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transform: none;
+}
+.lan-hero-art .lan-hero-art__control:hover {
+  color: var(--lan-art-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.lan-hero-art .lan-hero-art__control:focus-visible {
+  outline: 2px solid var(--lan-art-blue);
+  outline-offset: 1px;
+}
+.lan-hero-art .lan-hero-art__control:disabled {
+  cursor: default;
+  opacity: .6;
+  text-decoration: none;
+}
+.lan-hero-art .lan-hero-art__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.lan-hero-art [hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .lan-hero-art::before {
+    -webkit-mask-image: var(--lan-art-fallback);
+    mask-image: var(--lan-art-fallback);
+  }
+  .lan-hero-art .lan-hero-art__canvas,
+  .lan-hero-art .lan-hero-art__control { display: none !important; }
+}

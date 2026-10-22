@@ -1,0 +1,19 @@
+<svg width="230" height="88" viewBox="0 0 230 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_89_168)">
+<ellipse cx="110.5" cy="35.1401" rx="9.5" ry="11" fill="white" style="fill:white;fill-opacity:1;"/>
+<path d="M28.7823 22L28.7823 70.64L59 70.64" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<path d="M64 71.3901L110 22.3901L156 71.3901" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<path d="M72 48.3901C101.677 65.3101 118.323 66.132 148 48.3901" stroke-width="10" stroke="white" style="stroke:white;stroke-opacity:1;"/>
+<mask id="mask0_89_168" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="160" y="20" width="48" height="58">
+<path d="M166 75L165.963 23L202.5 75V23.14" stroke-width="10" stroke-miterlimit="1.30541" stroke="#473BF0" style="stroke:#473BF0;stroke:color(display-p3 0.2784 0.2314 0.9412);stroke-opacity:1;"/>
+</mask>
+<g mask="url(#mask0_89_168)">
+<rect x="160" y="23" width="51" height="52" fill="white" style="fill:white;fill-opacity:1;"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_89_168">
+<rect width="183" height="61" fill="white" style="fill:white;fill-opacity:1;" transform="translate(24 14)"/>
+</clipPath>
+</defs>
+</svg>

@@ -20,3 +20,9 @@ images/prototypes/
 scripts/__pycache__/
 
 .venv-share/
+
+# Reproducible domestic, global and immutable CDN release packages
+dist-global/
+dist-cdn/
+release-manifest.json
+node_modules

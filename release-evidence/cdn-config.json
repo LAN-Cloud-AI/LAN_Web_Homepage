@@ -1,0 +1,176 @@
+{
+  "domain": "img.lancloudtech.com",
+  "before": [],
+  "changes": [
+    {
+      "functionName": "path_based_ttl_set",
+      "functionArgs": [
+        {
+          "argName": "path",
+          "argValue": "/lanxin/webpage/releases/"
+        },
+        {
+          "argName": "ttl",
+          "argValue": "31536000"
+        },
+        {
+          "argName": "weight",
+          "argValue": "99"
+        },
+        {
+          "argName": "swift_origin_cache_high",
+          "argValue": "on"
+        }
+      ]
+    },
+    {
+      "functionName": "set_resp_header",
+      "functionArgs": [
+        {
+          "argName": "key",
+          "argValue": "Access-Control-Allow-Origin"
+        },
+        {
+          "argName": "value",
+          "argValue": "*"
+        },
+        {
+          "argName": "header_operation_type",
+          "argValue": "add"
+        },
+        {
+          "argName": "duplicate",
+          "argValue": "off"
+        }
+      ]
+    },
+    {
+      "functionName": "brotli",
+      "functionArgs": [
+        {
+          "argName": "enable",
+          "argValue": "on"
+        }
+      ]
+    },
+    {
+      "functionName": "gzip",
+      "functionArgs": [
+        {
+          "argName": "enable",
+          "argValue": "on"
+        }
+      ]
+    }
+  ],
+  "appliedAt": "2026-10-22T17:21:14.712Z",
+  "result": {
+    "DomainConfigList": {
+      "DomainConfigModel": [
+        {
+          "ConfigId": 525931756797952,
+          "DomainName": "img.lancloudtech.com",
+          "FunctionName": "path_based_ttl_set"
+        },
+        {
+          "ConfigId": 525931756797953,
+          "DomainName": "img.lancloudtech.com",
+          "FunctionName": "set_resp_header"
+        },
+        {
+          "ConfigId": 525931756797954,
+          "DomainName": "img.lancloudtech.com",
+          "FunctionName": "brotli"
+        },
+        {
+          "ConfigId": 525931756797955,
+          "DomainName": "img.lancloudtech.com",
+          "FunctionName": "gzip"
+        }
+      ]
+    },
+    "RequestId": "01A164A1-9B23-514A-B291-85E341DFBB71"
+  },
+  "after": [
+    {
+      "ConfigId": 525931756797954,
+      "FunctionArgs": {
+        "FunctionArg": [
+          {
+            "ArgName": "enable",
+            "ArgValue": "on"
+          }
+        ]
+      },
+      "FunctionName": "brotli",
+      "ParentId": 0,
+      "Status": "configuring"
+    },
+    {
+      "ConfigId": 525931756797953,
+      "FunctionArgs": {
+        "FunctionArg": [
+          {
+            "ArgName": "key",
+            "ArgValue": "Access-Control-Allow-Origin"
+          },
+          {
+            "ArgName": "value",
+            "ArgValue": "*"
+          },
+          {
+            "ArgName": "header_operation_type",
+            "ArgValue": "add"
+          },
+          {
+            "ArgName": "duplicate",
+            "ArgValue": "off"
+          }
+        ]
+      },
+      "FunctionName": "set_resp_header",
+      "ParentId": 0,
+      "Status": "configuring"
+    },
+    {
+      "ConfigId": 525931756797955,
+      "FunctionArgs": {
+        "FunctionArg": [
+          {
+            "ArgName": "enable",
+            "ArgValue": "on"
+          }
+        ]
+      },
+      "FunctionName": "gzip",
+      "ParentId": 0,
+      "Status": "configuring"
+    },
+    {
+      "ConfigId": 525931756797952,
+      "FunctionArgs": {
+        "FunctionArg": [
+          {
+            "ArgName": "path",
+            "ArgValue": "/lanxin/webpage/releases/"
+          },
+          {
+            "ArgName": "ttl",
+            "ArgValue": "31536000"
+          },
+          {
+            "ArgName": "swift_origin_cache_high",
+            "ArgValue": "on"
+          },
+          {
+            "ArgName": "weight",
+            "ArgValue": "99"
+          }
+        ]
+      },
+      "FunctionName": "path_based_ttl_set",
+      "ParentId": 0,
+      "Status": "configuring"
+    }
+  ]
+}

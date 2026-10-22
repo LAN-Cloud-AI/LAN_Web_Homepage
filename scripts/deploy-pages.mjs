@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build dist/ with Pages _headers and deploy to Cloudflare Pages project.
+ * Build dist-global/ with Pages _headers and deploy to Cloudflare Pages project.
  */
 import { spawnSync } from "node:child_process";
 import path from "node:path";
@@ -19,7 +19,7 @@ await preparePagesAssets();
 
 const result = spawnSync(
   "npx",
-  ["wrangler", "pages", "deploy", "dist", `--project-name=${PROJECT}`, `--branch=${PRODUCTION_BRANCH}`, "--commit-dirty=true"],
+  ["wrangler", "pages", "deploy", "dist-global", `--project-name=${PROJECT}`, `--branch=${PRODUCTION_BRANCH}`, "--commit-dirty=true"],
   { cwd: root, stdio: "inherit", env: process.env }
 );
 

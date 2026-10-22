@@ -5,8 +5,8 @@ import { fileURLToPath } from "node:url";
 
 const scriptPath = fileURLToPath(import.meta.url);
 const root = await fs.realpath(path.resolve(path.dirname(scriptPath), ".."));
-const assetsRoot = path.join(root, "dist");
-const imagesRoot = path.join(root, "images");
+const assetsRoot = path.join(root, "dist-global");
+const imagesRoot = path.join(assetsRoot, "images");
 const imagePrefix = "https://img.lancloudtech.com/lanxin/webpage/images/";
 const privateDirectories = new Set([
   "scripts", "docs", "workers", "ops", "node_modules", "mocks", "prompts",
