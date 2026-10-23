@@ -1,0 +1,368 @@
+{
+  "release": "compact-ad2aff2888034b54",
+  "checkedAt": "2026-10-23T03:37:26.800Z",
+  "passed": true,
+  "pages": 60,
+  "results": [
+    {
+      "url": "https://global.lancloudtech.com/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/en/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://global.lancloudtech.com/zh-Hant/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/en/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/404.html",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/fde/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/ai-course/mvp-3day/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/contact/wecom/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/internal-expense/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/practice/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/sitemap/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    },
+    {
+      "url": "https://lancloudtech.com/zh-Hant/solutions/",
+      "status": 200,
+      "fontCredit": false,
+      "fontStylesheet": true
+    }
+  ]
+}

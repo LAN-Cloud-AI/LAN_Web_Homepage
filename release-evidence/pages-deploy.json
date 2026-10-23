@@ -5,17 +5,17 @@
     "global.lancloudtech.com"
   ],
   "deployment": {
-    "id": "9a0e837c-64e4-4fe7-93e9-31c24c1eb877",
-    "url": "https://9a0e837c.lan-homepage-global.pages.dev",
+    "id": "247117d9-d929-424a-be72-85338ce2958f",
+    "url": "https://247117d9.lan-homepage-global.pages.dev",
     "environment": "production",
-    "createdAt": "2026-10-22T17:47:54.599243Z",
+    "createdAt": "2026-10-23T03:36:42.601351Z",
     "stage": {
       "name": "deploy",
       "started_on": null,
-      "ended_on": "2026-10-22T17:47:55.937473Z",
+      "ended_on": "2026-10-23T03:36:44.478449Z",
       "status": "success"
     },
-    "commit": "a2cffdacd373ce371bc3dddd94954728640e575f"
+    "commit": "fec92cfffb6c3ce2dfa6dc9fbef40ecf6d8aa075"
   },
-  "checkedAt": "2026-10-22T17:49:25.403Z"
+  "checkedAt": "2026-10-23T03:37:24.016Z"
 }

@@ -1,7 +1,7 @@
 {
-  "release": "compact-be0e1c4c7667c74f",
-  "cdnBase": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-be0e1c4c7667c74f",
-  "uploadedAt": "2026-10-22T17:46:29.279Z",
+  "release": "compact-ad2aff2888034b54",
+  "cdnBase": "https://img.lancloudtech.com/lanxin/webpage/releases/compact-ad2aff2888034b54",
+  "uploadedAt": "2026-10-23T03:35:07.913Z",
   "files": [
     {
       "path": "ai-course/ai-course-i18n.3d942099dcb7.js",
@@ -1421,25 +1421,25 @@
     },
     {
       "path": "share-meta.53304647ce7b.js",
-      "sha256": "b8a013b9e7fc055d22d27eb2e4171a63cdd68aaac2c52745c5681bee7af35ca3",
+      "sha256": "2be4007e227b15f88da2b9f791f303b032bd131b4e426773a85c5b056b48811b",
       "bytes": 5613,
       "alreadyPresent": false
     },
     {
       "path": "share-meta.js",
-      "sha256": "e8ce2699634bbbc238d9cebd06f6f10c9061d6afa6fb7b6aef57569e54ad01cd",
+      "sha256": "4d519db1caef10804ba1d92b8b889e6b1a679590a597b210e1028f6e66401459",
       "bytes": 5600,
       "alreadyPresent": false
     },
     {
       "path": "site-analytics.53304647ce7b.js",
-      "sha256": "60f827f795c8dbae6074f2e19679d8a609fe1afe588715c3aa020de6d516dab9",
+      "sha256": "6753fc94a955ab9b5efe6a35af369cf83bbdca7e4aafaf86b43bc37f36e04b82",
       "bytes": 1378,
       "alreadyPresent": false
     },
     {
       "path": "site-analytics.js",
-      "sha256": "37e1da8c9c361ee414f7246d2a70a324dabf2fd9d4b3e662a90a7203d4d86862",
+      "sha256": "cdd50b8070393670eccd31e56675bf1c3e8760d0c7c1454c798ae0631e846343",
       "bytes": 1365,
       "alreadyPresent": false
     },
@@ -1457,19 +1457,19 @@
     },
     {
       "path": "site-fonts.9daab28d556e.css",
-      "sha256": "c4323ac61d3be17ed967ec09421144752f08466e6336c234b21fba6d43462c1c",
+      "sha256": "dcc1c4c086bd3ee62677516ac603b0a4a71f143e54df447ff2627e83575a758d",
       "bytes": 1585,
       "alreadyPresent": false
     },
     {
       "path": "site-fonts.a4464e6b0fb4.css",
-      "sha256": "8563fbc9aee7732304b4f58a082929a1681790ac81aa9f9668eb88fdf7096f9c",
+      "sha256": "62ce53664afda585750dcd0e271d0e62949e4413d6b3191de89a3e925c97a02f",
       "bytes": 2123,
       "alreadyPresent": false
     },
     {
       "path": "site-fonts.css",
-      "sha256": "8563fbc9aee7732304b4f58a082929a1681790ac81aa9f9668eb88fdf7096f9c",
+      "sha256": "62ce53664afda585750dcd0e271d0e62949e4413d6b3191de89a3e925c97a02f",
       "bytes": 2123,
       "alreadyPresent": false
     },
@@ -1505,13 +1505,13 @@
     },
     {
       "path": "site-seo.53304647ce7b.js",
-      "sha256": "b0ba4cef51e4b5f802888e1cd596e396cf620e46964063b97c7a3965348a2617",
+      "sha256": "b295bbec88737e4535e8cdd8a0f206420e7976f09a832708b0fdd0fc732a5d2f",
       "bytes": 9476,
       "alreadyPresent": false
     },
     {
       "path": "site-seo.js",
-      "sha256": "9983661e0c05b81fd7dc52b73e90a38454c268434d8c8a1a352a52bd51509996",
+      "sha256": "860bdc852bd9b0c77b1c37a4f0cdd2b17f3c0b0e66dcb1aad6d879ba467c7c02",
       "bytes": 9411,
       "alreadyPresent": false
     },
@@ -1709,13 +1709,13 @@
     },
     {
       "path": "visual-hero.0af70ec2d6fa.css",
-      "sha256": "6eb1f2ec1c6ebb3ed3822ec609ec26756c270e06ea07b515fb61a435a488307b",
+      "sha256": "d4f74d7e306f6aade7c28769f40b155ae308a6484357d828516d82cb579d2be9",
       "bytes": 14572,
       "alreadyPresent": false
     },
     {
       "path": "visual-hero.33db9079e6de.css",
-      "sha256": "9145e9f32d0fe93a916beeebcd18880a3b8723a396dee41da6d8d79e51ade427",
+      "sha256": "76f3520bf9c76ffe79d69673da0042b7c6dd699192ef5d7463e75b55843def61",
       "bytes": 4862,
       "alreadyPresent": false
     },
@@ -1727,7 +1727,7 @@
     },
     {
       "path": "visual-hero.css",
-      "sha256": "6eb1f2ec1c6ebb3ed3822ec609ec26756c270e06ea07b515fb61a435a488307b",
+      "sha256": "d4f74d7e306f6aade7c28769f40b155ae308a6484357d828516d82cb579d2be9",
       "bytes": 14572,
       "alreadyPresent": false
     },
